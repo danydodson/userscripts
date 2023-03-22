@@ -11,8 +11,7 @@
 // @match            https://www.amazon.de/*
 // @match            https://www.amazon.it/*
 // @match            https://www.amazon.*
-// @match            https://*.amazon-*.com/*
-// @match            https://*.*-amazon.com/*
+// @match            https://*.amazon*.com/*
 // @run-at           document-end
 // @require          http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
 // @icon             https://www.google.com/s2/favicons?sz=64&domain=amazon.com
