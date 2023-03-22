@@ -94,14 +94,14 @@
 This helper script bridges compatibility between the Greasemonkey 4 APIs and
 existing/legacy APIs.  Say for example your user script includes
 
-    // @grant GM_getValue
+		// @grant GM_getValue
 
 And you'd like to be compatible with both Greasemonkey 3 and Greasemonkey 4
 (and for that matter all versions of Violentmonkey, Tampermonkey, and any other
 user script engine).  Add:
 
-    // @grant GM.getValue
-    // @require https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
+		// @grant GM.getValue
+		// @require https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 
 And switch to the new (GM-dot) APIs, which return promises.  If your script
 is running in an engine that does not provide the new asynchronous APIs, this
@@ -111,115 +111,115 @@ If you use `await` at the top level, you'll need to wrap your script in an
 `async` function to be compatible with any user script engine besides
 Greasemonkey 4.
 
-    (async () => {
-    let x = await GM.getValue('x');
-    })();
+		(async () => {
+		let x = await GM.getValue('x');
+		})();
 */
 
 if (typeof GM == 'undefined') {
-    this.GM = {}
+	this.GM = {}
 }
 
 
 if (typeof GM_addStyle == 'undefined') {
-    this.GM_addStyle = (aCss) => {
-        'use strict'
-        let head = document.getElementsByTagName('head')[0]
-        if (head) {
-            let style = document.createElement('style')
-            style.setAttribute('type', 'text/css')
-            style.textContent = aCss
-            head.appendChild(style)
-            return style
-        }
-        return null
-    }
+	this.GM_addStyle = (aCss) => {
+		'use strict'
+		let head = document.getElementsByTagName('head')[0]
+		if (head) {
+			let style = document.createElement('style')
+			style.setAttribute('type', 'text/css')
+			style.textContent = aCss
+			head.appendChild(style)
+			return style
+		}
+		return null
+	}
 }
 
 
 if (typeof GM_registerMenuCommand == 'undefined') {
-    this.GM_registerMenuCommand = (caption, commandFunc, accessKey) => {
-        if (!document.body) {
-            if (document.readyState === 'loading'
-                && document.documentElement && document.documentElement.localName === 'html') {
-                new MutationObserver((mutations, observer) => {
-                    if (document.body) {
-                        observer.disconnect()
-                        GM_registerMenuCommand(caption, commandFunc, accessKey)
-                    }
-                }).observe(document.documentElement, { childList: true })
-            } else {
-                console.error('GM_registerMenuCommand got no body.')
-            }
-            return
-        }
-        let contextMenu = document.body.getAttribute('contextmenu')
-        let menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null)
-        if (!menu) {
-            menu = document.createElement('menu')
-            menu.setAttribute('id', 'gm-registered-menu')
-            menu.setAttribute('type', 'context')
-            document.body.appendChild(menu)
-            document.body.setAttribute('contextmenu', 'gm-registered-menu')
-        }
-        let menuItem = document.createElement('menuitem')
-        menuItem.textContent = caption
-        menuItem.addEventListener('click', commandFunc, true)
-        menu.appendChild(menuItem)
-    }
+	this.GM_registerMenuCommand = (caption, commandFunc, accessKey) => {
+		if (!document.body) {
+			if (document.readyState === 'loading'
+				&& document.documentElement && document.documentElement.localName === 'html') {
+				new MutationObserver((mutations, observer) => {
+					if (document.body) {
+						observer.disconnect()
+						GM_registerMenuCommand(caption, commandFunc, accessKey)
+					}
+				}).observe(document.documentElement, { childList: true })
+			} else {
+				console.error('GM_registerMenuCommand got no body.')
+			}
+			return
+		}
+		let contextMenu = document.body.getAttribute('contextmenu')
+		let menu = (contextMenu ? document.querySelector('menu#' + contextMenu) : null)
+		if (!menu) {
+			menu = document.createElement('menu')
+			menu.setAttribute('id', 'gm-registered-menu')
+			menu.setAttribute('type', 'context')
+			document.body.appendChild(menu)
+			document.body.setAttribute('contextmenu', 'gm-registered-menu')
+		}
+		let menuItem = document.createElement('menuitem')
+		menuItem.textContent = caption
+		menuItem.addEventListener('click', commandFunc, true)
+		menu.appendChild(menuItem)
+	}
 }
 
 
 if (typeof GM_getResourceText == 'undefined') {
-    this.GM_getResourceText = (aRes) => {
-        'use strict'
-        return GM.getResourceUrl(aRes)
-            .then(url => fetch(url))
-            .then(resp => resp.text())
-            .catch(function (error) {
-                GM.log('Request failed', error)
-                return null
-            })
-    }
+	this.GM_getResourceText = (aRes) => {
+		'use strict'
+		return GM.getResourceUrl(aRes)
+			.then(url => fetch(url))
+			.then(resp => resp.text())
+			.catch(function (error) {
+				GM.log('Request failed', error)
+				return null
+			})
+	}
 }
 
 
 Object.entries({
-    'log': console.log.bind(console),  // Pale Moon compatibility.  See #13.
-    'info': GM_info,
+	'log': console.log.bind(console),  // Pale Moon compatibility.  See #13.
+	'info': GM_info,
 }).forEach(([newKey, old]) => {
-    if (old && (typeof GM[newKey] == 'undefined')) {
-        GM[newKey] = old
-    }
+	if (old && (typeof GM[newKey] == 'undefined')) {
+		GM[newKey] = old
+	}
 })
 
 
 Object.entries({
-    'GM_addStyle': 'addStyle',
-    'GM_deleteValue': 'deleteValue',
-    'GM_getResourceURL': 'getResourceUrl',
-    'GM_getValue': 'getValue',
-    'GM_listValues': 'listValues',
-    'GM_notification': 'notification',
-    'GM_openInTab': 'openInTab',
-    'GM_registerMenuCommand': 'registerMenuCommand',
-    'GM_setClipboard': 'setClipboard',
-    'GM_setValue': 'setValue',
-    'GM_xmlhttpRequest': 'xmlHttpRequest',
-    'GM_getResourceText': 'getResourceText',
+	'GM_addStyle': 'addStyle',
+	'GM_deleteValue': 'deleteValue',
+	'GM_getResourceURL': 'getResourceUrl',
+	'GM_getValue': 'getValue',
+	'GM_listValues': 'listValues',
+	'GM_notification': 'notification',
+	'GM_openInTab': 'openInTab',
+	'GM_registerMenuCommand': 'registerMenuCommand',
+	'GM_setClipboard': 'setClipboard',
+	'GM_setValue': 'setValue',
+	'GM_xmlhttpRequest': 'xmlHttpRequest',
+	'GM_getResourceText': 'getResourceText',
 }).forEach(([oldKey, newKey]) => {
-    let old = this[oldKey]
-    if (old && (typeof GM[newKey] == 'undefined')) {
-        GM[newKey] = function (...args) {
-            return new Promise((resolve, reject) => {
-                try {
-                    resolve(old.apply(this, args))
-                } catch (e) {
-                    reject(e)
-                }
-            })
-        }
-    }
+	let old = this[oldKey]
+	if (old && (typeof GM[newKey] == 'undefined')) {
+		GM[newKey] = function (...args) {
+			return new Promise((resolve, reject) => {
+				try {
+					resolve(old.apply(this, args))
+				} catch (e) {
+					reject(e)
+				}
+			})
+		}
+	}
 })
 
 //
@@ -271,58 +271,58 @@ const searchText_Desc = "enter your search\nSimple Wildcards = (?, *)\nRegular E
  * Add the DOM-Objects used in this script.
  */
 function lgmAddControlsGrabLinks() {
-    gmAddClipboardSupport()
-    // base layout
-    glContainer = gmCreateObj(null, "div", "gl-container")
-    glSearchDiv = gmCreateObj(glContainer, "div", "gl-searchbox")
-    glActionDiv = gmCreateObj(glContainer, "div", "gl-actionbox")
-    glResultDiv = gmCreateObj(glContainer, "div", "gl-resultbox")
-    glFormTag = gmCreateObj(glSearchDiv, "form", "gl-searchform")
-    gmSetAtI(glFormTag, "accept-charset", "utf-8")
-    // search fields
-    initFilter = gmFoundFilter(currSite, currPath)
-    gmCreateInput(glFormTag, "text", "gl-searchtext", initFilter, searchText_Desc, null, null, function () {
-        return gmSelectInput(this)
-    })
-    gmCreateButton(glFormTag, "submit", "gl-sstart", "S", "start search", null, function () {
-        return lgmSearchLinks("gl-searchtext", "gl-sdesc")
-    })
-    gmCreateButton(glFormTag, "button", "gl-sreset", "R", "clear search", null, function () {
-        return lgmResetSearch("gl-searchtext")
-    })
-    gmCreateButton(glFormTag, "button", "gl-sshow", glBtnShowResultText, glBtnShowResultTextDesc, null, function () {
-        return lgmShowHideResult()
-    })
-    gmCreateButton(glFormTag, "button", "gl-sdesc", glBtnSearchModeAText, glBtnSearchModeADesc, glBtnSearchModeAValue, function () {
-        return lgmToggleSearchDesc("gl-sdesc")
-    })
-    gmCreateInput(glFormTag, "text", "gl-scount", "", "number of hits", 1, null, null, null)
-    // copy fields
-    let selCap = "SA"
-    let selTit = "De-/Select All"
-    if (gmIsClipboardSupported()) {
-        selCap = "CA"
-        selTit = "Select & Copy All"
-    }
-    gmCreateButton(glActionDiv, "button", "gl-aselect", selCap, selTit, null, function () {
-        return lgmSelectall("gl-resultplain", "gl-resultlink")
-    })
-    gmCreateButton(glActionDiv, "button", "gl-ashowplain", "PR", "Show Plain Results", null, function () {
-        lgmSwitchResultDisplay("gl-resultplain", "gl-resultlink")
-    })
-    gmCreateButton(glActionDiv, "button", "gl-ashowlink", "RL", "Show Results as Link", null, function () {
-        lgmSwitchResultDisplay("gl-resultlink", "gl-resultplain")
-    })
-    gmCreateButton(glActionDiv, "button", "gl-awide", "W", descWidthWide, null, function () {
-        lgmToggleContainer("gl-container", "gl-resultbox", "gl-resultplain", "gl-resultlink", "gl-awide")
-    })
-    // result fields
-    gmCreateObj(glResultDiv, "div", "gl-resultplain")
-    gmCreateObj(glResultDiv, "div", "gl-resultlink")
-    // init
-    gmAddObj(glContainer, gmGetBody())
-    lgmShowHideResult(RESULT_HIDE)
-    //alert(glFormTag.outerHTML);
+	gmAddClipboardSupport()
+	// base layout
+	glContainer = gmCreateObj(null, "div", "gl-container")
+	glSearchDiv = gmCreateObj(glContainer, "div", "gl-searchbox")
+	glActionDiv = gmCreateObj(glContainer, "div", "gl-actionbox")
+	glResultDiv = gmCreateObj(glContainer, "div", "gl-resultbox")
+	glFormTag = gmCreateObj(glSearchDiv, "form", "gl-searchform")
+	gmSetAtI(glFormTag, "accept-charset", "utf-8")
+	// search fields
+	initFilter = gmFoundFilter(currSite, currPath)
+	gmCreateInput(glFormTag, "text", "gl-searchtext", initFilter, searchText_Desc, null, null, function () {
+		return gmSelectInput(this)
+	})
+	gmCreateButton(glFormTag, "submit", "gl-sstart", "S", "start search", null, function () {
+		return lgmSearchLinks("gl-searchtext", "gl-sdesc")
+	})
+	gmCreateButton(glFormTag, "button", "gl-sreset", "R", "clear search", null, function () {
+		return lgmResetSearch("gl-searchtext")
+	})
+	gmCreateButton(glFormTag, "button", "gl-sshow", glBtnShowResultText, glBtnShowResultTextDesc, null, function () {
+		return lgmShowHideResult()
+	})
+	gmCreateButton(glFormTag, "button", "gl-sdesc", glBtnSearchModeAText, glBtnSearchModeADesc, glBtnSearchModeAValue, function () {
+		return lgmToggleSearchDesc("gl-sdesc")
+	})
+	gmCreateInput(glFormTag, "text", "gl-scount", "", "number of hits", 1, null, null, null)
+	// copy fields
+	let selCap = "SA"
+	let selTit = "De-/Select All"
+	if (gmIsClipboardSupported()) {
+		selCap = "CA"
+		selTit = "Select & Copy All"
+	}
+	gmCreateButton(glActionDiv, "button", "gl-aselect", selCap, selTit, null, function () {
+		return lgmSelectall("gl-resultplain", "gl-resultlink")
+	})
+	gmCreateButton(glActionDiv, "button", "gl-ashowplain", "PR", "Show Plain Results", null, function () {
+		lgmSwitchResultDisplay("gl-resultplain", "gl-resultlink")
+	})
+	gmCreateButton(glActionDiv, "button", "gl-ashowlink", "RL", "Show Results as Link", null, function () {
+		lgmSwitchResultDisplay("gl-resultlink", "gl-resultplain")
+	})
+	gmCreateButton(glActionDiv, "button", "gl-awide", "W", descWidthWide, null, function () {
+		lgmToggleContainer("gl-container", "gl-resultbox", "gl-resultplain", "gl-resultlink", "gl-awide")
+	})
+	// result fields
+	gmCreateObj(glResultDiv, "div", "gl-resultplain")
+	gmCreateObj(glResultDiv, "div", "gl-resultlink")
+	// init
+	gmAddObj(glContainer, gmGetBody())
+	lgmShowHideResult(RESULT_HIDE)
+	//alert(glFormTag.outerHTML);
 }
 
 /**
@@ -332,30 +332,30 @@ function lgmAddControlsGrabLinks() {
  * @param {string|HTMLDivElement} behindLayer the layer to put in the bakc
  */
 function lgmSwitchResultDisplay(frontLayer, behindLayer) {
-    const oFrontLayer = gmGetStyle(frontLayer)
-    const oBehindLayer = gmGetStyle(behindLayer)
-    if (oFrontLayer && oBehindLayer) {
-        let idxFront = gmGetAtI(oFrontLayer, "index")
-        let idxBehind = gmGetAtI(oBehindLayer, "index")
+	const oFrontLayer = gmGetStyle(frontLayer)
+	const oBehindLayer = gmGetStyle(behindLayer)
+	if (oFrontLayer && oBehindLayer) {
+		let idxFront = gmGetAtI(oFrontLayer, "index")
+		let idxBehind = gmGetAtI(oBehindLayer, "index")
 
-        if (!idxFront || isNaN(idxFront) || idxFront === "") {
-            idxFront = 910
-        }
-        if (!idxBehind || isNaN(idxBehind) || idxBehind === "") {
-            idxBehind = idxFront - 1
-        }
-        if (idxFront < idxBehind) {
-            const i = idxFront
-            idxFront = idxBehind
-            idxBehind = i
-        }
-        gmSetAtI(oFrontLayer, "index", idxFront)
-        gmSetAtI(oFrontLayer, "visibility", "visible")
-        gmSetAtI(oFrontLayer, "left", 0)
-        gmSetAtI(oBehindLayer, "index", idxBehind)
-        gmSetAtI(oBehindLayer, "visibility", "hidden")
-        gmSetAtI(oBehindLayer, "left", 2000)
-    }
+		if (!idxFront || isNaN(idxFront) || idxFront === "") {
+			idxFront = 910
+		}
+		if (!idxBehind || isNaN(idxBehind) || idxBehind === "") {
+			idxBehind = idxFront - 1
+		}
+		if (idxFront < idxBehind) {
+			const i = idxFront
+			idxFront = idxBehind
+			idxBehind = i
+		}
+		gmSetAtI(oFrontLayer, "index", idxFront)
+		gmSetAtI(oFrontLayer, "visibility", "visible")
+		gmSetAtI(oFrontLayer, "left", 0)
+		gmSetAtI(oBehindLayer, "index", idxBehind)
+		gmSetAtI(oBehindLayer, "visibility", "hidden")
+		gmSetAtI(oBehindLayer, "left", 2000)
+	}
 }
 
 /**
@@ -364,19 +364,19 @@ function lgmSwitchResultDisplay(frontLayer, behindLayer) {
  * @param {string|HTMLButtonElement} btnSearch - the button to read the current state from
  */
 function lgmToggleSearchDesc(btnSearch) {
-    const oBtnSearch = gmGetElI(btnSearch)
-    if (oBtnSearch) {
-        const curValue = gmGetAtI(oBtnSearch, "value")
-        if (curValue === glBtnSearchModeLValue) {
-            gmSetCoI(oBtnSearch, glBtnSearchModeAText)
-            gmSetAtI(oBtnSearch, "value", glBtnSearchModeAValue)
-            gmSetAtI(oBtnSearch, "title", glBtnSearchModeADesc)
-        } else {
-            gmSetCoI(oBtnSearch, glBtnSearchModeLText)
-            gmSetAtI(oBtnSearch, "value", glBtnSearchModeLValue)
-            gmSetAtI(oBtnSearch, "title", glBtnSearchModeLDesc)
-        }
-    }
+	const oBtnSearch = gmGetElI(btnSearch)
+	if (oBtnSearch) {
+		const curValue = gmGetAtI(oBtnSearch, "value")
+		if (curValue === glBtnSearchModeLValue) {
+			gmSetCoI(oBtnSearch, glBtnSearchModeAText)
+			gmSetAtI(oBtnSearch, "value", glBtnSearchModeAValue)
+			gmSetAtI(oBtnSearch, "title", glBtnSearchModeADesc)
+		} else {
+			gmSetCoI(oBtnSearch, glBtnSearchModeLText)
+			gmSetAtI(oBtnSearch, "value", glBtnSearchModeLValue)
+			gmSetAtI(oBtnSearch, "title", glBtnSearchModeLDesc)
+		}
+	}
 }
 
 /**
@@ -388,40 +388,40 @@ function lgmToggleSearchDesc(btnSearch) {
  * @param {string|HTMLButtonElement} btnAction
  */
 function lgmToggleContainer(contDiv, resultDiv, resultPlainDiv, resultLinkDiv, btnAction) {
-    const oContDiv = gmGetElI(contDiv)
-    const oResultDiv = gmGetElI(resultDiv)
-    const oBtnAction = gmGetElI(btnAction)
-    if (oContDiv && oResultDiv) {
-        const oContDivStyle = gmGetStyle(oContDiv)
-        const oResultDivStyle = gmGetStyle(oResultDiv)
-        const oResultPlainDivStyle = gmGetStyle(resultPlainDiv)
-        const oResultLinkDivStyle = gmGetStyle(resultLinkDiv)
-        let newContWidth = contWidthWide
-        let newResultWidth = resWidthWide
-        let newResultDivWidth = divWidthWide
-        let newDescWidth = descWidthSmall
-        let newBtnActionText = "S"
-        const curValue = gmGetAtI(oContDivStyle, "width")
-        if (curValue === contWidthWide) {
-            newContWidth = contWidthSmall
-            newResultWidth = resWidthSmall
-            newResultDivWidth = divWidthSmall
-            newDescWidth = descWidthWide
-            newBtnActionText = "W"
-        }
-        gmSetAtI(oContDivStyle, "width", newContWidth)
-        gmSetAtI(oContDivStyle, "max-width", newContWidth)
-        gmSetAtI(oResultDivStyle, "width", newResultWidth)
-        gmSetAtI(oResultDivStyle, "max-width", newResultWidth)
-        gmSetAtI(oResultPlainDivStyle, "width", newResultDivWidth)
-        gmSetAtI(oResultPlainDivStyle, "max-width", newResultDivWidth)
-        gmSetAtI(oResultLinkDivStyle, "width", newResultDivWidth)
-        gmSetAtI(oResultLinkDivStyle, "max-width", newResultDivWidth)
-        if (oBtnAction) {
-            gmSetCoI(oBtnAction, newBtnActionText)
-            gmSetAtI(oBtnAction, "title", newDescWidth)
-        }
-    }
+	const oContDiv = gmGetElI(contDiv)
+	const oResultDiv = gmGetElI(resultDiv)
+	const oBtnAction = gmGetElI(btnAction)
+	if (oContDiv && oResultDiv) {
+		const oContDivStyle = gmGetStyle(oContDiv)
+		const oResultDivStyle = gmGetStyle(oResultDiv)
+		const oResultPlainDivStyle = gmGetStyle(resultPlainDiv)
+		const oResultLinkDivStyle = gmGetStyle(resultLinkDiv)
+		let newContWidth = contWidthWide
+		let newResultWidth = resWidthWide
+		let newResultDivWidth = divWidthWide
+		let newDescWidth = descWidthSmall
+		let newBtnActionText = "S"
+		const curValue = gmGetAtI(oContDivStyle, "width")
+		if (curValue === contWidthWide) {
+			newContWidth = contWidthSmall
+			newResultWidth = resWidthSmall
+			newResultDivWidth = divWidthSmall
+			newDescWidth = descWidthWide
+			newBtnActionText = "W"
+		}
+		gmSetAtI(oContDivStyle, "width", newContWidth)
+		gmSetAtI(oContDivStyle, "max-width", newContWidth)
+		gmSetAtI(oResultDivStyle, "width", newResultWidth)
+		gmSetAtI(oResultDivStyle, "max-width", newResultWidth)
+		gmSetAtI(oResultPlainDivStyle, "width", newResultDivWidth)
+		gmSetAtI(oResultPlainDivStyle, "max-width", newResultDivWidth)
+		gmSetAtI(oResultLinkDivStyle, "width", newResultDivWidth)
+		gmSetAtI(oResultLinkDivStyle, "max-width", newResultDivWidth)
+		if (oBtnAction) {
+			gmSetCoI(oBtnAction, newBtnActionText)
+			gmSetAtI(oBtnAction, "title", newDescWidth)
+		}
+	}
 }
 
 /**
@@ -437,40 +437,40 @@ function lgmToggleContainer(contDiv, resultDiv, resultPlainDiv, resultLinkDiv, b
  * @see #glContainerHeightMaxAuto
  */
 function lgmShowHideResult(bOnOff) {
-    const oCont = gmGetElI("gl-container")
-    const oContStyle = gmGetStyle(oCont)
-    const oCont1 = gmGetElI("gl-resultbox")
-    const oContStyle1 = gmGetStyle(oCont1)
-    const oBtnShow = gmGetElI("gl-sshow")
-    const oSearchCount = gmGetElI("gl-scount")
-    let currHeight
-    if (bOnOff) {
-        currHeight = bOnOff
-    } else {
-        currHeight = parseFloat(gmGetAtI(oContStyle, "height"))
-    }
-    if (currHeight === RESULT_SHOW || currHeight === parseFloat(glContainerHeightMin)) {
-        // if container should be shown or currently is at min size
-        currHeight = glContainerHeightMax
-        const searchCnt = gmGetAtI(oSearchCount, "value")
-        //alert(searchCnt);
-        if (isNaN(searchCnt)) {
-            currHeight = glContainerHeightMaxAuto
-        }
-    } else {
-        currHeight = glContainerHeightMin
-    }
-    let buttonText = glBtnShowResultText
-    let buttonTextDesc = glBtnShowResultTextDesc
-    if (currHeight !== glContainerHeightMin) {
-        buttonText = glBtnHideResultText
-        buttonTextDesc = glBtnHideResultTextDesc
-    }
-    gmSetAtI(oContStyle, "height", currHeight)
-    gmSetAtI(oContStyle1, "height", currHeight)
-    gmSetCoI(oBtnShow, buttonText)
-    gmSetAtI(oBtnShow, "title", buttonTextDesc)
-    return false
+	const oCont = gmGetElI("gl-container")
+	const oContStyle = gmGetStyle(oCont)
+	const oCont1 = gmGetElI("gl-resultbox")
+	const oContStyle1 = gmGetStyle(oCont1)
+	const oBtnShow = gmGetElI("gl-sshow")
+	const oSearchCount = gmGetElI("gl-scount")
+	let currHeight
+	if (bOnOff) {
+		currHeight = bOnOff
+	} else {
+		currHeight = parseFloat(gmGetAtI(oContStyle, "height"))
+	}
+	if (currHeight === RESULT_SHOW || currHeight === parseFloat(glContainerHeightMin)) {
+		// if container should be shown or currently is at min size
+		currHeight = glContainerHeightMax
+		const searchCnt = gmGetAtI(oSearchCount, "value")
+		//alert(searchCnt);
+		if (isNaN(searchCnt)) {
+			currHeight = glContainerHeightMaxAuto
+		}
+	} else {
+		currHeight = glContainerHeightMin
+	}
+	let buttonText = glBtnShowResultText
+	let buttonTextDesc = glBtnShowResultTextDesc
+	if (currHeight !== glContainerHeightMin) {
+		buttonText = glBtnHideResultText
+		buttonTextDesc = glBtnHideResultTextDesc
+	}
+	gmSetAtI(oContStyle, "height", currHeight)
+	gmSetAtI(oContStyle1, "height", currHeight)
+	gmSetCoI(oBtnShow, buttonText)
+	gmSetAtI(oBtnShow, "title", buttonTextDesc)
+	return false
 }
 
 /**
@@ -480,13 +480,13 @@ function lgmShowHideResult(bOnOff) {
  * @returns {boolean} always false
  */
 function lgmResetSearch(searchField) {
-    const oSearchField = gmGetElI(searchField)
-    if (oSearchField) {
-        gmSetAtI(oSearchField, "value", "")
-        lgmSearchLinks(oSearchField)
-        oSearchField.focus()
-    }
-    return false
+	const oSearchField = gmGetElI(searchField)
+	if (oSearchField) {
+		gmSetAtI(oSearchField, "value", "")
+		lgmSearchLinks(oSearchField)
+		oSearchField.focus()
+	}
+	return false
 }
 
 /**
@@ -497,35 +497,35 @@ function lgmResetSearch(searchField) {
  * @returns {boolean} always false
  */
 function lgmSelectall(selElementA, selElementB) {
-    let selectedElem = null
-    const oSelElemA = gmGetElI(selElementA)
-    const oSelElemAStyle = gmGetStyle(oSelElemA)
-    if (oSelElemA != null && gmGetAtI(oSelElemAStyle, "visibility") === "visible") {
-        selectedElem = oSelElemA
-    } else {
-        const oSelElemB = gmGetElI(selElementB)
-        const oSelElemBStyle = gmGetStyle(oSelElemB)
-        if (oSelElemB != null && gmGetAtI(oSelElemBStyle, "visibility") === "visible") {
-            selectedElem = oSelElemB
-        }
-    }
-    if (selectedElem != null) {
-        let bForce = false
-        if (gmIsClipboardSupported()) {
-            bForce = true
-        }
-        const selText = gmSelectText(selectedElem, bForce)
-        if (selText) {
-            try {
-                if (unsafeWindow) {
-                    unsafeWindow.copyPostToClipboard(selText)
-                }
-            } catch (ignored) {
-                // ignored
-            }
-        }
-    }
-    return false
+	let selectedElem = null
+	const oSelElemA = gmGetElI(selElementA)
+	const oSelElemAStyle = gmGetStyle(oSelElemA)
+	if (oSelElemA != null && gmGetAtI(oSelElemAStyle, "visibility") === "visible") {
+		selectedElem = oSelElemA
+	} else {
+		const oSelElemB = gmGetElI(selElementB)
+		const oSelElemBStyle = gmGetStyle(oSelElemB)
+		if (oSelElemB != null && gmGetAtI(oSelElemBStyle, "visibility") === "visible") {
+			selectedElem = oSelElemB
+		}
+	}
+	if (selectedElem != null) {
+		let bForce = false
+		if (gmIsClipboardSupported()) {
+			bForce = true
+		}
+		const selText = gmSelectText(selectedElem, bForce)
+		if (selText) {
+			try {
+				if (unsafeWindow) {
+					unsafeWindow.copyPostToClipboard(selText)
+				}
+			} catch (ignored) {
+				// ignored
+			}
+		}
+	}
+	return false
 }
 
 /**
@@ -536,17 +536,17 @@ function lgmSelectall(selElementA, selElementB) {
  * @returns {boolean} always false
  */
 function lgmSearchLinks(searchFieldAttr, searchModeAttr) {
-    try {
-        const searchText = gmGetAtI(searchFieldAttr, "value")
-        const searchMode = gmGetAtI(searchModeAttr, "value")
-        const arrFoundInPage = gmFindLinksInPage(searchText, searchMode)
-        lgmLinksInResult(arrFoundInPage)
-        lgmSwitchResultDisplay("gl-resultplain", "gl-resultlink")
-        lgmShowHideResult(RESULT_SHOW)
-    } catch (ex) {
-        alert(ex)
-    }
-    return false
+	try {
+		const searchText = gmGetAtI(searchFieldAttr, "value")
+		const searchMode = gmGetAtI(searchModeAttr, "value")
+		const arrFoundInPage = gmFindLinksInPage(searchText, searchMode)
+		lgmLinksInResult(arrFoundInPage)
+		lgmSwitchResultDisplay("gl-resultplain", "gl-resultlink")
+		lgmShowHideResult(RESULT_SHOW)
+	} catch (ex) {
+		alert(ex)
+	}
+	return false
 }
 
 /**
@@ -556,36 +556,36 @@ function lgmSearchLinks(searchFieldAttr, searchModeAttr) {
  * @returns {boolean} always false
  */
 function lgmLinksInResult(arrLinks) {
-    const arrLinksPlain = []
-    let arrLinksLink = []
-    try {
-        const oResultPlainDiv = gmGetElI("gl-resultplain")
-        const oResultLinkDiv = gmGetElI("gl-resultlink")
-        const oResultCount = gmGetElI("gl-scount")
-        const arrFoundInPage = gmSortArray(arrLinks)
-        for (let i = 0; i < arrFoundInPage.length; i++) {
-            const currLink = arrFoundInPage[i].link
-            const currCaption = lgmCleanArrayCaption(arrFoundInPage[i].linkText)
-            //alert(currCaption);
-            arrLinksPlain.push(lgmPrepareLinkAsPlain(currLink, currCaption, i))
-            arrLinksLink.push(lgmPrepareLinkAsLink(currLink, currCaption, i))
-        }
-        if (oResultCount) {
-            gmSetAtI(oResultCount, "value", arrFoundInPage.length)
-        }
-        if (oResultPlainDiv) {
-            lgmPrepareLinksInContainer(oResultPlainDiv, arrLinksPlain)
-            gmCreateObj(oResultPlainDiv, "br", null)
-        }
-        if (oResultLinkDiv) {
-            arrLinksLink = gmSortObject(arrLinksLink, "data-title")
-            lgmPrepareLinksInContainer(oResultLinkDiv, arrLinksLink)
-            gmCreateObj(oResultLinkDiv, "br", null)
-        }
-    } catch (ex) {
-        alert(ex)
-    }
-    return false
+	const arrLinksPlain = []
+	let arrLinksLink = []
+	try {
+		const oResultPlainDiv = gmGetElI("gl-resultplain")
+		const oResultLinkDiv = gmGetElI("gl-resultlink")
+		const oResultCount = gmGetElI("gl-scount")
+		const arrFoundInPage = gmSortArray(arrLinks)
+		for (let i = 0; i < arrFoundInPage.length; i++) {
+			const currLink = arrFoundInPage[i].link
+			const currCaption = lgmCleanArrayCaption(arrFoundInPage[i].linkText)
+			//alert(currCaption);
+			arrLinksPlain.push(lgmPrepareLinkAsPlain(currLink, currCaption, i))
+			arrLinksLink.push(lgmPrepareLinkAsLink(currLink, currCaption, i))
+		}
+		if (oResultCount) {
+			gmSetAtI(oResultCount, "value", arrFoundInPage.length)
+		}
+		if (oResultPlainDiv) {
+			lgmPrepareLinksInContainer(oResultPlainDiv, arrLinksPlain)
+			gmCreateObj(oResultPlainDiv, "br", null)
+		}
+		if (oResultLinkDiv) {
+			arrLinksLink = gmSortObject(arrLinksLink, "data-title")
+			lgmPrepareLinksInContainer(oResultLinkDiv, arrLinksLink)
+			gmCreateObj(oResultLinkDiv, "br", null)
+		}
+	} catch (ex) {
+		alert(ex)
+	}
+	return false
 }
 
 /**
@@ -595,14 +595,14 @@ function lgmLinksInResult(arrLinks) {
  * @returns {string} the cleaned text
  */
 function lgmCleanCaption(dirtyCaption) {
-    dirtyCaption = trim(dirtyCaption)
-    if (dirtyCaption != null) {
-        dirtyCaption = dirtyCaption.replace(/[\n\r]/g, "")
-        if (dirtyCaption.indexOf("<") >= 0) {
-            dirtyCaption = dirtyCaption.replace(/<(?:.|\n)*?>/gm, "").replace(/\s{2,}/gm, " ")
-        }
-    }
-    return dirtyCaption
+	dirtyCaption = trim(dirtyCaption)
+	if (dirtyCaption != null) {
+		dirtyCaption = dirtyCaption.replace(/[\n\r]/g, "")
+		if (dirtyCaption.indexOf("<") >= 0) {
+			dirtyCaption = dirtyCaption.replace(/<(?:.|\n)*?>/gm, "").replace(/\s{2,}/gm, " ")
+		}
+	}
+	return dirtyCaption
 }
 
 /**
@@ -612,19 +612,19 @@ function lgmCleanCaption(dirtyCaption) {
  * @returns {string} the cleaned array or text
  */
 function lgmCleanArrayCaption(arrCaption) {
-    let cleanCaption
-    if (gmIsArray(arrCaption)) {
-        let arrCleanCaption = []
-        for (let currElem of arrCaption) {
-            arrCleanCaption.push(lgmCleanCaption(currElem))
-        }
-        arrCleanCaption = gmOnlyUnique(arrCleanCaption)
-        arrCleanCaption = gmSortArray(arrCleanCaption, SORT_NUM)
-        cleanCaption = "[" + arrCleanCaption.join("][") + "]"
-    } else {
-        cleanCaption = lgmCleanCaption(arrCaption)
-    }
-    return cleanCaption
+	let cleanCaption
+	if (gmIsArray(arrCaption)) {
+		let arrCleanCaption = []
+		for (let currElem of arrCaption) {
+			arrCleanCaption.push(lgmCleanCaption(currElem))
+		}
+		arrCleanCaption = gmOnlyUnique(arrCleanCaption)
+		arrCleanCaption = gmSortArray(arrCleanCaption, SORT_NUM)
+		cleanCaption = "[" + arrCleanCaption.join("][") + "]"
+	} else {
+		cleanCaption = lgmCleanCaption(arrCaption)
+	}
+	return cleanCaption
 }
 
 /**
@@ -636,22 +636,22 @@ function lgmCleanArrayCaption(arrCaption) {
  * @returns {HTMLSpanElement} the newly span element
  */
 function lgmPrepareLinkAsPlain(currLink, currCaption, curId) {
-    // row for plain text
-    const curPId = scriptID + "P" + curId
-    let plainLink = gmCreateObj(null, "span", curPId)
-    gmSetAtI(plainLink, "data-href", currLink)
-    plainLink = gmCreateObjCommon(plainLink, currLink, currCaption, null,
-        function () {
-            lgmSelectEntry(this)
-            return false
-        },
-        null, null, null,
-        function () {
-            gmOpenInTab(this["data-href"])
-            return true
-        }
-    )
-    return plainLink
+	// row for plain text
+	const curPId = scriptID + "P" + curId
+	let plainLink = gmCreateObj(null, "span", curPId)
+	gmSetAtI(plainLink, "data-href", currLink)
+	plainLink = gmCreateObjCommon(plainLink, currLink, currCaption, null,
+		function () {
+			lgmSelectEntry(this)
+			return false
+		},
+		null, null, null,
+		function () {
+			gmOpenInTab(this["data-href"])
+			return true
+		}
+	)
+	return plainLink
 }
 
 /**
@@ -663,22 +663,22 @@ function lgmPrepareLinkAsPlain(currLink, currCaption, curId) {
  * @return {HTMLAnchorElement} the newly a element
  */
 function lgmPrepareLinkAsLink(currLink, currCaption, curId) {
-    // row for htmllink
-    const curLId = scriptID + "L" + curId
-    const plainCaption = "[" + currLink + "]"
-    const alink = gmCreateLink(null, curLId, currLink, currCaption, plainCaption, "_blank",
-        function () {
-            lgmSelectEntry(this)
-            return false
-        },
-        function () {
-            gmOpenInTab(this.href)
-            return true
-        }
-    )
-    gmSetAtI(alink, "data-title", currCaption)
-    gmSetAtI(alink, FL_TAG, FL_ID)
-    return alink
+	// row for htmllink
+	const curLId = scriptID + "L" + curId
+	const plainCaption = "[" + currLink + "]"
+	const alink = gmCreateLink(null, curLId, currLink, currCaption, plainCaption, "_blank",
+		function () {
+			lgmSelectEntry(this)
+			return false
+		},
+		function () {
+			gmOpenInTab(this.href)
+			return true
+		}
+	)
+	gmSetAtI(alink, "data-title", currCaption)
+	gmSetAtI(alink, FL_TAG, FL_ID)
+	return alink
 }
 
 /**
@@ -688,11 +688,11 @@ function lgmPrepareLinkAsLink(currLink, currCaption, curId) {
  * @param {HTMLAnchorElement[]} arrLinksLink - array with the result objects
  */
 function lgmPrepareLinksInContainer(oResultLinkDiv, arrLinksLink) {
-    gmEmptyObj(oResultLinkDiv)
-    for (let idxLinks = 0; idxLinks < arrLinksLink.length; idxLinks++) {
-        gmAddObj(arrLinksLink[idxLinks], oResultLinkDiv)
-        gmCreateObj(oResultLinkDiv, "br", null)
-    }
+	gmEmptyObj(oResultLinkDiv)
+	for (let idxLinks = 0; idxLinks < arrLinksLink.length; idxLinks++) {
+		gmAddObj(arrLinksLink[idxLinks], oResultLinkDiv)
+		gmCreateObj(oResultLinkDiv, "br", null)
+	}
 }
 
 /**
@@ -701,11 +701,11 @@ function lgmPrepareLinksInContainer(oResultLinkDiv, arrLinksLink) {
  * @param {HTMLElement} oEntry - a page element
  */
 function lgmSelectEntry(oEntry) {
-    try {
-        gmSelectText(oEntry, false)
-    } catch (ex) {
-        alert(ex)
-    }
+	try {
+		gmSelectText(oEntry, false)
+	} catch (ex) {
+		alert(ex)
+	}
 }
 const MAIN_FONT_TYPE = "Consolas" //"Arial, Courier New";
 const MAIN_FONT_SIZE = "10pt !important"
@@ -942,11 +942,11 @@ const CSS_STYLE = `
  * Can be left empty.
  */
 function lgm_addKnownSites() {
-    gmAddSite("watch?", "(|.+?\.)youtube\..+?", ".*")
-    gmAddSite("watch", "(|.+?\.)myvideo\..+?", ".*")
-    gmAddSite("video", "(|.+?\.)dailymotion\..+?", ".*")
-    gmAddSite("watch", "(|.+?\.)metacafe\..+?", ".*")
-    gmAddSite("10", "devzone\\..+?\\.(net|eu)", "/test/gmonkey/.*")
+	gmAddSite("watch?", "(|.+?\.)youtube\..+?", ".*")
+	gmAddSite("watch", "(|.+?\.)myvideo\..+?", ".*")
+	gmAddSite("video", "(|.+?\.)dailymotion\..+?", ".*")
+	gmAddSite("watch", "(|.+?\.)metacafe\..+?", ".*")
+	gmAddSite("10", "devzone\\..+?\\.(net|eu)", "/test/gmonkey/.*")
 }
 
 /**
@@ -956,8 +956,8 @@ function lgm_addKnownSites() {
  * @return {boolean} always true
  */
 function lgm_addStyles() {
-    GM_addStyle(CSS_STYLE)
-    return true
+	GM_addStyle(CSS_STYLE)
+	return true
 }
 
 /**
@@ -965,7 +965,7 @@ function lgm_addStyles() {
  * Can be left empty.
  */
 function lgm_addControls() {
-    lgmAddControlsGrabLinks()
+	lgmAddControlsGrabLinks()
 }
 
 /**
@@ -975,7 +975,7 @@ function lgm_addControls() {
  * @return {boolean} always true
  */
 function lgm_addInitAction() {
-    return true
+	return true
 }
 
 gmInitEventHandler()

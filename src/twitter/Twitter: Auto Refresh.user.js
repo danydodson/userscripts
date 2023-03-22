@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Twitter: Auto Refresh
-// @namespace    http://elamperti.com/
-// @version      0.2
-// @description  Refreshes the timeline items automatically every 10 sec.
-// @icon             https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
-// @author       Enrico Lamperti
-// @match        https://twitter.com/*
-// @grant        none
+// @name           Twitter: Auto Refresh
+// @namespace      http://elamperti.com/
+// @version        0.2
+// @description    Refreshes the timeline items automatically every 10 sec.
+// @icon           https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
+// @author         Enrico Lamperti
+// @match          https://twitter.com/*
+// @grant          none
 // ==/UserScript==
-/* jshint -W097 */
+
 'use strict'
 
 function updateTimeline() {

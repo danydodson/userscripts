@@ -22,20 +22,20 @@ var win = window
 if (win.frameElement) throw new Error("Stopped JavaScript.")
 
 function set_pref(preference, new_value) {
-    GM_setValue(preference, new_value)
+	GM_setValue(preference, new_value)
 }
 
 function get_pref(preference) {
-    return GM_getValue(preference)
+	return GM_getValue(preference)
 }
 
 function init_pref(preference, new_value) {
-    var value = get_pref(preference)
-    if (value == null) {
-        set_pref(preference, new_value)
-        value = new_value
-    }
-    return value
+	var value = get_pref(preference)
+	if (value == null) {
+		set_pref(preference, new_value)
+		value = new_value
+	}
+	return value
 }
 
 
@@ -97,108 +97,108 @@ body[dir='rtl'] #ytpc_cog_container {left:5px;}\
 
 function newNode(kind, id, classname, refnode, position) {
 
-    var node = doc.createElement(kind)
+	var node = doc.createElement(kind)
 
-    if (node == null) return null
+	if (node == null) return null
 
-    if (id != null) node.id = id
+	if (id != null) node.id = id
 
-    if (classname != null) node.className = classname
+	if (classname != null) node.className = classname
 
-    if (refnode != null) {
-        switch (position) {
-            //insert after refnode
-            case 'after':
-                if (refnode.nextSibling != null)
-                    refnode.parentNode.insertBefore(node, refnode.nextSibling)
-                else
-                    refnode.parentNode.appendChild(node)
-                break
+	if (refnode != null) {
+		switch (position) {
+			//insert after refnode
+			case 'after':
+				if (refnode.nextSibling != null)
+					refnode.parentNode.insertBefore(node, refnode.nextSibling)
+				else
+					refnode.parentNode.appendChild(node)
+				break
 
-            //insert before refnode
-            case 'before':
-                refnode.parentNode.insertBefore(node, refnode)
-                break
+			//insert before refnode
+			case 'before':
+				refnode.parentNode.insertBefore(node, refnode)
+				break
 
-            //insert as first child of refnode
-            case 'first':
-                var child = refnode.childNodes[0]
-                if (child != null)
-                    refnode.insertBefore(node, child)
-                else
-                    refnode.appendChild(node)
-                break
+			//insert as first child of refnode
+			case 'first':
+				var child = refnode.childNodes[0]
+				if (child != null)
+					refnode.insertBefore(node, child)
+				else
+					refnode.appendChild(node)
+				break
 
-            //insert as last child of refnode
-            case 'last':
-            default:
-                refnode.appendChild(node)
-                break
-        }
-    }
+			//insert as last child of refnode
+			case 'last':
+			default:
+				refnode.appendChild(node)
+				break
+		}
+	}
 
-    return node
+	return node
 }
 
 
 function message(str) {
-    var node = newNode("div", null, "ytpc_message", doc.body)
-    node.textContent = str + "\n"
+	var node = newNode("div", null, "ytpc_message", doc.body)
+	node.textContent = str + "\n"
 }
 
 
 function insertStyle(str, id) {
-    var styleNode = null
+	var styleNode = null
 
-    if (id != null) {
-        styleNode = doc.getElementById(id)
-    }
+	if (id != null) {
+		styleNode = doc.getElementById(id)
+	}
 
-    if (styleNode == null) {
-        styleNode = newNode("style", id, null, doc.head)
-        styleNode.setAttribute("type", "text/css")
-    }
+	if (styleNode == null) {
+		styleNode = newNode("style", id, null, doc.head)
+		styleNode.setAttribute("type", "text/css")
+	}
 
-    if (styleNode.textContent != str)
-        styleNode.textContent = str
+	if (styleNode.textContent != str)
+		styleNode.textContent = str
 }
 
 function deleteStyle(id) {
-    var styleNode = doc.getElementById(id)
-    if (styleNode) styleNode.parentElement.removeChild(styleNode)
+	var styleNode = doc.getElementById(id)
+	if (styleNode) styleNode.parentElement.removeChild(styleNode)
 }
 
 
 function injectScript(str, src) {
-    var script = doc.createElement("script")
-    if (str) script.textContent = str
-    if (src) script.src = src
-    doc.body.appendChild(script)
-    if (!src) doc.body.removeChild(script)
+	var script = doc.createElement("script")
+	if (str) script.textContent = str
+	if (src) script.src = src
+	doc.body.appendChild(script)
+	if (!src) doc.body.removeChild(script)
 }
 
 
 function simulClick(el) {
-    var clickEvent = doc.createEvent('MouseEvents')
-    clickEvent.initEvent('click', true, true)
-    clickEvent.artificialevent = true
-    el.dispatchEvent(clickEvent)
+	var clickEvent = doc.createEvent('MouseEvents')
+	clickEvent.initEvent('click', true, true)
+	clickEvent.artificialevent = true
+	el.dispatchEvent(clickEvent)
 }
 
 
 function xpath(outer_dom, inner_dom, query) {
-    //XPathResult.ORDERED_NODE_SNAPSHOT_TYPE = 7
-    return outer_dom.evaluate(query, inner_dom, null, 7, null)
+	//XPathResult.ORDERED_NODE_SNAPSHOT_TYPE = 7
+	return outer_dom.evaluate(query, inner_dom, null, 7, null)
 }
 
 
 function docsearch(query) {
-    return xpath(doc, doc, query)
+	return xpath(doc, doc, query)
 }
 
 
 function innersearch(inner, query) {
-    return xpath(doc, inner, query)
+	return xpath(doc, inner, query)
 }
 
 
@@ -207,7 +207,7 @@ function innersearch(inner, query) {
 //YT Player
 
 function ytplayer_script() {
-    injectScript("function f() {\
+	injectScript("function f() {\
                     var a = document.getElementById('c4-player') || document.getElementById('movie_player');\
                     var b = document.getElementById('ytpc_ytplayer_state');\
                     if (a != null && b != null)\
@@ -240,16 +240,16 @@ function ytplayer_script() {
 
 
 function ytplayer_state(attr, value) {
-    var node = doc.getElementById('ytpc_ytplayer_state')
-    if (!node) {
-        node = newNode("div", 'ytpc_ytplayer_state', null, doc.body)
-        node.style.display = "none"
-    }
+	var node = doc.getElementById('ytpc_ytplayer_state')
+	if (!node) {
+		node = newNode("div", 'ytpc_ytplayer_state', null, doc.body)
+		node.style.display = "none"
+	}
 
-    if (!node) return null
+	if (!node) return null
 
-    if (attr && value) node.setAttribute(attr, value)
-    else if (attr) return node.getAttribute(attr)
+	if (attr && value) node.setAttribute(attr, value)
+	else if (attr) return node.getAttribute(attr)
 }
 
 
@@ -263,23 +263,23 @@ function success_quality() { return ytplayer_state('quality_status') == 'success
 
 
 function adjust_pause_end() {
-    var islive = docsearch("//yt-view-count-renderer/*[contains(.,'watching now')]").snapshotLength > 0
-    //message("Is live: " + islive);
-    //alert("Is live: " + islive);
-    get_pref("ytPauseEnd") && !islive ? set_pause_end() : set_nopause_end()
-    reset_pause_end_mark()
+	var islive = docsearch("//yt-view-count-renderer/*[contains(.,'watching now')]").snapshotLength > 0
+	//message("Is live: " + islive);
+	//alert("Is live: " + islive);
+	get_pref("ytPauseEnd") && !islive ? set_pause_end() : set_nopause_end()
+	reset_pause_end_mark()
 }
 
 
 function adjust_loop() {
-    get_pref("ytLoop") ? set_loop() : set_noloop()
+	get_pref("ytLoop") ? set_loop() : set_noloop()
 }
 
 
 function ytplayer_pause() {
-    ytplayer_state('pause_status', 'fail')
+	ytplayer_state('pause_status', 'fail')
 
-    injectScript("var a = document.getElementById('c4-player') || document.getElementById('movie_player');\
+	injectScript("var a = document.getElementById('c4-player') || document.getElementById('movie_player');\
                    if (a != null)\
                       if (a.pauseVideo != null){\
                           a.pauseVideo();\
@@ -291,9 +291,9 @@ function ytplayer_pause() {
 
 
 function ytplayer_quality(def) {
-    ytplayer_state('quality_status', 'fail')
+	ytplayer_state('quality_status', 'fail')
 
-    injectScript("var a = document.getElementById('c4-player') || document.getElementById('movie_player');\
+	injectScript("var a = document.getElementById('c4-player') || document.getElementById('movie_player');\
                    if (a != null)\
                       if (a.setPlaybackQualityRange != null){\
                           a.setPlaybackQualityRange('" + def + "');\
@@ -323,152 +323,152 @@ init_pref("ytLoad", false)
 
 
 function close_ytplayer_options(e) {
-    var popup = doc.getElementById("ytpc_options_popup")
-    if (!popup) return
+	var popup = doc.getElementById("ytpc_options_popup")
+	if (!popup) return
 
-    if (!e) {
-        popup.parentNode.removeChild(popup)
-        return
-    }
+	if (!e) {
+		popup.parentNode.removeChild(popup)
+		return
+	}
 
-    if (e.artificialevent) return
+	if (e.artificialevent) return
 
-    var p = e.target
-    for (var i = 0; i < 5; i++) {
-        if (p) {
-            if (p.id)
-                if (p.id.search(/ytpc/) == 0) {
-                    e.stopPropagation()
-                    return
-                }
-            if (p.className)
-                if (p.className.search(/ytpc/) == 0) {
-                    e.stopPropagation()
-                    return
-                }
-        }
-        p = p.parentNode
-    }
+	var p = e.target
+	for (var i = 0; i < 5; i++) {
+		if (p) {
+			if (p.id)
+				if (p.id.search(/ytpc/) == 0) {
+					e.stopPropagation()
+					return
+				}
+			if (p.className)
+				if (p.className.search(/ytpc/) == 0) {
+					e.stopPropagation()
+					return
+				}
+		}
+		p = p.parentNode
+	}
 
-    popup.parentNode.removeChild(popup)
+	popup.parentNode.removeChild(popup)
 }
 
 
 function new_checkbox(prefname, str, node_kind, parent, value, func, hide1, hide2) {
-    var div = newNode(node_kind, null, "ytpc_generic", parent)
-    var input = newNode("input", null, "ytpc_generic", div)
-    input.type = "checkbox"
-    if (!value) {
-        input.checked = get_pref(prefname)
-        if (hide1 && !input.checked) parent.setAttribute("hide", "true")
-        input.onclick = function (e) {
-            var val = get_pref(prefname)
-            if (hide2 && parent.getAttribute("hide")) val = !val //no change if hidden
-            set_pref(prefname, !val)
-            e.target.checked = !val
-            if (hide1)
-                if (!val)
-                    parent.removeAttribute("hide")
-                else
-                    parent.setAttribute("hide", "true")
-            if (func) func()
-        }
-    }
-    else {
-        input.value = value
-        input.checked = (get_pref(prefname) == input.value)
-        input.onclick = function (e) {
-            var val = get_pref(prefname)
-            set_pref(prefname, e.target.value)
-            e.target.checked = true
-            var other = innersearch(parent.parentNode, ".//input[@value='" + val + "']").snapshotItem(0)
-            if (other && (other != e.target)) other.checked = false
-            if (func) func()
-        }
-    }
-    var span = newNode("span", null, "ytpc_generic", div)
-    span.textContent = str
-    if (hide2) div.setAttribute("hide", "true")
+	var div = newNode(node_kind, null, "ytpc_generic", parent)
+	var input = newNode("input", null, "ytpc_generic", div)
+	input.type = "checkbox"
+	if (!value) {
+		input.checked = get_pref(prefname)
+		if (hide1 && !input.checked) parent.setAttribute("hide", "true")
+		input.onclick = function (e) {
+			var val = get_pref(prefname)
+			if (hide2 && parent.getAttribute("hide")) val = !val //no change if hidden
+			set_pref(prefname, !val)
+			e.target.checked = !val
+			if (hide1)
+				if (!val)
+					parent.removeAttribute("hide")
+				else
+					parent.setAttribute("hide", "true")
+			if (func) func()
+		}
+	}
+	else {
+		input.value = value
+		input.checked = (get_pref(prefname) == input.value)
+		input.onclick = function (e) {
+			var val = get_pref(prefname)
+			set_pref(prefname, e.target.value)
+			e.target.checked = true
+			var other = innersearch(parent.parentNode, ".//input[@value='" + val + "']").snapshotItem(0)
+			if (other && (other != e.target)) other.checked = false
+			if (func) func()
+		}
+	}
+	var span = newNode("span", null, "ytpc_generic", div)
+	span.textContent = str
+	if (hide2) div.setAttribute("hide", "true")
 }
 
 
 function ytplayer_options() {
-    var popup = doc.getElementById("ytpc_options_popup")
-    if (popup) return
+	var popup = doc.getElementById("ytpc_options_popup")
+	if (popup) return
 
-    var parent = doc.getElementById("ytpc_ytcontrol_container")
-    if (!parent) return
+	var parent = doc.getElementById("ytpc_ytcontrol_container")
+	if (!parent) return
 
-    popup = newNode("span", "ytpc_options_popup", null, parent)
-    //parent.parentNode.parentNode.style.overflow = "visible";
+	popup = newNode("span", "ytpc_options_popup", null, parent)
+	//parent.parentNode.parentNode.style.overflow = "visible";
 
-    var title_node = newNode("div", null, "ytpc_options_title", popup)
-    title_node.textContent = "YouTube Player Controls"
+	var title_node = newNode("div", null, "ytpc_options_title", popup)
+	title_node.textContent = "YouTube Player Controls"
 
-    var closemark = newNode("span", null, "ytpc_options_close", popup)
-    closemark.textContent = "\u2716"
-    closemark.title = "close"
-    closemark.onclick = function (e) { e.stopPropagation(); close_ytplayer_options() }
+	var closemark = newNode("span", null, "ytpc_options_close", popup)
+	closemark.textContent = "\u2716"
+	closemark.title = "close"
+	closemark.onclick = function (e) { e.stopPropagation(); close_ytplayer_options() }
 
-    var groupCine = newNode("div", null, "ytpc_options_group space", popup)
-    new_checkbox("ytCine", "Fill Window", "span", groupCine, null, function () { resetTheaterMode(); cinema(0) }, true, false)
-    new_checkbox("ytStretch", "Stretch", "span", groupCine, null, function () { cinema(0) }, false, true)
-    new_checkbox("ytHide", "Hide Search", "span", groupCine, null, function () { cinema(0) }, false, true)
+	var groupCine = newNode("div", null, "ytpc_options_group space", popup)
+	new_checkbox("ytCine", "Fill Window", "span", groupCine, null, function () { resetTheaterMode(); cinema(0) }, true, false)
+	new_checkbox("ytStretch", "Stretch", "span", groupCine, null, function () { cinema(0) }, false, true)
+	new_checkbox("ytHide", "Hide Search", "span", groupCine, null, function () { cinema(0) }, false, true)
 
-    var groupFloat = newNode("div", null, "ytpc_options_group column", popup)
-    new_checkbox("ytFloat", "Float Video", "span", groupFloat, null, function () { float(0) }, true, false)
-    new_checkbox("ytFSmall", "Small Float", "span", groupFloat, null, null, false, true)
+	var groupFloat = newNode("div", null, "ytpc_options_group column", popup)
+	new_checkbox("ytFloat", "Float Video", "span", groupFloat, null, function () { float(0) }, true, false)
+	new_checkbox("ytFSmall", "Small Float", "span", groupFloat, null, null, false, true)
 
-    var groupAnnot = newNode("div", null, "ytpc_options_group column", popup)
-    new_checkbox("ytAnnot", "Hide Annotations", "span", groupAnnot, null, annotation)
-    new_checkbox("ytAdsExtra", "Hide Related Ads", "span", groupAnnot, null, extra_ads)
+	var groupAnnot = newNode("div", null, "ytpc_options_group column", popup)
+	new_checkbox("ytAnnot", "Hide Annotations", "span", groupAnnot, null, annotation)
+	new_checkbox("ytAdsExtra", "Hide Related Ads", "span", groupAnnot, null, extra_ads)
 
-    var groupClick = newNode("div", null, "ytpc_options_group column", popup)
-    new_checkbox("ytLoad", "Click Show More", "span", groupClick, null, function () { auto_load(10) })
-    new_checkbox("ytAds", "Click Skip Ads", "span", groupClick)
+	var groupClick = newNode("div", null, "ytpc_options_group column", popup)
+	new_checkbox("ytLoad", "Click Show More", "span", groupClick, null, function () { auto_load(10) })
+	new_checkbox("ytAds", "Click Skip Ads", "span", groupClick)
 
-    var groupRepeat = newNode("div", null, "ytpc_options_group", popup)
-    new_checkbox("ytLoop", "Loop ↺", "span", groupRepeat, null, adjust_loop)
-    new_checkbox("ytPause", "Pause Start", "span", groupRepeat)
-    new_checkbox("ytPauseEnd", "Pause End", "span", groupRepeat, null, adjust_pause_end)
+	var groupRepeat = newNode("div", null, "ytpc_options_group", popup)
+	new_checkbox("ytLoop", "Loop ↺", "span", groupRepeat, null, adjust_loop)
+	new_checkbox("ytPause", "Pause Start", "span", groupRepeat)
+	new_checkbox("ytPauseEnd", "Pause End", "span", groupRepeat, null, adjust_pause_end)
 
-    var div = newNode("div", null, "ytpc_options_text", popup)
-    //auto, small, medium, large, hd720, hd1080, hd1440, 4k2160, 5k2880, highres;
-    div.textContent = "Resolution"
-    var groupDef1 = newNode("div", null, "ytpc_options_group", popup)
-    var groupDef2 = newNode("div", null, "ytpc_options_group", popup)
-    var groupDef3 = newNode("div", null, "ytpc_options_group", popup)
-    new_checkbox("ytDef", "Auto", "span", groupDef1, "auto", function () { ytplayer_quality("auto") })
-    new_checkbox("ytDef", "144", "span", groupDef1, "tiny", function () { ytplayer_quality("tiny") })
-    new_checkbox("ytDef", "240", "span", groupDef1, "small", function () { ytplayer_quality("small") })
-    new_checkbox("ytDef", "360", "span", groupDef1, "medium", function () { ytplayer_quality("medium") })
-    new_checkbox("ytDef", "480", "span", groupDef1, "large", function () { ytplayer_quality("large") })
-    new_checkbox("ytDef", "HD 720", "span", groupDef2, "hd720", function () { ytplayer_quality("hd720") })
-    new_checkbox("ytDef", "FHD 1080", "span", groupDef2, "hd1080", function () { ytplayer_quality("hd1080") })
-    new_checkbox("ytDef", "QHD 1440", "span", groupDef2, "hd1440", function () { ytplayer_quality("hd1440") })
-    new_checkbox("ytDef", "4K 2160", "span", groupDef3, "hd2160", function () { ytplayer_quality("hd2160") })
-    new_checkbox("ytDef", "5K 2880", "span", groupDef3, "hd2880", function () { ytplayer_quality("hd2880") })
-    new_checkbox("ytDef", "8K 4320 (MAX)", "span", groupDef3, "highres", function () { ytplayer_quality("highres") })
+	var div = newNode("div", null, "ytpc_options_text", popup)
+	//auto, small, medium, large, hd720, hd1080, hd1440, 4k2160, 5k2880, highres;
+	div.textContent = "Resolution"
+	var groupDef1 = newNode("div", null, "ytpc_options_group", popup)
+	var groupDef2 = newNode("div", null, "ytpc_options_group", popup)
+	var groupDef3 = newNode("div", null, "ytpc_options_group", popup)
+	new_checkbox("ytDef", "Auto", "span", groupDef1, "auto", function () { ytplayer_quality("auto") })
+	new_checkbox("ytDef", "144", "span", groupDef1, "tiny", function () { ytplayer_quality("tiny") })
+	new_checkbox("ytDef", "240", "span", groupDef1, "small", function () { ytplayer_quality("small") })
+	new_checkbox("ytDef", "360", "span", groupDef1, "medium", function () { ytplayer_quality("medium") })
+	new_checkbox("ytDef", "480", "span", groupDef1, "large", function () { ytplayer_quality("large") })
+	new_checkbox("ytDef", "HD 720", "span", groupDef2, "hd720", function () { ytplayer_quality("hd720") })
+	new_checkbox("ytDef", "FHD 1080", "span", groupDef2, "hd1080", function () { ytplayer_quality("hd1080") })
+	new_checkbox("ytDef", "QHD 1440", "span", groupDef2, "hd1440", function () { ytplayer_quality("hd1440") })
+	new_checkbox("ytDef", "4K 2160", "span", groupDef3, "hd2160", function () { ytplayer_quality("hd2160") })
+	new_checkbox("ytDef", "5K 2880", "span", groupDef3, "hd2880", function () { ytplayer_quality("hd2880") })
+	new_checkbox("ytDef", "8K 4320 (MAX)", "span", groupDef3, "highres", function () { ytplayer_quality("highres") })
 }
 
 function build_yt_control() {
-    var parent = doc.getElementById("ytpc_ytcontrol_container")
-    if (parent) return
+	var parent = doc.getElementById("ytpc_ytcontrol_container")
+	if (parent) return
 
-    //cog button container
-    //var pp = null;
-    var pp = doc.getElementById("below")
+	//cog button container
+	//var pp = null;
+	var pp = doc.getElementById("below")
 
-    if (!pp) pp = doc.getElementById("primary-inner")
+	if (!pp) pp = doc.getElementById("primary-inner")
 
-    if (!pp) return
+	if (!pp) return
 
-    parent = newNode("span", "ytpc_ytcontrol_container", null, pp, 'first')
-    var node = newNode("span", "ytpc_cog_container", null, parent)
-    var control = newNode("span", "ytpc_ytcontrol_button", null, node)
+	parent = newNode("span", "ytpc_ytcontrol_container", null, pp, 'first')
+	var node = newNode("span", "ytpc_cog_container", null, parent)
+	var control = newNode("span", "ytpc_ytcontrol_button", null, node)
 
-    control.title = "YouTube Player Controls"
-    control.onclick = ytplayer_options
+	control.title = "YouTube Player Controls"
+	control.onclick = ytplayer_options
 }
 
 
@@ -476,134 +476,134 @@ function build_yt_control() {
 //Theater mode
 
 function setTheaterMode() {
-    if (docsearch("//ytd-page-manager/ytd-watch-flexy[@theater]").snapshotLength > 0) return //already in theater mode
-    var thnode = docsearch("//ytd-page-manager/ytd-watch-flexy//*[@class='ytp-chrome-controls']//*[contains(@class,'ytp-size-button')]").snapshotItem(0)
-    if (thnode) simulClick(thnode)
+	if (docsearch("//ytd-page-manager/ytd-watch-flexy[@theater]").snapshotLength > 0) return //already in theater mode
+	var thnode = docsearch("//ytd-page-manager/ytd-watch-flexy//*[@class='ytp-chrome-controls']//*[contains(@class,'ytp-size-button')]").snapshotItem(0)
+	if (thnode) simulClick(thnode)
 }
 
 function resetTheaterMode() {
-    if (get_pref("ytCine")) return
+	if (get_pref("ytCine")) return
 
-    if (docsearch("//ytd-page-manager/ytd-watch-flexy[@theater]").snapshotLength == 0) return //already in default view
-    var thnode = docsearch("//ytd-page-manager/ytd-watch-flexy//*[@class='ytp-chrome-controls']//*[contains(@class,'ytp-size-button')]").snapshotItem(0)
-    if (thnode) simulClick(thnode)
+	if (docsearch("//ytd-page-manager/ytd-watch-flexy[@theater]").snapshotLength == 0) return //already in default view
+	var thnode = docsearch("//ytd-page-manager/ytd-watch-flexy//*[@class='ytp-chrome-controls']//*[contains(@class,'ytp-size-button')]").snapshotItem(0)
+	if (thnode) simulClick(thnode)
 
-    deleteStyle("ytpc_style_cinemode")
-    showmast(false)
+	deleteStyle("ytpc_style_cinemode")
+	showmast(false)
 }
 
 function showmast(movetop) {
-    var mastoffset = doc.getElementById("masthead-container")
-    if (mastoffset) {
-        mastoffset.removeAttribute("ytpc_hide")
-        if (!movetop)
-            mastoffset.parentNode.removeAttribute("ytpc_top")
-    }
+	var mastoffset = doc.getElementById("masthead-container")
+	if (mastoffset) {
+		mastoffset.removeAttribute("ytpc_hide")
+		if (!movetop)
+			mastoffset.parentNode.removeAttribute("ytpc_top")
+	}
 }
 
 function hidemast(movetop) {
-    var mastoffset = doc.getElementById("masthead-container")
-    if (mastoffset) {
-        mastoffset.setAttribute("ytpc_hide", "")
-        if (movetop)
-            mastoffset.parentNode.setAttribute("ytpc_top", "")
-    }
+	var mastoffset = doc.getElementById("masthead-container")
+	if (mastoffset) {
+		mastoffset.setAttribute("ytpc_hide", "")
+		if (movetop)
+			mastoffset.parentNode.setAttribute("ytpc_top", "")
+	}
 }
 
 
 function cinema(start_count) {
-    //not video page
-    if (win.location.href.indexOf("watch?") == -1) {
-        showmast(false)
-        insertStyle("", "ytpc_style_cinemode")
-        return
-    }
+	//not video page
+	if (win.location.href.indexOf("watch?") == -1) {
+		showmast(false)
+		insertStyle("", "ytpc_style_cinemode")
+		return
+	}
 
-    //video page
-    if (!get_pref("ytCine")) return
+	//video page
+	if (!get_pref("ytCine")) return
 
-    var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
-    if (!page) return
+	var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
+	if (!page) return
 
-    setTheaterMode()
+	setTheaterMode()
 
-    var intheater = page.getAttribute("theater") != null
-    var fullscreen = page.getAttribute("fullscreen") != null
+	var intheater = page.getAttribute("theater") != null
+	var fullscreen = page.getAttribute("fullscreen") != null
 
-    if (intheater || fullscreen)
-        page.parentNode.parentNode.setAttribute("ytpc_cinema", "")
-    else
-        page.parentNode.parentNode.removeAttribute("ytpc_cinema")
+	if (intheater || fullscreen)
+		page.parentNode.parentNode.setAttribute("ytpc_cinema", "")
+	else
+		page.parentNode.parentNode.removeAttribute("ytpc_cinema")
 
-    var hide = get_pref("ytHide") || fullscreen
+	var hide = get_pref("ytHide") || fullscreen
 
-    if (hide && !fullscreen) { //hide or show search bar
-        hidemast(true)
-        if (win.pageYOffset > 0)
-            showmast(true)
-    }
-    else
-        showmast(false)
+	if (hide && !fullscreen) { //hide or show search bar
+		hidemast(true)
+		if (win.pageYOffset > 0)
+			showmast(true)
+	}
+	else
+		showmast(false)
 
-    //check at most 6 times
-    if (start_count > 5) return
+	//check at most 6 times
+	if (start_count > 5) return
 
-    var H = doc.documentElement.clientHeight || doc.body.clientHeight
-    var W = doc.documentElement.clientWidth || doc.body.clientWidth
-    var view_height = H - (hide ? 0 : 56) //visible height, adjust for search bar
-    var view_width = W
-    var view_ratio = view_width / view_height
+	var H = doc.documentElement.clientHeight || doc.body.clientHeight
+	var W = doc.documentElement.clientWidth || doc.body.clientWidth
+	var view_height = H - (hide ? 0 : 56) //visible height, adjust for search bar
+	var view_width = W
+	var view_ratio = view_width / view_height
 
-    var pl = docsearch("//ytd-watch-flexy//*[contains(@class,'html5-main-video')]").snapshotItem(0)
-    if (!pl) return
-    var pwidth = Number(pl.style.width.replace(/[^\d\.\-]/g, '')) //video width
-    var pheight = Number(pl.style.height.replace(/[^\d\.\-]/g, '')) //video height
-    var pratio = pwidth / pheight //video aspect ratio
+	var pl = docsearch("//ytd-watch-flexy//*[contains(@class,'html5-main-video')]").snapshotItem(0)
+	if (!pl) return
+	var pwidth = Number(pl.style.width.replace(/[^\d\.\-]/g, '')) //video width
+	var pheight = Number(pl.style.height.replace(/[^\d\.\-]/g, '')) //video height
+	var pratio = pwidth / pheight //video aspect ratio
 
-    var height = 1 // actual video height in view area
-    var width = 1
-    var left = 0
-    var top = 0
+	var height = 1 // actual video height in view area
+	var width = 1
+	var left = 0
+	var top = 0
 
-    var stretch = get_pref("ytStretch") //horizontal stretch of videos
+	var stretch = get_pref("ytStretch") //horizontal stretch of videos
 
-    if (stretch) {
-        if (pratio < view_ratio) {
-            width = view_width
-            height = width / pratio
-            top = -(height - view_height) / 2
-        }
-        else {
-            height = view_height
-            width = height * pratio
-            left = -(width - view_width) / 2
-        }
-    }
-    else {
-        if (pratio < view_ratio) {
-            height = view_height
-            width = height * pratio
-            left = -(width - view_width) / 2
-        }
-        else {
-            width = view_width
-            height = width / pratio
-            top = -(height - view_height) / 2
-        }
-    }
+	if (stretch) {
+		if (pratio < view_ratio) {
+			width = view_width
+			height = width / pratio
+			top = -(height - view_height) / 2
+		}
+		else {
+			height = view_height
+			width = height * pratio
+			left = -(width - view_width) / 2
+		}
+	}
+	else {
+		if (pratio < view_ratio) {
+			height = view_height
+			width = height * pratio
+			left = -(width - view_width) / 2
+		}
+		else {
+			width = view_width
+			height = width / pratio
+			top = -(height - view_height) / 2
+		}
+	}
 
 
-    height = Math.round(height)
-    width = Math.round(width)
-    left = Math.round(left)
-    top = Math.round(top)
+	height = Math.round(height)
+	width = Math.round(width)
+	left = Math.round(left)
+	top = Math.round(top)
 
-    //peculiarity of fullscreen, forces to loose a few pixels from bottom to keep correct aspect ratio
-    if (stretch && fullscreen) {
-        height = height + top - 7
-    }
+	//peculiarity of fullscreen, forces to loose a few pixels from bottom to keep correct aspect ratio
+	if (stretch && fullscreen) {
+		height = height + top - 7
+	}
 
-    insertStyle("\
+	insertStyle("\
 		ytd-watch-flexy[theater]:not([float]) #player-theater-container {height:" + view_height + "px !important; min-height:" + view_height + "px !important; max-height:" + view_height + "px !important;}\
 		ytd-watch-flexy[theater]:not([float]) .html5-main-video {width:" + width + "px !important; min-width:" + width + "px !important; max-width:" + width + "px !important; height:" + height + "px !important; min-height:" + height + "px !important; max-height:" + height + "px !important; left:" + left + "px !important; top:" + top + "px !important;}\
 		", "ytpc_style_cinemode")
@@ -617,110 +617,110 @@ var floatheight = 0
 var floatbot = 0
 
 function reset_float() {
-    var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
-    if (!page) return
+	var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
+	if (!page) return
 
-    if (page.getAttribute("float") != null) win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
-    page.removeAttribute("float")
-    page.parentNode.parentNode.removeAttribute("float")
-    insertStyle("", "ytpc_style_float")
-    floatheight = 0
-    floatbot = 0
+	if (page.getAttribute("float") != null) win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
+	page.removeAttribute("float")
+	page.parentNode.parentNode.removeAttribute("float")
+	insertStyle("", "ytpc_style_float")
+	floatheight = 0
+	floatbot = 0
 }
 
 
 function float(start_count) {
-    if (start_count == 0) reset_float()
+	if (start_count == 0) reset_float()
 
-    if (!get_pref("ytFloat")) return
-    var small = get_pref("ytFSmall")
-    var cine = get_pref("ytCine")
+	if (!get_pref("ytFloat")) return
+	var small = get_pref("ytFSmall")
+	var cine = get_pref("ytCine")
 
-    var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
-    if (!page) return
+	var page = docsearch("//ytd-page-manager/ytd-watch-flexy").snapshotItem(0)
+	if (!page) return
 
-    var intheater = page.getAttribute("theater") != null
-    var fullscreen = page.getAttribute("fullscreen") != null
-    if (start_count == 20 && !fullscreen) return
+	var intheater = page.getAttribute("theater") != null
+	var fullscreen = page.getAttribute("fullscreen") != null
+	if (start_count == 20 && !fullscreen) return
 
-    var vid = intheater || fullscreen ? docsearch("//*[@id='player-theater-container']").snapshotItem(0)
-        : docsearch("//*[@id='primary-inner']/*[@id='player']").snapshotItem(0)
-    if (!vid) return
+	var vid = intheater || fullscreen ? docsearch("//*[@id='player-theater-container']").snapshotItem(0)
+		: docsearch("//*[@id='primary-inner']/*[@id='player']").snapshotItem(0)
+	if (!vid) return
 
-    var val = vid.getBoundingClientRect()
-    var vwidth = val.right - val.left
-    var vheight = val.bottom - val.top
-    var vleft = val.left
-    var vright = val.right
+	var val = vid.getBoundingClientRect()
+	var vwidth = val.right - val.left
+	var vheight = val.bottom - val.top
+	var vleft = val.left
+	var vright = val.right
 
-    //player dimensions for fill window float
-    var W = doc.body.clientWidth || doc.documentElement.clientWidth
-    var height = 240
-    var width = 427
-    var left = Math.round((W - width) / 2)
+	//player dimensions for fill window float
+	var W = doc.body.clientWidth || doc.documentElement.clientWidth
+	var height = 240
+	var width = 427
+	var left = Math.round((W - width) / 2)
 
-    var infloat = page.getAttribute("float") != null
-    var inpltop = (docsearch("//*[@ytpc_top]").snapshotLength > 0)
+	var infloat = page.getAttribute("float") != null
+	var inpltop = (docsearch("//*[@ytpc_top]").snapshotLength > 0)
 
-    //store initial values
-    if (!infloat) {
-        floatheight = vheight
-        floatbot = inpltop ? vheight - 56 : vheight
-    }
+	//store initial values
+	if (!infloat) {
+		floatheight = vheight
+		floatbot = inpltop ? vheight - 56 : vheight
+	}
 
-    var thres = -1
+	var thres = -1
 
-    if (intheater || fullscreen) {
-        if (floatheight > 0)
-            thres = inpltop || fullscreen ? floatheight - 296 : floatheight - 240
-    }
-    else
-        if (small) {
-            if (floatheight > 0)
-                thres = floatheight - 220
-        }
-        else {
-            if (vheight > 0)
-                thres = 1
-        }
+	if (intheater || fullscreen) {
+		if (floatheight > 0)
+			thres = inpltop || fullscreen ? floatheight - 296 : floatheight - 240
+	}
+	else
+		if (small) {
+			if (floatheight > 0)
+				thres = floatheight - 220
+		}
+		else {
+			if (vheight > 0)
+				thres = 1
+		}
 
-    var scrollY = win.pageYOffset
-    if (fullscreen) { //in fullscreen the regular scroll value is not correct
-        var ref = doc.getElementById("content")
-        if (ref) scrollY = - ref.getBoundingClientRect().top
-    }
+	var scrollY = win.pageYOffset
+	if (fullscreen) { //in fullscreen the regular scroll value is not correct
+		var ref = doc.getElementById("content")
+		if (ref) scrollY = - ref.getBoundingClientRect().top
+	}
 
-    if (scrollY >= thres && thres > 0) {
-        page.setAttribute("float", "")
-        page.parentNode.parentNode.setAttribute("float", "")
+	if (scrollY >= thres && thres > 0) {
+		page.setAttribute("float", "")
+		page.parentNode.parentNode.setAttribute("float", "")
 
-        if (intheater || fullscreen)
-            insertStyle("\
+		if (intheater || fullscreen)
+			insertStyle("\
 				ytd-watch-flexy[float] #player-theater-container {position: fixed !important; top:56px !important; z-index:1000 !important;\
                                                                            height: " + height + "px !important; max-height:" + height + "px !important; min-height:" + height + "px !important;}\
 				ytd-watch-flexy[float] .html5-main-video {width: " + width + "px !important; height: " + height + "px !important; left: " + left + "px !important; top:0px !important; margin-left:0px !important;}\
                 ytd-watch-flexy[float] #columns {margin-top: " + floatbot + "px !important;}\
 				", "ytpc_style_float")
-        else {
-            var rtl = (doc.body.getAttribute('dir') == 'rtl')
-            var lroff = ""
-            if (small) {
-                lroff = rtl ? "right:" + (W - width) + "px !important;" : "left:" + (W - width) + "px !important;"
-                insertStyle("\
+		else {
+			var rtl = (doc.body.getAttribute('dir') == 'rtl')
+			var lroff = ""
+			if (small) {
+				lroff = rtl ? "right:" + (W - width) + "px !important;" : "left:" + (W - width) + "px !important;"
+				insertStyle("\
 				ytd-watch-flexy[float] #player-container {position: fixed !important; top:56px !important; " + lroff + " width: " + width + "px !important; height: " + height + "px !important; z-index:1000 !important;}\
                 ytd-watch-flexy[float] .html5-main-video {width: " + width + "px !important; height: " + height + "px !important;}\
 				", "ytpc_style_float")
-            }
-            else {
-                lroff = rtl ? "right: " + (W - vright) + "px !important;" : "left: " + vleft + "px !important;"
-                insertStyle("\
+			}
+			else {
+				lroff = rtl ? "right: " + (W - vright) + "px !important;" : "left: " + vleft + "px !important;"
+				insertStyle("\
                 ytd-watch-flexy[float] #player-container {position: fixed !important; top:80px !important; " + lroff + " width: " + vwidth + "px !important; height: " + vheight + "px !important; z-index:1000 !important;}\
                 ", "ytpc_style_float")
-            }
-        }
-    }
-    else
-        reset_float()
+			}
+		}
+	}
+	else
+		reset_float()
 }
 
 
@@ -732,52 +732,52 @@ var fs_on = false
 
 function skip_ads(start_count) {
 
-    //adjust cinema after adds by forcing resize event
-    if (get_pref("ytCine")) {
-        if (start_count == 0) adds_on = false
-        var adds = doc.getElementsByClassName("video-ads ytp-ad-module")
-        if (adds.length > 0) {
-            if (adds[0].style.display != "none") {
-                adds_on = true
-            }
-        }
-        else {
-            if (adds_on) { //adds turned off
-                //win.dispatchEvent(new Event('resize'));
-                win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
-            }
-            adds_on = false
-        }
-    }
+	//adjust cinema after adds by forcing resize event
+	if (get_pref("ytCine")) {
+		if (start_count == 0) adds_on = false
+		var adds = doc.getElementsByClassName("video-ads ytp-ad-module")
+		if (adds.length > 0) {
+			if (adds[0].style.display != "none") {
+				adds_on = true
+			}
+		}
+		else {
+			if (adds_on) { //adds turned off
+				//win.dispatchEvent(new Event('resize'));
+				win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
+			}
+			adds_on = false
+		}
+	}
 
-    //fullscreen also forces resize event
-    var fs = (docsearch("//ytd-page-manager/ytd-watch-flexy[@fullscreen]").snapshotLength > 0)
-    if (fs != fs_on) {
-        //win.dispatchEvent(new Event('resize'));
-        win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
-        //alert("fullscreen");
-        float(0)
-    }
-    fs_on = fs
+	//fullscreen also forces resize event
+	var fs = (docsearch("//ytd-page-manager/ytd-watch-flexy[@fullscreen]").snapshotLength > 0)
+	if (fs != fs_on) {
+		//win.dispatchEvent(new Event('resize'));
+		win.setTimeout(function () { win.dispatchEvent(new Event('resize')) }, 100)
+		//alert("fullscreen");
+		float(0)
+	}
+	fs_on = fs
 
-    //main skip ads
-    if (!get_pref("ytAds")) return
+	//main skip ads
+	if (!get_pref("ytAds")) return
 
-    var button = doc.getElementsByClassName("ytp-ad-skip-button ytp-button")
-    if (button.length > 0)
-        if (button[0].parentNode)
-            if (button[0].parentNode.style.display != "none") {
-                //message("will click");
-                simulClick(button[0])
-            }
+	var button = doc.getElementsByClassName("ytp-ad-skip-button ytp-button")
+	if (button.length > 0)
+		if (button[0].parentNode)
+			if (button[0].parentNode.style.display != "none") {
+				//message("will click");
+				simulClick(button[0])
+			}
 }
 
 function extra_ads() {
-    insertStyle(get_pref("ytAdsExtra") ? style_extra_ads : "", "ytpc_style_extra_ads")
+	insertStyle(get_pref("ytAdsExtra") ? style_extra_ads : "", "ytpc_style_extra_ads")
 }
 
 function annotation() {
-    insertStyle(get_pref("ytAnnot") ? style_annotations : "", "ytpc_style_annotations")
+	insertStyle(get_pref("ytAnnot") ? style_annotations : "", "ytpc_style_annotations")
 }
 
 
@@ -785,21 +785,21 @@ function annotation() {
 //Load More
 
 function auto_load(start_count) {
-    if (win.location.href.indexOf("watch?") == -1) return
+	if (win.location.href.indexOf("watch?") == -1) return
 
-    var button = docsearch("//div[(@id='meta') or (@id='above-the-fold')]//tp-yt-paper-button[(@id='more') or (@id='expand')]").snapshotItem(0)
-    if (!button) return
+	var button = docsearch("//div[(@id='meta') or (@id='above-the-fold')]//tp-yt-paper-button[(@id='more') or (@id='expand')]").snapshotItem(0)
+	if (!button) return
 
-    if (start_count < 2) {
-        button.removeAttribute("buttonclicked")
-        return
-    }
+	if (start_count < 2) {
+		button.removeAttribute("buttonclicked")
+		return
+	}
 
-    if (!get_pref("ytLoad")) return
-    if (button.getAttribute("buttonclicked") == "true") return
+	if (!get_pref("ytLoad")) return
+	if (button.getAttribute("buttonclicked") == "true") return
 
-    button.setAttribute("buttonclicked", "true")
-    simulClick(button)
+	button.setAttribute("buttonclicked", "true")
+	simulClick(button)
 }
 
 
@@ -827,79 +827,79 @@ win.addEventListener("scroll", function () { reset_nochanges(); cinema(0); float
 win.addEventListener("click", function (e) { reset_nochanges(); close_ytplayer_options(e) }, false)
 
 function reset_nochanges() {
-    nochanges_count = -1
+	nochanges_count = -1
 }
 
 function yt_start() {
-    if (start_count == 0) {
-        pause_count = 0
-        def_count = 0
-        pref_ytPause = get_pref('ytPause')
-        pref_ytDef = get_pref('ytDef')
-    }
+	if (start_count == 0) {
+		pause_count = 0
+		def_count = 0
+		pref_ytPause = get_pref('ytPause')
+		pref_ytDef = get_pref('ytDef')
+	}
 
-    if (pref_ytPause && pause_count <= 2) {
-        ytplayer_pause()
-        if (success_pause()) pause_count++
-    }
+	if (pref_ytPause && pause_count <= 2) {
+		ytplayer_pause()
+		if (success_pause()) pause_count++
+	}
 
-    if (pref_ytDef != 'auto' && def_count <= 2) {
-        ytplayer_quality(pref_ytDef)
-        if (success_quality()) def_count++
-    }
+	if (pref_ytDef != 'auto' && def_count <= 2) {
+		ytplayer_quality(pref_ytDef)
+		if (success_quality()) def_count++
+	}
 }
 
 
 //main routine
 function check_changes() {
-    if (old_addr == win.location.href) {
-        if (nochanges_count < 20) nochanges_count++
-        if (start_count < 20) start_count++
-    }
-    else {
-        old_addr = win.location.href
-        nochanges_count = 0
-        start_count = 0
-    }
+	if (old_addr == win.location.href) {
+		if (nochanges_count < 20) nochanges_count++
+		if (start_count < 20) start_count++
+	}
+	else {
+		old_addr = win.location.href
+		nochanges_count = 0
+		start_count = 0
+	}
 
-    if (!has_focus) {
-        has_focus = doc.hasFocus()
-        if (has_focus) {
-            nochanges_count = 0
-            start_count = 0
-        }
-    }
+	if (!has_focus) {
+		has_focus = doc.hasFocus()
+		if (has_focus) {
+			nochanges_count = 0
+			start_count = 0
+		}
+	}
 
-    //no video page
-    if (win.location.href.indexOf("watch?") == -1) {
-        if (start_count < 20) {
-            set_noloop()
-            set_nopause_end()
-            cinema(20) //for showmast
-        }
-        return
-    }
+	//no video page
+	if (win.location.href.indexOf("watch?") == -1) {
+		if (start_count < 20) {
+			set_noloop()
+			set_nopause_end()
+			cinema(20) //for showmast
+		}
+		return
+	}
 
-    //video page
-    skip_ads(start_count)
-    float(start_count)
+	//video page
+	skip_ads(start_count)
+	float(start_count)
 
-    if (start_count < 20) {
-        if (start_count == 0) {
-            close_ytplayer_options()
-            adjust_loop()
-            adjust_pause_end()
-        }
-        build_yt_control()
-        yt_start()
-        annotation()
-        extra_ads()
-        auto_load(start_count)
-    }
+	if (start_count < 20) {
+		if (start_count == 0) {
+			close_ytplayer_options()
+			adjust_loop()
+			adjust_pause_end()
+		}
+		build_yt_control()
+		yt_start()
+		annotation()
+		extra_ads()
+		auto_load(start_count)
+	}
 
-    if (nochanges_count < 20) {
-        cinema(start_count)
-    }
+	if (nochanges_count < 20) {
+		cinema(start_count)
+	}
 }
 
 win.setInterval(check_changes, 1000)

@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name     Reddit: Hide Promoted Posts
-// @namespace HideRedditsPromotedPosts
+// @name         Reddit: Hide Promoted Posts
+// @namespace    HideRedditsPromotedPosts
 // @icon         https://www.google.com/s2/favicons?domain=reddit.com
-// @description Hide Reddit's promoted links so they don't bother you.
-// @include  https://www.reddit.com/
-// @include  https://www.reddit.com/r/*
-// @version  1.01
-// @grant    none
+// @description  Hide Reddit's promoted links so they don't bother you.
+// @include      https://www.reddit.com/
+// @include      https://www.reddit.com/r/*
+// @version      1.01
+// @grant        none
 // ==/UserScript==
 
 function hide_ads() {
-    let promos = document.getElementsByClassName("promotedlink")
-    for (let promo of promos) {
-        promo.style.display = "none"
-    }
+	let promos = document.getElementsByClassName("promotedlink")
+	for (let promo of promos) {
+		promo.style.display = "none"
+	}
 }
 
 hide_ads()

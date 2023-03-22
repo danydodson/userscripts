@@ -1,18 +1,18 @@
 // ==UserScript==
-// @name            Twitch: VOD Unblocker
-// @description     Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
-// @copyright       2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
-// @contributionURL https://ko-fi.com/beypazari
-// @license         MIT
-// @version         2.0.5
-// @author          beypazarigurusu
-// @match           https://www.twitch.tv/*
-// @require         https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.0.11/hls.min.js
-// @require         https://unpkg.com/plyr/dist/plyr.min.js
-// @run-at          document-start
-// @grant           none
-// @icon            https://www.google.com/s2/favicons?domain=twitch.tv
-// @namespace https://greasyfork.org/users/727473
+// @name             Twitch: VOD Unblocker
+// @description      Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
+// @copyright        2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
+// @contributionURL  https://ko-fi.com/beypazari
+// @license          MIT
+// @version          2.0.5
+// @author           beypazarigurusu
+// @match            https://www.twitch.tv/*
+// @require          https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.0.11/hls.min.js
+// @require          https://unpkg.com/plyr/dist/plyr.min.js
+// @run-at           document-start
+// @grant            none
+// @icon             https://www.google.com/s2/favicons?domain=twitch.tv
+// @namespace        https://greasyfork.org/users/727473
 // ==/UserScript==
 
 /******/ (function () { // webpackBootstrap

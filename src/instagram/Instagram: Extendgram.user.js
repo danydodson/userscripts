@@ -28,22 +28,22 @@
 const _DEBUG = false
 
 const _PATTERN = {
-    dm: /^\/direct\/t\/.+$/i,
-    feed: /^\/$/i,
-    inbox: /^\/direct\/[inbox\/]+$$/i,
-    profile: /^\/p\/.+$/i,
-    story: /^\/stories\/.+$/i,
+	dm: /^\/direct\/t\/.+$/i,
+	feed: /^\/$/i,
+	inbox: /^\/direct\/[inbox\/]+$$/i,
+	profile: /^\/p\/.+$/i,
+	story: /^\/stories\/.+$/i,
 }
 
 const _POST = {
-    attribute: `data-${GM_info.script.name}`,
-    carousel: 'Tgarh',
-    class: 'M9sTE',
-    icons: ['ltpMr', 'wmtNn'],
-    image: 'FFVAD',
-    position: ['rQDP3', 1, 'XCodT', '_9nCnY', 'Ckrof'],
-    tag: 'article',
-    video: 'tWeCl',
+	attribute: `data-${GM_info.script.name}`,
+	carousel: 'Tgarh',
+	class: 'M9sTE',
+	icons: ['ltpMr', 'wmtNn'],
+	image: 'FFVAD',
+	position: ['rQDP3', 1, 'XCodT', '_9nCnY', 'Ckrof'],
+	tag: 'article',
+	video: 'tWeCl',
 }
 
 /*
@@ -58,354 +58,354 @@ const _POST = {
 const _SCRIPT = GM_info.script
 
 const _STORY = {
-    offsets: ['video', 'qbCDp', 'source', 'img'],
+	offsets: ['video', 'qbCDp', 'source', 'img'],
 };
 
 
 
 (function () {
-    'use strict'
+	'use strict'
 
-    GM_addStyle(`
+	GM_addStyle(`
     /* No CSS *//*# sourceMappingURL=extendgram.min.css.map */
 
 `)
 
-    class Logger {
-        constructor() {
-            this.codes = {
-                debug: {
-                    prefix: '🐛',
-                    style:
-                        'font-weight: bold; color: rgba(255, 102, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
-                },
-                error: {
-                    prefix: '❌',
-                    style:
-                        'font-weight: bold; color: rgba(255, 0, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
-                },
-                info: {
-                    prefix: '📌',
-                    style:
-                        'font-weight: bold; color: rgba(0, 123, 255, 1.0); background-color: rgba(0, 0, 0, 0.7);',
-                },
-                warning: {
-                    prefix: '⚠️',
-                    style:
-                        'font-weight: bold; color: rgba(255, 255, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
-                },
-                success: {
-                    prefix: '✔️',
-                    style:
-                        'font-weight: bold; color: rgba(0, 190, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
-                },
-            }
+	class Logger {
+		constructor() {
+			this.codes = {
+				debug: {
+					prefix: '🐛',
+					style:
+						'font-weight: bold; color: rgba(255, 102, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
+				},
+				error: {
+					prefix: '❌',
+					style:
+						'font-weight: bold; color: rgba(255, 0, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
+				},
+				info: {
+					prefix: '📌',
+					style:
+						'font-weight: bold; color: rgba(0, 123, 255, 1.0); background-color: rgba(0, 0, 0, 0.7);',
+				},
+				warning: {
+					prefix: '⚠️',
+					style:
+						'font-weight: bold; color: rgba(255, 255, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
+				},
+				success: {
+					prefix: '✔️',
+					style:
+						'font-weight: bold; color: rgba(0, 190, 0, 1.0); background-color: rgba(0, 0, 0, 0.7);',
+				},
+			}
 
-            this.prefix = '[extendgram]'
+			this.prefix = '[extendgram]'
 
-            if (_DEBUG) this.debug('constructor of class Logger called')
-        }
+			if (_DEBUG) this.debug('constructor of class Logger called')
+		}
 
-        debug(msg) {
-            return console.log(
-                `${this.prefix} ${this.codes.debug.prefix} - %c${msg}!`,
-                this.codes.debug.style
-            )
-        }
+		debug(msg) {
+			return console.log(
+				`${this.prefix} ${this.codes.debug.prefix} - %c${msg}!`,
+				this.codes.debug.style
+			)
+		}
 
-        error(msg) {
-            return console.log(
-                `${this.prefix} ${this.codes.error.prefix} - %c${msg}!`,
-                this.codes.error.style
-            )
-        }
+		error(msg) {
+			return console.log(
+				`${this.prefix} ${this.codes.error.prefix} - %c${msg}!`,
+				this.codes.error.style
+			)
+		}
 
-        info(msg) {
-            return console.log(
-                `${this.prefix} ${this.codes.info.prefix} - %c${msg}!`,
-                this.codes.info.style
-            )
-        }
+		info(msg) {
+			return console.log(
+				`${this.prefix} ${this.codes.info.prefix} - %c${msg}!`,
+				this.codes.info.style
+			)
+		}
 
-        warning(msg) {
-            return console.log(
-                `${this.prefix} ${this.codes.warning.prefix} - %c${msg}!`,
-                this.codes.warning.style
-            )
-        }
+		warning(msg) {
+			return console.log(
+				`${this.prefix} ${this.codes.warning.prefix} - %c${msg}!`,
+				this.codes.warning.style
+			)
+		}
 
-        success(msg) {
-            return console.log(
-                `${this.prefix} ${this.codes.success.prefix} - %c${msg}!`,
-                this.codes.success.style
-            )
-        }
-    }
+		success(msg) {
+			return console.log(
+				`${this.prefix} ${this.codes.success.prefix} - %c${msg}!`,
+				this.codes.success.style
+			)
+		}
+	}
 
-    class Helper {
-        constructor() {
-            if (_DEBUG) L.debug('constructor of class Helper called')
-        }
+	class Helper {
+		constructor() {
+			if (_DEBUG) L.debug('constructor of class Helper called')
+		}
 
-        download = async function (src) {
-            await GM_download(src, 'download')
-        };
+		download = async function (src) {
+			await GM_download(src, 'download')
+		};
 
-        /* https://plainjs.com/javascript/manipulation/insert-an-element-after-or-before-another-32/ */
-        insert_after = function (element, reference) {
-            reference.parentNode.insertBefore(element, reference.nextSibling)
-        };
+		/* https://plainjs.com/javascript/manipulation/insert-an-element-after-or-before-another-32/ */
+		insert_after = function (element, reference) {
+			reference.parentNode.insertBefore(element, reference.nextSibling)
+		};
 
-        insert_before = function (element, reference) {
-            reference.parentNode.insertBefore(element, reference)
-        };
+		insert_before = function (element, reference) {
+			reference.parentNode.insertBefore(element, reference)
+		};
 
-        in_new = async function (data) {
-            await GM_openInTab(data, { active: true, insert: true })
-        };
+		in_new = async function (data) {
+			await GM_openInTab(data, { active: true, insert: true })
+		};
 
-        notification = async function (text) {
-            /* image = 256x256 */
-            await GM_notification({
-                text: text,
-                title: `${_SCRIPT.name} v${_SCRIPT.version}`,
-                silent: true,
-                timeout: 3000,
-            })
-        };
+		notification = async function (text) {
+			/* image = 256x256 */
+			await GM_notification({
+				text: text,
+				title: `${_SCRIPT.name} v${_SCRIPT.version}`,
+				silent: true,
+				timeout: 3000,
+			})
+		};
 
-        to_clipboard = async function (data, mode) {
-            switch (mode) {
-                case 'url':
-                    await GM_setClipboard(data, {
-                        type: 'text',
-                        mimetype: 'text/plain',
-                    })
-                    break
+		to_clipboard = async function (data, mode) {
+			switch (mode) {
+				case 'url':
+					await GM_setClipboard(data, {
+						type: 'text',
+						mimetype: 'text/plain',
+					})
+					break
 
-                default:
-                    break
-            }
+				default:
+					break
+			}
 
-            this.notification('Copied to clipboard!')
-        };
-    }
+			this.notification('Copied to clipboard!')
+		};
+	}
 
-    class Settings {
-        defaults = {
-            main_color: 'rgba(102, 0, 255, 1)',
-            volume: 0.3,
-        };
+	class Settings {
+		defaults = {
+			main_color: 'rgba(102, 0, 255, 1)',
+			volume: 0.3,
+		};
 
-        constructor() {
-            this.obj = this.get()
-            console.log(this.obj)
-            if (_DEBUG) L.debug('constructor of class Settings called')
-        }
+		constructor() {
+			this.obj = this.get()
+			console.log(this.obj)
+			if (_DEBUG) L.debug('constructor of class Settings called')
+		}
 
-        delete(key) {
-            GM_deleteValue(key)
-            delete this.obj[key]
+		delete(key) {
+			GM_deleteValue(key)
+			delete this.obj[key]
 
-            if (_DEBUG) L.debug(`${key} deleted`)
+			if (_DEBUG) L.debug(`${key} deleted`)
 
-            return key
-        }
+			return key
+		}
 
-        get() {
-            let obj = {}
+		get() {
+			let obj = {}
 
-            for (let key in this.defaults) {
-                let value = GM_getValue(key)
+			for (let key in this.defaults) {
+				let value = GM_getValue(key)
 
-                if (typeof value === 'undefined') {
-                    obj[key] = this.defaults[key]
-                    L.warning(
-                        `${key} was not found so it got replaced with the default value`
-                    )
-                    this.set(key, this.defaults[key])
-                } else {
-                    obj[key] = value
-                }
-            }
+				if (typeof value === 'undefined') {
+					obj[key] = this.defaults[key]
+					L.warning(
+						`${key} was not found so it got replaced with the default value`
+					)
+					this.set(key, this.defaults[key])
+				} else {
+					obj[key] = value
+				}
+			}
 
-            return obj
-        }
+			return obj
+		}
 
-        set(key, value) {
-            GM_setValue(key, value)
-            this.obj[key] = value
+		set(key, value) {
+			GM_setValue(key, value)
+			this.obj[key] = value
 
-            if (_DEBUG) L.debug(`${key} set to ${value}`)
+			if (_DEBUG) L.debug(`${key} set to ${value}`)
 
-            return { key: value }
-        }
-    }
+			return { key: value }
+		}
+	}
 
-    class Gather {
-        constructor() {
-            this.interval = setInterval(() => {
-                this.main()
-            }, 1000)
-            this.url = window.location.pathname
-            this.observer_opt = {
-                attributes: true,
-            }
-            this.observer = new MutationObserver((list, observer) => {
-                let p = list[0].target
-                if (p.getElementsByClassName(_POST.video).length >= 1) {
-                    let e = p
-                    for (let i = 0; i < 4; i++) {
-                        e = e.parentElement
-                    }
-                    this.handle_carousel(e)
-                }
-            })
+	class Gather {
+		constructor() {
+			this.interval = setInterval(() => {
+				this.main()
+			}, 1000)
+			this.url = window.location.pathname
+			this.observer_opt = {
+				attributes: true,
+			}
+			this.observer = new MutationObserver((list, observer) => {
+				let p = list[0].target
+				if (p.getElementsByClassName(_POST.video).length >= 1) {
+					let e = p
+					for (let i = 0; i < 4; i++) {
+						e = e.parentElement
+					}
+					this.handle_carousel(e)
+				}
+			})
 
-            if (_DEBUG) L.debug('constructor of class Gather called')
-        }
+			if (_DEBUG) L.debug('constructor of class Gather called')
+		}
 
-        main = function () {
-            this.url = window.location.pathname
+		main = function () {
+			this.url = window.location.pathname
 
-            switch (true) {
-                case _PATTERN.dm.test(this.url):
-                    break
+			switch (true) {
+				case _PATTERN.dm.test(this.url):
+					break
 
-                case _PATTERN.feed.test(this.url):
-                    this.handle_posts()
-                    break
+				case _PATTERN.feed.test(this.url):
+					this.handle_posts()
+					break
 
-                case _PATTERN.inbox.test(this.url):
-                    break
+				case _PATTERN.inbox.test(this.url):
+					break
 
-                case _PATTERN.profile.test(this.url):
-                    this.handle_posts()
-                    break
+				case _PATTERN.profile.test(this.url):
+					this.handle_posts()
+					break
 
-                case _PATTERN.story.test(this.url):
-                    this.handle_stories()
-                    break
+				case _PATTERN.story.test(this.url):
+					this.handle_stories()
+					break
 
-                default:
-                    break
-            }
-        };
+				default:
+					break
+			}
+		};
 
-        handle_carousel = function (post) {
-            let index = 0
+		handle_carousel = function (post) {
+			let index = 0
 
-            let p = post.parentElement.parentElement.parentElement
+			let p = post.parentElement.parentElement.parentElement
 
-            const positions = p.getElementsByClassName(_POST.position[0])[0]
-                .children[_POST.position[1]].children
+			const positions = p.getElementsByClassName(_POST.position[0])[0]
+				.children[_POST.position[1]].children
 
-            for (let i = 0; i < positions.length; i++) {
-                if (positions[i].classList.contains(_POST.position[2])) {
-                    index = i
-                    break
-                }
-            }
+			for (let i = 0; i < positions.length; i++) {
+				if (positions[i].classList.contains(_POST.position[2])) {
+					index = i
+					break
+				}
+			}
 
-            if (index > 1) index = 1
+			if (index > 1) index = 1
 
-            let _p = p.getElementsByClassName(_POST.position[4])[index]
+			let _p = p.getElementsByClassName(_POST.position[4])[index]
 
-            let src =
-                _p.getElementsByClassName(_POST.image).length == 1
-                    ? _p.getElementsByClassName(_POST.image)[0]
-                    : _p.getElementsByClassName(_POST.video)[0]
+			let src =
+				_p.getElementsByClassName(_POST.image).length == 1
+					? _p.getElementsByClassName(_POST.image)[0]
+					: _p.getElementsByClassName(_POST.video)[0]
 
-            if (src.classList.contains(_POST.video)) {
-                src.volume = settings.obj.volume
+			if (src.classList.contains(_POST.video)) {
+				src.volume = settings.obj.volume
 
-                this.handle_videos(_p)
-            }
+				this.handle_videos(_p)
+			}
 
-            return src.src
-        };
+			return src.src
+		};
 
-        handle_posts = function () {
-            const posts = document.getElementsByClassName(_POST.class)
+		handle_posts = function () {
+			const posts = document.getElementsByClassName(_POST.class)
 
-            for (let i = 0; i < posts.length; i++) {
-                if (posts[i].getElementsByClassName('_8jZFn'))
-                    this.handle_videos(posts[i]) // image always appears again if scrolling down in feed
+			for (let i = 0; i < posts.length; i++) {
+				if (posts[i].getElementsByClassName('_8jZFn'))
+					this.handle_videos(posts[i]) // image always appears again if scrolling down in feed
 
-                if (posts[i].getAttribute(_POST.attribute)) continue
+				if (posts[i].getAttribute(_POST.attribute)) continue
 
-                let src
+				let src
 
-                if (posts[i].classList.contains(_POST.carousel)) {
-                    const p = posts[i].getElementsByClassName(_POST.position[4])
-                    const c = posts[i].getElementsByClassName(_POST.position[3])[0]
+				if (posts[i].classList.contains(_POST.carousel)) {
+					const p = posts[i].getElementsByClassName(_POST.position[4])
+					const c = posts[i].getElementsByClassName(_POST.position[3])[0]
 
-                    let links = []
-                    for (let j = 0; j < p.length; j++) {
-                        try {
-                            links.push(
-                                p[j].getElementsByClassName(_POST.image).length == 1
-                                    ? p[j].getElementsByClassName(_POST.image)[0]
-                                        .src
-                                    : p[j].getElementsByClassName(_POST.video)[0]
-                                        .src
-                            )
-                            this.observer.observe(c, this.observer_opt)
-                        } catch (err) {
-                            L.error(err)
-                        }
-                    }
+					let links = []
+					for (let j = 0; j < p.length; j++) {
+						try {
+							links.push(
+								p[j].getElementsByClassName(_POST.image).length == 1
+									? p[j].getElementsByClassName(_POST.image)[0]
+										.src
+									: p[j].getElementsByClassName(_POST.video)[0]
+										.src
+							)
+							this.observer.observe(c, this.observer_opt)
+						} catch (err) {
+							L.error(err)
+						}
+					}
 
-                    src = links
-                } else {
-                    try {
-                        if (
-                            posts[i].getElementsByClassName(_POST.image).length == 1
-                        ) {
-                            src = posts[i].getElementsByClassName(_POST.image)[0]
-                                .src
-                        } else {
-                            let p = posts[i].getElementsByClassName(_POST.video)[0]
-                            src = p.src
-                            p.volume = settings.obj.volume
-                            this.handle_videos(posts[i])
-                        }
-                    } catch (err) {
-                        L.error(err)
-                    }
-                }
+					src = links
+				} else {
+					try {
+						if (
+							posts[i].getElementsByClassName(_POST.image).length == 1
+						) {
+							src = posts[i].getElementsByClassName(_POST.image)[0]
+								.src
+						} else {
+							let p = posts[i].getElementsByClassName(_POST.video)[0]
+							src = p.src
+							p.volume = settings.obj.volume
+							this.handle_videos(posts[i])
+						}
+					} catch (err) {
+						L.error(err)
+					}
+				}
 
-                if (typeof src === 'undefined') continue
+				if (typeof src === 'undefined') continue
 
-                this.append_icons(posts[i], src, 'copy')
-                this.append_icons(posts[i], src, 'download')
-                this.append_icons(posts[i], src, 'in_new')
-                posts[i].setAttribute(_POST.attribute, 'true')
-            }
-        };
+				this.append_icons(posts[i], src, 'copy')
+				this.append_icons(posts[i], src, 'download')
+				this.append_icons(posts[i], src, 'in_new')
+				posts[i].setAttribute(_POST.attribute, 'true')
+			}
+		};
 
-        handle_videos = function (post) {
-            try {
-                post.getElementsByClassName('fXIG0')[0].style.display = 'none'
-                post.getElementsByClassName('PyenC')[0].style.display = 'none'
-                post.getElementsByClassName(_POST.video)[0].controls = true
-                post.getElementsByClassName('_8jZFn')[0].style.display = 'none'
-            } catch (e) { }
-        };
+		handle_videos = function (post) {
+			try {
+				post.getElementsByClassName('fXIG0')[0].style.display = 'none'
+				post.getElementsByClassName('PyenC')[0].style.display = 'none'
+				post.getElementsByClassName(_POST.video)[0].controls = true
+				post.getElementsByClassName('_8jZFn')[0].style.display = 'none'
+			} catch (e) { }
+		};
 
-        handle_stories = function () { };
+		handle_stories = function () { };
 
-        append_icons = function (post, src, icon) {
-            let range = document.createRange()
-            let element = post.getElementsByClassName(_POST.icons[0])[0]
-            range.selectNode(element)
+		append_icons = function (post, src, icon) {
+			let range = document.createRange()
+			let element = post.getElementsByClassName(_POST.icons[0])[0]
+			range.selectNode(element)
 
-            let append
-            let p
+			let append
+			let p
 
-            switch (icon) {
-                case 'copy':
-                    append = range.createContextualFragment(`
+			switch (icon) {
+				case 'copy':
+					append = range.createContextualFragment(`
                     <span class="${_SCRIPT.name}-${icon}">
                         <button class="wpO6b" type="button">
                             <div class="QBdPU">
@@ -417,24 +417,24 @@ const _STORY = {
                     </span>
                 `)
 
-                    helper.insert_before(
-                        append,
-                        post.getElementsByClassName(_POST.icons[1])[0]
-                    )
+					helper.insert_before(
+						append,
+						post.getElementsByClassName(_POST.icons[1])[0]
+					)
 
-                    p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
-                    if (typeof src === 'object')
-                        p.addEventListener('click', () => {
-                            helper.to_clipboard(this.handle_carousel(p), 'url')
-                        })
-                    else
-                        p.addEventListener('click', () => {
-                            helper.to_clipboard(src, 'url')
-                        })
-                    break
+					p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
+					if (typeof src === 'object')
+						p.addEventListener('click', () => {
+							helper.to_clipboard(this.handle_carousel(p), 'url')
+						})
+					else
+						p.addEventListener('click', () => {
+							helper.to_clipboard(src, 'url')
+						})
+					break
 
-                case 'download':
-                    append = range.createContextualFragment(`
+				case 'download':
+					append = range.createContextualFragment(`
                     <span class="${_SCRIPT.name}-${icon}">
                         <button class="wpO6b" type="button">
                             <div class="QBdPU">
@@ -446,24 +446,24 @@ const _STORY = {
                     </span>
                 `)
 
-                    helper.insert_before(
-                        append,
-                        post.getElementsByClassName(_POST.icons[1])[0]
-                    )
+					helper.insert_before(
+						append,
+						post.getElementsByClassName(_POST.icons[1])[0]
+					)
 
-                    p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
-                    if (typeof src === 'object')
-                        p.addEventListener('click', () => {
-                            helper.download(this.handle_carousel(p))
-                        })
-                    else
-                        p.addEventListener('click', () => {
-                            helper.download(src)
-                        })
-                    break
+					p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
+					if (typeof src === 'object')
+						p.addEventListener('click', () => {
+							helper.download(this.handle_carousel(p))
+						})
+					else
+						p.addEventListener('click', () => {
+							helper.download(src)
+						})
+					break
 
-                case 'in_new':
-                    append = range.createContextualFragment(`
+				case 'in_new':
+					append = range.createContextualFragment(`
                     <span class="${_SCRIPT.name}-${icon}">
                         <button class="wpO6b" type="button">
                             <div class="QBdPU">
@@ -475,34 +475,34 @@ const _STORY = {
                     </span>
                 `)
 
-                    helper.insert_before(
-                        append,
-                        post.getElementsByClassName(_POST.icons[1])[0]
-                    )
+					helper.insert_before(
+						append,
+						post.getElementsByClassName(_POST.icons[1])[0]
+					)
 
-                    p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
-                    if (typeof src === 'object')
-                        p.addEventListener('click', () => {
-                            helper.in_new(this.handle_carousel(p))
-                        })
-                    else
-                        p.addEventListener('click', () => {
-                            helper.in_new(src)
-                        })
-                    break
+					p = post.getElementsByClassName(`${_SCRIPT.name}-${icon}`)[0]
+					if (typeof src === 'object')
+						p.addEventListener('click', () => {
+							helper.in_new(this.handle_carousel(p))
+						})
+					else
+						p.addEventListener('click', () => {
+							helper.in_new(src)
+						})
+					break
 
-                default:
-                    break
-            }
-        };
-    }
+				default:
+					break
+			}
+		};
+	}
 
-    /* Always call Logger first or everything will go downhill :( */
-    var L = new Logger()
+	/* Always call Logger first or everything will go downhill :( */
+	var L = new Logger()
 
-    var helper = new Helper()
-    var settings = new Settings()
-    var gather = new Gather()
+	var helper = new Helper()
+	var settings = new Settings()
+	var gather = new Gather()
 
 
 

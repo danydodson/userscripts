@@ -11,22 +11,22 @@
 // ==/UserScript==
 
 const logTrendingPrice = () => {
-    let getSum = (numbers) => numbers.reduce((x, y) => parseFloat(x) + parseFloat(y), 0)
-    let getAverage = (numbers) => getSum(numbers) / numbers.length
-    let filterOutliers = (numbers) => {
-        let average = getAverage(numbers)
-        let min = average * .5
-        let max = average * 1.75
-        return numbers.filter(num => (num > min) && (num < max))
-    }
+	let getSum = (numbers) => numbers.reduce((x, y) => parseFloat(x) + parseFloat(y), 0)
+	let getAverage = (numbers) => getSum(numbers) / numbers.length
+	let filterOutliers = (numbers) => {
+		let average = getAverage(numbers)
+		let min = average * .5
+		let max = average * 1.75
+		return numbers.filter(num => (num > min) && (num < max))
+	}
 
-    let rawPrices = [...document.getElementsByClassName("s-item__price")].map(x => x.innerText.match(/\d+.\d+/)[0])
-    let prices = filterOutliers(rawPrices)
-    let average = getAverage(prices)
-    let max = Math.max(...prices)
-    let min = Math.min(...prices)
+	let rawPrices = [...document.getElementsByClassName("s-item__price")].map(x => x.innerText.match(/\d+.\d+/)[0])
+	let prices = filterOutliers(rawPrices)
+	let average = getAverage(prices)
+	let max = Math.max(...prices)
+	let min = Math.min(...prices)
 
-    alert(`
+	alert(`
        Average price: ${average.toFixed(2)}
        Max price: ${max}
        Min price: ${min}
@@ -34,22 +34,22 @@ const logTrendingPrice = () => {
 }
 
 (function () {
-    'use strict'
+	'use strict'
 
-    //--- Create a button
-    var btn = document.createElement('div')
-    btn.innerHTML = '<a id="myButton" type="button" class="rainbow-button" alt="Get Trending Price"></a>'
-    btn.setAttribute('id', 'myContainer')
-    let header = document.getElementsByClassName('x-header')[0]
-    header.append(btn)
+	//--- Create a button
+	var btn = document.createElement('div')
+	btn.innerHTML = '<a id="myButton" type="button" class="rainbow-button" alt="Get Trending Price"></a>'
+	btn.setAttribute('id', 'myContainer')
+	let header = document.getElementsByClassName('x-header')[0]
+	header.append(btn)
 
-    //--- Activate the button.
-    document.getElementById("myButton").addEventListener(
-        "click", logTrendingPrice, false
-    )
+	//--- Activate the button.
+	document.getElementById("myButton").addEventListener(
+		"click", logTrendingPrice, false
+	)
 
-    //--- Style the button
-    GM_addStyle(`
+	//--- Style the button
+	GM_addStyle(`
     .rainbow-button {
         text-decoration: none !important ;
         color: #fff;

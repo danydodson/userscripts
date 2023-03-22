@@ -65,15 +65,15 @@ const fileSettings = {
 
     // icon
     if ('iconSlug' in setting) {
-      // CDNからSVGを文字列で取得
+      // obtainSvgFromCdnByString
       const xhr = new XMLHttpRequest()
       xhr.open('GET', `https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/${setting.iconSlug}.svg`, true)
       xhr.onload = function () {
-        // 取得したSVG文字列を要素に変換して追加
+        // convert The Acquired Svg String Into Elements And Add
         const span = document.createElement('span')
         const svg = span.appendChild(xhr.responseXML.querySelector('svg'))
 
-        // 不要なtitle要素を削除
+        // Delete unnecessary Title elements
         svg.querySelector('title').remove()
 
         // style

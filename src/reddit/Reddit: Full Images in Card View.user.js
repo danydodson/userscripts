@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         Reddit: Full Images in Card View
 // @namespace    eskander.github.io
-// @version      2021-04-20
 // @description  Show non cropped images in Reddit feeds with Card view.
 // @author       Eskander
 // @license      MIT

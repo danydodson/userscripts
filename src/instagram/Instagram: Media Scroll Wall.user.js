@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name        Instagram: Media Scroll Wall
-// @namespace   driver8.net
-// @author      driver8
-// @license     GNU AGPLv3
-// @description Creates a scrollable wall of full-size images from any user's instagram page, "tagged" page, or the instagram homepage. Just click the "Load Images" button at the top of the list of images/posts.
-// @match       *://*.instagram.com/*
-// @version     0.2.4.2
-// @grant       none
-// @run-at      document-start
-// @icon            https://www.google.com/s2/favicons?domain=instagram.com
+// @name          Instagram: Media Scroll Wall
+// @namespace     driver8.net
+// @author        driver8
+// @license       GNU AGPLv3
+// @description   Creates a scrollable wall of full-size images from any user's instagram page, "tagged" page, or the instagram homepage. Just click the "Load Images" button at the top of the list of images/posts.
+// @match         *://*.instagram.com/*
+// @version       0.2.4.2
+// @grant         none
+// @run-at        document-start
+// @icon          https://www.google.com/s2/favicons?domain=instagram.com
 // ==/UserScript==
 
 (function () {

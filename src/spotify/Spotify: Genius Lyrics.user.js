@@ -1,13 +1,6 @@
 // ==UserScript==
 // @name            Spotify: Genius Lyrics
 // @description     Shows lyrics from genius.com on the Spotify web player
-// @description:es  Mostra la letra de genius.com de las canciones en el reproductor web de Spotify
-// @description:de  Zeigt den Songtext von genius.com im Spotify-Webplayer an
-// @description:fr  Présente les paroles de chansons de genius.com sur Spotify
-// @description:pl  Pokazuje teksty piosenek z genius.com na Spotify
-// @description:pt  Mostra letras de genius.com no Spotify
-// @description:it  Mostra i testi delle canzoni di genius.com su Spotify
-// @description:ja  スクリプトは、Spotify (スポティファイ)上の genius.com から歌詞を表示します
 // @namespace       https://greasyfork.org/users/20068
 // @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 // @copyright       2020, cuzi (https://github.com/cvzi)
@@ -23,7 +16,6 @@
 // @connect         genius.com
 // @match           https://open.spotify.com/*
 // @match           https://genius.com/songs/new
-// @sandbox         JavaScript
 // ==/UserScript==
 
 /*
