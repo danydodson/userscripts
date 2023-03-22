@@ -2,7 +2,7 @@
 // @name            All: Grab Links
 // @namespace       https://github.com/danydodson/userscripts/
 // @description     Lists all links from one webpage, so you can copy them easily.
-// @author          notme
+// @author          notme 
 // @match           /^https:\/\/(youtube|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
 // @match           /^https:\/\/(youtube).com/
 // @match           /^https:\/\/(|.+?\.)pinterest\..+?/.*/
