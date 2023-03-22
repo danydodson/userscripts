@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           HTML5: Enhanced Player
+// @name           All: Enhanced Player
 // @namespace      https://github.com/xxxily/h5player
 // @homepage       https://github.com/xxxily/h5player
 // @version        3.7.1
