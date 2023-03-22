@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         YouTube: CPU Tamer
+// @name         YouTube: Cpu Tamer
 // @version      1.2.0
 // @namespace    knoa.jp
 // @description  It just reduces CPU usage on YouTube.
@@ -41,8 +41,8 @@
 */
 
 (function () {
-  const SCRIPTID = 'YouTubeCpuTamer'
-  console.log(SCRIPTID, location.href)
+  const SCRIPTID = 'YouTube: Cpu Tamer'
+  // console.log(SCRIPTID, location.href)
   const BUNDLEDINTERVAL = 250 /* the bundled interval */
   const BACKGROUNDINTERVAL = 15 * 1000 /* take even longer interval on hidden tab */
   const ITIALIZINGTIME = 10 * 1000 /* timeouts should be passed on initial load */

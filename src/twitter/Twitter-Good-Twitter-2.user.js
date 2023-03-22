@@ -1,34 +1,38 @@
 // ==UserScript==
-// @name           Twitter: Electric Boogaloo
-// @version        0.0.43.2
-// @description    A try to make Twitter look good again.
-// @author         schwarzkatz
-// @license        MIT
-// @match          https://twitter.com/*
-// @match          https://mobile.twitter.com/*
-// @exclude        https://twitter.com/i/cards/*
-// @exclude        https://twitter.com/i/release_notes
-// @exclude        https://twitter.com/*/privacy
-// @exclude        https://twitter.com/*/tos
-// @exclude        https://twitter.com/account/access
-// @grant          GM_deleteValue
-// @grant          GM_getResourceText
-// @grant          GM_getResourceURL
-// @grant          GM_getValue
-// @grant          GM_setValue
-// @grant          GM_info
-// @grant          GM_xmlhttpRequest
-// @connect        api.twitter.com
-// @resource       css https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.style.css
-// @resource       emojiRegex https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/data/emoji-regex.txt
-// @resource       pickrCss https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css
-// @require        https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.i18n.js
-// @require        https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.polyfills.js
-// @require        https://code.jquery.com/jquery-3.5.1.min.js
-// @require        https://gist.github.com/raw/2625891/waitForKeyElements.js
-// @require        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js
-// @icon           https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
+// @name          Twitter: Good Twitter 2
+// @version       0.0.43.2
+// @description   A try to make Twitter look good again.
+// @author        schwarzkatz
+// @license       MIT
+// @match         https://twitter.com/*
+// @match         https://mobile.twitter.com/*
+// @exclude       https://twitter.com/i/cards/*
+// @exclude       https://twitter.com/i/release_notes
+// @exclude       https://twitter.com/*/privacy
+// @exclude       https://twitter.com/*/tos
+// @exclude       https://twitter.com/account/access
+// @grant         GM_deleteValue
+// @grant         GM_getResourceText
+// @grant         GM_getResourceURL
+// @grant         GM_getValue
+// @grant         GM_setValue
+// @grant         GM_info
+// @grant         GM_xmlhttpRequest
+// @connect       api.twitter.com
+// @resource      css https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.style.css
+// @resource      emojiRegex https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/data/emoji-regex.txt
+// @resource      pickrCss https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css
+// @require       https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.i18n.js
+// @require       https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.polyfills.js
+// @require       https://code.jquery.com/jquery-3.5.1.min.js
+// @require       https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @require       https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js
 // ==/UserScript==
+
+/*eslint no-undef: 0*/
+/*eslint curly: 0*/
+/*eslint no-loop-func: 0*/
+/*eslint no-multi-spaces: 0*/
 
 (function ($, waitForKeyElements) {
   "use strict"
@@ -1160,8 +1164,8 @@
 
       // sidebar profile information
       waitForKeyElements(`[href="/${getPath().match(/^intent\/(user|follow)/)
-          ? getPath().match(/screen_name=(\w+)/)[1]
-          : getPath().split("/")[0].split("?")[0].split("#")[0]
+        ? getPath().match(/screen_name=(\w+)/)[1]
+        : getPath().split("/")[0].split("?")[0].split("#")[0]
         }/following" i]`, () => {
           $(".gt2-legacy-profile-info").data("alreadyFound", false)
           waitForKeyElements(".gt2-legacy-profile-info", () => {

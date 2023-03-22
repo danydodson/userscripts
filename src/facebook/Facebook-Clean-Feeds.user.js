@@ -1,18 +1,16 @@
 // ==UserScript==
-// @name         Facebook: Clean My Feeds
+// @name         Facebook: Clean Feeds
 // @description  Hide Sponsored and Suggested posts in FB's News Feed, Groups Feed, Watch Videos Feed and Marketplace Feed
 // @namespace    https://greasyfork.org/users/812551
-// @supportURL   https://github.com/zbluebugz/facebook-clean-my-feeds/issues
 // @version      4.16
-// @author       zbluebugz (https://github.com/zbluebugz/)
-// @require      https://unpkg.com/idb-keyval@6.0.3/dist/umd.js
 // @match        https://*.facebook.com/*
-// @noframes
+// @require      https://unpkg.com/idb-keyval@6.0.3/dist/umd.js
 // @grant        GM.registerMenuCommand
-// @license      MIT; https://opensource.org/licenses/MIT
-// @icon            https://www.google.com/s2/favicons?domain=facebook.com
+// @icon         https://www.google.com/s2/favicons?domain=facebook.com
 // @run-at       document-start
+// @noframes
 // ==/UserScript==
+
 /*
 		v4.16 :: February 2023
 				Fixed issue with <no message> setting breaking FB
@@ -4545,7 +4543,7 @@
 		if (document.head && document.body && VARS.optionsReady) {
 			// console.info(log + 'runMO(); - ready ...');
 			if (firstRun) {
-				GM.registerMenuCommand(KeyWords.GM_MENU_SETTINGS[VARS.language], toggleDialog)
+				// GM.registerMenuCommand(KeyWords.GM_MENU_SETTINGS[VARS.language], toggleDialog)
 				addCSS()
 				window.setTimeout(addExtraCSS, 150) // fb is sometimes laggy ...
 				buildMoppingDialog()

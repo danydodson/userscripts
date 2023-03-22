@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Twitch: Auto Points Claimer
+// @name           Twitch: Points Claimer
 // @namespace      https://greasyfork.org/users/310437
 // @version        1.6
 // @author         PartMent

@@ -3,8 +3,8 @@
 // @description Extends functionality and user experience on instagram
 // @version     1.0.0
 // @author      ryano
-// @include     http://*.instagram.com/*
-// @include     https://*.instagram.com/*
+// @match       http://*.instagram.com/*
+// @match       https://*.instagram.com/*
 // @run-at      document-end
 // @grant       GM_addStyle
 // @grant       GM_addValueChangeListener
@@ -18,8 +18,10 @@
 // @grant       GM_removeValueChangeListener
 // @grant       GM_setClipboard
 // @grant       GM_setValue
-// @icon            https://www.google.com/s2/favicons?domain=instagram.com
+// @icon        https://www.google.com/s2/favicons?domain=instagram.com
 // ==/UserScript==
+
+/*eslint curly: 0*/
 
 const _DEBUG = false
 
@@ -56,8 +58,6 @@ const _SCRIPT = GM_info.script
 const _STORY = {
 	offsets: ['video', 'qbCDp', 'source', 'img'],
 };
-
-
 
 (function () {
 	'use strict'
@@ -402,16 +402,16 @@ const _STORY = {
 			switch (icon) {
 				case 'copy':
 					append = range.createContextualFragment(`
-                    <span class="${_SCRIPT.name}-${icon}">
-                        <button class="wpO6b" type="button">
-                            <div class="QBdPU">
-                                <svg aria-label="copy link" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
-                                    <path fill="currentColor" d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z" />
-                                </svg>
-                            </div>
-                        </button>
-                    </span>
-                `)
+            <span class="${_SCRIPT.name}-${icon}">
+              <button class="wpO6b" type="button">
+                <div class="QBdPU">
+                  <svg aria-label="copy link" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
+                    <path fill="currentColor" d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z" />
+                  </svg>
+                </div>
+              </button>
+            </span>
+          `)
 
 					helper.insert_before(
 						append,
@@ -431,16 +431,16 @@ const _STORY = {
 
 				case 'download':
 					append = range.createContextualFragment(`
-                    <span class="${_SCRIPT.name}-${icon}">
-                        <button class="wpO6b" type="button">
-                            <div class="QBdPU">
-                                <svg aria-label="download" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
-                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                </svg>
-                            </div>
-                        </button>
-                    </span>
-                `)
+            <span class="${_SCRIPT.name}-${icon}">
+              <button class="wpO6b" type="button">
+                <div class="QBdPU">
+                  <svg aria-label="download" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                  </svg>
+                </div>
+              </button>
+            </span>
+          `)
 
 					helper.insert_before(
 						append,
@@ -460,16 +460,16 @@ const _STORY = {
 
 				case 'in_new':
 					append = range.createContextualFragment(`
-                    <span class="${_SCRIPT.name}-${icon}">
-                        <button class="wpO6b" type="button">
-                            <div class="QBdPU">
-                                <svg aria-label="open in new tab" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
-                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                                </svg>
-                            </div>
-                        </button>
-                    </span>
-                `)
+            <span class="${_SCRIPT.name}-${icon}">
+              <button class="wpO6b" type="button">
+                <div class="QBdPU">
+                  <svg aria-label="open in new tab" class="_8-yf5" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                  </svg>
+                </div>
+              </button>
+            </span>
+          `)
 
 					helper.insert_before(
 						append,
@@ -499,7 +499,5 @@ const _STORY = {
 	var helper = new Helper()
 	var settings = new Settings()
 	var gather = new Gather()
-
-
 
 })()

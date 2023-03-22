@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Twitch: Auto Max Quality
+// @name            Twitch: Auto Quality
 // @namespace       Twitch-Auto-Max-Quality
 // @version         0.4.0
 // @author          Nomo

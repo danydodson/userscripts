@@ -13,8 +13,6 @@
 // @run-at          document-body
 // ==/UserScript==
 
-// @iconURL      https://raw.githubusercontent.com/russdreamer/instagram-followers-statistics/master/img/logo.jpg
-
 (function () {
 	'use strict'
 	GM_xmlhttpRequest({
