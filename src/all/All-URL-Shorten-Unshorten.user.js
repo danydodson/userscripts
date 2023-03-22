@@ -9,6 +9,7 @@
 // @grant		       GM_addStyle
 // @grant  		     GM_xmlhttpRequest
 // @grant  		     GM_registerMenuCommand
+// @icon           https://cdn.onlinewebfonts.com/svg/img_336230.png
 // ==/UserScript==
 
 //note to self: gotta make sure to update the one in the metadata too!
