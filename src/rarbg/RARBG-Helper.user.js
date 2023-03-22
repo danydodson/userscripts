@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                  RARBG: Helper
 // @author                PeratX
-// @icon                  https://iwf1.com/scrapekod/icons/script.projectx.rarbg-px.png
+// @icon                  https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
 // @connect               *
 // @description           Powerful Toolbox for RARBG
 // @grant                 GM_xmlhttpRequest
