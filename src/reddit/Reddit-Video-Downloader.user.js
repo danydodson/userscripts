@@ -4,7 +4,6 @@
 // @version      0.7.0
 // @description  Adds button to direct link or download the stupidly hard to save or share directly reddit videos. Designed to work on new Reddit only. Buttons appear when viewing the specific post -- does not work on preview/expand on post listing pages.
 // @author       Lawrence Sim
-// @license      WTFPL (http://www.wtfpl.net)
 // @grant        unsafeWindow
 // @match        *://*.reddit.com/*
 // @icon            https://www.google.com/s2/favicons?domain=reddit.com

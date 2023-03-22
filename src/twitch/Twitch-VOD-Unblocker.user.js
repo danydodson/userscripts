@@ -2,7 +2,6 @@
 // @name             Twitch: VOD Unblocker
 // @description      Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
 // @copyright        2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
-// @contributionURL  https://ko-fi.com/beypazari
 // @license          MIT
 // @version          2.0.5
 // @author           beypazarigurusu

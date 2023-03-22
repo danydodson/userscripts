@@ -4,7 +4,6 @@
 // @version      1.7
 // @description  When using Tinder on desktop there is need to manually open each new candidates profiles and browse their photos. This script automates it! Just enjoy swaping with just left and right arrows :)
 // @author       https://github.com/trzye
-// @license      Do What The F*ck You Want To Public License
 // @match        tinder.com
 // @match        tinder.com/app/recs
 // @match        tinder.com/app/recs/profile

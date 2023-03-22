@@ -2,9 +2,6 @@
 // @name            Spotify: Genius Lyrics
 // @description     Shows lyrics from genius.com on the Spotify web player
 // @namespace       https://greasyfork.org/users/20068
-// @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
-// @copyright       2020, cuzi (https://github.com/cvzi)
-// @supportURL      https://github.com/cvzi/Spotify-Genius-Lyrics-userscript/issues
 // @icon            https://avatars.githubusercontent.com/u/251374?s=200&v=4
 // @version         23.2.0
 // @require         https://greasyfork.org/scripts/406698-geniuslyrics/code/GeniusLyrics.js

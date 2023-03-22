@@ -41,7 +41,6 @@
 // @match                 *://rarbgproxy.com/*
 // @match                 *://rarbgunblock.com/*
 // @namespace             https://peratx.net
-// @supportURL            https://github.com/PeratX/RARBGHelper
 // @version               1.7.5
 // ==/UserScript==
 

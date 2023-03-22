@@ -2,8 +2,6 @@
 // @name        All: No Iframe
 // @namespace   no-iframe
 // @homepage    https://openuserjs.org/scripts/Azev/no-iframe
-// @updateURL	  https://openuserjs.org/install/Azev/no-iframe.user.js
-// @downloadURL	https://openuserjs.org/install/Azev/no-iframe.user.js
 // @icon        http://i.imgur.com/YdrrcRX.png
 // @description Disable iframes
 // @author		  Azev

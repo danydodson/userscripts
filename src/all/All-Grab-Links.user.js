@@ -16,13 +16,10 @@
 // @grant           GM_getResourceText
 // @grant           GM.getResourceText
 // @homepageURL     http://github.com/danydodson/userscripts/
-// @downloadURL     https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @updateURL       https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @require         https://greasyfork.org/scripts/428507-gm-base/code/GM%20Base.user.js
 // @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
-// @match http://gmonkey.*.*/test/*
-// @match http://devzone.*.*/test/gm/*
+// @match           http://gmonkey.*.*/test/*
+// @match           http://devzone.*.*/test/gm/*
 // ==/UserScript==
 
 

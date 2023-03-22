@@ -4,10 +4,6 @@
 // @version         0.4.0
 // @author          Nomo
 // @description     Always start playing live video with source quality on twitch.tv
-// @supportURL      https://github.com/nomomo/Twitch-Auto-Max-Quality/issues
-// @homepage        https://github.com/nomomo/Twitch-Auto-Max-Quality/
-// @downloadURL     https://raw.githubusercontent.com/nomomo/Twitch-Auto-Max-Quality/master/Twitch-Auto-Max-Quality.user.js
-// @updateURL       https://raw.githubusercontent.com/nomomo/Twitch-Auto-Max-Quality/master/Twitch-Auto-Max-Quality.user.js
 // @include         *://*.twitch.tv/*
 // @require         https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @require         https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js

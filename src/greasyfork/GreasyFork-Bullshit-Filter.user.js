@@ -9,7 +9,6 @@
 // @match     /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
 // @match     /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts\/[\w-]+\/feedback|discussions\/[\d]+|users\/.*\/conversations.*)$/
 // @grant       none
-// @supportURL  https://github.com/darkred/Userscripts/issues
 // ==/UserScript==
 
 //    This is a modified version of this script (http://userscripts-mirror.org/scripts/show/97145) by kuehlschrank.

@@ -27,8 +27,6 @@
 // @require        https://code.jquery.com/jquery-3.5.1.min.js
 // @require        https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require        https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js
-// @updateURL      https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.user.js
-// @downloadURL    https://github.com/Bl4Cc4t/GoodTwitter2/raw/master/twitter.gt2eb.user.js
 // @icon           https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // ==/UserScript==
 

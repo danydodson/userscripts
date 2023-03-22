@@ -3,9 +3,6 @@
 // @version      1.6
 // @namespace    45c9a6614fccd4edff9592da
 // @description  Google Unlocked scans hidden search results that were censored by Google due to complaints
-// @supportURL   https://github.com/Ibit-to/google-unlocked/issues
-// @updateURL    https://raw.githubusercontent.com/Ibit-to/google-unlocked/master/google-unlocked.user.js
-// @downloadURL  https://raw.githubusercontent.com/Ibit-to/google-unlocked/master/google-unlocked.user.js
 // @author       Ibit - The Best Torrents
 // @license      MIT License
 // @icon         https://raw.githubusercontent.com/Ibit-to/google-unlocked/master/extension/32.png

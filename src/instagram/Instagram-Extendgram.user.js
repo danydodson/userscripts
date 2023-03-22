@@ -3,10 +3,6 @@
 // @description Extends functionality and user experience on instagram
 // @version     1.0.0
 // @author      ryano
-// @source      https://github.com/ryanocf/extendgram
-// @updateURL   https://raw.githubusercontent.com/ryanocf/extendgram/main/src/dist/js/extendgram.user.js
-// @downloadURL https://raw.githubusercontent.com/ryanocf/extendgram/main/src/dist/js/extendgram.user.js
-// @supportURL  https://github.com/ryanocf/extendgram
 // @include     http://*.instagram.com/*
 // @include     https://*.instagram.com/*
 // @run-at      document-end

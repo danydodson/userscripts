@@ -5,9 +5,6 @@
 // @author          Iga Kovtun
 // @description     A simple script to track instagram followers/unfollowers since official instagram API doesn't allow to do it anymore.
 // @icon            https://www.google.com/s2/favicons?domain=instagram.com
-// @updateURL       https://github.com/russdreamer/instagram-followers-statistics/raw/master/installation.user.js
-// @downloadURL     https://github.com/russdreamer/instagram-followers-statistics/raw/master/installation.user.js
-// @supportURL      https://github.com/russdreamer/instagram-followers-statistics/issues
 // @match           https://www.instagram.com/*
 // @grant           GM_xmlhttpRequest
 // @connect         raw.githubusercontent.com
