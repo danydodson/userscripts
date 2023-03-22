@@ -5,9 +5,6 @@
 // @author          Tad Wohlrapp
 // @version         1.6.3
 // @license         MIT
-// @homepageURL     https://github.com/tadwohlrapp/soldby
-// @supportURL      https://github.com/tadwohlrapp/soldby/issues
-// @icon             https://www.google.com/s2/favicons?sz=64&domain=amazon.com
 // @match           https://www.amazon.co.jp/*
 // @match           https://www.amazon.co.uk/*
 // @match           https://www.amazon.com/*
@@ -23,16 +20,15 @@
 // @require         https://openuserjs.org/src/libs/sizzle/GM_config.min.js
 // @grant           GM_getValue
 // @grant           GM_setValue
-// @compatible      firefox Tested on Firefox v101 with Violentmonkey v2.13.0, Tampermonkey v4.17.6161 and Greasemonkey v4.11
-// @compatible      chrome Tested on Chrome v102 with Violentmonkey v2.13.0 and Tampermonkey v4.16.1
+// @icon            https://www.google.com/s2/favicons?sz=64&domain=amazon.com
 // ==/UserScript==
 
 (function () {
   'use strict'
-
+  
   const frame = document.createElement('div')
   frame.classList.add('sb-options')
-
+  
   const backdrop = document.createElement('div')
   backdrop.classList.add('sb-options--backdrop')
 
