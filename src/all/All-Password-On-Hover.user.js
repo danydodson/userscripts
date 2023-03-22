@@ -5,6 +5,7 @@
 // @author        LouCypher
 // @include       *
 // @version       0.0.1
+// @icon       https://cdn.onlinewebfonts.com/svg/img_376352.png
 // ==/UserScript==
 
 window.setTimeout(function () {

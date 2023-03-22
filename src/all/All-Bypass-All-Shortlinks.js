@@ -159,6 +159,7 @@
 // @match           *://galerybits.com/protectlink/*
 // @match           *://earnultimate.space/short/*
 // @match           *://bas.nurul-huda.or.id/*
+// @icon           https://cdn.onlinewebfonts.com/svg/img_336230.png
 // ==/UserScript==
 
 // ================================================================================================================================================================
