@@ -3,17 +3,18 @@
 // @namespace       https://github.com/danydodson/userscripts/
 // @description     Lists all links from one webpage, so you can copy them easily.
 // @author          notme
-// @license         Apache License, Version 2.0
-// @license         https://www.apache.org/licenses/LICENSE-2.0.txt
+// @include         /http(|s)\://(|.+?\.)youtube\..+?/.*/
+// @include         /http(|s)\://(|.+?\.)dailymotion\..+?/.*/
+// @include         /http(|s)\://(|.+?\.)pinterest\..+?/.*/
+// @include         /http(|s)\://(|.+?\.)flickr\..+?/.*/
+// @include         /http(|s)\://(|.+?\.)instagram\..+?/.*/
+// @include         /http(|s)\://(|.+?\.)tiktok\..+?/.*/
 // @homepageURL     http://github.com/danydodson/userscripts/
-// @supportURL      http://github.com/danydodson/userscripts/
-// @downloadURL     https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
-// @installURL      https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
-// @updateURL       https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
-// @source          https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
+// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @downloadURL     https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @installURL      https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @updateURL       https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @icon            https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/resource/gl_logo.png
-// @compatible      firefox >=52
-// @compatible      chrome >=57
 // @run-at          document-end
 // @version         2.02.002
 // @grant           unsafeWindow
@@ -24,12 +25,6 @@
 // @require         https://greasyfork.org/scripts/428507-gm-base/code/GM%20Base.user.js
 // @include         http://gmonkey.*.*/test/*
 // @include         http://devzone.*.*/test/gm/*
-// @include         /http(|s)\://(|.+?\.)youtube\..+?/.*/
-// @include         /http(|s)\://(|.+?\.)dailymotion\..+?/.*/
-// @include         /http(|s)\://(|.+?\.)pinterest\..+?/.*/
-// @include         /http(|s)\://(|.+?\.)flickr\..+?/.*/
-// @include         /http(|s)\://(|.+?\.)instagram\..+?/.*/
-// @include         /http(|s)\://(|.+?\.)tiktok\..+?/.*/
 // ==/UserScript==
 
 /* 
