@@ -10,11 +10,10 @@
 // @include         /http(|s)\://(|.+?\.)instagram\..+?/.*/
 // @include         /http(|s)\://(|.+?\.)tiktok\..+?/.*/
 // @homepageURL     http://github.com/danydodson/userscripts/
-// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @downloadURL     https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @installURL      https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @updateURL       https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @icon            https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/resource/gl_logo.png
+// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
 // @run-at          document-end
 // @version         2.02.002
 // @grant           unsafeWindow
