@@ -4,10 +4,10 @@
 // @namespace    Google_Image_Direct_View
 // @description  A different take on Google direct image viewer
 // @author       navchandar
-// @match      https://www.google.tld/*tbm=isch*
-// @match      https://www.google.tld/search?tbm=isch*
-// @match      https://www.google.co.*/*tbm=isch*
-// @match      https://www.google.co.*/search?tbm=isch*
+// @match        https://www.google.tld/*tbm=isch*
+// @match        https://www.google.tld/search?tbm=isch*
+// @match        https://www.google.co.*/*tbm=isch*
+// @match        https://www.google.co.*/search?tbm=isch*
 // @match        https://lens.google.com/search*
 // @run-at       document-end
 // @license      MIT

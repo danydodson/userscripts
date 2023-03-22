@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            Google: Highlight File Types
-// @icon           https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
+// @icon            https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
 // @namespace       https://greasyfork.org/users/783910
 // @version         0.3.1
 // @description     Highlight file type labels in Google search results

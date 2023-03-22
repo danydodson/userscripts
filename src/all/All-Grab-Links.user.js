@@ -1,30 +1,30 @@
 // ==UserScript==
 // @name            All: Grab Links
+// @version         2.02.002
 // @namespace       https://github.com/danydodson/userscripts/
 // @description     Lists all links from one webpage, so you can copy them easily.
 // @author          notme 
-// @match           /^https:\/\/(youtube|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
-// @match           /^https:\/\/(youtube).com/
-// @match           /^https:\/\/(|.+?\.)pinterest\..+?/.*/
-// @match           /^https:\/\/(|.+?\.)flickr\..+?/.*/
-// @match           /^https:\/\/(|.+?\.)instagram\..+?/.*/
-// @match           /^https:\/\/(|.+?\.)tiktok\..+?/.*/
-// @homepageURL     http://github.com/danydodson/userscripts/
-// @downloadURL     https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @updateURL       https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
-// @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
-// @version         2.02.002
+// @match           https://www.youtube.com/*
+// @match           https://www.pinterest.com/*
+// @match           https://www.tiktok.com/*
+// @match           https://www.flickr.com/*
+// @match           https://www.instagram.com/*
 // @run-at          document-end
 // @grant           unsafeWindow
 // @grant           GM_addStyle
 // @grant           GM.addStyle
 // @grant           GM_getResourceText
 // @grant           GM.getResourceText
+// @homepageURL     http://github.com/danydodson/userscripts/
+// @downloadURL     https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @updateURL       https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
+// @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @require         https://greasyfork.org/scripts/428507-gm-base/code/GM%20Base.user.js
-// @match           http://gmonkey.*.*/test/*
-// @match           http://devzone.*.*/test/gm/*
+// @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
 // ==/UserScript==
+
+// @match http://gmonkey.*.*/test/*
+// @match http://devzone.*.*/test/gm/*
 
 /* 
   This helper script bridges compatibility between the Greasemonkey 4 APIs and
