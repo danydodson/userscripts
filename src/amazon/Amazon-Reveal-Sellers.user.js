@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Amazon: Reveal Sellers on Amazon
+// @name            Amazon: Reveal Sellers
 // @description     Shows name, country of origin and ratings for third party sellers on Amazon (and highlights Chinese sellers)
 // @namespace       https://github.com/tadwohlrapp
 // @author          Tad Wohlrapp

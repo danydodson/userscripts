@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          Reddit: Better Image Previews
+// @name          Reddit: Better Previews
 // @namespace     https://lawrenzo.com/p/better-reddit-image-previews
 // @version       0.6.4
 // @description   Fixes issues with reddit image previews. Specifically, clicking image preview now links directly to image (instead of thread) and fits height of image previews in carousel so they don't get clipped out.

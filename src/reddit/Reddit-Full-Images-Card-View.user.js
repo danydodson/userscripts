@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Reddit: Full Images in Card View
+// @name         Reddit: Full Images Card View
 // @namespace    eskander.github.io
 // @description  Show non cropped images in Reddit feeds with Card view.
 // @author       Eskander

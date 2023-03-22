@@ -1,20 +1,19 @@
 // ==UserScript==
 // @name            All: Grab Links
-// @namespace       Grab_Links
+// @namespace       https://github.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js
 // @description     Lists all links from one webpage, so you can copy them easily.
-// @author          ollily2907
+// @author          notme
 // @license         Apache License, Version 2.0
 // @license         https://www.apache.org/licenses/LICENSE-2.0.txt
-// @homepageURL     http://ollily.github.io/gm-scripting/
-// @supportURL      http://ollily.github.io/gm-scripting/
-// @downloadURL     https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/grab_links.user.js
-// @installURL      https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/grab_links.user.js
-// @updateURL       https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/grab_links.user.js
-// @source          https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/grab_links.user.js
-// @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
+// @homepageURL     http://danydodson.github.io/userscripts/
+// @supportURL      http://danydodson.github.io/userscripts/
+// @downloadURL     https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
+// @installURL      https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
+// @updateURL       https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
+// @source          https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
+// @icon            https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/resource/gl_logo.png
 // @compatible      firefox >=52
 // @compatible      chrome >=57
-// @namespace       https://github.com/ollily
 // @run-at          document-end
 // @version         2.02.002
 // @grant           unsafeWindow
