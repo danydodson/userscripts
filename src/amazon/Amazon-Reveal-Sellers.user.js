@@ -7,7 +7,7 @@
 // @license         MIT
 // @homepageURL     https://github.com/tadwohlrapp/soldby
 // @supportURL      https://github.com/tadwohlrapp/soldby/issues
-// @icon            https://github.com/tadwohlrapp/soldby/raw/main/userscript/img/icon.png
+// @icon             https://www.google.com/s2/favicons?sz=64&domain=amazon.com
 // @match           https://www.amazon.co.jp/*
 // @match           https://www.amazon.co.uk/*
 // @match           https://www.amazon.com/*
