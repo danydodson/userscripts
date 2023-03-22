@@ -11,8 +11,7 @@
 // @match         https://www.amazon.de/*
 // @match         https://www.amazon.it/*
 // @match         https://www.amazon.*
-// @match         https://*.amazon-*.com/*
-// @match         https://*.*-amazon.com/*
+// @match         https://*.amazon.com/*
 // @exclude       */cart/*
 // @exclude       */buy/*
 // @grant         none
