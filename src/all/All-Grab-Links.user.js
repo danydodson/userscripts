@@ -21,10 +21,10 @@
 // @source          https://github.com/danydodson/userscripts/raw/main/src/all/All-Grab-Links.user.js
 // @require         https://greasyfork.org/scripts/428507-gm-base/code/GM%20Base.user.js
 // @icon            https://raw.githubusercontent.com/ollily/gm-scripting/master/grab_links/resource/gl_logo.png
-// ==/UserScript==
-
 // @match http://gmonkey.*.*/test/*
 // @match http://devzone.*.*/test/gm/*
+// ==/UserScript==
+
 
 /* 
   This helper script bridges compatibility between the Greasemonkey 4 APIs and
