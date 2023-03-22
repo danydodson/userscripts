@@ -1,17 +1,17 @@
 // ==UserScript==
 // @name            All: Grab Links
-// @namespace       https://github.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js
+// @namespace       https://github.com/danydodson/userscripts/
 // @description     Lists all links from one webpage, so you can copy them easily.
 // @author          notme
 // @license         Apache License, Version 2.0
 // @license         https://www.apache.org/licenses/LICENSE-2.0.txt
-// @homepageURL     http://danydodson.github.io/userscripts/
-// @supportURL      http://danydodson.github.io/userscripts/
-// @downloadURL     https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
-// @installURL      https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
-// @updateURL       https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
-// @source          https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/All_Grab_Links.user.js.user.js
-// @icon            https://raw.githubusercontent.com/danydodson/userscripts/main/src/all/resource/gl_logo.png
+// @homepageURL     http://github.com/danydodson/userscripts/
+// @supportURL      http://github.com/danydodson/userscripts/
+// @downloadURL     https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
+// @installURL      https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
+// @updateURL       https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
+// @source          https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/All_Grab_Links.user.js
+// @icon            https://githubusercontent.com/danydodson/userscripts/raw/main/src/all/resource/gl_logo.png
 // @compatible      firefox >=52
 // @compatible      chrome >=57
 // @run-at          document-end
@@ -32,87 +32,30 @@
 // @include         /http(|s)\://(|.+?\.)tiktok\..+?/.*/
 // ==/UserScript==
 
-/*
- Changes:
- 2021-06-19
- - update syntax, remove inspection failures
- - add jsdoc
+/* 
+  This helper script bridges compatibility between the Greasemonkey 4 APIs and
+  existing/legacy APIs.  Say for example your user script includes
 
- 2021-06-19
- - add wide/small handling of container
- - add result line selection
- - optimize link caption generation
+    // @grant GM_getValue
 
- 2021-06-03
- - switch to different IDE
- - clean code
+  And you'd like to be compatible with both Greasemonkey 3 and Greasemonkey 4
+  (and for that matter all versions of Violentmonkey, Tampermonkey, and any other
+  user script engine).  Add:
 
- 2014-05-28
- - some layout fixes
- - overlays the yt header
+	  // @grant GM.getValue
+	  // @require https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 
- 2013-03-29
- - the first 2.x release
- - removing JQuery from script
- - new color layout
- - now search through link and link description / caption
- - optional disable new search and search only by url
+  And switch to the new (GM-dot) APIs, which return promises.  If your script
+  is running in an engine that does not provide the new asynchronous APIs, this
+  helper will add them, based on the old APIs.
 
- 2013-02-20
- - Detecting clipboard support (disabling on new browsers)
+  If you use `await` at the top level, you'll need to wrap your script in an
+  `async` function to be compatible with any user script engine besides
+  Greasemonkey 4.
 
- 2011-12-27
- - Version Number changed
- - Added Copy to Clipboard Support (if enabled)
-
- 2011-12-20
- - Added a 'SELECT ALL' Button
- - Search result can be displayed as plain text or linked text
-
- 2011-02-06
- - Added JSDoc / Code cleaning
- - Code Testing function
- - Layout update
-
- 2011-01-22
- - Layout update
-
- 2010-09-08
- - Don't start search, if it's a known site
- - Layout update
-
- 2010-08-19
- - Layout update
- - Set automatic filter on favorite sites
- - Many Bugfixes
-
- 2010-07-24
- - Initial Release
- */
-/*
-This helper script bridges compatibility between the Greasemonkey 4 APIs and
-existing/legacy APIs.  Say for example your user script includes
-
-		// @grant GM_getValue
-
-And you'd like to be compatible with both Greasemonkey 3 and Greasemonkey 4
-(and for that matter all versions of Violentmonkey, Tampermonkey, and any other
-user script engine).  Add:
-
-		// @grant GM.getValue
-		// @require https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
-
-And switch to the new (GM-dot) APIs, which return promises.  If your script
-is running in an engine that does not provide the new asynchronous APIs, this
-helper will add them, based on the old APIs.
-
-If you use `await` at the top level, you'll need to wrap your script in an
-`async` function to be compatible with any user script engine besides
-Greasemonkey 4.
-
-		(async () => {
-		let x = await GM.getValue('x');
-		})();
+	  (async () => {
+	    let x = await GM.getValue('x')
+	  })()
 */
 
 if (typeof GM == 'undefined') {
