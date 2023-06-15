@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            All: Bypass All Shortlinks
-// @namespace       Violentmonkey_Scripts
+// @namespace       All: Bypass All Shortlinks
 // @version         60.7
 // @grant           none
 // @author          Bloggerpemula

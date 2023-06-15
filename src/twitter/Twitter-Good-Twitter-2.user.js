@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name          Twitter: Good Twitter 2
+// @namespace     Twitter: Good Twitter 2
 // @version       0.0.43.2
 // @description   A try to make Twitter look good again.
 // @author        schwarzkatz
@@ -27,6 +28,7 @@
 // @require       https://code.jquery.com/jquery-3.5.1.min.js
 // @require       https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @require       https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js
+// @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // ==/UserScript==
 
 /*eslint no-undef: 0*/

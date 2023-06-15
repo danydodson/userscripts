@@ -1,36 +1,36 @@
 // ==UserScript==
 // @name              All: Alternative Redirector
-// @namespace         All_Alternative_Redirector
+// @namespace         All: Alternative Redirector
 // @version           11.2.0
 // @description       Redirects you from proprietary web-services to ethical alternatives(front-end).
 // @author            NotYou
-// @grant             none
-// @run-at            document-start
+// @icon              https://cdn0.iconfinder.com/data/icons/interface-editing-and-time/64/arrow-redirect-interface-512.png
 // @license           GPL-3.0-or-later
-// @match             *youtube.com/*
-// @match             *google.com/*
-// @match             *google.*
-// @match             *yahoo.com/*
-// @match             *bing.com/*
-// @match             *reddit.com/*
-// @match             *twitter.com/*
-// @match             *instagram.com/*
-// @match             *wikipedia.org/*
-// @match             *medium.com/*
-// @match             *towardsdatascience.com/*
-// @match             *i.imgur.com/*
-// @match             *i.stack.imgur.com/*
-// @match             *odysee.com/*
-// @match             *tiktok.com/*
-// @match             *quora.com/*
-// @icon              data:image/png;base64,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
+// @run-at            document-start
+// @include           *youtube.com/*
+// @include           *google.com/*
+// @include           *google.*
+// @include           *yahoo.com/*
+// @include           *bing.com/*
+// @include           *reddit.com/*
+// @include           *twitter.com/*
+// @include           *instagram.com/*
+// @include           *wikipedia.org/*
+// @include           *medium.com/*
+// @include           *towardsdatascience.com/*
+// @include           *i.imgur.com/*
+// @include           *i.stack.imgur.com/*
+// @include           *odysee.com/*
+// @include           *tiktok.com/*
+// @include           *quora.com/*
+// @grant             none
 // ==/UserScript==
 
 (function () {
 	const DEBUG_MODE = false
-
+	
 	let { host, href, search } = location,
-
+	
 		// INSTANCES //
 		invidious = 'yewtu.be',
 		searx = 'search.mdosch.de',

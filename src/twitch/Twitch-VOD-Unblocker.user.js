@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name             Twitch: Vod Unblock
+// @name             Twitch: VOD Unblocker
 // @description      Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
 // @copyright        2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
 // @license          MIT

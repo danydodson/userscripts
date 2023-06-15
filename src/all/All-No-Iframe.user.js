@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        All: No Iframe
-// @namespace   no-iframe
+// @namespace   All: No Iframe
 // @homepage    https://openuserjs.org/scripts/Azev/no-iframe
 // @icon        http://i.imgur.com/YdrrcRX.png
 // @description Disable iframes

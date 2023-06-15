@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         All: Pagetual Pager
-// @namespace    hoothin
+// @namespace    All: Pagetual Pager
 // @version      1.9.34.29
 // @description  Perpetual pages - Most powerful auto-pager script. Auto loading next paginated web pages and inserting into current page. Support thousands of web sites without any rule.
 // @author       hoothin

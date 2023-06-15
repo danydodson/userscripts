@@ -3,7 +3,7 @@
 // @description    Save Video/Photo by One-Click.
 // @version        1.05
 // @author         AMANE
-// @namespace      none
+// @namespace      Twitter: Media Downloader
 // @match          https://twitter.com/*
 // @match          https://mobile.twitter.com/*
 // @match          https://tweetdeck.twitter.com/*

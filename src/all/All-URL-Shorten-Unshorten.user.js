@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           All: URL Shorten Unshorten
-// @namespace      Smiths
+// @namespace      All: URL Shorten Unshorten
 // @description	   Adds small button next to shortened URLs (t.co/bit.ly/goo.gl) on Twitter and other sites that will replace the shortened URLs with their real locations and vice-versa. Useful for when you don't want to blindly click links.
 // @match          *
 // @version        1.0.5

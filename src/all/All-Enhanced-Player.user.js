@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           All: Enhanced Player
-// @namespace      https://github.com/xxxily/h5player
+// @namespace      All: Enhanced Player
 // @homepage       https://github.com/xxxily/h5player
 // @version        3.7.1
 // @description    Video enhancement script, supports all H5 video websites, such as: Bilibili, Douyin, Tencent Video, Youku, iQiyi, Xigua Video, YouTube, Weibo Video, Zhihu Video, Sohu Video, NetEase Open Course, Baidu network disk, Alibaba cloud disk, ted, instagram, twitter, etc. Full shortcut key control, support: double-speed playback/accelerated playback, video screenshots, picture-in-picture, full-screen web pages, adjusting brightness, saturation, contrast
@@ -4479,32 +4479,32 @@ let monkeyMenuList = [
   //         openInTab('https://h5player.anzz.top/#%E8%B5%9E');
   //       }
   //     },
-  {
-    title: `${configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu')} 「${i18n.t('globalSetting')}」`,
-    fn: () => {
-      const confirm = window.confirm(configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu'))
-      if (confirm) {
-        configManager.setGlobalStorage('enhance.unfoldMenu', !configManager.get('enhance.unfoldMenu'))
-        window.location.reload()
-      }
-    }
-  },
-  {
-    title: i18n.t('setting'),
-    disable: true,
-    fn: () => {
-      openInTab('https://h5player.anzz.top/configure/', null, true)
-      window.alert('In functional development, stay tuned...')
-    }
-  },
-  {
-    title: i18n.t('restoreConfiguration'),
-    disable: !configManager.get('enhance.unfoldMenu'),
-    fn: () => {
-      configManager.clear()
-      refreshPage()
-    }
-  }
+  // {
+  //   title: `${configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu')} 「${i18n.t('globalSetting')}」`,
+  //   fn: () => {
+  //     const confirm = window.confirm(configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu'))
+  //     if (confirm) {
+  //       configManager.setGlobalStorage('enhance.unfoldMenu', !configManager.get('enhance.unfoldMenu'))
+  //       window.location.reload()
+  //     }
+  //   }
+  // },
+  // {
+  //   title: i18n.t('setting'),
+  //   disable: true,
+  //   fn: () => {
+  //     openInTab('https://h5player.anzz.top/configure/', null, true)
+  //     window.alert('In functional development, stay tuned...')
+  //   }
+  // },
+  // {
+  //   title: i18n.t('restoreConfiguration'),
+  //   disable: !configManager.get('enhance.unfoldMenu'),
+  //   fn: () => {
+  //     configManager.clear()
+  //     refreshPage()
+  //   }
+  // }
 ]
 
 /* The menu constructor (must be a function to dynamically update the menu status after clicking) */
@@ -7736,8 +7736,8 @@ function init(retryCount = 0) {
 }
 
 /**
- * 某些极端情况下，直接访问window对象都会导致报错，所以整个init都try起来
- * 例如：www.icourse163.org 就有一定的机率异常
+ * In some extreme cases, directly accessing Window objects will cause an error, so the entire init fry up
+ * For example: www.icourse163.org has a certain chance of abnormality
  */
 let initTryCount = 0
 try {

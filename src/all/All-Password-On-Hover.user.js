@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          All: Password On Hover
-// @namespace     http://zoolcar9.lhukie.net/
+// @namespace     All: Password On Hover
 // @description	  Show password when mouseover on password field
 // @author        LouCypher
 // @include       *

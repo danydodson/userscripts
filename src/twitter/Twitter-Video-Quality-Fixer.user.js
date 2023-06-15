@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Twitter: Video Quality Fixer
 // @version       0.2.0
-// @namespace     https://github.com/yuhaofe
+// @namespace     Twitter: Video Quality Fixer
 // @description   Force highest quality playback for Twitter videos.
 // @author        yuhaofe
 // @grant         none

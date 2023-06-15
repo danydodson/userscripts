@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name            Twitch: Auto Quality
+// @name            Twitch: Auto Max Quality
 // @namespace       Twitch-Auto-Max-Quality
 // @version         0.4.0
 // @author          Nomo
 // @description     Always start playing live video with source quality on twitch.tv
-// @include         *://*.twitch.tv/*
+// @match           *://*.twitch.tv/*
 // @require         https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @require         https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
 // @run-at          document-start
@@ -670,10 +670,10 @@
 	*/
 
 	////////////////////////////////////////////////////////////////////////////////////
-	// disable_visibilitychange 화면 이동 시 화질 저하 무력화
+	// disable_visibilitychange Disabling the image quality when moving the screen
 	if (GM_SETTINGS.disable_visibilitychange) {
 		NOMO_DEBUG("GM_SETTINGS.disable_visibilitychange: true")
-		// 1. document object 덮어쓰기
+		// 1. document object Cover
 		try {
 			Object.defineProperty(document, 'hidden', {
 				value: false,
@@ -851,7 +851,7 @@
 		NOMO_DEBUG("max_quality_start error", e)
 	}
 
-	// 5초 동안 대기 후 실패 시 unbind
+	// UNBIND when failing after waiting for 5 seconds
 	var SETTIMEOUT_PL_MENU = undefined
 	function video_quality_unbind() {
 		setTimeout(function () {
@@ -868,7 +868,7 @@
 			}
 			$("body").removeClass("pl-menu-hide")
 			video_quality_unbind()
-			NOMO_DEBUG("5초 경과하여 자동 해제됨")
+			NOMO_DEBUG("5 seconds later")
 		}, 5000)
 	}
 
@@ -922,13 +922,13 @@
 						NOMO_DEBUG("ARRIVE FIRED 0")
 						$("body").addClass("pl-menu-hide")
 
-						// 이미 메뉴 존재 시
+						// When the menu is already present
 						if ($(menu_elem_selector).length !== 0) {
 							NOMO_DEBUG("이미 메뉴 존재")
 							$(setting_elem_selector).trigger("click")
 						}
 
-						// 설정 버튼 클릭
+						// Click the Settings button
 						// $(document).arrive(setting_elem_selector, { onlyOnce: true, existing: true }, function (elem) {
 						//     NOMO_DEBUG("click setting button", elem);
 						//     $(elem).trigger("click");
@@ -1082,7 +1082,7 @@
 	}
 
 
-	// 설정 메뉴 추가 및 관리
+	// setting menu addition and management
 	function openSettingsMenu() {
 		try {
 			if (document === undefined) {
@@ -1125,6 +1125,7 @@
 			NOMO_DEBUG("Error from openSettingsMenu function", e)
 		}
 	}
+	
 	$(document).ready(function () {
 		NOMO_DEBUG("DOCUMENT_READY")
 		if (typeof GM_registerMenuCommand === "function") {
@@ -1132,10 +1133,10 @@
 			console.log(GM_SETTINGS)
 			if (GM_SETTINGS !== undefined && GM_SETTINGS.Lang !== undefined) {
 				if (GM_SETTINGS.Lang === "ko") {
-					menustr = "설정 메뉴 열기"
+					menustr = "Setting Menu Heat"
 				}
 			}
-			GM_registerMenuCommand(menustr, openSettingsMenu)
+			// GM_registerMenuCommand(menustr, openSettingsMenu)
 		}
 	})
 

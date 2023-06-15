@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            All: Grab Links
 // @version         2.02.002
-// @namespace       https://github.com/danydodson/userscripts/
+// @namespace       All: Grab Links
 // @description     Lists all links from one webpage, so you can copy them easily.
 // @author          notme 
 // @match           https://www.youtube.com/*
