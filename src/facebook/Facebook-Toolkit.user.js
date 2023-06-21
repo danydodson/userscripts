@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name        Facebook: Toolkit
-// @namespace   https://github.com/RootDev4/Facebook-Toolkit
-// @version     0.3
-// @description JavaScript Userscript for Facebook automation
-// @author      RootDev4 (Chris)
-// @match       https://www.facebook.com/*
-// @grant       none
-// @run-at      document-idle
-// @icon            https://www.google.com/s2/favicons?domain=facebook.com
+// @name         Facebook: Toolkit
+// @version      0.3
+// @author       RootDev4 (Chris)
+// @description  JavaScript Userscript for Facebook automation
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/facebook/Facebook-Toolkit.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/facebook/Facebook-Toolkit.user.js
+// @icon         https://www.google.com/s2/favicons?domain=facebook.com
+// @match        https://www.facebook.com/*
+// @run-at       document-idle
+// @grant        none
 // ==/UserScript==
 
 // Facebook loading image

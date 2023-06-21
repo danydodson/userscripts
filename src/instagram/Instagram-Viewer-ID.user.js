@@ -1,12 +1,14 @@
 // ==UserScript==
-// @name           Instagram: Viewer ID
-// @namespace      http://tampermonkey.net/
-// @version        1.17
-// @description    View ID of user instagram
-// @author         Anonymous
-// @match          https://www.instagram.com/*/*
-// @grant          none
-// @icon           https://www.google.com/s2/favicons?domain=instagram.com
+// @name         Instagram: Viewer ID
+// @version      1.17
+// @author       Anonymous
+// @description  View ID of user instagram
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Viewer-ID.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Viewer-ID.user.js
+// @icon         https://www.google.com/s2/favicons?domain=instagram.com
+// @match        https://www.instagram.com/*/*
+// @grant        none
 // ==/UserScript==
 
 window.onload = main

@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name           Instagram: Anonymous View
-// @namespace      com.instagram
-// @version        0.4
-// @description    Features as: Anonymous Story Viwer and etc...
-// @author         iKaio
-// @license        MIT
-// @match          *://*.instagram.com/*
-// @icon           https://www.google.com/s2/favicons?domain=instagram.com
-// @grant          none
+// @name         Instagram: Anonymous View
+// @version      0.1
+// @author       iKaio
+// @description  Anonymous Story Viwer
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Anonymous-View.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Anonymous-View.user.js
+// @icon         https://www.google.com/s2/favicons?domain=instagram.com
+// @license      MIT
+// @match        *://*.instagram.com/*
+// @grant        none
 // ==/UserScript==
 
 (function () {
