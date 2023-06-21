@@ -45,25 +45,24 @@
 	}
 
 	waitForElm('div[class*="-DivVideoContainer"]').then((elm) => {
-		console.log('Element Found, Starting Fullscreen')
+		console.log('Video container found, enabling fullscreen')
 
 		var vid = document.querySelector('video')
-		console.log(vid)
-		vid.volume = 0.15
 		vid.loop = true
 		vid.controls = null
+		vid.volume = 0.1
 		if (enableToasts == 1) { iqwerty.toast.toast(Math.floor(100 * vid.volume) + "%", options) }
 
 		var cssClass = document.querySelector('div[class*="-DivVideoContainer"]').className.split(" ")
 		var css = "." + cssClass[0] + ", ." + cssClass[1] + " { height: 80vh !important; }"
 		GM_addStyle(css)
-		if (enableToasts == 1) { iqwerty.toast.toast('Fullscreen added', options) }
+		if (enableToasts == 1) { iqwerty.toast.toast('Fullscreen enabled', options) }
 
 		if (removeBlur == 1) {
 			var cssClass1 = document.querySelector('div[class*="-DivBlurBackground"]').className.split(" ")
 			var css1 = "." + cssClass1[0] + ", ." + cssClass1[1] + " { opacity: 0 !important; }"
 			GM_addStyle(css1)
-			if (enableToasts == 1) { iqwerty.toast.toast('Blur Removed', options) }
+			if (enableToasts == 1) { iqwerty.toast.toast('Blur removed', options) }
 		}
 	})
 })()

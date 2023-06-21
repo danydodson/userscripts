@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         GreasyFork: Sleazyfork Results
-// @namespace    hoothin
 // @version      1.6.3
-// @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
-// @description  Merge adult results of sleazyfork into greasyfork when the script is no longer anonymously available, add rating score and version for scripts then
 // @author       hoothin
+// @description  Merge adult results of sleazyfork into greasyfork when the script is no longer anonymously available, add rating score and version for scripts then
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
+// @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
 // @match        http*://greasyfork.org/*
 // @match        http*://www.greasyfork.org/*
 // @match        http*://sleazyfork.org/*
@@ -199,13 +200,13 @@
         _bullshit = filterTextarea.innerText
         storage.setItem("GeasyforkBullshit", _bullshit)
         alert("Saved")
-        //_GM_notification("Saved");
+        _GM_notification("Saved");
       }
       resetBtn.onclick = () => {
         storage.setItem("GeasyforkBullshit", bullshit_o)
         alert("Reset over")
         location.reload()
-        //_GM_notification("Reset over");
+        _GM_notification("Reset over");
       }
     }
     initFilter()
@@ -322,7 +323,7 @@
 
   _GM_registerMenuCommand("Configure the Filter", () => {
     location.href = "https://greasyfork.org/scripts/23840#additional-info"
-    /*
+
     var _bullshit = window.prompt("Configure the Filter", bullshit)
     if (_bullshit == "") {
       bullshit = bullshit_o
@@ -333,7 +334,7 @@
       storage.setItem("GeasyforkBullshit", bullshit)
       location.reload()
     }
-    */
+
   })
 
   function initFilter() {

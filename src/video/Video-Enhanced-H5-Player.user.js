@@ -1,29 +1,31 @@
 // ==UserScript==
-// @name           All: Enhanced Player
-// @namespace      All: Enhanced Player
-// @homepage       https://github.com/xxxily/h5player
-// @version        3.7.1
-// @description    Video enhancement script, supports all H5 video websites, such as: Bilibili, Douyin, Tencent Video, Youku, iQiyi, Xigua Video, YouTube, Weibo Video, Zhihu Video, Sohu Video, NetEase Open Course, Baidu network disk, Alibaba cloud disk, ted, instagram, twitter, etc. Full shortcut key control, support: double-speed playback/accelerated playback, video screenshots, picture-in-picture, full-screen web pages, adjusting brightness, saturation, contrast
-// @author         ankvps
-// @match          *://*/*
-// @grant          unsafeWindow
-// @grant          GM_addStyle
-// @grant          GM_setValue
-// @grant          GM_getValue
-// @grant          GM_deleteValue
-// @grant          GM_listValues
-// @grant          GM_addValueChangeListener
-// @grant          GM_removeValueChangeListener
-// @grant          GM_registerMenuCommand
-// @grant          GM_unregisterMenuCommand
-// @grant          GM_getTab
-// @grant          GM_saveTab
-// @grant          GM_getTabs
-// @grant          GM_openInTab
-// @grant          GM_setClipboard
-// @run-at         document-start
-// @icon           https://cdn.jsdelivr.net/gh/xxxily/h5player@master/logo.png
-// @license        GPL
+// @name         Video: Enhanced H5 Player
+// @version      3.7.1
+// @author       ankvps
+// @description  H5 video video enhancement script
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
+// @homepage     https://github.com/xxxily/h5player
+// @icon         https://cdn.jsdelivr.net/gh/xxxily/h5player@master/logo.png
+// @license      GPL
+// @match        *://*/*
+// @grant        unsafeWindow
+// @grant        GM_addStyle
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        GM_deleteValue
+// @grant        GM_listValues
+// @grant        GM_addValueChangeListener
+// @grant        GM_removeValueChangeListener
+// @grant        GM_registerMenuCommand
+// @grant        GM_unregisterMenuCommand
+// @grant        GM_getTab
+// @grant        GM_saveTab
+// @grant        GM_getTabs
+// @grant        GM_openInTab
+// @grant        GM_setClipboard
+// @run-at       document-start
 // ==/UserScript==
 
 (function (w) { if (w) { w.name = 'h5player' } })()
@@ -443,7 +445,7 @@ const mediaCore = (function () {
 
   /**
    * Media label detection can detect VIODE, Audio, and other labels.
-   * @param {Function} handler -必选 The callback function to be executed after detection
+   * @param {Function} handler -required The callback function to be executed after detection
    * @returns mediaElementList
    */
   function mediaChecker(handler) {
@@ -863,10 +865,10 @@ function hideDom(selector, delay) {
 }
 
 /**
- * 向上查找操作
- * @param dom {Element} -必选 初始dom元素
- * @param fn {function} -必选 每一级ParentNode的回调操作
- * 如果函数返回true则表示停止向上查找动作
+ * Find the operation upward
+ * @param dom {Element} -required Initial DOM element
+ * @param fn {function} -required The callback operation of each level of Parentnode
+ * If the function returns true, it means stop looking up to find the action
  */
 function eachParentNode(dom, fn) {
   let parent = dom.parentNode
@@ -880,10 +882,10 @@ function eachParentNode(dom, fn) {
 }
 
 /**
- * 动态加载css内容
- * @param cssText {String} -必选 样式的文本内容
- * @param id {String} -可选 指定样式文本的id号，如果已存在对应id号则不会再次插入
- * @param insetTo {Dom} -可选 指定插入到哪
+ * Dynamic loading CSS content
+ * @param cssText {String} -required Style text content
+ * @param id {String} -Optional Specify the ID number of the style text, if the corresponding ID number already exists, it will not be inserted again
+ * @param insetTo {Dom} -Optional Where to insert
  * @returns {HTMLStyleElement}
  */
 function loadCSSText(cssText, id, insetTo) {
@@ -904,7 +906,7 @@ function loadCSSText(cssText, id, insetTo) {
 }
 
 /**
- * 判断当前元素是否为可编辑元素
+ * Determine whether the current element is editable element
  * @param target
  * @returns Boolean
  */
@@ -915,8 +917,8 @@ function isEditableTarget(target) {
 }
 
 /**
- * 判断某个元素是否处于shadowDom里面
- * 参考：https://www.coder.work/article/299700
+ * Determine whether a certain element is in shadowdom
+ * Reference: https://www.coder.work/article/299700
  * @param node
  * @returns {boolean}
  */
@@ -934,8 +936,8 @@ function isInShadow(node, returnShadowRoot) {
 }
 
 /**
- * 判断某个元素是否处于可视区域，适用于被动调用情况，需要高性能，请使用IntersectionObserver
- * 参考：https://github.com/febobo/web-interview/issues/84
+ * To determine whether a certain element is in a visible area and suitable for passive calls, you need high performance, please use the InternetObServer
+ * Reference: https://github.com/febobo/web-interview/issues/84
  * @param element
  * @returns {boolean}
  */
@@ -958,8 +960,8 @@ function isInViewPort(element) {
 }
 
 /**
- * 将行内样式转换成对象的形式
- * @param {string} inlineStyle -必选，例如： position: relative; opacity: 1; visibility: hidden; transform: scale(0.1) rotate(180deg);
+ * Convert the inner style of the line into an object form
+ * @param {string} inlineStyle -Must -choose, for example: position: relative; opacity: 1; visibility: hidden; transform: scale(0.1) rotate(180deg);
  * @returns {Object}
  */
 
@@ -993,7 +995,7 @@ function objToInlineStyle(obj) {
   return styleArr.join('; ')
 }
 
-/* ua信息伪装 */
+/* UA information camouflage */
 function fakeUA(ua) {
   Object.defineProperty(navigator, 'userAgent', {
     value: ua,
@@ -1003,7 +1005,7 @@ function fakeUA(ua) {
   })
 }
 
-/* ua信息来源：https://developers.whatismybrowser.com */
+/* UA information source: https://developers.whatismybrowser.com */
 const userAgentMap = {
   android: {
     chrome: 'Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36',
@@ -1020,7 +1022,7 @@ const userAgentMap = {
 }
 
 /**
- * 判断是否处于Iframe中
+ * Determine whether it is in iframe
  * @returns {boolean}
  */
 function isInIframe() {
@@ -1028,7 +1030,7 @@ function isInIframe() {
 }
 
 /**
- * 判断是否处于跨域限制的Iframe中
+ * Determine whether it is in iframe, which is in cross -domain restrictions
  * @returns {boolean}
  */
 function isInCrossOriginFrame() {
@@ -1044,7 +1046,7 @@ function isInCrossOriginFrame() {
 }
 
 /**
- * 简单的节流函数
+ * Simple running function
  * @param fn
  * @param interval
  * @returns {Function}
@@ -1062,7 +1064,7 @@ function throttle(fn, interval = 80) {
 
 /*!
 * @name         url.js
-* @description  用于对url进行解析的相关方法
+* @description  Related methods for parsing URL
 * @version      0.0.1
 * @author       Blaze
 * @date         27/03/2019 15:52
@@ -1070,9 +1072,9 @@ function throttle(fn, interval = 80) {
 */
 
 /**
- * 参考示例：
+ * Reference example:
  * https://segmentfault.com/a/1190000006215495
- * 注意：该方法必须依赖浏览器的DOM对象
+ * Note: This method must rely on the browser's DOM object
  */
 
 function parseURL(url) {
@@ -1119,8 +1121,8 @@ function parseURL(url) {
 }
 
 /**
- * 将params对象转换成字符串模式
- * @param params {Object} - 必选 params对象
+ * Convert the Params object to a string mode
+ * @param params {Object} - required Params object
  * @returns {string}
  */
 function stringifyParams(params) {
@@ -1151,9 +1153,9 @@ function stringifyParams(params) {
 }
 
 /**
- * 将通过parseURL解析出来url对象重新还原成url地址
- * 主要用于查询参数被动态修改后，再重组url链接
- * @param obj {Object} -必选 parseURL解析出来url对象
+ * The URL object will be resolved through PARSEURL to resume the URL address
+ * After the query parameters are dynamically modified, reorganize the URL link
+ * @param obj {Object} -required PARSEURL parsed out the URL object
  */
 function stringifyToUrl(urlObj) {
   var query = stringifyParams(urlObj.params) || ''
@@ -1164,7 +1166,7 @@ function stringifyToUrl(urlObj) {
 
 /*!
 configManager parse localStorage error * @name         configManager.js
-* @description  配置统一管理脚本
+* @description  Configure unified management script
 * @version      0.0.1
 * @author       xxxily
 * @date         2022/09/20 16:10
@@ -1172,17 +1174,17 @@ configManager parse localStorage error * @name         configManager.js
 */
 
 /**
- * 判断localStorage是否可用
- * localStorage并不能保证100%可用，所以使用前必须进行判断，否则会导致部分网站下脚本出现异常
+ * Determine whether the localStorage is available
+ * LocalStorage does not guarantee 100 xIt is available, so it must be judged before use, otherwise it will cause abnormal scripts in some websites.
  * https://stackoverflow.com/questions/30481516/iframe-in-chrome-error-failed-to-read-localstorage-from-window-access-deni
- * https://cloud.tencent.com/developer/article/1803097 (当localStorage不能用时，window.localStorage为null，而不是文中的undefined)
+ * https://cloud.tencent.com/developer/article/1803097 (When the localStorage cannot be used, Window.LocalStorage is null, not the UNDEFINED in the text)
  */
 function isLocalStorageUsable() {
   return window.localStorage && window.localStorage.getItem && window.localStorage.setItem
 }
 
 /**
- * 判断GlobalStorage是否可用，目前使用的GlobalStorage是基于tampermonkey提供的相关api
+ * Determine whether the GlobalStorage is available. The GlobalStorage currently used is based on the relevant API provided by TamperMonkey
  * https://www.tampermonkey.net/documentation.php?ext=dhdg#GM_setValue
  */
 function isGlobalStorageUsable() {
@@ -1190,8 +1192,8 @@ function isGlobalStorageUsable() {
 }
 
 /**
- * 存储干净的localStorage相关方法
- * 防止localStorage对象下的方法被改写而导致读取和写入规则不一样的问题
+ * Store clean LocalStorage related methods
+ * Prevent methods under the LocalStorage object are rewritten, causing the reading and writing rules to be different.
  */
 const rawLocalStorage = (function getRawLocalStorage() {
   const localStorageApis = [
@@ -1227,303 +1229,302 @@ const defConfig = {
     playbackRate: 1,
     volume: 1,
 
-    /* 是否允许存储播放进度 */
+    /* Whether to allow storage and playback progress */
     allowRestorePlayProgress: {
 
     },
-    /* 视频播放进度映射表 */
+    /* Video playback progress mapping table */
     progress: {}
   },
   hotkeys: [
     {
-      desc: '网页全屏',
+      desc: 'Full screen screen',
       key: 'shift+enter',
       command: 'setWebFullScreen',
-      /* 如需禁用快捷键，将disabled设为true */
+      /* If you need to disable shortcut keys, set disabled to true */
       disabled: false
     },
     {
-      desc: '全屏',
+      desc: 'full screen',
       key: 'enter',
       command: 'setFullScreen'
     },
     {
-      desc: '切换画中画模式',
+      desc: 'Switch the painting mode in painting',
       key: 'shift+p',
       command: 'togglePictureInPicture'
     },
     {
-      desc: '视频截图',
+      desc: 'Video screenshot',
       key: 'shift+s',
       command: 'capture'
     },
     {
-      desc: '启用或禁止自动恢复播放进度功能',
+      desc: 'Enable or prohibit automatic recovery of playback progress functions',
       key: 'shift+r',
       command: 'capture'
     },
     {
-      desc: '垂直镜像翻转',
+      desc: 'Vertical mirror flip',
       key: 'shift+m',
       command: 'setMirror',
       args: [true]
     },
     {
-      desc: '水平镜像翻转',
+      desc: 'Horizontal mirror flip',
       key: 'm',
       command: 'setMirror'
     },
     {
-      desc: '下载音视频文件（实验性功能）',
+      desc: 'Download audio and video file (experimental function)',
       key: 'shift+d',
       command: 'mediaDownload'
     },
     {
-      desc: '缩小视频画面 -0.05',
+      desc: 'Reduce video screen -0.05',
       key: 'shift+x',
       command: 'setScaleDown'
     },
     {
-      desc: '放大视频画面 +0.05',
+      desc: 'Zooli video screen +0.05',
       key: 'shift+c',
       command: 'setScaleUp'
     },
     {
-      desc: '恢复视频画面',
+      desc: 'Restore video screen',
       key: 'shift+z',
       command: 'resetTransform'
     },
     {
-      desc: '画面向右移动10px',
+      desc: 'Move to the right 10px to the right',
       key: 'shift+arrowright',
       command: 'setTranslateRight'
     },
     {
-      desc: '画面向左移动10px',
+      desc: 'Move 10px to the left',
       key: 'shift+arrowleft',
       command: 'setTranslateLeft'
     },
     {
-      desc: '画面向上移动10px',
+      desc: 'Move 10px upwards',
       key: 'shift+arrowup',
       command: 'setTranslateUp'
     },
     {
-      desc: '画面向下移动10px',
+      desc: 'Move 10px down the screen',
       key: 'shift+arrowdown',
       command: 'setTranslateDown'
     },
     {
-      desc: '前进5秒',
+      desc: '5 seconds',
       key: 'arrowright',
       command: 'setCurrentTimeUp'
     },
     {
-      desc: '后退5秒',
+      desc: '5 seconds back',
       key: 'arrowleft',
       command: 'setCurrentTimeDown'
     },
     {
-      desc: '前进30秒',
+      desc: '30 seconds',
       key: 'ctrl+arrowright',
       command: 'setCurrentTimeUp',
       args: [30]
     },
     {
-      desc: '后退30秒',
+      desc: '30 seconds back',
       key: 'ctrl+arrowleft',
       command: 'setCurrentTimeDown',
       args: [-30]
     },
     {
-      desc: '音量升高 5%',
+      desc: 'Increased volume 5%',
       key: 'arrowup',
       command: 'setVolumeUp',
       args: [0.05]
     },
     {
-      desc: '音量降低 5%',
+      desc: 'Decrease 5%',
       key: 'arrowdown',
       command: 'setVolumeDown',
       args: [-0.05]
     },
     {
-      desc: '音量升高 20%',
+      desc: 'Increased volume 20%',
       key: 'ctrl+arrowup',
       command: 'setVolumeUp',
       args: [0.2]
     },
     {
-      desc: '音量降低 20%',
+      desc: 'Decrease 20%',
       key: 'ctrl+arrowdown',
       command: 'setVolumeDown',
       args: [-0.2]
     },
     {
-      desc: '切换暂停/播放',
+      desc: 'Switching/Play',
       key: 'space',
       command: 'switchPlayStatus'
     },
     {
-      desc: '减速播放 -0.1',
+      desc: 'Deceleration -0.1',
       key: 'x',
       command: 'setPlaybackRateDown'
     },
     {
-      desc: '加速播放 +0.1',
+      desc: 'Accelerate +0.1',
       key: 'c',
       command: 'setPlaybackRateUp'
     },
     {
-      desc: '正常速度播放',
+      desc: 'Play normal speed',
       key: 'z',
       command: 'resetPlaybackRate'
     },
     {
-      desc: '设置1x的播放速度',
+      desc: 'Set 1X playback speed',
       key: 'Digit1',
       command: 'setPlaybackRatePlus',
       args: 1
     },
     {
-      desc: '设置1x的播放速度',
+      desc: 'Set 1X playback speed',
       key: 'Numpad1',
       command: 'setPlaybackRatePlus',
       args: 1
     },
     {
-      desc: '设置2x的播放速度',
+      desc: 'Set 2X playback speed',
       key: 'Digit2',
       command: 'setPlaybackRatePlus',
       args: 2
     },
     {
-      desc: '设置2x的播放速度',
+      desc: 'Set 2X playback speed',
       key: 'Numpad2',
       command: 'setPlaybackRatePlus',
       args: 2
     },
     {
-      desc: '设置3x的播放速度',
+      desc: 'Set the playback speed of 3X',
       key: 'Digit3',
       command: 'setPlaybackRatePlus',
       args: 3
     },
     {
-      desc: '设置3x的播放速度',
+      desc: 'Set the playback speed of 3X',
       key: 'Numpad3',
       command: 'setPlaybackRatePlus',
       args: 3
     },
     {
-      desc: '设置4x的播放速度',
+      desc: 'Set 4X playback speed',
       key: 'Digit4',
       command: 'setPlaybackRatePlus',
       args: 4
     },
     {
-      desc: '设置4x的播放速度',
+      desc: 'Set 4X playback speed',
       key: 'Numpad4',
       command: 'setPlaybackRatePlus',
       args: 4
     },
     {
-      desc: '下一帧',
+      desc: 'Next frame',
       key: 'F',
       command: 'freezeFrame',
       args: 1
     },
     {
-      desc: '上一帧',
+      desc: 'Last frame',
       key: 'D',
       command: 'freezeFrame',
       args: -1
     },
     {
-      desc: '增加亮度',
+      desc: 'Increase brightness',
       key: 'E',
       command: 'setBrightnessUp'
     },
     {
-      desc: '减少亮度',
+      desc: 'Reduce brightness',
       key: 'W',
       command: 'setBrightnessDown'
     },
     {
-      desc: '增加对比度',
+      desc: 'Increase',
       key: 'T',
       command: 'setContrastUp'
     },
     {
-      desc: '减少对比度',
+      desc: 'Reduce contrast',
       key: 'R',
       command: 'setContrastDown'
     },
     {
-      desc: '增加饱和度',
+      desc: 'Increase saturation',
       key: 'U',
       command: 'setSaturationUp'
     },
     {
-      desc: '减少饱和度',
+      desc: 'Reduce saturation',
       key: 'Y',
       command: 'setSaturationDown'
     },
     {
-      desc: '增加色相',
+      desc: 'Increasing hue',
       key: 'O',
       command: 'setHueUp'
     },
     {
-      desc: '减少色相',
+      desc: 'Reduce hue',
       key: 'I',
       command: 'setHueDown'
     },
     {
-      desc: '模糊增加 1 px',
+      desc: 'Vague increase 1 px',
       key: 'K',
       command: 'setBlurUp'
     },
     {
-      desc: '模糊减少 1 px',
+      desc: 'Blur 1 px',
       key: 'J',
       command: 'setBlurDown'
     },
     {
-      desc: '图像复位',
+      desc: 'Image reset',
       key: 'Q',
       command: 'resetFilterAndTransform'
     },
     {
-      desc: '画面旋转 90 度',
+      desc: 'Rotation 90 Every time',
       key: 'S',
       command: 'setRotate'
     },
     {
-      desc: '播放下一集',
+      desc: 'Play the next episode',
       key: 'N',
       command: 'setNextVideo'
     },
     {
-      desc: '执行JS脚本',
+      desc: 'Execute JS script',
       key: 'ctrl+j ctrl+s',
       command: () => {
-        alert('自定义JS脚本')
+        alert('Custom JS script')
       },
       when: ''
     }
   ],
   enhance: {
-    /* 不禁用默认的调速逻辑，则在多个视频切换时，速度很容易被重置，所以该选项默认开启 */
+    /* Can't help but use the default speed regulation logic, when multiple video switching, the speed is easily reset, so the option is turned on by default */
     blockSetPlaybackRate: true,
-
     blockSetCurrentTime: false,
     blockSetVolume: false,
     allowExperimentFeatures: false,
     allowExternalCustomConfiguration: false,
-    /* 是否开启音量增益功能 */
+    /* Whether to turn on the volume gain function */
     allowAcousticGain: false,
-    /* 是否开启跨域控制 */
+    /* Whether to turn on cross -domain control */
     allowCrossOriginControl: true,
     unfoldMenu: false
   },
@@ -1532,8 +1533,8 @@ const defConfig = {
 
 const configManager = {
   /**
-   * 将confPath转换称最终存储到localStorage或globalStorage里的键名
-   * @param {String} confPath -必选，配置路径信息：例如：'enhance.blockSetPlaybackRate'
+   * Conversion of confpath is called the key name in LocalStorage or GlobalStorage
+   * @param {String} confPath -Must -choose, configuration path information: for example:'enhance.blockSetPlaybackRate'
    * @returns {keyName}
    */
   getConfKeyName(confPath = '') {
@@ -1541,8 +1542,8 @@ const configManager = {
   },
 
   /**
-   * 将存储到localStorage或globalStorage里的键名转换成实际调用时候的confPath
-   * @param {String} keyName -必选 存储到localStorage或globalStorage里的键名，例如：'_h5player_enhance_blockSetPlaybackRate'
+   * Convert the key name in LocalStorage or GlobalStorage into Confpath when actual calls
+   * @param {String} keyName -required The key names in LocalStorage or GlobalStorage, such as::'_h5player_enhance_blockSetPlaybackRate'
    * @returns {confPath}
    */
   getConfPath(keyName = '') {
@@ -1550,29 +1551,29 @@ const configManager = {
   },
 
   /**
-   * 根据给定的配置路径，获取相关配置信息
-   * 获取顺序：LocalStorage > GlobalStorage > defConfig > null
-   * @param {String} confPath -必选，配置路径信息：例如：'enhance.blockSetPlaybackRate'
-   * @returns {*} 如果返回null，则表示没获取到相关配置信息
+   * Get the relevant configuration information according to the given configuration path
+   * Sequence: LocalStorage > GlobalStorage > defConfig > null
+   * @param {String} confPath -Must -choose, configuration path information: for example:'enhance.blockSetPlaybackRate'
+   * @returns {*} If you return null, it means that the relevant configuration information is not obtained
    */
   get(confPath) {
     if (typeof confPath !== 'string') {
       return null
     }
 
-    /* 默认优先使用本地的localStorage配置 */
+    /* By default, priority uses the local localStorage configuration */
     const localConf = configManager.getLocalStorage(confPath)
     if (localConf !== null && localConf !== undefined) {
       return localConf
     }
 
-    /* 如果localStorage没相关配置，则尝试使用GlobalStorage的配置 */
+    /* If LocalStorage has no relevant configuration, try to use the configuration of GlobalStorage */
     const globalConf = configManager.getGlobalStorage(confPath)
     if (globalConf !== null && globalConf !== undefined) {
       return globalConf
     }
 
-    /* 如果localStorage和GlobalStorage配置都没找到，则尝试在默认配置表里拿相关配置信息 */
+    /* If neither LocalStorage and GlobalStorage configuration is not found, try to get related configuration information in the default configuration table */
     const defConfVal = getValByPath(defConfig, confPath)
     if (typeof defConfVal !== 'undefined' && defConfVal !== null) {
       return defConfVal
@@ -1582,9 +1583,9 @@ const configManager = {
   },
 
   /**
-   * 将配置结果写入到localStorage或GlobalStorage
-   * 写入顺序：LocalStorage > GlobalStorage
-   * 无论是否写入成功都会将结果更新到defConfig里对应的配置项上
+   * Write the configuration results to LocalStorage or GlobalStorage
+   * Writing order: LocalStorage > GlobalStorage
+   * Regardless of whether it is written or not, the result will be updated to the corresponding configuration items in Defconfig
    * @param {String} confPath
    * @param {*} val
    * @returns {Boolean}
@@ -1607,7 +1608,7 @@ const configManager = {
     return sucStatus
   },
 
-  /* 获取并列出当前所有已设定的配置项 */
+  /* Get side -to -tied allocated configuration items */
   list() {
     const result = {
       localConf: configManager.listLocalStorage(),
@@ -1617,15 +1618,15 @@ const configManager = {
     return result
   },
 
-  /* 清除已经写入到本地存储里的配置项 */
+  /* Clear the configuration items that have been written in local storage */
   clear() {
     configManager.clearLocalStorage()
     configManager.clearGlobalStorage()
   },
 
   /**
-   * 根据给定的配置路径，获取LocalStorage下定义的配置信息
-   * @param {String} confPath -必选，配置路径信息
+   * According to the given configuration path, obtain the configuration information defined under localStorage
+   * @param {String} confPath -Must -choose, configure path information
    * @returns
    */
   getLocalStorage(confPath) {
@@ -1652,8 +1653,8 @@ const configManager = {
   },
 
   /**
-   * 根据给定的配置路径，获取GlobalStorage下定义的配置信息
-   * @param {String} confPath -必选，配置路径信息
+   * According to the given configuration path, obtain the configuration information defined under GlobalStorage
+   * @param {String} confPath -Must -choose, configure path information
    * @returns
    */
   getGlobalStorage(confPath) {
@@ -1674,7 +1675,7 @@ const configManager = {
   },
 
   /**
-   * 将配置结果写入到localStorage里
+   * Write the configuration results into the localStorage
    * @param {String} confPath
    * @param {*} val
    * @returns {Boolean}
@@ -1707,7 +1708,7 @@ const configManager = {
   },
 
   /**
-   * 将配置结果写入到globalStorage里
+   * Write the configuration results into GlobalStorage
    * @param {String} confPath
    * @param {*} val
    * @returns {Boolean}
@@ -1789,7 +1790,7 @@ const configManager = {
   mergeDefConf(conf) { return mergeObj(defConfig, conf) }
 }
 
-/* 保存重要的原始函数，防止被外部脚本污染 */
+/* Preserve important original functions to prevent contamination by external scripts */
 const originalMethods = {
   Object: {
     defineProperty: Object.defineProperty,
@@ -1800,20 +1801,20 @@ const originalMethods = {
 }
 
 /**
- * 任务配置中心 Task Control Center
- * 用于配置所有无法进行通用处理的任务，如不同网站的全屏方式不一样，必须调用网站本身的全屏逻辑，才能确保字幕、弹幕等正常工作
+ * Mission Configuration Center Task Control Center
+ * It is used to configure all tasks that cannot be performed in general processing. For example, the full -screen method of different websites is different. You must call the full screen logic of the website itself to ensure that subtitles, barrage and other normal work
  **/
 
 class TCC {
   constructor(taskConf, doTaskFunc) {
     this.conf = taskConf || {
       /**
-       * 配置示例
-       * 父级键名对应的是一级域名，
-       * 子级键名对应的相关功能名称，键值对应的该功能要触发的点击选择器或者要调用的相关函数
-       * 所有子级的键值都支持使用选择器触发或函数调用
-       * 配置了子级的则使用子级配置逻辑进行操作，否则使用默认逻辑
-       * 注意：include，exclude这两个子级键名除外，这两个是用来进行url范围匹配的
+       * Configuration example
+       * The parent key name corresponds to the first -level domain name,
+       * The relevant function name corresponds to the sub -key name, and the key value corresponding to this function to be triggered by the click selector or the relevant function to be called
+       * All sub -level key values support the use of selector trigger or function call
+       * If the sub -level is configured, the sub -level configuration logic is operated, otherwise the default logic will be used
+       * Note: In addition to the two sub -level keys, these two are used to match the URL range
        * */
       'demo.demo': {
         fullScreen: '.fullscreen-btn',
@@ -1872,8 +1873,8 @@ class TCC {
   }
 
   /**
-   * 格式化配置任务
-   * @param isAll { boolean } -可选 默认只格式当前域名或host下的配置任务，传入true则将所有域名下的任务配置都进行格式化
+   * Formatting configuration task
+   * @param isAll { boolean } -Optional The default format only format or host configuration task is formatted by the task configuration of all domain names in True
    */
   formatTCC(isAll) {
     const t = this
@@ -1909,7 +1910,7 @@ class TCC {
     return result
   }
 
-  /* 判断所提供的配置任务是否适用于当前URL */
+  /* Determine whether the configuration task provided is applicable to the current URL */
   isMatch(taskConf) {
     const url = window.location.href
     let isMatch = false
@@ -1927,8 +1928,8 @@ class TCC {
   }
 
   /**
-   * 获取任务配置，只能获取到当前域名下的任务配置信息
-   * @param taskName {string} -可选 指定具体任务，默认返回所有类型的任务配置
+   * Get the task configuration, you can only get the task configuration information under the current domain name
+   * @param taskName {string} -Optional Specify the specific task, and return all types of task configuration by default
    */
   getTaskConfig() {
     const t = this
@@ -1947,9 +1948,9 @@ class TCC {
   }
 
   /**
-   * 执行当前页面下的相应任务
-   * @param taskName {object|string} -必选，可直接传入任务配置对象，也可用是任务名称的字符串信息，自己去查找是否有任务需要执行
-   * @param data {object} -可选，传给回调函数的数据
+   * Execute the corresponding tasks under the current page
+   * @param taskName {object|string} -Must be selected, you can directly pass the task configuration object, or it can also be used as a string information of the task name.
+   * @param data {object} -Optional, data passed to the callback function
    */
   doTask(taskName, data) {
     const t = this
@@ -2031,38 +2032,38 @@ var debug = Debug$1.create('h5player message:')
 const $q = function (str) { return document.querySelector(str) }
 
 /**
- * 任务配置中心 Task Control Center
- * 用于配置所有无法进行通用处理的任务，如不同网站的全屏方式不一样，必须调用网站本身的全屏逻辑，才能确保字幕、弹幕等正常工作
+ * Mission Configuration Center Task Control Center
+ * It is used to configure all tasks that cannot be performed in general processing. For example, the full -screen method of different websites is different. You must call the full screen logic of the website itself to ensure that subtitles, barrage and other normal work
  * */
 
 const taskConf = {
   /**
-   * 配置示例
-   * 父级键名对应的是一级域名，
-   * 子级键名对应的相关功能名称，键值对应的该功能要触发的点击选择器或者要调用的相关函数
-   * 所有子级的键值都支持使用选择器触发或函数调用
-   * 配置了子级的则使用子级配置逻辑进行操作，否则使用默认逻辑
-   * 注意：include，exclude这两个子级键名除外，这两个是用来进行url范围匹配的
+   * Configuration example
+   * The parent key name corresponds to the first -level domain name,
+   * The relevant function name corresponds to the sub -key name, and the key value corresponding to this function to be triggered by the click selector or the relevant function to be called
+   * All sub -level key values support the use of selector trigger or function call
+   * If the sub -level is configured, the sub -level configuration logic is operated, otherwise the default logic will be used
+   * Note: In addition to the two sub -level keys, these two are used to match the URL range
    * */
   'demo.demo': {
-    // disable: true, // 在该域名下禁止插件的所有功能
+    // disable: true, // All functions of the plug -in in this domain name
     fullScreen: '.fullscreen-btn',
     exitFullScreen: '.exit-fullscreen-btn',
     webFullScreen: function () { },
     exitWebFullScreen: '.exit-fullscreen-btn',
     autoPlay: '.player-start-btn',
-    // pause: ['.player-pause', '.player-pause02'], //多种情况对应不同的选择器时，可使用数组，插件会对选择器进行遍历，知道找到可用的为止
+    // pause: ['.player-pause', '.player-pause02'], //When a variety of cases correspond to different selectors, they can use the array, and the plug -in will traverse the selector.
     pause: '.player-pause',
     play: '.player-play',
     switchPlayStatus: '.player-play',
     playbackRate: function () { },
-    // playbackRate: true, // 当给某个功能设置true时，表示使用网站自身的能力控制视频，而忽略插件的能力
+    // playbackRate: true, // When setting True to a function, it means that the ability to control the website itself controls the video and ignore the ability of the plug -in
     currentTime: function () { },
     addCurrentTime: '.add-currenttime',
     subtractCurrentTime: '.subtract-currenttime',
-    // 自定义快捷键的执行方式，如果是组合键，必须是 ctrl-->shift-->alt 这样的顺序，没有可以忽略，键名必须全小写
+    // The execution method of custom shortcut keys, if it is a combination key, must be ctrl-->shift-->alt This order is not available, the key name must be fullycase
     shortcuts: {
-      /* 注册要执行自定义回调操作的快捷键 */
+      /* Register to execute the shortcut key to customize the callback operation */
       register: [
         'ctrl+shift+alt+c',
         'ctrl+shift+c',
@@ -2070,7 +2071,7 @@ const taskConf = {
         'ctrl+c',
         'c'
       ],
-      /* 自定义快捷键的回调操作 */
+      /* Customized shortcut bonding operation */
       callback: function (h5Player, taskConf, data) {
         const { event, player } = data
         console.log(event, player)
@@ -2100,7 +2101,7 @@ const taskConf = {
       callback: function (h5Player, taskConf, data) {
         const { event } = data
         if (event.keyCode === 27) {
-          /* 取消播放下一个推荐的视频 */
+          /* Cancel the video to play the next recommended video */
           if (document.querySelector('.ytp-upnext').style.display !== 'none') {
             document.querySelector('.ytp-upnext-cancel-button').click()
           }
@@ -2153,7 +2154,7 @@ const taskConf = {
         const webFullscreen = oldWebFullscreen || (getComputedStyle(webFullscreenLeave).display === 'none' ? webFullscreenEnter : webFullscreenLeave)
         webFullscreen.click()
 
-        /* 取消弹幕框聚焦，干扰了快捷键的操作 */
+        /* Cancel the focus of the barrage frame and interfere with the operation of the shortcut key */
         setTimeout(function () {
           const danmaku = $q('.bpx-player-dm-input') || $q('.bilibili-player-video-danmaku-input')
           danmaku && danmaku.blur()
@@ -2173,7 +2174,7 @@ const taskConf = {
       callback: function (h5Player, taskConf, data) {
         const { event } = data
         if (event.keyCode === 27) {
-          /* 退出网页全屏 */
+          /* Exit the full screen of the webpage */
           const oldWebFullscreen = $q('.bilibili-player-video-web-fullscreen')
           if (oldWebFullscreen && oldWebFullscreen.classList.contains('closed')) {
             oldWebFullscreen.click()
@@ -2212,7 +2213,7 @@ const taskConf = {
     fullScreen: '[data-bind-key="screenTip"]',
     webFullScreen: '[data-bind-key="webTip"]',
     switchPlayStatus: function (h5player) {
-      /* 无法抢得控制权，只好延迟判断要不要干预 */
+      /* Can't grab control, so you have to delay judgment whether to intervene */
       const player = h5player.player()
       const status = player.paused
       setTimeout(function () {
@@ -2227,21 +2228,21 @@ const taskConf = {
     }
   },
   'ixigua.com': {
-    fullScreen: ['xg-fullscreen.xgplayer-fullscreen', '.xgplayer-control-item__entry[aria-label="全屏"]', '.xgplayer-control-item__entry[aria-label="退出全屏"]'],
-    webFullScreen: ['xg-cssfullscreen.xgplayer-cssfullscreen', '.xgplayer-control-item__entry[aria-label="剧场模式"]', '.xgplayer-control-item__entry[aria-label="退出剧场模式"]']
+    fullScreen: ['xg-fullscreen.xgplayer-fullscreen', '.xgplayer-control-item__entry[aria-label="全屏"]', '.xgplayer-control-item__entry[aria-label="Exit Full Screen"]'],
+    webFullScreen: ['xg-cssfullscreen.xgplayer-cssfullscreen', '.xgplayer-control-item__entry[aria-label="Theater mode"]', '.xgplayer-control-item__entry[aria-label="Exit the theater mode"]']
   },
   'tv.sohu.com': {
-    fullScreen: 'button[data-title="网页全屏"]',
-    webFullScreen: 'button[data-title="全屏"]'
+    fullScreen: 'button[data-title="Full screen screen"]',
+    webFullScreen: 'button[data-title="full screen"]'
   },
   'iqiyi.com': {
     fullScreen: '.iqp-btn-fullscreen',
     webFullScreen: '.iqp-btn-webscreen',
     next: '.iqp-btn-next',
     init: function (h5Player, taskConf) {
-      // 隐藏水印
+      // Hidden watermark
       hideDom('.iqp-logo-box')
-      // 移除暂停广告
+      // Remove Paramount Advertising
       window.GM_addStyle(`
             div[templatetype="common_pause"]{ display:none }
             .iqp-logo-box{ display:none !important }
@@ -2252,7 +2253,7 @@ const taskConf = {
     fullScreen: '.control-fullscreen-icon',
     next: '.control-next-video',
     init: function (h5Player, taskConf) {
-      // 隐藏水印
+      // Hidden watermark
       hideDom('.youku-layer-logo')
     }
   },
@@ -2270,19 +2271,19 @@ const taskConf = {
         const keyName = 'customShortcuts_' + key
 
         if (!h5Player[keyName]) {
-          /* 第一次按下快捷键使用默认逻辑进行调速 */
+          /* Press the shortcut key for the first time to use the default logic for speed adjustment */
           h5Player[keyName] = {
             time: Date.now(),
             playbackRate: h5Player.playbackRate
           }
           return false
         } else {
-          /* 第一次操作后的200ms内的操作都是由默认逻辑进行调速 */
+          /* After the first operation, the operation within 200ms is adjusted by the default logic */
           if (Date.now() - h5Player[keyName].time < 200) {
             return false
           }
 
-          /* 判断是否需进行降级处理，利用sessionStorage进行调速 */
+          /* Determine whether you need to be downgraded and use the sessionStorage for speed adjustment */
           if (h5Player[keyName] === h5Player.playbackRate || h5Player[keyName] === true) {
             if (window.sessionStorage.playbackRate && /(c|x|z|1|2|3|4)/.test(key)) {
               const curSpeed = Number(window.sessionStorage.playbackRate)
@@ -2310,10 +2311,10 @@ const taskConf = {
               return true
             }
 
-            /* 标识默认调速方案失效，需启用sessionStorage调速方案 */
+            /* The default speed regulation scheme is invalid, and the SESSIONSTORAGE speed regulation scheme is required */
             h5Player[keyName] = true
           } else {
-            /* 标识默认调速方案生效 */
+            /* The default speed regulation scheme is effective */
             h5Player[keyName] = false
           }
         }
@@ -2323,7 +2324,7 @@ const taskConf = {
     webFullScreen: 'txpdiv[data-report="browser-fullscreen"]',
     next: 'txpdiv[data-report="play-next"]',
     init: function (h5Player, taskConf) {
-      // 隐藏水印
+      // Hidden watermark
       hideDom('.txp-watermark')
       hideDom('.txp-watermark-action')
     },
@@ -2334,15 +2335,15 @@ const taskConf = {
       h5Player.player().parentNode.querySelector('.vjs-fullscreen-control').click()
     }
   },
-  // 'pornhub.com': {
-  //   fullScreen: 'div[class*="icon-fullscreen"]',
-  //   webFullScreen: 'div[class*="icon-size-large"]'
-  // },
+  'pornhub.com': {
+    fullScreen: 'div[class*="icon-fullscreen"]',
+    webFullScreen: 'div[class*="icon-size-large"]'
+  },
   'facebook.com': {
     fullScreen: function (h5Player, taskConf) {
       const actionBtn = h5Player.player().parentNode.querySelectorAll('button')
       if (actionBtn && actionBtn.length > 3) {
-        /* 模拟点击倒数第二个按钮 */
+        /* Introduction to the penultimate button */
         actionBtn[actionBtn.length - 2].click()
         return true
       }
@@ -2350,17 +2351,17 @@ const taskConf = {
     webFullScreen: function (h5Player, taskConf) {
       const actionBtn = h5Player.player().parentNode.querySelectorAll('button')
       if (actionBtn && actionBtn.length > 3) {
-        /* 模拟点击倒数第二个按钮 */
+        /* Introduction to the penultimate button */
         actionBtn[actionBtn.length - 2].click()
         return true
       }
     },
     shortcuts: {
-      /* 在视频模式下按esc键，自动返回上一层界面 */
+      /* Press the ESC key in the video mode and automatically return to the previous layer interface */
       register: [
         'escape'
       ],
-      /* 自定义快捷键的回调操作 */
+      /* Customized shortcut bonding operation */
       callback: function (h5Player, taskConf, data) {
         eachParentNode(h5Player.player(), function (parentNode) {
           if (parentNode.getAttribute('data-fullscreen-container') === 'true') {
@@ -2379,9 +2380,9 @@ const taskConf = {
       const player = h5Player.player()
       const container = player._fullScreen_.getContainer()
       if (player._isFullScreen_) {
-        container.querySelector('div[title="退出窗口全屏"]').click()
+        container.querySelector('div[title="Exit the window full screen"]').click()
       } else {
-        container.querySelector('div[title="窗口全屏"]').click()
+        container.querySelector('div[title="Full screen"]').click()
       }
       player._isFullScreen_ = !player._isFullScreen_
       return true
@@ -2390,9 +2391,9 @@ const taskConf = {
       const player = h5Player.player()
       const container = player._fullScreen_.getContainer()
       if (player._isWebFullScreen_) {
-        container.querySelector('div[title="退出网页全屏"]').click()
+        container.querySelector('div[title="Exit the full screen of the webpage"]').click()
       } else {
-        container.querySelector('div[title="网页全屏"]').click()
+        container.querySelector('div[title="Full screen screen"]').click()
       }
       player._isWebFullScreen_ = !player._isWebFullScreen_
       return true
@@ -2402,7 +2403,7 @@ const taskConf = {
     init: function (h5Player, taskConf) {
       const player = h5Player.player()
       /**
-       * 不设置CORS标识，这样才能跨域截图
+       * Do not set the CORS logo, so as to cross -the -domain screenshots
        * https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_enabled_image
        * https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_settings_attributes
        */
@@ -2439,7 +2440,7 @@ const taskConf = {
     }
   },
   'zhihu.com': {
-    fullScreen: ['button[aria-label="全屏"]', 'button[aria-label="退出全屏"]'],
+    fullScreen: ['button[aria-label="full screen"]', 'button[aria-label="Exit Full Screen"]'],
     play: function (h5Player, taskConf, data) {
       const player = h5Player.player()
       if (player && player.parentNode && player.parentNode.parentNode) {
@@ -2458,7 +2459,7 @@ const taskConf = {
   },
   'weibo.com': {
     fullScreen: ['button.wbpv-fullscreen-control'],
-    // webFullScreen: ['div[title="关闭弹层"]', 'div.wbpv-open-layer-button']
+    // webFullScreen: ['div[title="Turn off the bullet layer"]', 'div.wbpv-open-layer-button']
     webFullScreen: ['div.wbpv-open-layer-button']
   }
 }
@@ -2489,9 +2490,9 @@ function h5PlayerTccInit(h5Player) {
         for (let i = 0; i < selectorList.length; i++) {
           const selector = selectorList[i]
 
-          /* 触发选择器上的点击事件 */
+          /* Trigger a click event on the selector */
           if (wrapDom && wrapDom.querySelector(selector)) {
-            // 在video的父元素里查找，是为了尽可能兼容多实例下的逻辑
+            // Find in Video's parent element is to compat with the logic of multiple instances as much as possible
             wrapDom.querySelector(selector).click()
             return true
           } else if (document.querySelector(selector)) {
@@ -2511,7 +2512,7 @@ function mergeTaskConf(config) {
   return mergeObj(taskConf, config)
 }
 
-/* ua伪装配置 */
+/* UA camouflage configuration */
 const fakeConfig = {
   // 'tv.cctv.com': userAgentMap.iPhone.chrome,
   // 'v.qq.com': userAgentMap.iPad.chrome,
@@ -2524,10 +2525,10 @@ function setFakeUA(ua) {
   ua = ua || fakeConfig[host]
 
   /**
-   * 动态判断是否需要进行ua伪装
-   * 下面方案暂时不可用
-   * 由于部分网站跳转至移动端后域名不一致，形成跨域问题
-   * 导致无法同步伪装配置而不断死循环跳转
+   * Dynamic judgment requires UA camouflage
+   * The following scheme is temporarily unavailable
+   * Due to the inconsistent domain names of some websites to the after -mobile terminal, cross -domain issues are formed
+   * As a result, it is impossible to synchronize camouflage configuration and constantly die in a cycle
    * eg. open.163.com
    * */
   // let customUA = window.localStorage.getItem('_h5_player_user_agent_')
@@ -2543,7 +2544,7 @@ function setFakeUA(ua) {
 }
 
 /**
- * 元素全屏API，同时兼容网页全屏
+ * The element full screen API, compatible with the full screen of the web page
  */
 
 hackAttachShadow()
@@ -2552,7 +2553,7 @@ class FullScreen {
     this.dom = dom
     this.shadowRoot = null
     this.fullStatus = false
-    // 默认全屏模式，如果传入pageMode则表示进行的是页面全屏操作
+    // The default full -screen mode, if it is introduced to the PageMode, it means that the full screen operation of the page is performed.
     this.pageMode = pageMode || false
     const fullPageStyle = `
         ._webfullscreen_box_size_ {
@@ -2573,13 +2574,13 @@ class FullScreen {
           z-index: 999999 !important;
         }
       `
-    /* 将样式插入到全局页面中 */
+    /* Insert style into the global page */
     if (!window._hasInitFullPageStyle_ && window.GM_addStyle) {
       window.GM_addStyle(fullPageStyle)
       window._hasInitFullPageStyle_ = true
     }
 
-    /* 将样式插入到shadowRoot中 */
+    /* Insert the style into the shadowroot */
     const shadowRoot = isInShadow(dom, true)
     if (shadowRoot) {
       this.shadowRoot = shadowRoot
@@ -2676,7 +2677,7 @@ class FullScreen {
     }
     addFullscreenStyleToParentNode(t.dom)
 
-    /* 判断dom自身是否需要加上webfullscreen样式 */
+    /* Determine whether DOM itself needs to add WebFullScreen style */
     if (t.dom.parentNode) {
       const domBox = t.dom.getBoundingClientRect()
       const domParentBox = t.dom.parentNode.getBoundingClientRect()
@@ -2766,8 +2767,8 @@ async function setClipboard(blob) {
 
 var videoCapturer = {
   /**
-   * 进行截图操作
-   * @param video {dom} -必选 video dom 标签
+   * Screenshot operation
+   * @param video {dom} -required video dom Label
    * @returns {boolean}
    */
   capture(video, download, title) {
@@ -2776,7 +2777,7 @@ var videoCapturer = {
     const currentTime = `${Math.floor(video.currentTime / 60)}'${(video.currentTime % 60).toFixed(3)}''`
     const captureTitle = title || `${document.title}_${currentTime}`
 
-    /* 截图核心逻辑 */
+    /* Screenshot core logic */
     video.setAttribute('crossorigin', 'anonymous')
     const canvas = document.createElement('canvas')
     canvas.width = video.videoWidth
@@ -2793,7 +2794,7 @@ var videoCapturer = {
     return canvas
   },
   /**
-   * 预览截取到的画面内容
+   * Preview The content of the screen intercepted
    * @param canvas
    */
   previe(canvas, title) {
@@ -2805,7 +2806,7 @@ var videoCapturer = {
     previewPage.document.body.appendChild(canvas)
   },
   /**
-   * canvas 下载截取到的内容
+   * canvas Download the contents of the interception
    * @param canvas
    */
   download(canvas, title, video) {
@@ -2818,7 +2819,7 @@ var videoCapturer = {
         el.href = URL.createObjectURL(blob)
         el.click()
 
-        /* 尝试复制到剪贴板 */
+        /* Try to copy to the clipboard */
         setClipboard(blob)
       }, 'image/jpg', 0.99)
     } catch (e) {
@@ -2830,10 +2831,10 @@ var videoCapturer = {
 }
 
 /**
- * 鼠标事件观测对象
- * 用于实现鼠标事件的穿透响应，有别于pointer-events:none
- * pointer-events:none是设置当前层允许穿透
- * 而MouseObserver是：即使不知道target上面存在多少层遮挡，一样可以响应鼠标事件
+ * Mouse event observation object
+ * Used to achieve penetration response of mouse events, different from Pointer-events:none
+ * pointer-events:None is setting the current layer to allow penetration
+ * And MouseobServer is: Even if you don’t know how many layers of obstruction exists on Target, you can also respond to mouse events
  */
 
 class MouseObserver {
@@ -2876,10 +2877,10 @@ class MouseObserver {
   }
 
   /**
-   * 增加事件绑定
-   * @param target {element} -必选 要绑定事件的dom对象
-   * @param type {string} -必选 要绑定的事件，只支持鼠标事件
-   * @param listener {function} -必选 符合触发条件时的响应函数
+   * Increase event binding
+   * @param target {element} -required To bind the DOM object of the event
+   * @param type {string} -required The event to be binding only supports mouse events
+   * @param listener {function} -required The response function that meets the trigger conditions
    */
   on(target, type, listener, options) {
     const t = this
@@ -2902,14 +2903,14 @@ class MouseObserver {
           const isVisibility = target.IntersectionObserverEntry && target.IntersectionObserverEntry.intersectionRatio > 0
           const isReg = target.MouseObserverEvent[event.type] === true
           if (isVisibility && isReg) {
-            /* 判断是否符合触发侦听器事件条件 */
+            /* Determine whether it meets the triggering conditions of the hearing device */
             const bound = target.getBoundingClientRect()
             const offsetX = event.x - bound.x
             const offsetY = event.y - bound.y
             const isNeedTap = offsetX <= bound.width && offsetX >= 0 && offsetY <= bound.height && offsetY >= 0
 
             if (isNeedTap) {
-              /* 执行监听回调 */
+              /* Execute the monitoring recovery */
               const listenerList = t._mouseObserver_[type]
               listenerList.forEach((listener) => {
                 if (listener instanceof Function) {
@@ -2925,17 +2926,17 @@ class MouseObserver {
       }, options)
     }
 
-    /* 将监听回调加入到事件队列 */
+    /* Add the monitor recovery to the incident queue */
     if (listener instanceof Function) {
       t._mouseObserver_[type].push(listener)
     }
   }
 
   /**
-   * 解除事件绑定
-   * @param target {element} -必选 要解除事件的dom对象
-   * @param type {string} -必选 要解除的事件，只支持鼠标事件
-   * @param listener {function} -必选 绑定事件时的响应函数
+   * Lie incident binding
+   * @param target {element} -required To relieve the DOM object of the event
+   * @param type {string} -required The event to be lifted only supports mouse events
+   * @param listener {function} -required The response function during the binding event
    * @returns {boolean}
    */
   off(target, type, listener) {
@@ -2956,12 +2957,12 @@ class MouseObserver {
     if (isMatch) {
       t._mouseObserver_[type] = newListenerList
 
-      /* 侦听器已被完全移除 */
+      /* The listener has been completely removed */
       if (newListenerList.length === 0) {
         delete target.MouseObserverEvent[type]
       }
 
-      /* 当MouseObserverEvent为空对象时移除观测对象 */
+      /* When the Mouseobserverevent is an empty object, the observation object is removed */
       if (JSON.stringify(target.MouseObserverEvent[type]) === '{}') {
         t._unobserve(target)
       }
@@ -2970,7 +2971,7 @@ class MouseObserver {
 }
 
 /**
- * 简单的i18n库
+ * Simple I18N library
  */
 
 class I18n {
@@ -2986,7 +2987,7 @@ class I18n {
 
     const t = this
     t._locale = config.locale || t._locale
-    /* 指定当前要是使用的语言环境，默认无需指定，会自动读取 */
+    /* Specify that if the current language environment is used, the default does not need to be specified by default, and it will automatically read automatically */
     t._languages = config.languages || t._languages
     t._defaultLanguage = config.defaultLanguage || t._defaultLanguage
   }
@@ -2997,7 +2998,7 @@ class I18n {
     const t = this
     let result = t.getValByPath(t._languages[t._locale] || {}, path)
 
-    /* 版本回退 */
+    /* Version back */
     if (!result && t._locale !== t._defaultLanguage) {
       result = t.getValByPath(t._languages[t._defaultLanguage] || {}, path)
     }
@@ -3005,7 +3006,7 @@ class I18n {
     return result || ''
   }
 
-  /* 当前语言值 */
+  /* Current language value */
   language() {
     return this._locale
   }
@@ -3024,9 +3025,9 @@ class I18n {
   }
 
   /**
-   * 根据文本路径获取对象里面的值
-   * @param obj {Object} -必选 要操作的对象
-   * @param path {String} -必选 路径信息
+   * Get the value in the object according to the text path
+   * @param obj {Object} -required Object to be operated
+   * @param path {String} -required Path information
    * @returns {*}
    */
   getValByPath(obj, path) {
@@ -3034,7 +3035,7 @@ class I18n {
     const pathArr = path.split('.')
     let result = obj
 
-    /* 递归提取结果值 */
+    /* Recursive extraction result value */
     for (let i = 0; i < pathArr.length; i++) {
       if (!result) break
       result = result[pathArr[i]]
@@ -3043,75 +3044,9 @@ class I18n {
     return result
   }
 
-  /* 获取客户端当前的语言环境 */
+  /* Get the current language environment of the client */
   getClientLang() {
     return navigator.languages ? navigator.languages[0] : navigator.language
-  }
-}
-
-var zhCN = {
-  website: '脚本官网',
-  about: '关于',
-  issues: '问题反馈',
-  setting: '设置',
-  hotkeys: '快捷键',
-  donate: '请作者喝杯咖啡👍',
-  openCrossOriginFramePage: '单独打开跨域的页面',
-  disableInitAutoPlay: '禁止在此网站自动播放视频',
-  enableInitAutoPlay: '允许在此网站自动播放视频',
-  restoreConfiguration: '还原全局的默认配置',
-  blockSetPlaybackRate: '禁用默认速度调节逻辑',
-  blockSetCurrentTime: '禁用默认播放进度控制逻辑',
-  blockSetVolume: '禁用默认音量控制逻辑',
-  unblockSetPlaybackRate: '允许默认速度调节逻辑',
-  unblockSetCurrentTime: '允许默认播放进度控制逻辑',
-  unblockSetVolume: '允许默认音量控制逻辑',
-  allowAcousticGain: '开启音量增益能力',
-  notAllowAcousticGain: '禁用音量增益能力',
-  allowCrossOriginControl: '开启跨域控制能力',
-  notAllowCrossOriginControl: '禁用跨域控制能力',
-  allowExperimentFeatures: '开启实验性功能',
-  notAllowExperimentFeatures: '禁用实验性功能',
-  experimentFeaturesWarning: '实验性功能容易造成一些不确定的问题，请谨慎开启',
-  allowExternalCustomConfiguration: '开启外部自定义能力',
-  notAllowExternalCustomConfiguration: '关闭外部自定义能力',
-  configFail: '配置失败',
-  globalSetting: '全局设置',
-  localSetting: '仅用于此网站',
-  openDebugMode: '开启调试模式',
-  closeDebugMode: '关闭调试模式',
-  unfoldMenu: '展开菜单',
-  foldMenu: '折叠菜单',
-  tipsMsg: {
-    playspeed: '播放速度：',
-    forward: '前进：',
-    backward: '后退：',
-    seconds: '秒',
-    volume: '音量：',
-    nextframe: '定位：下一帧',
-    previousframe: '定位：上一帧',
-    stopframe: '定格帧画面：',
-    play: '播放',
-    pause: '暂停',
-    arpl: '允许自动恢复播放进度',
-    drpl: '禁止自动恢复播放进度',
-    brightness: '图像亮度：',
-    contrast: '图像对比度：',
-    saturation: '图像饱和度：',
-    hue: '图像色相：',
-    blur: '图像模糊度：',
-    imgattrreset: '图像属性：复位',
-    imgrotate: '画面旋转：',
-    onplugin: '启用h5Player插件',
-    offplugin: '禁用h5Player插件',
-    globalmode: '全局模式：',
-    playbackrestored: '为你恢复上次播放进度',
-    playbackrestoreoff: '恢复播放进度功能已禁用，按 SHIFT+R 可开启该功能',
-    horizontal: '水平位移：',
-    vertical: '垂直位移：',
-    horizontalMirror: '水平镜像',
-    verticalMirror: '垂直镜像',
-    videozoom: '视频缩放率：'
   }
 }
 
@@ -3182,138 +3117,6 @@ var enUS = {
   demo: 'demo-test'
 }
 
-var ru = {
-  website: 'официальный сайт скрипта',
-  about: 'около',
-  issues: 'обратная связь',
-  setting: 'установка',
-  hotkeys: 'горячие клавиши',
-  donate: 'пожертвовать',
-  openCrossOriginFramePage: 'Открывать только междоменные страницы',
-  disableInitAutoPlay: 'Запретить автовоспроизведение видео на этом сайте',
-  enableInitAutoPlay: 'Разрешить автоматическое воспроизведение видео на этом сайте',
-  restoreConfiguration: 'Восстановить глобальную конфигурацию по умолчанию',
-  blockSetPlaybackRate: 'Отключить логику регулирования скорости по умолчанию',
-  blockSetCurrentTime: 'Отключить логику управления ходом воспроизведения по умолчанию',
-  blockSetVolume: 'Отключить логику управления громкостью по умолчанию',
-  unblockSetPlaybackRate: 'Разрешить логику регулировки скорости по умолчанию',
-  unblockSetCurrentTime: 'Разрешить логику управления ходом воспроизведения по умолчанию',
-  unblockSetVolume: 'Разрешить логику управления громкостью по умолчанию',
-  allowAcousticGain: 'Включите усиление громкости',
-  notAllowAcousticGain: 'Отключить возможность увеличения громкости',
-  allowCrossOriginControl: 'Включить возможность междоменного контроля',
-  notAllowCrossOriginControl: 'Отключить возможности междоменного контроля',
-  allowExperimentFeatures: 'Включить экспериментальные функции',
-  notAllowExperimentFeatures: 'Отключить экспериментальные функции',
-  experimentFeaturesWarning: 'Экспериментальные функции могут вызвать определенные проблемы, включайте их с осторожностью.',
-  allowExternalCustomConfiguration: 'Включить возможности внешней настройки',
-  notAllowExternalCustomConfiguration: 'Отключить возможности внешней настройки',
-  configFail: 'Ошибка конфигурации',
-  globalSetting: 'Глобальные настройки',
-  localSetting: 'только для этого сайта',
-  openDebugMode: 'Включить режим отладки',
-  closeDebugMode: 'отключить режим отладки',
-  unfoldMenu: 'развернуть меню',
-  foldMenu: 'свернуть меню',
-  tipsMsg: {
-    playspeed: 'Скорость: ',
-    forward: 'Вперёд: ',
-    backward: 'Назад: ',
-    seconds: ' сек',
-    volume: 'Громкость: ',
-    nextframe: 'Следующий кадр',
-    previousframe: 'Предыдущий кадр',
-    stopframe: 'Стоп-кадр: ',
-    play: 'Запуск',
-    pause: 'Пауза',
-    arpl: 'Разрешить автоматическое возобновление прогресса воспроизведения',
-    drpl: 'Запретить автоматическое возобновление прогресса воспроизведения',
-    brightness: 'Яркость: ',
-    contrast: 'Контраст: ',
-    saturation: 'Насыщенность: ',
-    hue: 'Оттенок: ',
-    blur: 'Размытие: ',
-    imgattrreset: 'Атрибуты: сброс',
-    imgrotate: 'Поворот изображения: ',
-    onplugin: 'ВКЛ: плагин воспроизведения',
-    offplugin: 'ВЫКЛ: плагин воспроизведения',
-    globalmode: 'Глобальный режим:',
-    playbackrestored: 'Восстановлен последний прогресс воспроизведения',
-    playbackrestoreoff: 'Функция восстановления прогресса воспроизведения отключена. Нажмите SHIFT + R, чтобы включить функцию',
-    horizontal: 'Горизонтальное смещение: ',
-    vertical: 'Вертикальное смещение: ',
-    horizontalMirror: 'Горизонтальное зеркало',
-    verticalMirror: 'вертикальное зеркало',
-    videozoom: 'Увеличить видео: '
-  }
-}
-
-var zhTW = {
-  website: '腳本官網',
-  about: '關於',
-  issues: '反饋',
-  setting: '設置',
-  hotkeys: '快捷鍵',
-  donate: '讚賞',
-  openCrossOriginFramePage: '單獨打開跨域的頁面',
-  disableInitAutoPlay: '禁止在此網站自動播放視頻',
-  enableInitAutoPlay: '允許在此網站自動播放視頻',
-  restoreConfiguration: '還原全局的默認配置',
-  blockSetPlaybackRate: '禁用默認速度調節邏輯',
-  blockSetCurrentTime: '禁用默認播放進度控制邏輯',
-  blockSetVolume: '禁用默認音量控制邏輯',
-  unblockSetPlaybackRate: '允許默認速度調節邏輯',
-  unblockSetCurrentTime: '允許默認播放進度控制邏輯',
-  unblockSetVolume: '允許默認音量控制邏輯',
-  allowAcousticGain: '開啟音量增益能力',
-  notAllowAcousticGain: '禁用音量增益能力',
-  allowCrossOriginControl: '開啟跨域控制能力',
-  notAllowCrossOriginControl: '禁用跨域控制能力',
-  allowExperimentFeatures: '開啟實驗性功能',
-  notAllowExperimentFeatures: '禁用實驗性功能',
-  experimentFeaturesWarning: '實驗性功能容易造成一些不確定的問題，請謹慎開啟',
-  allowExternalCustomConfiguration: '開啟外部自定義能力',
-  notAllowExternalCustomConfiguration: '關閉外部自定義能力',
-  configFail: '配置失敗',
-  globalSetting: '全局設置',
-  localSetting: '僅用於此網站',
-  openDebugMode: '開啟調試模式',
-  closeDebugMode: '關閉調試模式',
-  unfoldMenu: '展開菜單',
-  foldMenu: '折疊菜單',
-  tipsMsg: {
-    playspeed: '播放速度：',
-    forward: '向前：',
-    backward: '向後：',
-    seconds: '秒',
-    volume: '音量：',
-    nextframe: '定位：下一幀',
-    previousframe: '定位：上一幀',
-    stopframe: '定格幀畫面：',
-    play: '播放',
-    pause: '暫停',
-    arpl: '允許自動恢復播放進度',
-    drpl: '禁止自動恢復播放進度',
-    brightness: '圖像亮度：',
-    contrast: '圖像對比度：',
-    saturation: '圖像飽和度：',
-    hue: '圖像色相：',
-    blur: '圖像模糊度：',
-    imgattrreset: '圖像屬性：復位',
-    imgrotate: '畫面旋轉：',
-    onplugin: '啟用h5Player插件',
-    offplugin: '禁用h5Player插件',
-    globalmode: '全局模式：',
-    playbackrestored: '為你恢復上次播放進度',
-    playbackrestoreoff: '恢復播放進度功能已禁用，按 SHIFT+R 可開啟該功能',
-    horizontal: '水平位移：',
-    vertical: '垂直位移：',
-    horizontalMirror: '水平鏡像',
-    verticalMirror: '垂直鏡像',
-    videozoom: '視頻縮放率：'
-  }
-}
-
 const messages = {
   'zh-CN': zhCN,
   zh: zhCN,
@@ -3326,12 +3129,12 @@ const messages = {
 
 const i18n = new I18n({
   defaultLanguage: 'en',
-  /* 指定当前要是使用的语言环境，默认无需指定，会自动读取 */
-  // locale: 'zh-TW',
+  /* Specify that if the current language environment is used, the default does not need to be specified by default, and it will automatically read automatically */
+  locale: 'en-US',
   languages: messages
 })
 
-/* 用于获取全局唯一的id */
+/* Used to obtain the unique ID of the global */
 let __globalId__ = 0
 function getId() {
   if (window.GM_getValue && window.GM_setValue) {
@@ -3341,7 +3144,7 @@ function getId() {
     window.GM_setValue('_global_id_', gID)
     return gID
   } else {
-    /* 如果不处于油猴插件下，则该id为页面自己独享的id */
+    /* If it is not under the oil monkey plug -in, the ID is the ID that the page itself is exclusive */
     __globalId__ = Number(__globalId__) + 1
     return __globalId__
   }
@@ -3350,7 +3153,7 @@ function getId() {
 let curTabId = null
 
 /**
- * 获取当前TAB标签的Id号，可用于iframe确定自己是否处于同一TAB标签下
+ * Get the ID number of the current TAB label, which can be used for iframe to determine whether you are in the same TAB tag
  * @returns {Promise<any>}
  */
 function getTabId() {
@@ -3361,18 +3164,18 @@ function getTabId() {
           obj.tabId = getId()
           window.GM_saveTab(obj)
         }
-        /* 每次获取都更新当前Tab的id号 */
+        /* Update the ID number of the current TAB every time */
         curTabId = obj.tabId
         resolve(obj.tabId)
       })
     } else {
-      /* 非油猴插件下，无法确定iframe是否处于同一个tab下 */
+      /* Under the non -oil monkey plug -in, it is impossible to determine whether iframe is under the same TAB */
       resolve(Date.now())
     }
   })
 }
 
-/* 一开始就初始化好curTabId，这样后续就不需要异步获取Tabid，部分场景下需要用到 */
+/* From the beginning, initialize Curtabid, so that there is no need to obtain tabid asynchronous in the future. In some scenarios, you need to use it */
 getTabId()
 
 /*!
@@ -3384,9 +3187,9 @@ getTabId()
 // import debug from './debug'
 
 /**
- * 将对象数据里面可存储到GM_setValue里面的值提取出来
- * @param obj {objcet} -必选 打算要存储的对象数据
- * @param deep {number} -可选 如果对象层级非常深，则须限定递归的层级，默认最高不能超过3级
+ * Extract the value in the object data to the value in GM_SETVALUE
+ * @param obj {objcet} -required Data planned to store objects
+ * @param deep {number} -Optional If the object level is very deep, the level of recursion must be limited, and the highest default cannot exceed level 3
  * @returns {{}}
  */
 function extractDatafromOb(obj, deep) {
@@ -3406,7 +3209,7 @@ function extractDatafromOb(obj, deep) {
           enumerable: true
         })
       } else if (valType === 'object' && Object.prototype.propertyIsEnumerable.call(obj, key)) {
-        /* 进行递归提取 */
+        /* Recursive extraction */
         result[key] = extractDatafromOb(val, deep + 1)
       } else if (valType === 'array') {
         result[key] = val
@@ -3418,10 +3221,10 @@ function extractDatafromOb(obj, deep) {
 
 const monkeyMsg = {
   /**
-   * 发送消息，除了正常发送信息外，还会补充各类必要的信息
-   * @param name {string} -必选 要发送给那个字段，接收时要一致才能监听的正确
-   * @param data {Any} -必选 要发送的数据
-   * @param throttleInterval -可选，因为会出现莫名奇妙的重复发送情况，为了消除重复发送带来的副作用，所以引入节流限制逻辑，即限制某个时间间隔内只能发送一次，多余的次数自动抛弃掉，默认80ms
+   * Send messages, in addition to sending information normally, it will also supplement various necessary information
+   * @param name {string} -required To send it to that field, it must be consistent when receiving it to monitor the correctness
+   * @param data {Any} -required Data to be sent
+   * @param throttleInterval -Optional, because there will be an inexplicable repeated sending situation, in order to eliminate the side effects of repeated sending, the introduction of the logic of the throttling restrictions, that is, it can only be sent once within a certain time interval.
    * @returns {Promise<void>}
    */
   send(name, data, throttleInterval = 80) {
@@ -3429,7 +3232,7 @@ const monkeyMsg = {
       return false
     }
 
-    /* 阻止频繁发送修改事件 */
+    /* Prevent frequently sending modification events */
     const oldMsg = window.GM_getValue(name)
     if (oldMsg && oldMsg.updateTime) {
       const interval = Math.abs(Date.now() - oldMsg.updateTime)
@@ -3439,15 +3242,15 @@ const monkeyMsg = {
     }
 
     const msg = {
-      /* 发送过来的数据 */
+      /* Send data */
       data,
-      /* 补充标签ID，用于判断是否同处一个tab标签下 */
+      /* Supplementary tag ID to determine whether it is in the same TAB tag */
       tabId: curTabId || 'undefined',
-      /* 补充消息的页面来源的标题信息 */
+      /* The title information of the page source of the supplementary message */
       title: document.title,
-      /* 补充消息的页面来源信息 */
+      /* Page source information for supplementary messages */
       referrer: extractDatafromOb(window.location),
-      /* 最近一次更新该数据的时间 */
+      /* The last time the data is updated */
       updateTime: Date.now()
     }
     if (typeof data === 'object') {
@@ -3462,7 +3265,7 @@ const monkeyMsg = {
   on: (name, fn) => window.GM_addValueChangeListener && window.GM_addValueChangeListener(name, function (name, oldVal, newVal, remote) {
     // debug.info(`[monkeyMsg-on][${name}]`, oldVal, newVal, remote)
 
-    /* 补充消息来源是否出自同一个Tab的判断字段 */
+    /* Does the supplementary message source come from the judgment field of the same TAB? */
     newVal.originTab = newVal.tabId === curTabId
 
     fn instanceof Function && fn.apply(null, arguments)
@@ -3470,11 +3273,11 @@ const monkeyMsg = {
   off: (listenerId) => window.GM_removeValueChangeListener && window.GM_removeValueChangeListener(listenerId),
 
   /**
-   * 进行monkeyMsg的消息广播，该广播每两秒钟发送一次，其它任意页面可通接收到的广播信息来更新一些变量信息
-   * 主要用以解决通过setInterval或setTimeout因页面可视状态和性能策略导致的不运行或执行频率异常而不能正确更新变量状态的问题
-   * 见： https://developer.mozilla.org/zh-CN/docs/Web/API/Page_Visibility_API
-   * 广播也不能100%保证不受性能策略的影响，但只要有一个网页处于前台运行，则就能正常工作
-   * @param handler {Function} -必选 接收到广播信息时的回调函数
+   * Monkeymsg message broadcast, the broadcast is sent once every two seconds, and other pages can be connected to the broadcast information to update some variable information
+   * It is mainly used to solve the problem that the non -running or execution frequency of the variable state cannot be correctly updated through the visual state and performance strategies caused by the visual state and performance strategies of the SetInterval or Settimeout.
+   * See: https://developer.mozilla.org/zh-CN/docs/Web/API/Page_Visibility_API
+   * Broadcasting cannot be 100%Ensure that it is not affected by performance strategies, but as long as one webpage is running at the front desk, it can work normally
+   * @param handler {Function} -required The callback function when receiving the broadcast information
    * @returns
    */
   broadcast(handler) {
@@ -3493,7 +3296,7 @@ const monkeyMsg = {
     })
 
     setInterval(function () {
-      /* 通过限定时间间隔来防止多个页面批量发起广播信息 */
+      /* To prevent multiple pages from batch broadcast information by limited time interval */
       const data = monkeyMsg.get(broadcastName)
       if (data && Date.now() - data.updateTime < 1000 * 2) {
         return false
@@ -3506,56 +3309,16 @@ const monkeyMsg = {
   }
 }
 
-/* 当前用到的快捷键 */
+/* The shortcut keys currently used */
 const hasUseKey = {
   keyCodeList: [13, 16, 17, 18, 27, 32, 37, 38, 39, 40, 49, 50, 51, 52, 67, 68, 69, 70, 73, 74, 75, 77, 78, 79, 80, 81, 82, 83, 84, 85, 87, 88, 89, 90, 97, 98, 99, 100, 220],
   keyList: ['enter', 'shift', 'control', 'alt', 'escape', ' ', 'arrowleft', 'arrowright', 'arrowup', 'arrowdown', '1', '2', '3', '4', 'c', 'd', 'e', 'f', 'i', 'j', 'k', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'x', 'y', 'z', '\\', '|'],
-  keyMap: {
-    enter: 13,
-    shift: 16,
-    ctrl: 17,
-    alt: 18,
-    esc: 27,
-    space: 32,
-    '←': 37,
-    '↑': 38,
-    '→': 39,
-    '↓': 40,
-    1: 49,
-    2: 50,
-    3: 51,
-    4: 52,
-    c: 67,
-    d: 68,
-    e: 69,
-    f: 70,
-    i: 73,
-    j: 74,
-    k: 75,
-    m: 77,
-    n: 78,
-    o: 79,
-    p: 80,
-    q: 81,
-    r: 82,
-    s: 83,
-    t: 84,
-    u: 85,
-    w: 87,
-    x: 88,
-    y: 89,
-    z: 90,
-    pad1: 97,
-    pad2: 98,
-    pad3: 99,
-    pad4: 100,
-    '\\': 220
-  }
+  keyMap: { enter: 13, shift: 16, ctrl: 17, alt: 18, esc: 27, space: 32, '←': 37, '↑': 38, '→': 39, '↓': 40, 1: 49, 2: 50, 3: 51, 4: 52, c: 67, d: 68, e: 69, f: 70, i: 73, j: 74, k: 75, m: 77, n: 78, o: 79, p: 80, q: 81, r: 82, s: 83, t: 84, u: 85, w: 87, x: 88, y: 89, z: 90, pad1: 97, pad2: 98, pad3: 99, pad4: 100, '\\': 220 }
 }
 
 /**
- * 判断当前按键是否注册为需要用的按键
- * 用于减少对其它键位的干扰
+ * Determine whether the current keys are registered as a key that needs to be used
+ * Used to reduce interference to other key positions
  */
 function isRegisterKey(event) {
   const keyCode = event.keyCode
@@ -3565,9 +3328,9 @@ function isRegisterKey(event) {
 }
 
 /**
- * 由于tampermonkey对window对象进行了封装，我们实际访问到的window并非页面真实的window
- * 这就导致了如果我们需要将某些对象挂载到页面的window进行调试的时候就无法挂载了
- * 所以必须使用特殊手段才能访问到页面真实的window对象，于是就有了下面这个函数
+ * Since TamperMonkey encapsulates the Window object, the Window we actually visited is not the real Window of the page
+ * This causes it to be mounted if we need to mount some objects to the page of the page for debugging
+ * Therefore, we must use special means to access the real Window object of the page, so there is a function below
  * @returns {Promise<void>}
  */
 async function getPageWindow() {
@@ -3576,7 +3339,7 @@ async function getPageWindow() {
       return resolve(window._pageWindow)
     }
 
-    /* 尝试通过同步的方式获取pageWindow */
+    /* Try to obtain pageswindow in a synchronous manner */
     try {
       const pageWin = getPageWindowSync()
       if (pageWin && pageWin.document && pageWin.XMLHttpRequest) {
@@ -3586,7 +3349,7 @@ async function getPageWindow() {
       }
     } catch (e) { }
 
-    /* 下面异步获取pagewindow的方法在最新的chrome浏览器里已失效 */
+    /* The following method of obtaining Pagewindow is not effective in the latest Chrome browser */
 
     const listenEventList = ['load', 'mousemove', 'scroll', 'get-page-window-event']
 
@@ -3603,15 +3366,15 @@ async function getPageWindow() {
       window.addEventListener(eventType, getWin, true)
     })
 
-    /* 自行派发事件以便用最短的时间获得pageWindow对象 */
+    /* The self -proofing incident can be obtained in the shortest time to obtain the Pagewindow object */
     window.dispatchEvent(new window.Event('get-page-window-event'))
   })
 }
 getPageWindow()
 
 /**
- * 通过同步的方式获取pageWindow
- * 注意同步获取的方式需要将脚本写入head，部分网站由于安全策略会导致写入失败，而无法正常获取
+ * Get PAGEWINDOW in a synchronous manner
+ * Pay attention to the method of simultaneous acquisition that requires the script into the head. Some websites cannot be obtained normally because the security strategy will cause the writing failure
  * @returns {*}
  */
 function getPageWindowSync(rawFunction) {
@@ -3653,7 +3416,7 @@ function openInTab(url, opts, referer) {
   }
 }
 
-/* 确保数字为正数 */
+/* Make sure the number is positive */
 function numUp(num) {
   if (typeof num === 'number' && num < 0) {
     num = Math.abs(num)
@@ -3661,7 +3424,7 @@ function numUp(num) {
   return num
 }
 
-/* 确保数字为负数 */
+/* Make sure the number is negative */
 function numDown(num) {
   if (typeof num === 'number' && num > 0) {
     num = -num
@@ -3683,15 +3446,15 @@ function isAudioElement(element) {
 
 /*!
 * @name         crossTabCtl.js
-* @description  跨Tab控制脚本逻辑
+* @description  Cross Tab control script logic
 * @version      0.0.1
 * @author       Blaze
-* @date         2019/11/21 上午11:56
+* @date         2019/11/21 11 am:56
 * @github       https://github.com/xxxily
 */
 
 const crossTabCtl = {
-  /* 在进行跨Tab控制时，排除转发的快捷键，以减少对重要快捷键的干扰 */
+  /* When performing cross -TAB control, exclude the shortcut key to forward to reduce the interference of important shortcut keys */
   excludeShortcuts(event) {
     if (!event || typeof event.keyCode === 'undefined') {
       return false
@@ -3734,18 +3497,18 @@ const crossTabCtl = {
       }
     })
   },
-  /* 判断当前是否开启了画中画功能 */
+  /* Determine whether the current painting function is turned on */
   hasOpenPictureInPicture() {
     const data = monkeyMsg.get('globalPictureInPictureInfo')
 
-    /* 画中画的全局信息更新时间差在3s内，才认为当前开启了画中画模式，否则有可能意外退出，而没修改usePictureInPicture的值，造成误判 */
+    /* The overall information update time difference between painting in painting is within 3S, so I think that the painting mode in the painting is currently turned on, otherwise it may be unexpectedly exited without modifying the value of the USEPICTURENPICTURETURE, causing misjudgments */
     if (data && data.data) {
       if (data.data.usePictureInPicture) {
         return Math.abs(Date.now() - data.updateTime) < 1000 * 3
       } else {
         /**
-         * 检测到画中画已经被关闭，但还没关闭太久的话，允许有个短暂的时间段内让用户跨TAB控制视频
-         * 例如：暂停视频播放
+         * The painting in the painting has been closed, but if it has not been closed for too long, it is allowed to allow users to cross TAB control videos across the TAB within a short period of time.
+         * For example: pause video playback
          */
         return Math.abs(Date.now() - data.updateTime) < 1000 * 15
       }
@@ -3754,12 +3517,12 @@ const crossTabCtl = {
     return false
   },
   /**
-   * 判断是否需要发送跨Tab控制按键信息
+   * Determine whether you need to send a cross -TAB control button information
    */
   isNeedSendCrossTabCtlEvent() {
     const t = crossTabCtl
 
-    /* 画中画开启后，判断不在同一个Tab才发送事件 */
+    /* After the painting is turned on, the judgment is not sent to the same TAB incident */
     const data = monkeyMsg.get('globalPictureInPictureInfo')
     if (t.hasOpenPictureInPicture() && data.tabId !== curTabId) {
       return true
@@ -3769,15 +3532,15 @@ const crossTabCtl = {
   },
   crossTabKeydownEvent(event) {
     const t = crossTabCtl
-    /* 处于可编辑元素中不执行任何快捷键 */
+    /* Do not perform any shortcut keys in editing elements */
     if (isEditableTarget(event.target)) return
     if (t.isNeedSendCrossTabCtlEvent() && isRegisterKey(event) && !t.excludeShortcuts(event)) {
-      // 阻止事件冒泡和默认事件
+      // Prevent incident bubbling and default events
       event.stopPropagation()
       event.preventDefault()
 
-      /* 广播按键消息，进行跨Tab控制 */
-      // keydownEvent里已经包含了globalKeydownEvent事件
+      /* Broadcast button message, perform cross -TAB control */
+      // Keydownevent has contained GlobalKeyDownevent event
       // monkeyMsg.send('globalKeydownEvent', event)
 
       return true
@@ -3799,7 +3562,7 @@ const crossTabCtl = {
 
 /*!
 * @name         index.js
-* @description  hookJs JS AOP切面编程辅助库
+* @description  hookJs JS AOP cut surface programming auxiliary library
 * @version      0.0.1
 * @author       Blaze
 * @date         2020/10/22 17:40
@@ -3808,12 +3571,12 @@ const crossTabCtl = {
 
 const win = typeof window === 'undefined' ? global : window
 const toStr = Function.prototype.call.bind(Object.prototype.toString)
-/* 特殊场景，如果把Boolean也hook了，很容易导致调用溢出，所以是需要使用原生Boolean */
+/* Special scenes, if Boolean is also hook, it is easy to cause call overflow, so you need to use the native Boolean */
 const toBoolean = Boolean.originMethod ? Boolean.originMethod : Boolean
 const util = {
   toStr,
   isObj: obj => toStr(obj) === '[object Object]',
-  /* 判断是否为引用类型，用于更宽泛的场景 */
+  /* Determine whether it is a reference type, for a broader scene */
   isRef: obj => typeof obj === 'object',
   isReg: obj => toStr(obj) === '[object RegExp]',
   isFn: obj => obj instanceof Function,
@@ -3832,7 +3595,7 @@ const util = {
       }
     }
   },
-  /* 获取包含自身、继承、可枚举、不可枚举的键名 */
+  /* Get the key name that includes itself, inheritance, enumeration, and indispensable */
   getAllKeys(obj) {
     const tmpArr = []
     for (const key in obj) { tmpArr.push(key) }
@@ -3858,7 +3621,7 @@ class HookJs {
       hookMethodProperties[hookKeyName] = []
     }
 
-    /* 注册（储存）要被调用的hook函数，同时防止重复注册 */
+    /* Register (stored) the HOOK function to be called, while preventing repeated registration at the same time */
     let hasSameHook = false
     for (let i = 0; i < hookMethodProperties[hookKeyName].length; i++) {
       if (fn === hookMethodProperties[hookKeyName][i]) {
@@ -3914,15 +3677,15 @@ class HookJs {
     })()
 
     const beforeHooksResult = runHooks(beforeHooks, 'before')
-    /* 支持终止后续调用的指令 */
+    /* Support instructions to terminate subsequent calls */
     if (beforeHooksResult && beforeHooksResult === 'STOP-INVOKE') {
       return beforeHooksResult
     }
 
     if (hangUpHooks.length || replaceHooks.length) {
       /**
-       * 当存在hangUpHooks或replaceHooks的时候是不会触发原来函数的
-       * 本质上来说hangUpHooks和replaceHooks是一样的，只是外部的定义描述不一致和分类不一致而已
+       * When there is HanguPhooks or Replacehooks, it will not trigger the original function
+       * In essence, HangupHooks and Replacehooks are the same, but the external definition description is inconsistent and the classification is inconsistent.
        */
       runHooks(hangUpHooks, 'hangUp')
       runHooks(replaceHooks, 'replace')
@@ -3933,7 +3696,7 @@ class HookJs {
         } catch (err) {
           execInfo.error = err
           const errorHooksResult = runHooks(errorHooks, 'error')
-          /* 支持执行错误后不抛出异常的指令 */
+          /* Do not throw an abnormal instruction after supporting the execution error */
           if (errorHooksResult && errorHooksResult === 'SKIP-ERROR'); else {
             throw err
           }
@@ -3944,9 +3707,9 @@ class HookJs {
     }
 
     /**
-     * 执行afterHooks，如果返回的是Promise，理论上应该进行进一步的细分处理
-     * 但添加细分处理逻辑后发现性能下降得比较厉害，且容易出现各种异常，所以决定不在hook里处理Promise情况
-     * 下面是原Promise处理逻辑，添加后会导致以下网站卡死或无法访问：
+     * After executing afterhooks, if the Promise is returned, further segmentation should be performed in theory
+     * However, after adding the subdivision logic, it is found that the performance has fallen fell, and it is prone to various abnormalities.
+     * The following is the original Promise processing logic. After adding, it will cause the following website to be stuck or not accessible:
      * wenku.baidu.com
      * https://pubs.rsc.org/en/content/articlelanding/2021/sc/d1sc01881g#!divAbstract
      * https://www.elsevier.com/connect/coronavirus-information-center
@@ -3973,7 +3736,7 @@ class HookJs {
     const useProxy = t.useProxy
     let hookMethod = null
 
-    /* 存在缓存则使用缓存的hookMethod */
+    /* If there is a cache, use the cache hookMethod */
     if (t.isHook(originMethod)) {
       hookMethod = originMethod
     } else if (originMethod[t.hookPropertiesKeyName] && t.isHook(originMethod[t.hookPropertiesKeyName].hookMethod)) {
@@ -3982,19 +3745,19 @@ class HookJs {
 
     if (hookMethod) {
       if (!hookMethod[t.hookPropertiesKeyName].isHook) {
-        /* 重新标注被hook状态 */
+        /* Re -marked the state of the hook */
         hookMethod[t.hookPropertiesKeyName].isHook = true
         util.debug.log(`[hook method] ${util.toStr(parentObj)} ${methodName}`)
       }
       return hookMethod
     }
 
-    /* 使用Proxy模式进行hook可以获得更多特性，但性能也会稍差一些 */
+    /* Using the Proxy mode for HOOK can get more features, but the performance will be slightly worse */
     if (useProxy && Proxy) {
-      /* 注意：使用Proxy代理，hookMethod和originMethod将共用同一对象 */
+      /* Note: Use Proxy proxy, HookMethod and OriginMethod will share the same object */
       const handler = { ...proxyHandler }
 
-      /* 下面的写法确定了proxyHandler是无法覆盖construct和apply操作的 */
+      /* The following writing determines that Proxyhandler cannot cover the Construction and Apply operation */
       if (classHook) {
         handler.construct = function (target, args, newTarget) {
           context = context || this
@@ -4011,15 +3774,15 @@ class HookJs {
     } else {
       hookMethod = function () {
         /**
-         * 注意此处不能通过 context = context || this
-         * 然后通过把context当ctx传递过去
-         * 这将导致ctx引用错误
+         * Note that you cannot pass here context = context || this
+         * Then pass the context as CTX
+         * This will cause ctx reference errors
          */
         const ctx = context || this
         return t._runHooks(parentObj, methodName, originMethod, hookMethod, originMethod, ctx, arguments, classHook, t.hookPropertiesKeyName)
       }
 
-      /* 确保子对象和原型链跟originMethod保持一致 */
+      /* Make sure the sub -object and prototype chain are consistent with OriginMethod */
       const keys = Reflect.ownKeys(originMethod)
       keys.forEach(keyName => {
         try {
@@ -4032,7 +3795,7 @@ class HookJs {
             }
           })
         } catch (err) {
-          // 设置defineProperty的时候出现异常，可能导致hookMethod部分功能确实，也可能不受影响
+          // When setting defineProperty, an abnormalities may cause some functions of HookMethod to be true, or it may not be affected
           util.debug.log(`[proxyMethodcGenerator] hookMethod defineProperty abnormal.  hookMethod:${methodName}, definePropertyName:${keyName}`, err)
         }
       })
@@ -4062,7 +3825,7 @@ class HookJs {
     }
 
     /**
-     * for in、Object.keys与Reflect.ownKeys的区别见：
+     * for in、Object.keys与Reflect.See the difference between OWNKEYS:
      * https://es6.ruanyifeng.com/#docs/object#%E5%B1%9E%E6%80%A7%E7%9A%84%E9%81%8D%E5%8E%86
      */
     if (rule === '*') {
@@ -4075,7 +3838,7 @@ class HookJs {
       result = util.getAllKeys(obj).filter(keyName => rule.test(keyName))
     }
 
-    /* 如果存在排除规则，则需要进行排除 */
+    /* If there are rules for exclusion, you need to exclude */
     if (excludeRule) {
       result = Array.isArray(result) ? result : [result]
       if (util.isReg(excludeRule)) {
@@ -4091,8 +3854,8 @@ class HookJs {
   }
 
   /**
-   * 判断某个函数是否已经被hook
-   * @param fn {Function} -必选 要判断的函数
+   * Determine whether a function has been HOOK
+   * @param fn {Function} -required The function to be judged
    * @returns {boolean}
    */
   isHook(fn) {
@@ -4104,31 +3867,31 @@ class HookJs {
   }
 
   /**
-   * 判断对象下的某个值是否具备hook的条件
-   * 注意：具备hook条件和能否直接修改值是两回事，
-   * 在进行hook的时候还要检查descriptor.writable是否为false
-   * 如果为false则要修改成true才能hook成功
+   * Determine whether the value of a certain value under the object is the conditions of the hook
+   * Note: It is two different ways to have hook conditions and whether it can be directly modified.
+   * When doing hook, check the descriptor.writable是否为false
+   * If for false, it is necessary to modify it to true before the hook success
    * @param parentObj
    * @param keyName
    * @returns {boolean}
    */
   isAllowHook(parentObj, keyName) {
-    /* 有些对象会设置getter，让读取值的时候就抛错，所以需要try catch 判断能否正常读取属性 */
+    /* Some objects will set getter to let the read value throw the mistake, so you need to try catch Determine whether you can read the attribute normally */
     try { if (!parentObj[keyName]) return false } catch (e) { return false }
     const descriptor = Object.getOwnPropertyDescriptor(parentObj, keyName)
     return !(descriptor && descriptor.configurable === false)
   }
 
   /**
-   * hook 核心函数
-   * @param parentObj {Object} -必选 被hook函数依赖的父对象
-   * @param hookMethods {Object|Array|RegExp|string} -必选 被hook函数的函数名或函数名的匹配规则
-   * @param fn {Function} -必选 hook之后的回调方法
-   * @param type {String} -可选 默认before，指定运行hook函数回调的时机，可选字符串：before、after、replace、error、hangUp
-   * @param classHook {Boolean} -可选 默认false，指定是否为针对new（class）操作的hook
-   * @param context {Object} -可选 指定运行被hook函数时的上下文对象
-   * @param proxyHandler {Object} -可选 仅当用Proxy进行hook时有效，默认使用的是Proxy的apply handler进行hook，如果你有特殊需求也可以配置自己的handler以实现更复杂的功能
-   * 附注：不使用Proxy进行hook，可以获得更高性能，但也意味着通用性更差些，对于要hook HTMLElement.prototype、EventTarget.prototype这些对象里面的非实例的函数往往会失败而导致被hook函数执行出错
+   * hook Core function
+   * @param parentObj {Object} -required The parent object depended on the HOOK function
+   * @param hookMethods {Object|Array|RegExp|string} -required The matching rules of the function name or function name of the HOOK function
+   * @param fn {Function} -required The callback method after hook
+   * @param type {String} -Optional By default, the timing of running the HOOK function callback is specified, and you can choose a string: BeFore, after, Replace, ERROR, Hangup
+   * @param classHook {Boolean} -Optional Default FALSE, specify whether it is for new (class) operation
+   * @param context {Object} -Optional Specify the context object when running the hook function
+   * @param proxyHandler {Object} -Optional It is effective when using HOOK with proxy, the apply of proxy is used by default Handler performs hook, if you have special needs, you can also configure your own handler to achieve more complex functions
+   * Note: You can get higher performance without using Proxy for HOOK, but it also means that the universalability is worse. For HOOK HTMLElement.prototype、EventTarget.The non -instance functions in these objects in Prototype often fail, causing an error in executing by the HOOK function
    * @returns {boolean}
    */
   hook(parentObj, hookMethods, fn, type, classHook, context, proxyHandler) {
@@ -4156,7 +3919,7 @@ class HookJs {
       const originMethod = parentObj[methodName]
       let hookMethod = null
 
-      /* 非函数无法进行hook操作 */
+      /* Non -function cannot perform hook operations */
       if (!util.isFn(originMethod)) {
         return false
       }
@@ -4169,7 +3932,7 @@ class HookJs {
         return false
       }
 
-      /* 使用hookMethod接管需要被hook的方法 */
+      /* Use HookMethod to take over the way to take over */
       if (parentObj[methodName] !== hookMethod) {
         parentObj[methodName] = hookMethod
       }
@@ -4178,17 +3941,17 @@ class HookJs {
     })
   }
 
-  /* 专门针对new操作的hook，本质上是hook函数的别名，可以少传classHook这个参数，并且明确语义 */
+  /* HOOK, which is specifically operated by New, is essentially the alias of the hook function. You can less pass the parameter of Classhook, and clear the semantics */
   hookClass(parentObj, hookMethods, fn, type, context, proxyHandler) {
     return this.hook(parentObj, hookMethods, fn, type, true, context, proxyHandler)
   }
 
   /**
-   * 取消对某个函数的hook
-   * @param parentObj {Object} -必选 要取消被hook函数依赖的父对象
-   * @param hookMethods {Object|Array|RegExp|string} -必选 要取消被hook函数的函数名或函数名的匹配规则
-   * @param type {String} -可选 默认before，指定要取消的hook类型，可选字符串：before、after、replace、error、hangUp，如果不指定该选项则取消所有类型下的所有回调
-   * @param fn {Function} -必选 取消指定的hook回调函数，如果不指定该选项则取消对应type类型下的所有回调
+   * Cancel HOOK for a function
+   * @param parentObj {Object} -必选 To cancel the parent object dependent on the hook function
+   * @param hookMethods {Object|Array|RegExp|string} -required To cancel the matching rules of the function name or function name of the HOOK function
+   * @param type {String} -Optional By default before, specify the hook type to be canceled, optional string: BeFore, After, Replace, ERROR, Hangup, if you do not specify the option, cancel all the calls under all types,
+   * @param fn {Function} -required Cancel the specified hook callback function, if the option is not specified, cancel all the callbacks under the corresponding type type
    * @returns {boolean}
    */
   unHook(parentObj, hookMethods, type, fn) {
@@ -4217,7 +3980,7 @@ class HookJs {
         const hooks = hookMethodProperties[hookKeyName] || []
 
         if (fn) {
-          /* 删除指定类型下的指定hook函数 */
+          /* Delete the specified HOOK function under the specified type */
           for (let i = 0; i < hooks.length; i++) {
             if (fn === hooks[i]) {
               hookMethodProperties[hookKeyName].splice(i, 1)
@@ -4226,14 +3989,14 @@ class HookJs {
             }
           }
         } else {
-          /* 删除指定类型下的所有hook函数 */
+          /* Delete all the hook functions under the specified typeook functions under the specified type */
           if (Array.isArray(hookMethodProperties[hookKeyName])) {
             hookMethodProperties[hookKeyName] = []
             util.debug.log(`[unHook all ${hookKeyName}] ${util.toStr(parentObj)} ${methodName}`)
           }
         }
       } else {
-        /* 彻底还原被hook的函数 */
+        /* Fully restore the function of being HOOKe the function of being HOOK */
         if (util.isFn(originMethod)) {
           parentObj[methodName] = originMethod
           delete parentObj[methodName][t.hookPropertiesKeyName]
@@ -4257,27 +4020,27 @@ class HookJs {
     })
   }
 
-  /* 源函数运行前的hook */
+  /* HOOK before the source function runs the source function runs */
   before(obj, hookMethods, fn, classHook, context, proxyHandler) {
     return this.hook(obj, hookMethods, fn, 'before', classHook, context, proxyHandler)
   }
 
-  /* 源函数运行后的hook */
+  /* HOOK after the source function runsthe source function runs */
   after(obj, hookMethods, fn, classHook, context, proxyHandler) {
     return this.hook(obj, hookMethods, fn, 'after', classHook, context, proxyHandler)
   }
 
-  /* 替换掉要hook的函数，不再运行源函数，换成运行其他逻辑 */
+  /* Replace the function of hook, no longer run the source function, and replace it with other logic, no longer run the source function, and replace it with other logic */
   replace(obj, hookMethods, fn, classHook, context, proxyHandler) {
     return this.hook(obj, hookMethods, fn, 'replace', classHook, context, proxyHandler)
   }
 
-  /* 源函数运行出错时的hook */
+  /* Hook when the source function runs error */
   error(obj, hookMethods, fn, classHook, context, proxyHandler) {
     return this.hook(obj, hookMethods, fn, 'error', classHook, context, proxyHandler)
   }
 
-  /* 底层实现逻辑与replace一样，都是替换掉要hook的函数，不再运行源函数，只不过是为了明确语义，将源函数挂起不再执行，原则上也不再执行其他逻辑，如果要执行其他逻辑请使用replace hook */
+  /* The underlying implementation logic is the same as REPLACE. They all replace the functions that want to hook. They no longer run the source function, but just to clear the semantics, hang the source function and no longer execute.For other logic, please use replace hook */
   hangUp(obj, hookMethods, fn, classHook, context, proxyHandler) {
     return this.hook(obj, hookMethods, fn, 'hangUp', classHook, context, proxyHandler)
   }
@@ -4286,10 +4049,10 @@ class HookJs {
 var hookJs = new HookJs()
 
 /**
- * 禁止对playbackRate进行锁定
- * 部分播放器会阻止修改playbackRate
- * 通过hackDefineProperty来反阻止playbackRate的修改
- * 参考： https://greasyfork.org/zh-CN/scripts/372673
+ * Forbidden to lock on Playbackrate
+ * Some players will prevent modifying Playbackrate
+ * Cutting the modification of PlayBackrate through hackDefinePROPERTY
+ * reference: https://greasyfork.org/zh-CN/scripts/372673
  */
 
 function hackDefineProperCore(target, key, option) {
@@ -4301,7 +4064,7 @@ function hackDefineProperCore(target, key, option) {
     const unLockProperties = ['playbackRate', 'currentTime', 'volume', 'muted']
     if (unLockProperties.includes(key)) {
       if (!option.configurable) {
-        debug.log(`禁止对${key}进行锁定`)
+        debug.log(`Prohibit${key}Lock`)
         option.configurable = true
         key = key + '_hack'
       }
@@ -4314,7 +4077,7 @@ function hackDefineProperCore(target, key, option) {
 function hackDefineProperOnError(args, parentObj, methodName, originMethod, execInfo, ctx) {
   debug.error(`${methodName} error:`, execInfo.error)
 
-  /* 忽略执行异常 */
+  /* Ignore execution abnormality */
   return 'SKIP-ERROR'
 }
 
@@ -4379,9 +4142,9 @@ const monkeyMenu = {
       delete this.menuIds[id]
 
       /**
-       * 批量移除已注册的按钮时，在某些性能较差的机子上会留下数字title的菜单残留
-       * 应该属于插件自身导致的BUG，暂时无法解决
-       * 所以此处暂时不进行菜单移除，tampermonkey会自动对同名菜单进行合并
+       * When removing the registered buttons in batches, the menu residue will be left on some poor performance machines
+       * It should be a bug caused by the plug -in itself, which cannot be solved for the time being
+       * So the menu is not removed for the time being, tampermonkey will automatically merge the menu of the same name
        */
       // return window.GM_unregisterMenuCommand(id)
     }
@@ -4394,8 +4157,8 @@ const monkeyMenu = {
   },
 
   /**
-   * 通过菜单配置进行批量注册，注册前会清空之前注册过的所有菜单
-   * @param {array|function} menuOpts 菜单配置，如果是函数则会调用该函数获取菜单配置，并且当菜单被点击后会重新创建菜单，实现菜单的动态更新
+   * Register in batches through the menu configuration, all the menus registered before registration will be cleared before registration
+   * @param {array|function} menuOpts The menu configuration, if the function is the function, the function will be called to get the menu configuration, and the menu will be created after the menu is clicked to achieve the dynamic update of the menu
    */
   build(menuOpts) {
     this.clear()
@@ -4420,7 +4183,7 @@ const monkeyMenu = {
               console.error('[monkeyMenu]', menu.title, e)
             }
 
-            // 每次菜单点击后，重新注册菜单，这样可以确保菜单的状态是最新的
+            // After each menu click, re -register the menu, which can ensure that the state of the menu is the latest
             setTimeout(() => {
               // console.log('[monkeyMenu rebuild]', menu.title)
               this.build(this._menuBuilder_)
@@ -4454,57 +4217,57 @@ function refreshPage(msg) {
 }
 
 let monkeyMenuList = [
-  //     {
-  //       title: i18n.t('website'),
-  //       fn: () => {
-  //         openInTab('https://h5player.anzz.top/');
-  //       }
-  //     },
-  //     {
-  //       title: i18n.t('hotkeys'),
-  //       fn: () => {
-  //         openInTab('https://h5player.anzz.top/home/Introduction.html#%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%97%E8%A1%A8');
-  //       }
-  //     },
-  //     {
-  //       title: i18n.t('issues'),
-  //       disable: !configManager.get('enhance.unfoldMenu'),
-  //       fn: () => {
-  //         openInTab('https://github.com/xxxily/h5player/issues');
-  //       }
-  //     },
-  //     {
-  //       title: i18n.t('donate'),
-  //       fn: () => {
-  //         openInTab('https://h5player.anzz.top/#%E8%B5%9E');
-  //       }
-  //     },
-  // {
-  //   title: `${configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu')} 「${i18n.t('globalSetting')}」`,
-  //   fn: () => {
-  //     const confirm = window.confirm(configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu'))
-  //     if (confirm) {
-  //       configManager.setGlobalStorage('enhance.unfoldMenu', !configManager.get('enhance.unfoldMenu'))
-  //       window.location.reload()
-  //     }
-  //   }
-  // },
-  // {
-  //   title: i18n.t('setting'),
-  //   disable: true,
-  //   fn: () => {
-  //     openInTab('https://h5player.anzz.top/configure/', null, true)
-  //     window.alert('In functional development, stay tuned...')
-  //   }
-  // },
-  // {
-  //   title: i18n.t('restoreConfiguration'),
-  //   disable: !configManager.get('enhance.unfoldMenu'),
-  //   fn: () => {
-  //     configManager.clear()
-  //     refreshPage()
-  //   }
-  // }
+  {
+    title: i18n.t('website'),
+    fn: () => {
+      openInTab('https://h5player.anzz.top/')
+    }
+  },
+  {
+    title: i18n.t('hotkeys'),
+    fn: () => {
+      openInTab('https://h5player.anzz.top/home/Introduction.html#%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%88%97%E8%A1%A8')
+    }
+  },
+  {
+    title: i18n.t('issues'),
+    disable: !configManager.get('enhance.unfoldMenu'),
+    fn: () => {
+      openInTab('https://github.com/xxxily/h5player/issues')
+    }
+  },
+  {
+    title: i18n.t('donate'),
+    fn: () => {
+      openInTab('https://h5player.anzz.top/#%E8%B5%9E')
+    }
+  },
+  {
+    title: `${configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu')} 「${i18n.t('globalSetting')}」`,
+    fn: () => {
+      const confirm = window.confirm(configManager.get('enhance.unfoldMenu') ? i18n.t('foldMenu') : i18n.t('unfoldMenu'))
+      if (confirm) {
+        configManager.setGlobalStorage('enhance.unfoldMenu', !configManager.get('enhance.unfoldMenu'))
+        window.location.reload()
+      }
+    }
+  },
+  {
+    title: i18n.t('setting'),
+    disable: true,
+    fn: () => {
+      openInTab('https://h5player.anzz.top/configure/', null, true)
+      window.alert('In functional development, stay tuned...')
+    }
+  },
+  {
+    title: i18n.t('restoreConfiguration'),
+    disable: !configManager.get('enhance.unfoldMenu'),
+    fn: () => {
+      configManager.clear()
+      refreshPage()
+    }
+  }
 ]
 
 /* The menu constructor (must be a function to dynamically update the menu status after clicking) */
@@ -4584,7 +4347,7 @@ function registerH5playerMenus(h5player) {
         fn: () => {
           const confirm = window.confirm(configManager.get('enhance.blockSetPlaybackRate') ? i18n.t('unblockSetPlaybackRate') : i18n.t('blockSetPlaybackRate'))
           if (confirm) {
-            /* 倍速参数，只能全局设置 */
+            /* The double -speed parameter can only be set globally-speed parameter can only be set globally */
             configManager.setGlobalStorage('enhance.blockSetPlaybackRate', !configManager.get('enhance.blockSetPlaybackRate'))
             window.location.reload()
           }
@@ -4688,12 +4451,12 @@ function proxyHTMLMediaElementEvent() {
       const eventName = args[0]
       const listener = args[1]
       if (listener instanceof Function && eventName === 'ratechange') {
-        /* 对注册了ratechange事件进行检测，如果存在异常行为，则尝试挂起事件 */
+        /* Test the registered RateChange event. If there is an abnormal behavior, try to hang the event */
 
         args[1] = new Proxy(listener, {
           apply(target, ctx, args) {
             if (ctx) {
-              /* 阻止调速检测，并进行反阻止 */
+              /* Prevent speed adjustment, and proceed to prevent it */
               if (ctx.playbackRate && eventName === 'ratechange') {
                 if (ctx._hasBlockRatechangeEvent_) {
                   return true
@@ -4705,9 +4468,9 @@ function proxyHTMLMediaElementEvent() {
                 const result = target.apply(ctx, args)
 
                 /**
-                 * 通过判断执行ratechange前后的速率是否被改变，
-                 * 以及是否出现了超长的执行时间（可能出现了alert弹窗）来检测是否可能存在阻止调速的行为
-                 * 其他检测手段待补充
+                 * By determining whether the rate before and after the execution of RateChange is changed,
+                 * And whether there is a long execution time (maybe alert pop -up window) to detect whether there may be a way to prevent speed adjustment
+                 * Other testing methods to be supplemented
                  */
                 const blockRatechangeBehave1 = oldRate !== ctx.playbackRate || Date.now() - startTime > 1000
                 const blockRatechangeBehave2 = ctx._setPlaybackRate_ && ctx._setPlaybackRate_.value !== ctx.playbackRate
@@ -4737,7 +4500,7 @@ function proxyHTMLMediaElementEvent() {
 
 /*!
 * @name         hotkeysRunner.js
-* @description  热键运行器，实现类似vscode的热键配置方式
+* @description  Hot -key operator, realize the hot key configuration method similar to VSCode
 * @version      0.0.1
 * @author       xxxily
 * @date         2022/11/23 18:22
@@ -4753,7 +4516,7 @@ function getValByPath$1(obj, path) {
   const pathArr = path.split('.')
   let result = obj
 
-  /* 递归提取结果值 */
+  /* Recursive extraction result valueve extraction result value */
   for (let i = 0; i < pathArr.length; i++) {
     if (!result) break
     result = result[pathArr[i]]
@@ -4811,8 +4574,8 @@ const combinationKeysMonitor = (function () {
       }
 
       /**
-       * combinationKeysState状态必须保留一段时间，否则当外部定义的是keyup事件时候，由于这个先注册也先执行，
-       * 马上更改combinationKeysState状态，会导致后面定义的事件拿到的是未激活组合键的状态
+       * CombiningKeysState must be kept for a period of time, otherwise when the keyup incident is defined, it is also executed first because this registration first.e when the keyup incident is defined, it is also executed first because this registration first.
+       * Change the CombinationKeysState state immediately, which will cause the event that the later definition is obtained by the state of the non -activated combination key which will cause the event that the later definition is obtained by the state of the non -activated combination key
        */
       if (isModifierKey(event.code)) {
         clearTimeout(timers[event.code])
@@ -4847,7 +4610,7 @@ const combinationKeysMonitor = (function () {
 
 class HotkeysRunner {
   constructor(hotkeys) {
-    /* Mac和window使用的修饰符是不一样的 */
+    /* Mac and Window's modifiers are differentfiers are different */
     this.MOD = typeof navigator === 'object' && /Mac|iPod|iPhone|iPad/.test(navigator.platform) ? 'Meta' : 'Control'
 
     this.prevPress = null
@@ -4857,10 +4620,10 @@ class HotkeysRunner {
     combinationKeysMonitor.init(window)
   }
 
-  /* 设置其它window对象的组合键监控逻辑 */
+  /* Set the combination key monitoring logic of other Window objectskey monitoring logic of other Window objects */
   setCombinationKeysMonitor(win) { combinationKeysMonitor.init(win) }
 
-  /* 数据预处理 */
+  /* Pre -processingprocessing */
   hotkeysPreprocess(hotkeys) {
     if (!Array.isArray(hotkeys)) {
       return false
@@ -4874,7 +4637,7 @@ class HotkeysRunner {
       const keyName = config.key.trim().toLowerCase()
       const mod = this.MOD.toLowerCase()
 
-      /* 增加格式化后的hotkeys数组 */
+      /* Add formatted Hotkeys arraytkeys array */
       config.keyBindings = keyName.split(' ').map(press => {
         const keys = press.split(/\b\+/)
         const mods = []
@@ -4902,9 +4665,9 @@ class HotkeysRunner {
   }
 
   /**
-   * 判断当前提供的键盘事件和预期的热键配置是否匹配
+   * Determine whether the keyboard event and the expected hot key configuration currently provided match
    * @param {KeyboardEvent} event
-   * @param {Array} press 例如：[['alt', 'shift'], 's']
+   * @param {Array} press For example:[['alt', 'shift'], 's']
    * @param {Object} prevCombinationKeys
    * @returns
    */
@@ -4915,21 +4678,21 @@ class HotkeysRunner {
     const mods = press[0]
     const key = press[1]
 
-    /* 修饰符个数不匹配 */
+    /* The number of modifiers does not match */
     if (mods.length !== combinationKeys.size) {
       return false
     }
 
-    /* 当前按下的键位和预期的键位不匹配 */
+    /* The key position is not matched with the expected key position */
     if (key && event.key.toLowerCase() !== key && event.code.toLowerCase() !== key) {
       return false
     }
 
-    /* 当前按下的修饰符和预期的修饰符不匹配 */
+    /* The modifier currently pressed is not matched with the expected modifier */
     let result = true
     const modsKey = new Map$1()
     combinationKeys.forEach((val, key) => {
-      /* 补充各种可能情况的标识 */
+      /* Supplement various possible signs */
       modsKey.set(key, val)
       modsKey.set(key.toLowerCase(), val)
       keyAlias[key] && modsKey.set(keyAlias[key], val)
@@ -4962,7 +4725,7 @@ class HotkeysRunner {
 
       let press = hotkeyConf.keyBindings[0]
 
-      /* 如果存在上一轮的操作快捷键记录，且之前的快捷键与第一个keyBindings定义的快捷键匹配，则去匹配第二个keyBindings */
+      /* If there is a shortcut record of the previous round of operation, and the previous shortcut key matches the shortcut key defined by the first KeyBindings, it will match the second KeyBindings */
       if (this.prevPress && hotkeyConf.keyBindings.length > 1 && this.isMatchPrevPress(press)) {
         press = hotkeyConf.keyBindings[1]
       }
@@ -4972,15 +4735,15 @@ class HotkeysRunner {
 
       matchResult = hotkeyConf
 
-      /* 是否阻止事件冒泡和阻止默认事件 */
+      /* Whether to stop the incident bubbling and prevent the default event */
       const stopPropagation = opts.stopPropagation || hotkeyConf.stopPropagation
       const preventDefault = opts.preventDefault || hotkeyConf.preventDefault
       stopPropagation && event.stopPropagation()
       preventDefault && event.preventDefault()
 
-      /* 记录上一次操作的快捷键，且一段时间后清空该操作的记录 */
+      /* Record the shortcut key of the previous operation, and clear the record of the operation after a period of time */
       if (press === hotkeyConf.keyBindings[0]) {
-        /* 将prevPress变成一个具有event相关字段的对象 */
+        /* Transform prevpress into an object with Event related fields */
         this.prevPress = {
           combinationKeys: combinationKeysMonitor.getCombinationKeys(),
           code: event.code,
@@ -5002,7 +4765,7 @@ class HotkeysRunner {
         this.prevPress = null
       }
 
-      /* 执行hotkeyConf.command对应的函数或命令 */
+      /* Execute HotKeyConf.The function or command corresponding to the Command */
       const args = toArrArgs(hotkeyConf.args)
       let commandFunc = hotkeyConf.command
       if (target && typeof hotkeyConf.command === 'string') {
@@ -5010,7 +4773,7 @@ class HotkeysRunner {
       }
 
       if (!(commandFunc instanceof Function) && target) {
-        throw new Error(`[hotkeysRunner] 未找到command: ${hotkeyConf.command} 对应的函数`)
+        throw new Error(`[hotkeysRunner] No command was found: ${hotkeyConf.command} The corresponding function`)
       }
 
       if (hotkeyConf.when && conditionHandler instanceof Function) {
@@ -5028,7 +4791,7 @@ class HotkeysRunner {
 
   binding(opts = {}) {
     if (!isObj$1(opts) || !Array.isArray(opts.hotkeys)) {
-      throw new Error('[hotkeysRunner] 提供给binding的参数不正确')
+      throw new Error('[hotkeysRunner] The parameters provided to binding are incorrect')
     }
 
     opts.el = opts.el || window
@@ -5117,15 +4880,15 @@ function mediaDownload(mediaEl, title, downloadType) {
     let mediaTitle = `${title || mediaEl.title || document.title || Date.now()}_${mediaInfo.type}.${mediaInfo.format}`
 
     /**
-     * 当媒体包含source标签时，媒体标签的真实地址将会是currentSrc
+     * When the media contains the source label, the real address of the media label will be CURRENTSRC
      * https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentSrc
      */
     const mediaUrl = mediaEl.src || mediaEl.currentSrc
 
-    /* 小于5分钟的媒体文件，尝试通过fetch下载 */
+    /* Small than 5 minutes of media files, try to download through fetch */
     if (downloadType === 'blob' || mediaEl.duration < 60 * 5) {
       if (mediaEl.downloading) {
-        /* 距上次点下载小于1s的情况直接不响应任何操作 */
+        /* The situation where the download of the last time is less than 1S, not in response to any operation */
         if (Date.now() - mediaEl.downloading < 1000 * 1) {
           return false
         } else {
@@ -5168,21 +4931,21 @@ function mediaDownload(mediaEl, title, downloadType) {
       }).catch(err => {
         original.console.error('FETCH download operation failed:', err)
 
-        /* 下载兜底 */
+        /* Download */
         download(mediaUrl, mediaTitle)
       })
     } else {
       download(mediaUrl, mediaTitle)
     }
   } else if (mediaSource.hasInit()) {
-    /* 下载通过MediaSource管理的媒体文件 */
+    /* Download media files managed through MediaSource */
     mediaSource.downloadMediaSource()
   } else {
-    original.alert('当前媒体文件无法下载，下载功能待优化完善')
+    original.alert('The current media files cannot be downloaded, the download function is to be optimized and perfect')
   }
 }
 
-/* 定义支持哪些媒体标签 */
+/* Define which media tags support */
 // const supportMediaTags = ['video', 'bwp-video', 'audio']
 const supportMediaTags = ['video', 'bwp-video']
 
@@ -5192,7 +4955,7 @@ const h5Player = {
   mediaPlusApi: null,
   mediaSource,
   configManager,
-  /* 提示文本的字号 */
+  /* Note of the text */
   fontSize: 12,
   enable: true,
   globalMode: true,
@@ -5204,9 +4967,9 @@ const h5Player = {
   },
   rotate: 0,
 
-  /* 水平镜像翻转, 0 或 180 */
+  /* Horizontal mirror flip, 0 or 180 */
   rotateY: 0,
-  /* 垂直镜像翻转, 0 或 180 */
+  /* Vertical mirror flip, 0 or 180 */
   rotateX: 0,
 
   defaultTransform: {
@@ -5220,19 +4983,19 @@ const h5Player = {
     rotateX: 0
   },
 
-  /* 存储旧的Transform值 */
+  /* Store the old transform value */
   historyTransform: {},
 
   playbackRate: configManager.get('media.playbackRate'),
   volume: configManager.get('media.volume'),
   lastPlaybackRate: 1,
-  /* 快进快退步长 */
+  /* Fast and fast backing */
   skipStep: 5,
 
-  /* 监听鼠标活动的观察对象 */
+  /* Observation objects of monitoring mouse activities */
   mouseObserver: new MouseObserver(),
 
-  /* 获取当前播放器的实例 */
+  /* Example of obtaining the current player */
   player: function () {
     const t = this
     let playerInstance = t.playerInstance
@@ -5257,7 +5020,7 @@ const h5Player = {
     return isAudioElement(this.player())
   },
 
-  /* 每个网页可能存在的多个video播放器 */
+  /* Multiple Video players that may exist in each webpage */
   getPlayerList: function () {
     const list = mediaCore.mediaElementList || []
 
@@ -5265,7 +5028,7 @@ const h5Player = {
       supportMediaTags.forEach(tagName => {
         context.querySelectorAll(tagName).forEach(function (player) {
           if (player.tagName.toLowerCase() === 'bwp-video') {
-            /* 将B站的BWP-VIDEO标识为HTMLVideoElement */
+            /* BWP at station B-Video logo as htmlvideoElement */
             player.HTMLVideoElement = true
           }
 
@@ -5278,7 +5041,7 @@ const h5Player = {
 
     findPlayer(document)
 
-    // 被封装在 shadow dom 里面的video
+    // Encapsulate shadow dom Video inside
     if (window._shadowDomList_) {
       window._shadowDomList_.forEach(function (shadowRoot) {
         findPlayer(shadowRoot)
@@ -5307,7 +5070,7 @@ const h5Player = {
     return wrapDom
   },
 
-  /* 挂载到页面上的window对象，用于调试 */
+  /* Mount Window object on the page for debugging */
   async mountToGlobal() {
     try {
       const pageWindow = await getPageWindow()
@@ -5325,8 +5088,8 @@ const h5Player = {
   },
 
   /**
-   * 初始化播放器实例
-   * @param isSingle 是否为单实例video标签
+   * Initiated player instance
+   * @param isSingle Whether it is a single -instance Video tag
    */
   initPlayerInstance(isSingle) {
     const t = this
@@ -5344,11 +5107,11 @@ const h5Player = {
     t.setPlaybackRate()
     t.lockPlaybackRate(1000)
 
-    /* 增加通用全屏，网页全屏api */
+    /* Increase the general screen, web full -screen API */
     player._fullScreen_ = new FullScreen(player)
     player._fullPageScreen_ = new FullScreen(player, true)
 
-    /* 注册热键运行器 */
+    /* Register hot -key operator */
     t.registerHotkeysRunner()
 
     if (!player._hasCanplayEvent_) {
@@ -5358,7 +5121,7 @@ const h5Player = {
       player._hasCanplayEvent_ = true
     }
 
-    /* 播放的时候进行相关同步操作 */
+    /* Related synchronization operations during playback */
     if (!player._hasPlayerInitEvent_) {
       let setPlaybackRateOnPlayingCount = 0
       player.addEventListener('playing', function (event) {
@@ -5366,26 +5129,26 @@ const h5Player = {
         t.setPlaybackRate(null, true)
         t.lockPlaybackRate(1000)
 
-        /* 同步播放音量 */
+        /* Synchronous playback volume */
         if (configManager.get('enhance.blockSetVolume') === true && event.target.muted === false) {
           t.setVolume(configManager.getGlobalStorage('media.volume'), true)
         }
 
-        /* 禁止默认的进度控制 */
+        /* Prohibit the default progress control */
         if (configManager.get('enhance.blockSetCurrentTime') === true) {
           t.lockCurrentTime()
         }
 
-        /* 恢复播放进度 */
+        /* Restore playing progress */
         t.setPlayProgress(player)
 
         if (setPlaybackRateOnPlayingCount === 0) {
-          /* 同步之前设定的播放速度，音量等 */
+          /* Play speed, volume, etc. set before synchronization */
           t.unLockPlaybackRate()
           t.setPlaybackRate()
           t.lockPlaybackRate(1000)
 
-          /* 启动播放进度记录 */
+          /* Start the playback progress record */
           setTimeout(() => {
             t.playProgressRecorder(player)
           }, 2000)
@@ -5400,18 +5163,18 @@ const h5Player = {
       player._hasPlayerInitEvent_ = true
     }
 
-    /* 进行自定义初始化操作 */
+    /* Customized initialization operation */
     const taskConf = TCC$1.getTaskConfig()
     if (taskConf.init) {
       TCC$1.doTask('init', player)
     }
 
-    /* 注册鼠标响应事件 */
+    /* Registered mouse in response event */
     t.mouseObserver.on(player, 'click', function (event, offset, target) {
       // debug.log('Capture the mouse click event:', event, offset, target)
     })
 
-    /* 画中画事件监听 */
+    /* Painting incident in painting */
     player.addEventListener('enterpictureinpicture', () => {
       monkeyMsg.send('globalPictureInPictureInfo', {
         usePictureInPicture: true
@@ -5443,26 +5206,26 @@ const h5Player = {
       this.hotkeysRunner = new HotkeysRunner(configManager.get('hotkeys'))
 
       if (isInIframe() && !isInCrossOriginFrame()) {
-        /* 让顶层页面也可以监听组合键的触发 */
+        /* Let the top page also monitor the trigger of the combination key */
         this.hotkeysRunner.setCombinationKeysMonitor(window.top)
       }
     }
   },
 
-  /* 刚关闭画中画不久，此段时间内允许跨TAB控制 */
+  /* Shortly after closing the painting in the painting, cross -TAB control is allowed during this period of time */
   isLeavepictureinpictureAwhile() {
     const t = this
     return t.leavepictureinpictureTime && (Date.now() - t.leavepictureinpictureTime < 1000 * 10)
   },
 
   /**
-   * 对播放器实例的方法或属性进行代理
+   * Proxy the method or attribute of the player instance
    * @param player
    */
   proxyPlayerInstance(player) {
     if (!player) return
 
-    /* 要代理的方法或属性列表 */
+    /* The method or attribute list of the proxy */
     const proxyList = [
       'play',
       'pause'
@@ -5476,7 +5239,7 @@ const h5Player = {
           apply(target, ctx, args) {
             // debug.log(key + 'Call')
 
-            /* 处理挂起逻辑 */
+            /* Processing Hanging Logic */
             const hangUpInfo = player._hangUpInfo_ || {}
             const hangUpDetail = hangUpInfo[key] || hangUpInfo['hangUp_' + key]
             const needHangUp = hangUpDetail && hangUpDetail.timeout >= Date.now()
@@ -5496,9 +5259,9 @@ const h5Player = {
     if (!player._hangUp_) {
       player._hangUpInfo_ = {}
       /**
-       * 挂起player某个函数的调用
-       * @param name {String} -必选 player方法或属性名，名字写对外，还须要该方法或属性被代理了才能进行挂起，否则这将是个无效的调用
-       * @param timeout {Number} -可选 挂起多长时间，默认200ms
+       * Hanging the call of a function of Player
+       * @param name {String} -required The Player method or attribute name, the name is written to the outside, also requires that the method or attribute is represented by the agent to hang, otherwise this will be an invalid call
+       * @param timeout {Number} -Optional How long is the hung, the default 200ms default
        * @private
        */
       player._hangUp_ = function (name, timeout) {
@@ -5509,7 +5272,7 @@ const h5Player = {
         }
       }
 
-      /* 取消挂起 */
+      /* Cancel */
       player._unHangUp_ = function (name) {
         if (player._hangUpInfo_ && player._hangUpInfo_[name]) {
           player._hangUpInfo_[name].timeout = Date.now() - 1
@@ -5519,15 +5282,15 @@ const h5Player = {
   },
 
   /**
-   * 初始化自动播放逻辑
-   * 必须是配置了自动播放按钮选择器得的才会进行自动播放
+   * Initialize automatic playback logic
+   * It must be configured with the automatic play button selectioner before the automatic playback will be performed
    */
   initAutoPlay: function (p) {
     const t = this
     const player = p || t.player()
     const taskConf = TCC$1.getTaskConfig()
 
-    /* 注册开启禁止自动播放的控制菜单 */
+    /* Register to open the control menu for automatic playback */
     if (taskConf.autoPlay) {
       if (configManager.getLocalStorage('media.autoPlay') === null) {
         configManager.setLocalStorage('media.autoPlay', true)
@@ -5572,7 +5335,7 @@ const h5Player = {
     if (player && taskConf.autoPlay && player.paused) {
       TCC$1.doTask('autoPlay')
       if (player.paused) {
-        // 轮询重试
+        // Ran inquiry and retry
         if (!player._initAutoPlayCount_) {
           player._initAutoPlayCount_ = 1
         }
@@ -5587,7 +5350,7 @@ const h5Player = {
     }
   },
 
-  /* 设置视频全屏 */
+  /* Set video full screen */
   setFullScreen() {
     const player = this.player()
     const isDo = TCC$1.doTask('fullScreen')
@@ -5596,7 +5359,7 @@ const h5Player = {
     }
   },
 
-  /* 设置页面全屏 */
+  /* Set the full screen of the page */
   setWebFullScreen: function () {
     const t = this
     const player = t.player()
@@ -5614,7 +5377,7 @@ const h5Player = {
   playbackRateInfo: {
     lockTimeout: Date.now() - 1,
     time: Date.now(),
-    /* 未初始化播放实列前，不知道倍速是多少，所以设置为-1 */
+    /* Before the initialization of the playback, I do n’t know what the speed is, so the setting is-1 */
     value: -1
   },
 
@@ -5629,11 +5392,11 @@ const h5Player = {
     return Number(Number(playbackRate).toFixed(1))
   },
 
-  /* 锁定playbackRate，禁止调速 */
+  /* Lock Playbackrate, prohibit speed adjustment */
   lockPlaybackRate: function (timeout = 200) {
     if (this.mediaPlusApi) {
       if (configManager.get('enhance.blockSetPlaybackRate') === true) {
-        // 如果配置了要锁死外部对playbackRate的操作，则直接给一个超大的值
+        // If you are configured to lock the operation of the external exterior on PlayBackrate, give a large value directly
         timeout = 1000 * 60 * 60 * 24 * 365
       }
 
@@ -5661,7 +5424,7 @@ const h5Player = {
     return Date.now() - this.playbackRateInfo.lockTimeout < 0
   },
 
-  /* 设置播放速度 */
+  /* Set the playback speed */
   setPlaybackRate: function (num, notips, duplicate) {
     const t = this
     const player = t.player()
@@ -5698,7 +5461,7 @@ const h5Player = {
       curPlaybackRate = t.getPlaybackRate()
     }
 
-    /* 记录播放速度的信息 */
+    /* Record information about playback speed */
     t.playbackRate = curPlaybackRate
     if (isInIframe()) {
       configManager.setGlobalStorage('media.playbackRate', curPlaybackRate)
@@ -5713,7 +5476,7 @@ const h5Player = {
         t.tips(i18n.t('tipsMsg.playspeed') + player.playbackRate)
       }
 
-      /* 将播放倍速同步到全部媒体元素 */
+      /* Synchronize the playback speed to all media elements */
       const mediaList = t.getPlayerList()
       mediaList.forEach(media => {
         if (media !== player) {
@@ -5741,8 +5504,8 @@ const h5Player = {
         configurable: true,
         get: function () {
           /**
-           * 在油管，如果返回的是playbackRateDescriptor.get.apply(player, arguments)，调速会出现波动和异常
-           * 暂时不知是什么原因，所以还是先返回curPlaybackRate
+           * In the oil pipe, if the back is PlaybackraatedEScriptor.get.apply(player, arguments), Speed adjustment will fluctuate and abnormal
+           * I don’t know why for the time being, so I will return to CurplayBackrate first
            */
           return curPlaybackRate || playbackRateDescriptor.get.apply(player, arguments)
         },
@@ -5751,7 +5514,7 @@ const h5Player = {
             return false
           }
 
-          /* 有些网站是通过定时器不断刷playbackRate的，所以通过计时器减少不必要的信息输出 */
+          /* Some websites are continuously brushed PLAYBACKRATE through the timer, so the unnecessary information output is reduced by the timer through the timer */
           !Number.isInteger(player._blockSetPlaybackRateTips_) && (player._blockSetPlaybackRateTips_ = 0)
 
           if (TCC$1.doTask('blockSetPlaybackRate')) {
@@ -5773,7 +5536,7 @@ const h5Player = {
       debug.error('Unlocked Playbackrate failed', e)
     }
 
-    /* 本身处于1倍播放速度的时候不再提示 */
+    /* It is not prompted when it is 1 times the playback speed */
     if (!num && curPlaybackRate === 1) {
       return true
     } else {
@@ -5781,8 +5544,8 @@ const h5Player = {
     }
 
     /**
-     * 重复触发最后一次倍速的设定
-     * 解决YouTube快速调速时并不生效，要停顿下来再调节一下才能生效的问题
+     * Repeat the setting of the last double speed
+     * It does not take effect when you solve YouTube fast speed adjustment. If you stop pause, you need to adjust it before you can take effect.
      */
     if (!duplicate && configManager.get('enhance.blockSetPlaybackRate') === true) {
       clearTimeout(t._setPlaybackRateDuplicate_)
@@ -5793,15 +5556,15 @@ const h5Player = {
         t.lockPlaybackRate(1000)
       }
       t._setPlaybackRateDuplicate_ = setTimeout(duplicatePlaybackRate, 600)
-      /* 600ms时重新触发无效的话，再来个1200ms后触发，如果是1200ms才生效，则调速生效的延迟已经非常明显了 */
+      /* If it is re -triggered when 600ms, it will be triggered after 1200ms. If it is 1200ms before it takes effect, the delay of the speed adjustment is very obvious. */
       t._setPlaybackRateDuplicate2_ = setTimeout(duplicatePlaybackRate, 1200)
     }
   },
 
   /**
-   * 加强版的倍速调节，当短时间内设置同一个值时，会认为需更快的跳速能力
-   * 则会对调速的数值进行叠加放大，从而达到快速跳跃地进行倍速调节的目的
-   * 可用于视频广告的高速快进，片头片尾的速看等场景
+   * Enhanced the doubling speed adjustment. When the same value is set in a short period of time, it will be considered to be faster
+   * The value of the speed adjustment will be superimposed to large, so as to achieve the purpose of rapid jump to make double -speed adjustment
+   * Scenes can be used for high -speed fast -forward, speeding at the beginning of the head and the beginning of the film
    * @param {*} num
    */
   setPlaybackRatePlus: function (num) {
@@ -5830,7 +5593,7 @@ const h5Player = {
     t.lockPlaybackRate(1000)
   },
 
-  /* 恢复播放速度，还原到1倍速度、或恢复到上次的倍速 */
+  /* Restore the playback speed, restore to 1 times of speed, or restore to the last double speed */
   resetPlaybackRate: function (player) {
     const t = this
     player = player || t.player()
@@ -5845,42 +5608,42 @@ const h5Player = {
 
     t.setPlaybackRate(playbackRate)
 
-    /* 防止外部调速逻辑的干扰，所以锁定一段时间 */
+    /* Prevent the interference of external speed regulation logic, so lock it for a while */
     t.lockPlaybackRate(1000)
   },
 
-  /* 提升播放速率 */
+  /* Increase the playback rate */
   setPlaybackRateUp(num) {
     num = numUp(num) || 0.1
     if (this.player()) {
       this.unLockPlaybackRate()
       this.setPlaybackRate(this.player().playbackRate + num)
 
-      /* 防止外部调速逻辑的干扰，所以锁定一段时间 */
+      /* Prevent the interference of external speed regulation logic, so lock it for a while */
       this.lockPlaybackRate(1000)
     }
   },
 
-  /* 降低播放速率 */
+  /* Reduce the playback rate */
   setPlaybackRateDown(num) {
     num = numDown(num) || -0.1
     if (this.player()) {
       this.unLockPlaybackRate()
       this.setPlaybackRate(this.player().playbackRate + num)
 
-      /* 防止外部调速逻辑的干扰，所以锁定一段时间 */
+      /* Prevent the interference of external speed regulation logic, so lock it for a while */
       this.lockPlaybackRate(1000)
     }
   },
 
   /**
-   * 锁定播放进度的控制逻辑
-   * 跟锁定音量和倍速不一样，播放进度是跟视频实例有密切相关的，所以其锁定信息必须依附于播放实例
+   * Control logic of locking the progress of playback progress
+   * Unlike the locking volume and double speed, the playback progress is closely related to video examples, so the locking information must be attached to the play instance
    */
   lockCurrentTime: function (timeout = 200) {
     if (this.mediaPlusApi) {
       if (configManager.get('enhance.blockSetCurrentTime') === true) {
-        // 如果配置了要锁死外部对currentTime的操作，则直接给一个超大的值
+        // If you are configured to lock the operation of the external ones to Currenttime, give a large value directly
         timeout = 1000 * 60 * 60 * 24 * 365
       }
 
@@ -5921,7 +5684,7 @@ const h5Player = {
     }
   },
 
-  /* 设置播放进度 */
+  /* Set the playback progress */
   setCurrentTime: function (num) {
     if (!num && num !== 0) return
     num = Number(num)
@@ -5986,7 +5749,7 @@ const h5Player = {
         this.unLockCurrentTime()
         this.setCurrentTime(this.player().currentTime + num)
 
-        /* 防止外部进度控制逻辑的干扰，所以锁定一段时间 */
+        /* Prevent the interference of the logic of external progress, so lock it for a while */
         this.lockCurrentTime(500)
 
         this.tips(i18n.t('tipsMsg.forward') + num + i18n.t('tipsMsg.seconds'))
@@ -6007,7 +5770,7 @@ const h5Player = {
         this.unLockCurrentTime()
         this.setCurrentTime(currentTime)
 
-        /* 防止外部进度控制逻辑的干扰，所以锁定一段时间 */
+        /* Prevent the interference of the logic of external progress, so lock it for a whilece of the logic of external progress, so lock it for a while */
         this.lockCurrentTime(500)
 
         this.tips(i18n.t('tipsMsg.backward') + Math.abs(num) + i18n.t('tipsMsg.seconds'))
@@ -6018,7 +5781,7 @@ const h5Player = {
   volumeInfo: {
     lockTimeout: Date.now() - 1,
     time: Date.now(),
-    /* 未初始化播放实列前，不知道音量是多少，所以设置为-1 */
+    /* Before the initialization of the playback, I don't know what the volume is, so the setting is set to-1 */
     value: -1
   },
 
@@ -6033,11 +5796,11 @@ const h5Player = {
     return Number(Number(volume).toFixed(2))
   },
 
-  /* 锁定音量，禁止调音 */
+  /* Lock the volume and prohibit the tuning */
   lockVolume: function (timeout = 200) {
     if (this.mediaPlusApi) {
       if (configManager.get('enhance.blockSetVolume') === true) {
-        // 如果配置了要锁死外部对voluem的操作，则直接给一个超大的值
+        // If you are configured to lock the external operation of Voluem, give a large value directlyhe external operation of Voluem, give a large value directly
         timeout = 1000 * 60 * 60 * 24 * 365
       }
 
@@ -6065,7 +5828,7 @@ const h5Player = {
     return Date.now() - this.volumeInfo.lockTimeout < 0
   },
 
-  /* 设置声音大小 */
+  /* Set the sound */
   setVolume: function (num, notips, outerCall) {
     const t = this
     const player = t.player()
@@ -6093,7 +5856,7 @@ const h5Player = {
         debug.error('Media sound sound gain gain logic abnormal', e)
       }
 
-      /* 限定增益的最大值 */
+      /* The maximum value of limited gain */
       if (num > 6) {
         num = 6
       }
@@ -6105,10 +5868,10 @@ const h5Player = {
       num = 1
     }
 
-    /* 记录播放音量信息 */
+    /* Record playback volume informationlayback volume information */
     t.volume = num
 
-    /* 使用音量增益逻辑，增益音量不进行本地存储记录 */
+    /* Use the volume gain logic, the gain volume does not perform local storage records */
     if (num > 1 && player._amp_ && player._amp_.setLoudness) {
       player._amp_.setLoudness(num)
 
@@ -6127,7 +5890,7 @@ const h5Player = {
     if (t.mediaPlusApi) {
       t.mediaPlusApi.setVolume(num)
 
-      /* 将播放音量同步到全部媒体元素 */
+      /* Synchronize the playback volume to all media elements */
       const mediaList = t.getPlayerList()
       mediaList.forEach(media => {
         if (media !== player) {
@@ -6165,7 +5928,7 @@ const h5Player = {
       }
     }
 
-    /* 调节音量的时候顺便把静音模式关闭 */
+    /* When adjusting the volume, close the mute mode by the way */
     if (!outerCall) { player.muted = false }
 
     !notips && t.tips(i18n.t('tipsMsg.volume') + parseInt(player.volume * 100) + '%')
@@ -6183,7 +5946,7 @@ const h5Player = {
         this.setVolume(player.volume + num)
       }
 
-      /* 防止外部调音逻辑的干扰，所以锁定一段时间 */
+      /* Prevent the interference of external tuning logic, so lock it for a whileence of external tuning logic, so lock it for a while */
       this.lockVolume(500)
     }
   },
@@ -6200,12 +5963,12 @@ const h5Player = {
         this.setVolume(player.volume + num)
       }
 
-      /* 防止外部调音逻辑的干扰，所以锁定一段时间 */
+      /* Prevent the interference of external tuning logic, so lock it for a while */
       this.lockVolume(500)
     }
   },
 
-  /* 采集Transform值的历史变更记录，以便后续进行还原 */
+  /* Collection of historical changes to the transform value */
   collectTransformHistoryInfo() {
     const t = this
     Object.keys(t.defaultTransform).forEach(key => {
@@ -6225,7 +5988,7 @@ const h5Player = {
     })
   },
 
-  /* 判断h5Player下的Transform值是否跟默认的Transform值一致 */
+  /* Determine whether the Transform value under H5Player is consistent with the default transform value */
   isSameAsDefaultTransform() {
     let result = true
     const t = this
@@ -6245,7 +6008,7 @@ const h5Player = {
     return result
   },
 
-  /* 设置视频画面的缩放与位移 */
+  /* Set the zooming and displacement of the video screen */
   setTransform(notTips) {
     const t = this
     const player = t.player()
@@ -6268,7 +6031,7 @@ const h5Player = {
       t.tips(tipsMsg)
     }
 
-    /* 始终保持transform样式的正常 */
+    /* Always maintain the normal of transform style */
     if (!t._transformStateGuard_) {
       t._transformStateGuard_ = setInterval(() => {
         t.setTransform(true)
@@ -6276,7 +6039,7 @@ const h5Player = {
     }
   },
 
-  /* 视频画面旋转 90 度 */
+  /* Video screen rotation 90 Every time */
   setRotate() {
     const t = this
     t.rotate += 90
@@ -6285,7 +6048,7 @@ const h5Player = {
     t.tips(i18n.t('tipsMsg.imgrotate') + t.rotate + '°')
   },
 
-  /* 设置镜像翻转 */
+  /* Set mirror flipping */
   setMirror(vertical = false) {
     const t = this
     let tipsMsg = ''
@@ -6301,7 +6064,7 @@ const h5Player = {
     t.tips(tipsMsg)
   },
 
-  /* 缩放视频画面 */
+  /* Scaling video screeng video screen
   setScale(num) {
     if (Number.isNaN(this.scale) || Number.isNaN(num)) {
       this.scale = 1
@@ -6312,19 +6075,19 @@ const h5Player = {
     this.setTransform()
   },
 
-  /* 视频放大 +0.1 */
+  /* Video amplification +0.1 */
   setScaleUp(num) {
     num = numUp(num) || 0.05
     this.setScale(Number(this.scale) + num)
   },
 
-  /* 视频缩小 -0.1 */
+  /* Video narrowingo narrowing -0.1 */
   setScaleDown(num) {
     num = numDown(num) || -0.05
     this.setScale(Number(this.scale) + num)
   },
 
-  /* 设置视频画面的位移属性 */
+  /* Set the displacement attribute of the video screen */
   setTranslate(x, y) {
     if (typeof x === 'number') {
       this.translate.x = x
@@ -6337,25 +6100,25 @@ const h5Player = {
     this.setTransform()
   },
 
-  /* 视频画面向右平移 */
+  /* The video screen moves to the right */
   setTranslateRight(num) {
     num = numUp(num) || 10
     this.setTranslate(this.translate.x + num)
   },
 
-  /* 视频画面向左平移 */
+  /* The video screen moves to the left */
   setTranslateLeft(num) {
     num = numDown(num) || -10
     this.setTranslate(this.translate.x + num)
   },
 
-  /* 视频画面向上平移 */
+  /* Video screen moves upward */
   setTranslateUp(num) {
     num = numUp(num) || 10
     this.setTranslate(null, this.translate.y - num)
   },
 
-  /* 视频画面向下平移 */
+  /* Video screen moves downward */
   setTranslateDown(num) {
     num = numDown(num) || -10
     this.setTranslate(null, this.translate.y - num)
@@ -6365,7 +6128,7 @@ const h5Player = {
     const t = this
 
     if (t.isSameAsDefaultTransform() && Object.keys(t.historyTransform).length) {
-      /* 还原成历史记录中的Transform值 */
+      /* Restore into the transform value in the historical record */
       Object.keys(t.historyTransform).forEach(key => {
         if (isObj(t.historyTransform[key])) {
           Object.keys(t.historyTransform[key]).forEach(subKey => {
@@ -6376,7 +6139,7 @@ const h5Player = {
         }
       })
     } else {
-      /* 还原成默认的Transform值 */
+      /* Restore into the default transform value */
       const defaultTransform = clone(t.defaultTransform)
       Object.keys(defaultTransform).forEach(key => {
         t[key] = defaultTransform[key]
@@ -6387,8 +6150,8 @@ const h5Player = {
   },
 
   /**
-   * 定格帧画面
-   * @param perFps {Number} -可选 默认 1，即定格到下一帧，如果是-1则为定格到上一帧
+   * Fixed frame screen
+   * @param perFps {Number} -Optionaltional default 1. Form it to the next frame, if so-1 is to set to the previous frame
    */
   freezeFrame(perFps) {
     perFps = perFps || 1
@@ -6398,10 +6161,10 @@ const h5Player = {
     /* 跳帧 */
     player.currentTime += Number(perFps / t.fps)
 
-    /* 定格画面 */
+    /* Fixed screen */
     if (!player.paused) player.pause()
 
-    /* 有些播放器发现画面所在位置变了会自动进行播放，所以此时需要对播放操作进行挂起 */
+    /* Some players find that the location of the screen will be automatically played, so at this time you need to hang the playback operation the screen will be automatically played, so at this time you need to hang the playback operation */
     player._hangUp_ && player._hangUp_('play', 400)
 
     if (perFps === 1) {
@@ -6414,7 +6177,7 @@ const h5Player = {
   },
 
   /**
-   * 切换画中画功能
+   * Switch the painting function in the painting
    */
   togglePictureInPicture() {
     const player = this.player()
@@ -6435,7 +6198,7 @@ const h5Player = {
     }
   },
 
-  /* 播放下一个视频，默认是没有这个功能的，只有在TCC里配置了next字段才会有该功能 */
+  /* Play the next video, there is no such feature in the default. Only the Next field is equipped in the TCC can there be this function */
   setNextVideo() {
     const isDo = TCC$1.doTask('next')
     if (!isDo) {
@@ -6443,7 +6206,7 @@ const h5Player = {
     }
   },
 
-  /* 切换播放状态 */
+  /* Switch play status */
   switchPlayStatus() {
     const t = this
     const player = t.player()
@@ -6458,7 +6221,7 @@ const h5Player = {
           t.mediaPlusApi.lockPause(400)
           t.mediaPlusApi.applyPlay()
         } else {
-          /* 挂起其它逻辑的暂停操作，确保播放状态生效 */
+          /* Hanging the pause operation of other logic to ensure that the play status takes effect */
           if (player._hangUp_ instanceof Function) {
             player._hangUp_('pause', 400)
             player._unHangUp_('play')
@@ -6475,7 +6238,7 @@ const h5Player = {
           t.mediaPlusApi.lockPlay(400)
           t.mediaPlusApi.applyPause()
         } else {
-          /* 挂起其它逻辑的播放操作，确保暂停状态生效 */
+          /* Hanging other logic playback operations to ensure that the suspension status takes effect */
           if (player._hangUp_ instanceof Function) {
             player._hangUp_('play', 400)
             player._unHangUp_('pause')
@@ -6493,7 +6256,7 @@ const h5Player = {
     const allowRestoreVal = configManager.get(`media.allowRestorePlayProgress.${window.location.host}`)
     return allowRestoreVal === null || allowRestoreVal
   },
-  /* 切换自动恢复播放进度的状态 */
+  /* Switch the state of automatic recovery play progress */
   switchRestorePlayProgressStatus: function () {
     const t = h5Player
     let isAllowRestorePlayProgress = t.isAllowRestorePlayProgress()
@@ -6501,13 +6264,13 @@ const h5Player = {
     if (isInCrossOriginFrame()) {
       isAllowRestorePlayProgress = false
     } else {
-      /* 进行值反转 */
+      /* Develop value */
       isAllowRestorePlayProgress = !isAllowRestorePlayProgress
     }
 
     configManager.set(`media.allowRestorePlayProgress.${window.location.host}`, isAllowRestorePlayProgress)
 
-    /* 操作提示 */
+    /* Operating prompt */
     if (isAllowRestorePlayProgress) {
       t.tips(i18n.t('tipsMsg.arpl'))
       t.setPlayProgress(t.player())
@@ -6520,12 +6283,12 @@ const h5Player = {
   getTipsContainer: function (videoEl) {
     const t = h5Player
     const player = videoEl || t.player()
-    // 使用getContainer获取到的父节点弊端太多，暂时弃用
+    // There are too many disadvantages to use the parent nodes obtained using GetContainer, and temporarily discard it
     // const _tispContainer_ = player._tispContainer_  ||  getContainer(player);
 
     let tispContainer = player.parentNode || player
 
-    /* 如果父节点为无长宽的元素，则再往上查找一级 */
+    /* If the parent node is an element without long and width, then look up first level */
     const containerBox = tispContainer.getBoundingClientRect()
     if ((!containerBox.width || !containerBox.height) && tispContainer.parentNode) {
       tispContainer = tispContainer.parentNode
@@ -6551,7 +6314,7 @@ const h5Player = {
 
     let backupStyle = ''
     if (!isAudio) {
-      // 修复部分提示按钮位置异常问题
+      // Repair part prompt button position abnormal problem
       const defStyle = parentNode.getAttribute('style') || ''
 
       backupStyle = parentNode.getAttribute('style-backup') || ''
@@ -6560,8 +6323,8 @@ const h5Player = {
         const backupStyObj = inlineStyleToObj(backupSty)
 
         /**
-       * 修复因为缓存时机获取到错误样式的问题
-       * 例如在：https://www.xuetangx.com/
+       * Fix the problem of getting an error style because the cache is obtained
+       * For example: https://www.xuetangx.com/
        */
         if (backupStyObj.opacity === '0') {
           backupStyObj.opacity = '1'
@@ -6588,7 +6351,7 @@ const h5Player = {
 
       const playerBox = player.getBoundingClientRect()
       const parentNodeBox = parentNode.getBoundingClientRect()
-      /* 不存在高宽时，给包裹节点一个最小高宽，才能保证提示能正常显示 */
+      /* When there is no high and width, give the parcel node a minimum height width to ensure that the prompt can be displayed normally */
       if (!parentNodeBox.width || !parentNodeBox.height) {
         newStyleArr.push('min-width:' + playerBox.width + 'px')
         newStyleArr.push('min-height:' + playerBox.height + 'px')
@@ -6605,7 +6368,7 @@ const h5Player = {
 
     const tipsSelector = '.' + t.tipsClassName
 
-    /* 当出现多个tips元素时，将这些tips元素全部移除 */
+    /* When multiple TIPS elements appear, remove all these TIPS elements */
     const tipsList = document.querySelectorAll(tipsSelector)
     if (tipsList.length > 1) {
       tipsList.forEach(tipsItem => {
@@ -6615,7 +6378,7 @@ const h5Player = {
 
     let tipsDom = parentNode.querySelector(tipsSelector)
 
-    /* 提示dom未初始化的，则进行初始化 */
+    /* If the DOM is not initialized, the initialization will be initialized */
     if (!tipsDom) {
       t.initTips()
       tipsDom = parentNode.querySelector(tipsSelector)
@@ -6638,7 +6401,7 @@ const h5Player = {
         style.opacity = 1
       }, 50)
       t.on_off[1] = setTimeout(function () {
-        // 隐藏提示框和还原样式
+        // Hide prompt box and restore style
         style.opacity = 0
         style.display = 'none'
         if (backupStyle) {
@@ -6658,7 +6421,7 @@ const h5Player = {
     }
   },
 
-  /* 设置提示DOM的样式 */
+  /* Set the style of prompt DOM */
   initTips: function () {
     const t = h5Player
     const isAudio = t.isAudioInstance()
@@ -6713,7 +6476,7 @@ const h5Player = {
   },
   on_off: new Array(3),
   fps: 30,
-  /* 滤镜效果 */
+  /* Filter effect */
   filter: {
     key: [1, 1, 1, 0, 0],
     setup: function () {
@@ -6740,7 +6503,7 @@ const h5Player = {
       return false
     }
 
-    /* 如果标识为down，则自动取负数值 */
+    /* If the logo is DOWN, the negative number is automatically taken */
     if (isDown === true) {
       if (num && num > 0) { num = -num }
     }
@@ -6765,77 +6528,77 @@ const h5Player = {
     t.tips(i18n.t(`tipsMsg.${nameMap[item]}`) + parseInt(t.filter.key[item] * 100) + '%')
   },
 
-  /* 设置视频的亮度 */
+  /* Set the brightness of the video */
   setBrightness(num) {
     this.setFilter(0, num)
   },
 
-  /* 提升视频的亮度 */
+  /* Enhance the brightness of the video */
   setBrightnessUp(num) {
     this.setFilter(0, num || 0.1)
   },
 
-  /* 降低视频的亮度 */
+  /* Reduce the brightness of the video */
   setBrightnessDown(num) {
     this.setFilter(0, num || -0.1, true)
   },
 
-  /* 设置视频的对比度 */
+  /* Set the contrast of video */
   setContrast(num) {
     this.setFilter(1, num)
   },
 
-  /* 提升视频的对比度 */
+  /* Increase the contrast of video */
   setContrastUp(num) {
     this.setFilter(1, num || 0.1)
   },
 
-  /* 降低视频的对比度 */
+  /* Reduce the contrast of video */
   setContrastDown(num) {
     this.setFilter(1, num || -0.1, true)
   },
 
-  /* 设置饱和度 */
+  /* Settling saturation */
   setSaturation(num) {
     this.setFilter(2, num)
   },
 
-  /* 提升饱和度 */
+  /* Increase saturation */
   setSaturationUp(num) {
     this.setFilter(2, num || 0.1)
   },
 
-  /* 降低饱和度 */
+  /* Reduce saturation */
   setSaturationDown(num) {
     this.setFilter(2, num || -0.1, true)
   },
 
-  /* 设置色相 */
+  /* Set the hue */
   setHue(num) {
     this.setFilter(3, num)
   },
 
-  /* 增加色相 */
+  /* Increasing hue */
   setHueUp(num) {
     this.setFilter(3, num || 1)
   },
 
-  /* 降低色相 */
+  /* Reduce color */
   setHueDown(num) {
     this.setFilter(3, num || -1, true)
   },
 
-  /* 设置模糊度 */
+  /* Set the vagueness */
   setBlur(num) {
     this.setFilter(4, num)
   },
 
-  /* 增加模糊度 */
+  /* Increase blur */
   setBlurUp(num) {
     this.setFilter(4, num || 1)
   },
 
-  /* 降低模糊度 */
+  /* Reduce the fuzzyness */
   setBlurDown(num) {
     this.setFilter(4, num || -1, true)
   },
@@ -6859,7 +6622,7 @@ const h5Player = {
     const player = this.player()
     videoCapturer.capture(player, true)
 
-    /* 暂停画面 */
+    /* Pause screen */
     if (!player.paused && !document.pictureInPictureElement && document.visibilityState !== 'visible') {
       this.freezeFrame()
     }
@@ -6867,7 +6630,7 @@ const h5Player = {
 
   _isFoucs: false,
 
-  /* 播放器的聚焦事件 */
+  /* Focus event of the player */
   isFoucs: function () {
     const t = h5Player
     const player = t.player()
@@ -6880,7 +6643,7 @@ const h5Player = {
       h5Player._isFoucs = false
     }
   },
-  /* 播放器事件响应器 */
+  /* Player event responder */
   palyerTrigger: function (player, event) {
     if (!player || !event) return
     const t = h5Player
@@ -6888,17 +6651,17 @@ const h5Player = {
     const key = event.key.toLowerCase()
 
     if (event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
-      // 网页全屏
+      // Full screen screen
       if (key === 'enter') {
         t.setWebFullScreen()
       }
 
-      // 进入或退出画中画模式
+      // Enter or exit the painting mode in the painting
       if (key === 'p') {
         t.togglePictureInPicture()
       }
 
-      // 截图并下载保存
+      // Screenshot and download and save
       if (key === 's') {
         t.capture()
       }
@@ -6908,7 +6671,7 @@ const h5Player = {
       }
 
       if (key === 'm') {
-        /* 垂直镜像翻转 */
+        /* Vertical mirror flip */
         t.setMirror(true)
       }
 
@@ -6916,21 +6679,21 @@ const h5Player = {
         t.mediaDownload()
       }
 
-      // 视频画面缩放相关事件
+      // Video screen zoom -related events
       const allowKeys = ['x', 'c', 'z', 'arrowright', 'arrowleft', 'arrowup', 'arrowdown']
       if (!allowKeys.includes(key)) return
 
       t.scale = Number(t.scale)
       switch (key) {
-        // shift+X：视频缩小 -0.1
+        // shift+X: Video narrowing -0.1
         case 'x':
           t.setScaleDown()
           break
-        // shift+C：视频放大 +0.1
+        // shift+C: Video amplification +0.1
         case 'c':
           t.setScaleUp()
           break
-        // shift+Z：视频恢复正常大小
+        // shift+Z: Video resumption of normal size
         case 'z':
           t.resetTransform()
           break
@@ -6948,144 +6711,144 @@ const h5Player = {
           break
       }
 
-      // 阻止事件冒泡
+      // Prevent incident bubbling
       event.stopPropagation()
       event.preventDefault()
       return true
     }
 
-    // ctrl+方向键右→：快进30秒
+    // ctrl+Direction button right →: Fast 30 seconds
     if (event.ctrlKey && keyCode === 39) {
       t.setCurrentTimeUp(t.skipStep * 6)
     }
-    // ctrl+方向键左←：后退30秒
+    // ctrl+Treaty key left ←: 30 seconds back
     if (event.ctrlKey && keyCode === 37) {
       t.setCurrentTimeDown(-t.skipStep * 6)
     }
 
-    // ctrl+方向键上↑：音量升高 20%
+    // ctrl+On the direction key ↑: increased volume increase 20%
     if (event.ctrlKey && keyCode === 38) {
       t.setVolumeUp(0.2)
     }
-    // 方向键下↓：音量降低 20%
+    // Under the direction key ↓: reduced volume 20%
     if (event.ctrlKey && keyCode === 40) {
       t.setVolumeDown(-0.2)
     }
 
-    // 防止其它无关组合键冲突
+    // Prevent other unrelated combination key conflicts
     if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) return
 
-    // 方向键右→：快进5秒
+    // Direction keys right →: Fast 5 seconds
     if (keyCode === 39) {
       t.setCurrentTimeUp()
     }
-    // 方向键左←：后退5秒
+    // Direction key left ←: 5 seconds back
     if (keyCode === 37) {
       t.setCurrentTimeDown()
     }
 
-    // 方向键上↑：音量升高 10%
+    // On the direction key ↑: increased volume increase 10%
     if (keyCode === 38) {
       t.setVolumeUp(0.05)
     }
-    // 方向键下↓：音量降低 10%
+    // Under the direction key ↓: reduced volume 10%
     if (keyCode === 40) {
       t.setVolumeDown(-0.05)
     }
 
-    // 空格键：暂停/播放
+    // Space key: suspension/play
     if (keyCode === 32) {
       t.switchPlayStatus()
     }
 
-    // 按键X：减速播放 -0.1
+    // Key X: Smoral playback -0.1
     if (keyCode === 88) {
       t.setPlaybackRateDown()
     }
-    // 按键C：加速播放 +0.1
+    // Key C: Accelerate Play +0.1
     if (keyCode === 67) {
       t.setPlaybackRateUp()
     }
-    // 按键Z：正常速度播放
+    // Button Z: Normal speed playback
     if (keyCode === 90) {
       t.resetPlaybackRate()
     }
 
-    // 按1-4设置播放速度 49-52;97-100
+    // Press 1-4 Set the playback speed 49-52;97-100
     if ((keyCode >= 49 && keyCode <= 52) || (keyCode >= 97 && keyCode <= 100)) {
       t.setPlaybackRatePlus(event.key)
     }
 
-    // 按键F：下一帧
+    // Button F: Next frame
     if (keyCode === 70) {
       t.freezeFrame(1)
     }
-    // 按键D：上一帧
+    // Key D: Previous frame
     if (keyCode === 68) {
       t.freezeFrame(-1)
     }
 
-    // 按键E：亮度增加%
+    // Press E: Brightness increases%
     if (keyCode === 69) {
       t.setBrightnessUp()
     }
-    // 按键W：亮度减少%
+    // Key W: Brightness decreases%
     if (keyCode === 87) {
       t.setBrightnessDown()
     }
 
-    // 按键T：对比度增加%
+    // Key T: Increased contrast%
     if (keyCode === 84) {
       t.setContrastUp()
     }
-    // 按键R：对比度减少%
+    // Key R: Decreased contrast%
     if (keyCode === 82) {
       t.setContrastDown()
     }
 
-    // 按键U：饱和度增加%
+    // Key U: increased saturation%
     if (keyCode === 85) {
       t.setSaturationUp()
     }
-    // 按键Y：饱和度减少%
+    // Key Y: Reduced saturation%
     if (keyCode === 89) {
       t.setSaturationDown()
     }
 
-    // 按键O：色相增加 1 度
+    // Key O: Greeds increase 1 Every time
     if (keyCode === 79) {
       t.setHueUp()
     }
-    // 按键I：色相减少 1 度
+    // Key I: decrease in hue 1 Every time
     if (keyCode === 73) {
       t.setHueDown()
     }
 
-    // 按键K：模糊增加 1 px
+    // Key K: Vaguely increased 1 px
     if (keyCode === 75) {
       t.setBlurUp()
     }
-    // 按键J：模糊减少 1 px
+    // Button J: Vague reduction reduction 1 px
     if (keyCode === 74) {
       t.setBlurDown()
     }
 
-    // 按键Q：图像复位
+    // Button Q: Image reset
     if (keyCode === 81) {
       t.resetFilterAndTransform()
     }
 
-    // 按键S：画面旋转 90 度
+    // Key S: Rotate the screen 90 Every time
     if (keyCode === 83) {
       t.setRotate()
     }
 
-    /* 水平镜像翻转 */
+    /* Horizontal mirror flip */
     if (keyCode === 77) {
       t.setMirror()
     }
 
-    // 按键回车，进入全屏
+    // Press the car to enter the full screen
     if (keyCode === 13) {
       t.setFullScreen()
     }
@@ -7094,13 +6857,13 @@ const h5Player = {
       t.setNextVideo()
     }
 
-    // 阻止事件冒泡
+    // Prevent incident bubbling
     event.stopPropagation()
     event.preventDefault()
     return true
   },
 
-  /* 运行自定义的快捷键操作，如果运行了会返回true */
+  /* Run customized shortcut operation, if it runs, it will return True */
   runCustomShortcuts: function (player, event) {
     if (!player || !event) return
     const key = event.key.toLowerCase()
@@ -7109,11 +6872,11 @@ const h5Player = {
       Array.isArray(taskConf.shortcuts.register) &&
       taskConf.shortcuts.callback instanceof Function
 
-    /* 判断当前触发的快捷键是否已被注册 */
+    /* Determine whether the shortcut keys currently triggered have been registered */
     function isRegister() {
       const list = taskConf.shortcuts.register
 
-      /* 当前触发的组合键 */
+      /* The combination key currently triggered */
       const combineKey = []
       if (event.ctrlKey) {
         combineKey.push('ctrl')
@@ -7130,7 +6893,7 @@ const h5Player = {
 
       combineKey.push(key)
 
-      /* 通过循环判断当前触发的组合键和已注册的组合键是否完全一致 */
+      /* Whether the combination key that currently triggered by the currently triggered and the registered combination key is completely consistent */
       let hasReg = false
       list.forEach((shortcut) => {
         const regKey = shortcut.split('+')
@@ -7151,7 +6914,7 @@ const h5Player = {
     }
 
     if (confIsCorrect && isRegister()) {
-      // 执行自定义快捷键操作
+      // Execute custom shortcut key operation
       const isDo = TCC$1.doTask('shortcuts', {
         event,
         player,
@@ -7169,17 +6932,17 @@ const h5Player = {
     }
   },
 
-  /* 按键响应方法 */
+  /* Key response method */
   keydownEvent: function (event) {
     const t = h5Player
     const keyCode = event.keyCode
     // const key = event.key.toLowerCase()
     const player = t.player()
 
-    /* 处于可编辑元素中不执行任何快捷键 */
+    /* Do not perform any shortcut keys in editing elements */
     if (isEditableTarget(event.target)) return
 
-    /* 广播按键消息，进行跨域控制 */
+    /* Broadcast button message, perform cross -domain control */
     monkeyMsg.send('globalKeydownEvent', event, 0)
 
     if (!player) {
@@ -7189,8 +6952,8 @@ const h5Player = {
         }
 
         /**
-         * 利用热键运行器的匹配能力来决定要不要禁止事件冒泡和阻止默认事件
-         * 解决处于跨TAB、跨域控制时造成其它默认快捷键响应异常的问题
+         * Use the matching ability of the hot -key operator to decide whether to prohibit incident bubbling and prevent the default event.
+         * Solution that causes other default shortcut keys to respond to abnormalities during cross -TAB and cross -domain control
          */
         if (t.hotkeysRunner && t.hotkeysRunner.run) {
           t.hotkeysRunner.run({
@@ -7211,7 +6974,7 @@ const h5Player = {
       return false
     }
 
-    /* 切换插件的可用状态 */
+    /* Available state of switching plug -in */
     if (event.ctrlKey && keyCode === 32) {
       t.enable = !t.enable
       if (t.enable) {
@@ -7226,7 +6989,7 @@ const h5Player = {
       return false
     }
 
-    // 按ctrl+\ 键进入聚焦或取消聚焦状态，用于视频标签被遮挡的场景
+    // Press ctrl+\ The key enters the focus of focusing or cancel the focus, and is used for the scene of the video label being blocked.
     if (event.ctrlKey && keyCode === 220) {
       t.globalMode = !t.globalMode
       if (t.globalMode) {
@@ -7236,13 +6999,13 @@ const h5Player = {
       }
     }
 
-    /* 非全局模式下，不聚焦则不执行快捷键的操作 */
+    /* In non -full -boistorized mode, the operation of shortcut keys does not focus on not focusing */
     if (!t.globalMode && !t._isFoucs) return
 
-    /* 判断是否执行了自定义快捷键操作，如果是则不再响应后面默认定义操作 */
+    /* Determine whether the custom shortcut operation is performed, if so, no longer respond to the default definition operation later */
     if (t.runCustomShortcuts(player, event) === true) return
 
-    /* 热键运行器匹配到相关执行任务便不在执行后续的palyerTrigger */
+    /* The hot -key operator matches the relevant execution task and does not perform subsequent PALYERTRIGGER */
     if (t.hotkeysRunner && t.hotkeysRunner.run) {
       const matchResult = t.hotkeysRunner.run({
         event,
@@ -7250,7 +7013,7 @@ const h5Player = {
         stopPropagation: true,
         preventDefault: true,
         conditionHandler(condition) {
-          // TODO 完善条件限定回调逻辑
+          // TODO Improve the condition of limited adjustment logic
           if (condition) {
             return true
           }
@@ -7262,17 +7025,17 @@ const h5Player = {
         return true
       }
     } else {
-      /* 未用到的按键不进行任何事件监听 */
+      /* Unused keys are not monitored without any incident */
       if (!isRegisterKey(event)) { return false }
 
-      /* 响应播放器相关操作 */
+      /* Response player -related operation */
       t.palyerTrigger(player, event)
     }
   },
 
   /**
-   * 获取播放进度
-   * @param player -可选 对应的h5 播放器对象， 如果不传，则获取到的是整个播放进度表，传则获取当前播放器的播放进度
+   * Get the progress of playback
+   * @param player -Optional Corresponding H5 Player object, If you do not pass, you can get the entire playback schedule, and the passage of the current player's playback progress
    */
   getPlayProgress: function (player) {
     const progressMap = configManager.get('media.progress') || {}
@@ -7282,7 +7045,7 @@ const h5Player = {
     } else {
       const keyName = window.location.href + player.duration
       if (progressMap[keyName]) {
-        /* 对于直播的视频流，会出现记录的duration和当前视频duration不一致的情况，这时候通过返回currentTime来忽略恢复播放进度 */
+        /* For the live video stream, the recorded Duration and the current video Duration will be inconsistent. At this time */
         if (Number.isNaN(Number(player.duration)) || Number(progressMap[keyName].duration) !== Number(player.duration)) {
           return player.currentTime
         } else {
@@ -7293,13 +7056,13 @@ const h5Player = {
       }
     }
   },
-  /* 播放进度记录器 */
+  /* Play progress recorder */
   playProgressRecorder: function (player) {
     const t = h5Player
     clearTimeout(player._playProgressTimer_)
     function recorder(player) {
       player._playProgressTimer_ = setTimeout(function () {
-        /* 时长小于两分钟的视频不记录播放进度 */
+        /* Video with less than two minutes does not record the playback progress */
         const isToShort = !player.duration || Number.isNaN(Number(player.duration)) || player.duration < 120
         const isLeave = document.visibilityState !== 'visible' && player.paused
 
@@ -7313,17 +7076,17 @@ const h5Player = {
         const keyName = window.location.href + player.duration
 
         /**
-         * 对首次记录到progressMap的值进行标记
-         * 用于防止手动切换播放进度时，执行到错误的恢复逻辑
+         * Mark the value recorded to the progressMap for the first time
+         * When used to prevent manual switching and playback progress, execute the wrong recovery logic
          */
         if (!progressMap[keyName]) {
           t._firstProgressRecord_ = keyName
           t._hasRestorePlayProgress_ = keyName
         }
 
-        /* 只保存最近10个视频的播放进度 */
+        /* Only save the playback progress of the last 10 videos */
         if (list.length > 10) {
-          /* 根据更新的时间戳，取出最早添加播放进度的记录项 */
+          /* According to the updated timestamp, take out the earliest record items to add play progress */
           let timeList = []
           list.forEach(function (keyName) {
             progressMap[keyName] && progressMap[keyName].t && timeList.push(progressMap[keyName].t)
@@ -7331,7 +7094,7 @@ const h5Player = {
           timeList = quickSort(timeList)
           const timestamp = timeList[0]
 
-          /* 删除最早添加的记录项 */
+          /* Delete the earliest added record items */
           list.forEach(function (keyName) {
             if (progressMap[keyName].t === timestamp) {
               delete progressMap[keyName]
@@ -7339,34 +7102,34 @@ const h5Player = {
           })
         }
 
-        /* 记录当前播放进度 */
+        /* Record the current playback progress */
         progressMap[keyName] = {
           progress: player.currentTime,
           duration: player.duration,
           t: new Date().getTime()
         }
 
-        /* 存储播放进度表 */
+        /* Store playback progress table */
         configManager.setLocalStorage('media.progress', progressMap)
 
-        /* 循环侦听 */
+        /* Cyclic listening */
         recorder(player)
       }, 1000 * 2)
     }
     recorder(player)
   },
 
-  /* 设置播放进度 */
+  /* Set the playback progress */
   setPlayProgress: function (player) {
     const t = h5Player
     if (!player || !player.duration || Number.isNaN(player.duration)) return
 
     const curTime = Number(t.getPlayProgress(player))
 
-    /* 要恢复进度的时间过小或大于player.duration都不符合规范，不进行进度恢复操作 */
+    /* The time to restore the progress is too small or greater than the player.Duration does not meet the norms and does not perform progress to restore operations */
     if (!curTime || Number.isNaN(curTime) || curTime < 10 || curTime >= player.duration) return
 
-    /* 忽略恢复进度时间与当前播放进度时间相差不大的情况 */
+    /* Ignore a situation where the time is not much different from the current playback progress time */
     if (Math.abs(curTime - player.currentTime) < 2) {
       return false
     }
@@ -7382,7 +7145,7 @@ const h5Player = {
     }
 
     if (t.isAllowRestorePlayProgress()) {
-      // 比curTime少1.5s可以让用户知道是前面的画面，从而有个衔接上了的感觉
+      // 1 less than Curtime.5s allows users to know that it is the previous picture, so that there is a feeling of connecting
       player.currentTime = curTime - 1.5
       t._hasRestorePlayProgress_ = progressKey
       t.tips(i18n.t('tipsMsg.playbackrestored'))
@@ -7425,7 +7188,7 @@ const h5Player = {
   },
 
   /**
-   * 视频元素是否出现在视口里的观察对象，用于优化多视频实例的实例切换
+   * Whether the video element appears in the viewing objects in the viewport to optimize the instance switching of multiple video instances
    * https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API
    */
   intersectionObserver: new IntersectionObserver(function (entries, observer) {
@@ -7441,11 +7204,11 @@ const h5Player = {
 
         const oldPlayer = t.player()
         if (oldPlayer && oldPlayer._intersectionInfo_ && tmpIntersectionRatio < oldPlayer._intersectionInfo_.intersectionRatio) {
-          /* 新实例的视图范围比旧的小，则不切换实例 */
+          /* The view range of the new instance is smaller than the old, so the instance does not switch */
           return
         }
 
-        /* 切换视频实例 */
+        /* Switch video example */
         const toggleResult = t.setPlayerInstance(entrie.target)
         toggleResult && debug.log('[intersectionObserver] Switch video example', entrie)
       }
@@ -7455,7 +7218,7 @@ const h5Player = {
   }),
 
   /**
-   * 检测h5播放器是否存在
+   * Detect whether the H5 player exists
    * @param callback
    */
   detecH5Player: function () {
@@ -7465,15 +7228,15 @@ const h5Player = {
     if (playerList.length) {
       // debug.log('Test HTML5 video!', location.href, h5Player, playerList)
 
-      /* 单video实例标签的情况 */
+      /* Single Video instance labeling */
       if (playerList.length === 1) {
         t.playerInstance = playerList[0]
         t.initPlayerInstance(true)
       }
 
-      /* 多video实例标签的情况 */
+      /* Multiple Video instance labeling */
       playerList.forEach(function (player) {
-        /* 鼠标移到其上面的时候重新指定实例 */
+        /* Specify the instance when the mouse moves to it */
         if (!player._hasMouseRedirectEvent_) {
           player.addEventListener('mouseenter', function (event) {
             t.setPlayerInstance(event.target)
@@ -7481,12 +7244,12 @@ const h5Player = {
           player._hasMouseRedirectEvent_ = true
         }
 
-        /* 播放器开始播放的时候重新指向实例 */
+        /* Re -point to the instance when the player starts to play */
         if (!player._hasPlayingRedirectEvent_) {
           player.addEventListener('playing', function (event) {
             const media = event.target
 
-            /* 对于超短的音视频可能是某些操作反馈的特效，可忽略对其进行播放实例切换 */
+            /* For ultra -short audio and video, it may be a special effect of some operation feedback, which can be ignored to play instance switching */
             if (media.duration && media.duration < 8) {
               return false
             }
@@ -7496,7 +7259,7 @@ const h5Player = {
           player._hasPlayingRedirectEvent_ = true
         }
 
-        /* 当被观察到出现在浏览器视口里时，切换视频实例 */
+        /* When observed at the browser view, switch video instance */
         if (!player._hasIntersectionObserver_) {
           t.intersectionObserver.observe(player)
           player._hasIntersectionObserver_ = true
@@ -7504,7 +7267,7 @@ const h5Player = {
       })
 
       if (isInCrossOriginFrame()) {
-        /* 广播检测到H5Player的消息 */
+        /* The news of the broadcast detects H5Player */
         monkeyMsg.send('videoDetected', {
           src: t.playerInstance.src
         })
@@ -7514,12 +7277,12 @@ const h5Player = {
     }
   },
 
-  /* 响应来自按键消息的广播 */
+  /* Response from the broadcast of key messages */
   bindFakeEvent() {
     const t = this
     if (t._hasBindFakeEvent_) return
 
-    /* 触发来自消息广播的模拟事件，实现跨域、跨Tab控制视频播放 */
+    /* Trigger an analog event from message broadcasting to achieve cross -domain and cross -TAB control video playback */
     let triggerFakeEvent = function (name, oldVal, newVal, remote) {
       const player = t.player()
       if (player) {
@@ -7533,26 +7296,26 @@ const h5Player = {
     }
 
     /**
-     * 操作节流控制，减少按键消息频率，
-     * 注意，开启节流控制后导致复合按键（如：shift+s）没法生效
+     * Operation throwing control to reduce the frequency of key message,
+     * Note that after opening the throttling control, the composite button (such as: shift+s) Can't take effect
      */
     if (!crossTabCtl.hasOpenPictureInPicture() && !t.hasCrossOriginVideoDetected) {
       triggerFakeEvent = throttle(triggerFakeEvent, 80)
     }
 
-    /* 注册响应来自按键消息的广播的事件 */
+    /* Registration response comes from the broadcast of key messages */
     monkeyMsg.on('globalKeydownEvent', async (name, oldVal, newVal, remote) => {
       if (remote) {
         if (isInCrossOriginFrame()) {
           /**
-           * 同处跨域受限页面，且都处于可见状态，大概率处于同一个Tab标签里，但不是100%
-           * tabId一致则100%为同一标签下
+           * In the same cross -domain limited page, they are all visible, and the probability is in the same TAB tag, but it is not 100%
+           * Tabid is consistent and 100%Under the same label
            */
           if (document.visibilityState === 'visible' && newVal.originTab) {
             triggerFakeEvent(name, oldVal, newVal, remote)
           }
         } else if (crossTabCtl.hasOpenPictureInPicture()) {
-          /* 跨Tab控制画中画里面的视频播放 */
+          /* Play the video in the painting across TAB control paintings */
           if (!newVal.originTab && (document.pictureInPictureElement || t.isLeavepictureinpictureAwhile())) {
             triggerFakeEvent(name, oldVal, newVal, remote)
           }
@@ -7563,7 +7326,7 @@ const h5Player = {
     t._hasBindFakeEvent_ = true
   },
 
-  /* 绑定相关事件 */
+  /* Binding related events */
   bindEvent: function () {
     const t = this
     if (t._hasBindEvent_) return
@@ -7571,7 +7334,7 @@ const h5Player = {
     document.removeEventListener('keydown', t.keydownEvent)
     document.addEventListener('keydown', t.keydownEvent, true)
 
-    /* 兼容iframe操作 */
+    /* Compatible with iframe operation */
     if (isInIframe() && !isInCrossOriginFrame()) {
       window.top.document.removeEventListener('keydown', t.keydownEvent)
       window.top.document.addEventListener('keydown', t.keydownEvent, true)
@@ -7612,7 +7375,7 @@ const h5Player = {
     }
 
     if (!global) {
-      /* 检测是否存在H5播放器 */
+      /* Detect whether there is an H5 player */
       t.detecH5Player()
       return true
     }
@@ -7624,14 +7387,14 @@ const h5Player = {
 
     setFakeUA()
 
-    /* 初始化任务配置中心 */
+    /* Initialization task configuration center */
     TCC$1 = h5PlayerTccInit(t)
 
-    /* 绑定键盘事件 */
+    /* Binding keyboard incident */
     t.bindEvent()
     t.bindFakeEvent()
 
-    /* 响应来自跨域受限的视频检出事件 */
+    /* A response to the event from the restricted video of the cross -domain detecting events */
     monkeyMsg.on('videoDetected', async (name, oldVal, newVal, remote) => {
       if (newVal.originTab) {
         t.hasCrossOriginVideoDetected = true
@@ -7640,7 +7403,7 @@ const h5Player = {
       debug.log('[hasCrossOriginVideoDetected]', t, name, oldVal, newVal, remote)
     })
 
-    /* 当页面处于可视化状态时，初始化自定义播放逻辑 */
+    /* When the page is in a state of visualization, initialize the logic of the definition of the playback logic */
     document.addEventListener('visibilitychange', function () {
       h5Player.initAutoPlay()
     })
@@ -7664,13 +7427,13 @@ async function h5PlayerInit() {
       debug.warn('[experimentFeatures][mediaSource][activated]')
     }
 
-    /* 禁止对playbackRate等属性进行锁定 */
+    /* It is forbidden to lock the attributes such as Playback on */
     hackDefineProperty()
 
-    /* 禁止对shadowdom使用close模式 */
+    /* Prohibit using Close mode for shadowdom */
     hackAttachShadow()
 
-    /* 对所有事件进行接管 */
+    /* Take over all events */
     proxyHTMLMediaElementEvent()
     // hackEventListener()
   } catch (e) {
@@ -7680,17 +7443,17 @@ async function h5PlayerInit() {
   menuRegister()
 
   try {
-    /* 初始化全局所需的相关方法 */
+    /* Related methods required for the global situation */
     h5Player.init(true)
 
-    /* 检测到有视频标签就进行初始化 */
+    /* Initialize after detecting a video label */
     supportMediaTags.forEach(tagName => {
       ready(tagName, function () {
         h5Player.init()
       })
     })
 
-    /* 检测shadow dom 下面的video */
+    /* Detect SHADOW dom Video below */
     document.addEventListener('addShadowRoot', function (e) {
       const shadowRoot = e.detail.shadowRoot
       supportMediaTags.forEach(tagName => {
@@ -7700,7 +7463,7 @@ async function h5PlayerInit() {
       })
     })
 
-    /* 初始化跨Tab控制逻辑 */
+    /* Initialize cross -TAB control logic */
     crossTabCtl.init()
 
     if (isInIframe()) {

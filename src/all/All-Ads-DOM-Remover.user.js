@@ -23,7 +23,7 @@
 // @require      https://code.jquery.com/jquery-2.2.2.min.js
 // @require      https://greasyfork.org/scripts/18490-ads-dom-remover-runner/code/Ads%20DOM%20Remover%20Runner.js?version=983896
 // @grant        none
-// @icon            https://www.kindpng.com/picc/m/122-1222069_circle-cross-out-png-cross-in-red-circle.png
+// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @license      MIT License
 // ==/UserScript==
 
