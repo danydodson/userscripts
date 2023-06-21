@@ -1,6 +1,8 @@
 // ==UserScript==
-// @name         Schwab: Clean UI
-// @namespace    https://github.com/danydodson/userscripts/blob/main/src/schwab/schwab-clean-ui.user.js
+// @name         Schwab: Cleanup
+// @namespace    https://github.com/danydodson/userscripts/blob/main/src/schwab/Schwab-Cleanup.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/schwab/Schwab-Cleanup.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/schwab/Schwab-Cleanup.user.js
 // @version      0.1
 // @description  removes unnecessary elements from schwab ui
 // @author       toaster
