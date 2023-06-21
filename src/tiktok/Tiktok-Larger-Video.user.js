@@ -1,15 +1,18 @@
 // ==UserScript==
-// @name            Tiktok: Larger Video
-// @version         1.2
-// @namespace       https://greasyfork.org/en/users/807108-jeremy-r
-// @description     Makes the TikTok video take up more of the screen
-// @author          JRem
-// @match           https://www.tiktok.com/*/video/*
-// @match           https://www.tiktok.com/*
-// @grant           GM_addStyle
-// @license         MIT
-// @require         https://cdn.jsdelivr.net/gh/mlcheng/js-toast@ebd3c889a1abaad615712485ce864d92aab4c7c0/toast.min.js
-// @icon            https://www.google.com/s2/favicons?domain=tiktok.com
+// @name         Tiktok: Larger Video
+// @version      1.2
+// @author       JRem
+// @description  Makes the TikTok video take up more of the screen
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Larger-Video.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Larger-Video.user.js
+// @icon         https://www.google.com/s2/favicons?domain=tiktok.com
+// @license      MIT
+// @require      https://cdn.jsdelivr.net/gh/mlcheng/js-toast@ebd3c889a1abaad615712485ce864d92aab4c7c0/toast.min.js
+// @match        https://www.tiktok.com/*/video/*
+// @match        https://www.tiktok.com/*
+// @grant        GM_addStyle
+
 // ==/UserScript==
 
 (function () {
