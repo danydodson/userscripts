@@ -1,19 +1,21 @@
 // ==UserScript==
-// @name           Twitter: Media Downloader
-// @description    Save Video/Photo by One-Click.
-// @version        1.05
-// @author         AMANE
-// @namespace      Twitter: Media Downloader
-// @match          https://twitter.com/*
-// @match          https://mobile.twitter.com/*
-// @match          https://tweetdeck.twitter.com/*
-// @grant          GM_registerMenuCommand
-// @grant          GM_setValue
-// @grant          GM_getValue
-// @grant          GM_download
-// @compatible     Chrome
-// @compatible     Firefox
-// @icon           https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
+// @name          Twitter: Media Downloader
+// @version       1.05
+// @description   Save Video/Photo by One-Click.
+// @author        AMANE
+// @namespace     https://github.com/danydodson/userscripts
+// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Media-Downloader.user.js
+// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Media-Downloader.user.js
+// @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
+// @match         https://twitter.com/*
+// @match         https://mobile.twitter.com/*
+// @match         https://tweetdeck.twitter.com/*
+// @grant         GM_registerMenuCommand
+// @grant         GM_setValue
+// @grant         GM_getValue
+// @grant         GM_download
+// @compatible    Chrome
+// @compatible    Firefox
 // ==/UserScript==
 
 const filename = 'twitter_{user-name}(@{user-id})_{date-time}_{status-id}_{file-type}'

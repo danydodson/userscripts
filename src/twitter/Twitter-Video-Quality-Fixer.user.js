@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name          Twitter: Video Quality Fixer
 // @version       0.2.0
-// @namespace     Twitter: Video Quality Fixer
 // @description   Force highest quality playback for Twitter videos.
 // @author        yuhaofe
-// @grant         none
+// @namespace     https://github.com/danydodson/userscripts
+// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Video-Quality-Fixer.user.js
+// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Video-Quality-Fixer.user.js
+// @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // @match         https://twitter.com/*
 // @match         https://mobile.twitter.com/*
-// @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
+// @grant         none
 // ==/UserScript==
 
 (function () {
