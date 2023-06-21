@@ -1,14 +1,17 @@
 // ==UserScript==
-// @name        Tiktok: Remove Distractions
-// @namespace   https://greasyfork.org/users/931787
-// @description Remove distractions on TikTok
-// @version     1.1
-// @match	      *://tiktok.com/*
-// @match	      *://*.tiktok.com/*
-// @author      @incognico
-// @grant       none
-// @license     GPL v3
-// @icon            https://www.google.com/s2/favicons?domain=tiktok.com
+// @name         Tiktok: Remove Distractions
+// @version      1.1
+// @author       You!
+// @description  Remove distractions on TikTok
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Remove-Distractions.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Lower-Remove-Distractions.user.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
+// @license      GPL v3
+// @match	       *://tiktok.com/*
+// @match	       *://*.tiktok.com/*
+// @author       @incognico
+// @grant        none
 // ==/UserScript==
 
 const selectors = [

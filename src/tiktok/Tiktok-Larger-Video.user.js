@@ -49,7 +49,7 @@
 
 		var vid = document.querySelector('video')
 		console.log(vid)
-		vid.volume = 0.9
+		vid.volume = 0.15
 		vid.loop = true
 		vid.controls = null
 		if (enableToasts == 1) { iqwerty.toast.toast(Math.floor(100 * vid.volume) + "%", options) }
