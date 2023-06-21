@@ -9,8 +9,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
 // @license      MIT
 // @require      https://cdn.jsdelivr.net/gh/mlcheng/js-toast@ebd3c889a1abaad615712485ce864d92aab4c7c0/toast.min.js
-// @match        https://www.tiktok.com/*/video/*
 // @match        https://www.tiktok.com/*
+// @match        https://www.tiktok.com/*/video/*
 // @grant        GM_addStyle
 
 // ==/UserScript==
@@ -45,24 +45,23 @@
 	}
 
 	waitForElm('div[class*="-DivVideoContainer"]').then((elm) => {
-		console.log('Video container found, enabling fullscreen')
+		console.log('Element Found, Starting Fullscreen')
 
-		var vid = document.querySelector('video')
-		vid.loop = true
-		vid.controls = null
-		vid.volume = 0.1
-		if (enableToasts == 1) { iqwerty.toast.toast(Math.floor(100 * vid.volume) + "%", options) }
+		elm.volume = 0.15
+		elm.loop = true
+		elm.controls = null
+		if (enableToasts == 1) { iqwerty.toast.toast(Math.floor(100 * elm.volume) + "%", options) }
 
 		var cssClass = document.querySelector('div[class*="-DivVideoContainer"]').className.split(" ")
 		var css = "." + cssClass[0] + ", ." + cssClass[1] + " { height: 80vh !important; }"
 		GM_addStyle(css)
-		if (enableToasts == 1) { iqwerty.toast.toast('Fullscreen enabled', options) }
+		if (enableToasts == 1) { iqwerty.toast.toast('Fullscreen added', options) }
 
 		if (removeBlur == 1) {
 			var cssClass1 = document.querySelector('div[class*="-DivBlurBackground"]').className.split(" ")
 			var css1 = "." + cssClass1[0] + ", ." + cssClass1[1] + " { opacity: 0 !important; }"
 			GM_addStyle(css1)
-			if (enableToasts == 1) { iqwerty.toast.toast('Blur removed', options) }
+			if (enableToasts == 1) { iqwerty.toast.toast('Blur Removed', options) }
 		}
 	})
 })()
