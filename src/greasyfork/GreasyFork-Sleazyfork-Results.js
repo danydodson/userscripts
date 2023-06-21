@@ -200,13 +200,13 @@
         _bullshit = filterTextarea.innerText
         storage.setItem("GeasyforkBullshit", _bullshit)
         alert("Saved")
-        _GM_notification("Saved");
+        // _GM_notification("Saved");
       }
       resetBtn.onclick = () => {
         storage.setItem("GeasyforkBullshit", bullshit_o)
         alert("Reset over")
         location.reload()
-        _GM_notification("Reset over");
+        // _GM_notification("Reset over");
       }
     }
     initFilter()
@@ -323,18 +323,16 @@
 
   _GM_registerMenuCommand("Configure the Filter", () => {
     location.href = "https://greasyfork.org/scripts/23840#additional-info"
-
-    var _bullshit = window.prompt("Configure the Filter", bullshit)
-    if (_bullshit == "") {
-      bullshit = bullshit_o
-      storage.setItem("GeasyforkBullshit", bullshit)
-      location.reload()
-    } else if (_bullshit != null) {
-      bullshit = _bullshit
-      storage.setItem("GeasyforkBullshit", bullshit)
-      location.reload()
-    }
-
+    // var _bullshit = window.prompt("Configure the Filter", bullshit)
+    // if (_bullshit == "") {
+    //   bullshit = bullshit_o
+    //   storage.setItem("GeasyforkBullshit", bullshit)
+    //   location.reload()
+    // } else if (_bullshit != null) {
+    //   bullshit = _bullshit
+    //   storage.setItem("GeasyforkBullshit", bullshit)
+    //   location.reload()
+    // }
   })
 
   function initFilter() {
