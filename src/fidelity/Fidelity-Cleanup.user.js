@@ -16,7 +16,7 @@
 
 	function clearFeedbackBtn() {
 		try {
-			let feedbackBtn = document.getElementsByClassName('SI_0AsPpi6JZXIjgMZ_FeedBackLinkContainer')
+			let feedbackBtn = document.getElementsByClassName('QSIFeedBackLink SI_0AsPpi6JZXIjgMZ_FeedBackLinkContainer')
 			if (feedbackBtn) feedbackBtn.style.display = 'none'
 		} catch (exception) {
 			console.error(exception)
