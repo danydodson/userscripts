@@ -14,15 +14,15 @@
 (function () {
 	'use strict'
 
-	function clearFeedbackBtn() {
+	function clearFeedbackBtns() {
 		try {
-			let feedbackBtn = document.getElementsByClassName('QSIFeedBackLink SI_0AsPpi6JZXIjgMZ_FeedBackLinkContainer')
-			if (feedbackBtn) feedbackBtn.style.display = 'none'
+			let feedbackBtns = document.getElementsByClassName('QSIFeedBackLink SI_0AsPpi6JZXIjgMZ_FeedBackLinkContainer')
+			while (feedbackBtns.length > 0) feedbackBtns[0].remove()
 		} catch (exception) {
 			console.error(exception)
 		}
 	}
 
-	clearFeedbackBtn()
+	clearFeedbackBtns()
 
 })()
