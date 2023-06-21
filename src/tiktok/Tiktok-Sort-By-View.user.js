@@ -1,13 +1,14 @@
 // ==UserScript==
-// @name               Tiktok: Sort By View
-// @namespace          http://tampermonkey.net/
-// @version            0.1.1
-// @description        Click the video tab on tiktok user page to sort video by views and click again to restore order!
-// @author             You
-// @match              https://www.tiktok.com/@*
-// @icon               https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
-// @grant              none
-// @license            MIT
+// @name         Tiktok: Sort By View
+// @version      0.1.1
+// @author       You
+// @description  Click the video tab on tiktok user page to sort video by views and click again to restore order
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Sort-By-View.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Sort-By-View.user.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
+// @license      MIT
+// @match        https://www.tiktok.com/@*
+// @grant        none
 // ==/UserScript==
 
 const multiplierMap = {

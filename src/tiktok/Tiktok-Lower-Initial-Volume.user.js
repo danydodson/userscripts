@@ -6,7 +6,7 @@
 // @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Lower-Initial-Volume.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Lower-Initial-Volume.user.js
-// @icon         https://www.google.com/s2/favicons?domain=tiktok.com
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
 // @match        https://m.tiktok.com/v/*
 // @grant        none
 // ==/UserScript==
