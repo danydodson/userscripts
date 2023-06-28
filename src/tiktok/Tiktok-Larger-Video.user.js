@@ -53,7 +53,7 @@
 		if (enableToasts == 1) { iqwerty.toast.toast(Math.floor(100 * elm.volume) + "%", options) }
 
 		var cssClass = document.querySelector('div[class*="-DivVideoContainer"]').className.split(" ")
-		var css = "." + cssClass[0] + ", ." + cssClass[1] + " { height: 80vh !important; }"
+		var css = "." + cssClass[0] + ", ." + cssClass[1] + " { height: 90vh !important; }"
 		GM_addStyle(css)
 		if (enableToasts == 1) { iqwerty.toast.toast('Fullscreen added', options) }
 
