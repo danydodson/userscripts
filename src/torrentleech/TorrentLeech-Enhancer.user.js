@@ -2,9 +2,11 @@
 // @name          TorrentLeech: Enhancer
 // @author        Urban48 / Sandbird
 // @version       0.3.2
-// @namespace     https://greasyfork.org/en/scripts/12940-torrentleech-enhancer
+// @namespace     https://github.com/danydodson/userscripts
 // @description   Enhance TorrentLeech
 // @resource      copy_btn http://dl.dropbox.com/u/29482107/gm/TLE/copy.png
+// @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/torrentleech/TorrentLeech-Enhancer.user.js
+// @updateURL     https://github.com/danydodson/userscripts/blob/main/src/torrentleech/TorrentLeech-Enhancer.user.js
 // @resource      traktb http://dl.dropboxusercontent.com/s/291znyahazdw7f6/traktv.png
 // @resource      copyRl_btn http://dl.dropbox.com/u/29482107/gm/TLE/copy_rollover.png
 // @resource      info_btn http://dl.dropbox.com/u/29482107/gm/TLE/i.png
@@ -19,10 +21,10 @@
 // @grant         GM_setValue
 // @grant         GM_getResourceURL
 // @grant         GM_xmlhttpRequest
-// @license       GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
+// @license       GPL version 3 or any later version
 // @include       https://classic.torrentleech.org/torrents/*
 // @include       http://classic.torrentleech.org/torrents/*
-// @icon          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOsAAADWCAMAAAAHMIWUAAAAsVBMVEUAAAD///+Qvz6Twz+Wx0EHCQNlhiysrKwkJCSvr6/CwsKSkpLT09OoqKjq6ur5+fnx8fG4uLje3t5RbCOMjIx+fn5WVlbMzMzl5eUeHh45OTlHR0d1dXUTExPNzc2hoaEcJQw1RxdFXB4lMRCJtjtsjy8wQBUxMTGYmJg/Pz8/Uxt3njN+pzZwlTAICwNggCkTGggdJw2ErzliYmJdXV1LS0t5eXlaeCcqKioWHQkyQxYLrw1JAAAEWklEQVR4nO2de3eaMBiHBVxblItSBBWs3eaq9rpq7e37f7DRrVtDLpawKkn6e/7pOYa+J88Bk5Dkja0WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwyTn9+u2F8+9NV2TnPF9czhyn3Xbs1dXXpiuzU66vCsm/OO0Lk+/tTdsmcWbmyp7N7DLO6mfTddoVx45Nyz40XaddccO42penTVdqR/xgXZ2zpiu1IziubbjqD8fVNtWV1zY9NV2pHcHpcw6artOuuF0xsuaOiQ8oV+ei6RqJGOVTt1Pg+9N4WSvCbXk8bCs7Hr4PQusfQWdSJwY19lf12+paZbyRfIwverhuLJqufBBNXA8Z1458EE1c+3CVQ1tXXz6IJq4xrRrM5YNo4roMKddBjSCauDINcY3uVVvXoxox4KoecKWZbJJkLIxhlGuSFiVDV/QOZIjraL7J3eFrxxQJbq0Bro/rhesFZKFg/Ki162icDNKgR48zLGvDjaGr62M2mPYjRvIVlxtDV9egJ/IUP8S6uPrb1AxynWRxZ+tt1Nt1POh21y9/191DT0pTO9fuSxcSpm40ZNvYKvS5UZV0TWsJEvDfblV0ZScNZeGPEhV0vav33BII5o4VdJ3+r2oqmLRQ0LVTQ6839LxFfpR7BWtRYPVcJ7KunhsPkiord/q6hkEUdeKNxIKdeq7VnmG/m29k5xIVdK009K2z/qqga17F1ZS5NWYA3AsieuxvimtCOEUdf3GfjZgH2xTX1t2fCYdwsJz/bX8Mnh+O+2l6SM4aGexadLPlltZoVwq4ygFX9YCrHHBVD7jKAVf1gKsccFUPuMoBV/WAqxxwVQ+4ymGm62iZZcsxvQ5ipGv8e+UgPPEfSx8b6Dp621oS5GSBga6lXJ6EKDDPNSttLfGIEvNcF6XrQmL3hHmu1Ioesf/HPFdq09v0rcQ41671aVxpVYNdmXxK6/6t0CxX5q5aKVFqlOuU3bWZEcUGuU7Y5GcrJi8wyJWzV768P9wY1zxgVb3yJaa4xpwN1hF1kRmuY16uR0DHMMK1y8ve8ZhsSV1dib4k4SbweGwMXV3/vYPP+VkffU5DravraybkfMFP+uCeKqKra3hXfJhMBWl2+uQi8WCe1LA/FSWgBYJMDm1dxaSio2J+Uq43ezWoTnXXQ2EqAH2O3kzRUy+rupZnhEt8X9kUih6kVzHx7ER8kgbv3Msf+xOQIK+SUNiLt4V40OX84XGFJG4v2xqC49o+31P15Th5z3TLN/UP+riu31H1380ePGZUbed5H1WXZ+uN7VTIkzxl2mFF26bixopbp6ja6WvH1NmtCv+YwUBg6lU+Z+6mrLpSVlXQx1Y3bbWuH95+kMNpXymsWrzX0PNnw77kScRPBy8/tOI4s9WFkl0rwTwmbHvu4PH9f6F5ej4uOL/9+Mp9PNniJCrw7+udLQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAv/AJUoEymTxRyDwAAAABJRU5ErkJggg==
+// @icon          https://www.torrentleech.org/favicon.ico
 // ==/UserScript==
 
 
