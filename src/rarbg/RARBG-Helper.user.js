@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name                  RARBG: Helper
+// @version               1.7.5
 // @author                PeratX
-// @icon                  https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
-// @connect               *
 // @description           Powerful Toolbox for RARBG
-// @grant                 GM_xmlhttpRequest
+// @namespace             https://peratx.net
+// @icon                  https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
 // @license               Apache License 2.0
 // @match                 *://rarbg.to/*
 // @match                 *://rarbg2018.org/*
@@ -40,8 +40,8 @@
 // @match                 *://rarbgmirror.com/*
 // @match                 *://rarbgproxy.com/*
 // @match                 *://rarbgunblock.com/*
-// @namespace             https://peratx.net
-// @version               1.7.5
+// @connect               *
+// @grant                 GM_xmlhttpRequest
 // ==/UserScript==
 
 (async () => {
@@ -122,8 +122,6 @@
 		pop.style.left = xoff + "px"
 		pop.style.top = yoff + "px"
 	}
-
-
 
 	const opened = JSON.parse(localStorage.getItem("opened") || "[]")
 	const viewed = JSON.parse(localStorage.getItem("viewed") || "[]")

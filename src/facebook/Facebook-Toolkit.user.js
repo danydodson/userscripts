@@ -345,31 +345,32 @@ function init() {
 			const newItem = document.createElement('div')
 
 			newItem.classList.add('_4kny', '_2s24')
-			newItem.innerHTML = `<!--Facebook Toolkit by RootDev4-->
-                <div class="uiToggle _cy7 _3nzl">
-                    <a class="_2s25" rel="toggle" href="#" role="button" data-target="fbToolkitFlyout">
-                        <img src="${fbLoaderImg}" class="hidden_elem" style="margin-right: 8px;" id="fbToolkitImg">
-                        <span>Toolkit</span>
-                    </a>
-                    <div class="__tw toggleTargetClosed _3nzk" role="dialog" id="fbToolkitFlyout" style="margin: 5px 10px 0 0; width: 160px">
-                        <div class="beeperNub"></div>
-                        <ul style="padding: 10px">
-                            <li style="padding: 3px"><a href="#" id="fbToolkitUserId">Get numeric user ID</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitIdCover">Show user ID on cover</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitScroll">Scroll user timeline</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitExpand">Expand hidden content</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitFriends">Extract user's friendlist</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitPhotos">Download user's photos</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitClear">Clear user profile</a></li>
-                            <hr>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitBottom" onclick="window.scrollTo(0, body.scrollHeight)">Jump to page bottom</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitTop" onclick="window.scrollTo(0, 0)">Jump to page top</a></li>
-                            <li style="padding: 3px"><a href="#" id="fbToolkitReload" onclick="location.reload(true)">Force page reload</a></li>
-                            <hr>
-                            <li style="padding: 3px"><a href="https://github.com/RootDev4/Facebook-Toolkit" id="fbToolkitHelp" target="_blank">About & Help</a></li>
-                        </ul>
-                    </div>
-                </div>`
+			newItem.innerHTML = `
+			<!--Facebook Toolkit by RootDev4-->
+      <div class="uiToggle _cy7 _3nzl">
+        <a class="_2s25" rel="toggle" href="#" role="button" data-target="fbToolkitFlyout">
+          <img src="${fbLoaderImg}" class="hidden_elem" style="margin-right: 8px;" id="fbToolkitImg" />
+          <span>Toolkit</span>
+        </a>
+        <div class="__tw toggleTargetClosed _3nzk" role="dialog" id="fbToolkitFlyout" style="margin: 5px 10px 0 0; width: 160px">
+          <div class="beeperNub"></div>
+          <ul style="padding: 10px">
+            <li style="padding: 3px"><a href="#" id="fbToolkitUserId">Get numeric user ID</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitIdCover">Show user ID on cover</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitScroll">Scroll user timeline</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitExpand">Expand hidden content</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitFriends">Extract user's friendlist</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitPhotos">Download user's photos</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitClear">Clear user profile</a></li>
+            <hr>
+            <li style="padding: 3px"><a href="#" id="fbToolkitBottom" onclick="window.scrollTo(0, body.scrollHeight)">Jump to page bottom</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitTop" onclick="window.scrollTo(0, 0)">Jump to page top</a></li>
+            <li style="padding: 3px"><a href="#" id="fbToolkitReload" onclick="location.reload(true)">Force page reload</a></li>
+            <hr>
+            <li style="padding: 3px"><a href="https://github.com/RootDev4/Facebook-Toolkit" id="fbToolkitHelp" target="_blank">About & Help</a></li>
+          </ul>
+        </div>
+      </div>`
 
 			resolve(menuItem.appendChild(newItem))
 		} catch (exception) {

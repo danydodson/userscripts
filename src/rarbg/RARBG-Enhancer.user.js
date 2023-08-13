@@ -2,19 +2,10 @@ var meta = {
 	rawmdb: function () {
 		// ==UserScript==
 		// @name         RARBG: Enhancer
-		// @namespace    https://github.com/FarisHijazi
 		// @version      1.6.11
-		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents,
-		// @description  adds a image search link in case you want to see more pics of the torrent, and more!
-		// @author       Faris Hijazi
-		//               with some code from https://greasyfork.org/en/users/2160-darkred
-		// @grant        unsafeWindow
-		// @grant        GM_setValue
-		// @grant        GM_getValue
-		// @grant        GM_download
-		// @grant        GM_xmlhttpRequest
-		// @grant        GM_registerMenuCommand
-		// @icon         https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
+		// @namespace    https://github.com/FarisHijazi
+		// @author       Faris Hijazi with some code from https://greasyfork.org/en/users/2160-darkred
+		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents             
 		// @run-at       document-idle
 		// @updateUrl    https://github.com/FarisHijazi/Rarbg-Enhancer-UserScript/raw/master/Rarbg-Enhancer-UserScript.user.js
 		// @require      https://code.jquery.com/jquery-3.4.0.min.js
@@ -24,46 +15,53 @@ var meta = {
 		// @require      https://raw.githubusercontent.com/mitchellmebane/GM_fetch/master/GM_fetch.js
 		// @require      https://raw.githubusercontent.com/sizzlemctwizzle/GM_config/master/gm_config.js
 		// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
-		// @include      https://*rarbg.*
-		// @include      /https?:\/\/.{0,8}rarbg.*\.\/*/
-		// @include      /https?:\/\/.{0,8}rargb.*\.\/*/
-		// @include      /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
-		// @include      https://www.rarbg.is
-		// @include      https://proxyrarbg.org
-		// @include      https://rarbg.com
-		// @include      https://rarbg.to
-		// @include      https://rarbg2018.org
-		// @include      https://rarbg2019.org
-		// @include      https://rarbg2020.org
-		// @include      https://rarbg2021.org
-		// @include      https://rarbgaccess.org
-		// @include      https://rarbgaccessed.org
-		// @include      https://rarbgcdn.org
-		// @include      https://rarbgcore.org
-		// @include      https://rarbgdata.org
-		// @include      https://rarbgenter.org
-		// @include      https://rarbgget.org
-		// @include      https://rarbggo.org
-		// @include      https://rarbgindex.org
-		// @include      https://rarbgmirror.com
-		// @include      https://rarbgmirror.org
-		// @include      https://rarbgmirrored.org
-		// @include      https://rarbgp2p.org
-		// @include      https://rarbgproxied.org
-		// @include      https://rarbgproxies.org
-		// @include      https://rarbgproxy.com
-		// @include      https://rarbgproxy.org
-		// @include      https://rarbgprx.org
-		// @include      https://rarbgto.org
-		// @include      https://rarbgtor.org
-		// @include      https://rarbgtorrents.org
-		// @include      https://rarbgunblock.com
-		// @include      https://rarbgunblock.org
-		// @include      https://rarbgunblocked.org
-		// @include      https://rarbgway.org
-		// @include      https://rarbgweb.org
-		// @include      https://unblockedrarbg.org
-		// @include      https://www.rarbg.is
+		// @icon         https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
+		// @match        https://*rarbg.*
+		// @match        /https?:\/\/.{0,8}rarbg.*\.\/*/
+		// @match        /https?:\/\/.{0,8}rargb.*\.\/*/
+		// @match        /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
+		// @match        https://www.rarbg.is
+		// @match        https://proxyrarbg.org
+		// @match        https://rarbg.com
+		// @match        https://rarbg.to
+		// @match        https://rarbg2018.org
+		// @match        https://rarbg2019.org
+		// @match        https://rarbg2020.org
+		// @match        https://rarbg2021.org
+		// @match        https://rarbgaccess.org
+		// @match        https://rarbgaccessed.org
+		// @match        https://rarbgcdn.org
+		// @match        https://rarbgcore.org
+		// @match        https://rarbgdata.org
+		// @match        https://rarbgenter.org
+		// @match        https://rarbgget.org
+		// @match        https://rarbggo.org
+		// @match        https://rarbgindex.org
+		// @match        https://rarbgmirror.com
+		// @match        https://rarbgmirror.org
+		// @match        https://rarbgmirrored.org
+		// @match        https://rarbgp2p.org
+		// @match        https://rarbgproxied.org
+		// @match        https://rarbgproxies.org
+		// @match        https://rarbgproxy.com
+		// @match        https://rarbgproxy.org
+		// @match        https://rarbgprx.org
+		// @match        https://rarbgto.org
+		// @match        https://rarbgtor.org
+		// @match        https://rarbgtorrents.org
+		// @match        https://rarbgunblock.com
+		// @match        https://rarbgunblock.org
+		// @match        https://rarbgunblocked.org
+		// @match        https://rarbgway.org
+		// @match        https://rarbgweb.org
+		// @match        https://unblockedrarbg.org
+		// @match        https://www.rarbg.is
+		// @grant        unsafeWindow
+		// @grant        GM_setValue
+		// @grant        GM_getValue
+		// @grant        GM_download
+		// @grant        GM_xmlhttpRequest
+		// @grant        GM_registerMenuCommand
 		// @noframes
 		// ==/UserScript==
 	}

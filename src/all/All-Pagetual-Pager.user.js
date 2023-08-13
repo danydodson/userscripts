@@ -623,15 +623,15 @@
 	const ruleImportUrlReg = /greasyfork\.org\/.*scripts\/438684[^\/]*(\/discussions|\/?$|\/feedback)|github\.com\/hoothin\/UserScripts\/(tree\/master\/Pagetual|issues)/i
 	const allOfBody = "body>*"
 	const mainSel = "article,.article,[role=main],main,.main"
-	const nextTextReg1 = new RegExp("\u005e\u7ffb\u003f\u005b\u4e0b\u540e\u5f8c\u6b21\u005d\u005b\u4e00\u30fc\u0031\u005d\u003f\u005b\u9875\u9801\u5f20\u5f35\u005d\u007c\u005e\u0028\u006e\u0065\u0078\u0074\u005b\u0020\u005f\u002d\u005d\u003f\u0070\u0061\u0067\u0065\u007c\u006f\u006c\u0064\u0065\u0072\u0029\u005c\u0073\u002a\u005b\u203a\u003e\u2192\u00bb\u005d\u003f\u0024\u007c\u6b21\u306e\u30da\u30fc\u30b8\u007c\u005e\u6b21\u3078\u003f\u0024\u007cВперед", "i")
+	const nextTextReg1 = new RegExp("\u005e\u7ffb\u003f\u005b\u4e0b\u540e\u5f8c\u6b21\u005d\u005b\u4e00\u30fc\u0031\u005d\u003f\u005b\u9875\u9801\u5f20\u5f35\u005d\u007c\u005e\u0028\u006e\u0065\u0078\u0074\u005b\u0020\u005f\u002d\u005d\u003f\u0070\u0061\u0067\u0065\u007c\u006f\u006c\u0064\u0065\u0072\u0029\u005c\u0073\u002a\u005b\u203a\u003e\u2192\u00bb\u005d\u003f\u0024\u007c\u6b21\u306e\u30da\u30fc\u30b8\u007c\u005e\u6b21\u3078\u003f\u0024\U007KV", "i")
 	const nextTextReg2 = new RegExp("\u005e\u005b\u4e0b\u540e\u5f8c\u6b21\u005d\u005b\u4e00\u30fc\u0031\u005d\u003f\u005b\u7ae0\u8bdd\u8a71\u8282\u7bc0\u4e2a\u500b\u5e45\u005d", "i")
 	const lazyImgAttr = ["data-lazy-src", "data-lazy", "data-url", "data-orig-file", "zoomfile", "file", "original", "load-src", "imgsrc", "real_src", "src2", "origin-src", "data-lazyload", "data-lazyload-src", "data-lazy-load-src", "data-ks-lazyload", "data-ks-lazyload-custom", "data-src", "data-defer-src", "data-actualsrc", "data-cover", "data-original", "data-thumb", "data-imageurl", "data-placeholder",]
-	_GM_registerMenuCommand(i18n("configure"), () => {
-		_GM_openInTab(configPage[0], { active: true })
-	})
-	_GM_registerMenuCommand(i18n("editCurrent"), () => {
-		Picker.getInstance().start()
-	})
+	// _GM_registerMenuCommand(i18n("configure"), () => {
+	// 	_GM_openInTab(configPage[0], { active: true })
+	// })
+	// _GM_registerMenuCommand(i18n("editCurrent"), () => {
+	// 	Picker.getInstance().start()
+	// })
 
 	function getElementByXpath(xpath, contextNode, doc) {
 		doc = doc || document
@@ -3721,21 +3721,21 @@
 			}
 			_unsafeWindow.initedPagetual = true
 		} catch (e) { showTips(e) }
-		_GM_registerMenuCommand(i18n(forceState == 1 ? "enable" : "disableSite"), () => {
-			forceState = (forceState == 1 ? 0 : 1)
-			storage.setItem("forceState_" + location.host, forceState)
-			showTips(i18n(forceState == 1 ? "disableSiteTips" : "enableSiteTips"))
-			if (!ruleParser.curSiteRule.url) location.reload()
-		})
-		_GM_registerMenuCommand(i18n("update"), () => {
-			showTips(i18n("beginUpdate"))
-			updateRules(() => {
-				showTips(i18n("updateSucc"))
-				location.reload()
-			}, (rule, err) => {
-				showTips(`Update ${rule.url} rules fail! ${err}`)
-			})
-		})
+		// _GM_registerMenuCommand(i18n(forceState == 1 ? "enable" : "disableSite"), () => {
+		// 	forceState = (forceState == 1 ? 0 : 1)
+		// 	storage.setItem("forceState_" + location.host, forceState)
+		// 	showTips(i18n(forceState == 1 ? "disableSiteTips" : "enableSiteTips"))
+		// 	if (!ruleParser.curSiteRule.url) location.reload()
+		// })
+		// _GM_registerMenuCommand(i18n("update"), () => {
+		// 	showTips(i18n("beginUpdate"))
+		// 	updateRules(() => {
+		// 		showTips(i18n("updateSucc"))
+		// 		location.reload()
+		// 	}, (rule, err) => {
+		// 		showTips(`Update ${rule.url} rules fail! ${err}`)
+		// 	})
+		// })
 		if (guidePage.test(location.href)) {
 			if (typeof JSONEditor !== 'undefined') {
 				createEdit()
@@ -4776,30 +4776,30 @@
 				autoLoadNum = ruleParser.curSiteRule.autoLoadNum
 			}
 			if (ruleParser.curSiteRule.nextLink && Array && Array.isArray && Array.isArray(ruleParser.curSiteRule.nextLink)) {
-				_GM_registerMenuCommand(i18n("nextSwitch"), () => {
-					NextSwitch.getInstance().start()
-				})
+				// _GM_registerMenuCommand(i18n("nextSwitch"), () => {
+				// 	NextSwitch.getInstance().start()
+				// })
 			}
 			if (ruleParser.nextLinkHref) {
 				let isJs = /^(javascript|#)/.test(ruleParser.nextLinkHref.replace(location.href, ""))
 				if (!isJs) {
 					let inForce = (forceState == 2 || forceState == 3)
-					_GM_registerMenuCommand(i18n(inForce ? "cancelForceIframe" : "forceIframe"), () => {
-						if (inForce) {
-							storage.setItem("forceState_" + location.host, "")
-						} else {
-							let _state = ruleParser.curSiteRule.action > 0 || confirm(i18n("forceAllBody")) ? 2 : 3
-							storage.setItem("forceState_" + location.host, _state)
-						}
-						location.reload()
-					})
+					// _GM_registerMenuCommand(i18n(inForce ? "cancelForceIframe" : "forceIframe"), () => {
+					// 	if (inForce) {
+					// 		storage.setItem("forceState_" + location.host, "")
+					// 	} else {
+					// 		let _state = ruleParser.curSiteRule.action > 0 || confirm(i18n("forceAllBody")) ? 2 : 3
+					// 		storage.setItem("forceState_" + location.host, _state)
+					// 	}
+					// 	location.reload()
+					// })
 				}
-				_GM_registerMenuCommand(i18n("loadNow"), () => {
-					let loadNum = window.prompt(i18n("loadConfirm"), "1")
-					if (loadNum === "" || loadNum === null) return
-					autoLoadNum = Math.abs(parseInt(loadNum))
-					nextPage()
-				})
+				// _GM_registerMenuCommand(i18n("loadNow"), () => {
+				// 	let loadNum = window.prompt(i18n("loadConfirm"), "1")
+				// 	if (loadNum === "" || loadNum === null) return
+				// 	autoLoadNum = Math.abs(parseInt(loadNum))
+				// 	nextPage()
+				// })
 			}
 			initListener()
 		})
