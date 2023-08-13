@@ -42,7 +42,10 @@
 // @match                 https://rarbgmirror.com/*
 // @match                 https://rarbgproxy.com/*
 // @match                 https://rarbgunblock.com/*
-// @match                 https://rarbg.proxyninja.org/*
+// @match                 https://rarbg.proxyninja.org
+// @match                 https://www.rarbgproxy.to/*
+// @match                 https://rarbgproxy.to/*
+// @match                 https://www2.rarbggo.to/*
 // @connect               *
 // @grant                 GM_xmlhttpRequest
 // ==/UserScript==

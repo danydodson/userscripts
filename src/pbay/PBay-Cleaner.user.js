@@ -1,16 +1,19 @@
 // ==UserScript==
-// @name         PBay: Cleaner
-// @description  Updated for 2022. Settings are in the navigation menus. Now Includes support for thepiratebay.org with support for 1337x.to and rarbg.to hopefully soon.
-// @author       BoKu
+// @name         PirateBay: Cleaner
 // @version      5.6.1
-// @namespace    https://greasyfork.org/scripts/1573-the-pirate-bay-cleaner
-// @icon         https://pirate-bays.net/wp-content/themes/piratebay/assets/img/tpb.jpg
+// @author       BoKu
+// @description  Updated for 2022. Settings are in the navigation menus. Now Includes support for thepiratebay.org with support for 1337x.to and rarbg.to hopefully soon.
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
+// @icon         https://thepiratebay.org/favicon.ico
 // @license 	   The Pirate Bay Cleaner is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.openInTab
 // @match        *://thepiratebay.org/*
 // @match        *://pirateproxy.surf/*
+// @match        *://pirate-bays.net/*
 // @-match       *://rarbg.to/*
 // @-match       *://1337x.to/*
 // @-match       *://1337x.st/*

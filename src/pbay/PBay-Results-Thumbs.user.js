@@ -1,11 +1,14 @@
 // ==UserScript==
-// @name         PBay: Results Thumbnails
+// @name         PirateBay: Results Thumbnails
 // @version      1.0
 // @author       qwertanon
 // @description  Looks at search results on PirateBay results page that include Porn and adds a box with google image search results for the torrent title when you hover over the result. Also simplies the page's title.
-// @namespace    https://greasyfork.org/users/13708
-// @icon         https://pirate-bays.net/wp-content/themes/piratebay/assets/img/tpb.jpg
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Results-Thumbs.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Results-Thumbs.user.js
+// @icon         https://thepiratebay.org/favicon.ico
 // @match        thepiratebay.org/search/*
+// @match        https://pirate-bays.net/*
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 

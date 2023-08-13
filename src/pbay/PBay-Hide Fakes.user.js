@@ -1,11 +1,14 @@
 // ==UserScript==
-// @name         PBay: Hide Fakes
+// @name         PirateBay: Hide Fake Torrents
 // @version      2.0
 // @author       https://www.reddit.com/user/nicobelic
 // @description  Hide Fake Torrents on The Pirate Bay with Conditional Logic
-// @namespace    https://www.reddit.com/r/Piracy/comments/4w0qix/now_that_kat_is_gone_i_wrote_a_small_script_that/
-// @icon         https://pirate-bays.net/wp-content/themes/piratebay/assets/img/tpb.jpg
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Hide%20Fakes.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Hide%20Fakes.user.js
+// @icon         https://thepiratebay.org/favicon.ico
 // @match        https://thepiratebay.org/*
+// @match        https://pirate-bays.net/*
 // @grant        none
 // @locale       English
 // ==/UserScript==
