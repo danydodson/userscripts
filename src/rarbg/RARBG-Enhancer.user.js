@@ -56,6 +56,7 @@ var meta = {
 		// @match        https://rarbgweb.org
 		// @match        https://unblockedrarbg.org
 		// @match        https://www.rarbg.is
+		// @match        https://rarbg.proxyninja.org
 	  // @run-at       document-idle
 		// @grant        unsafeWindow
 		// @grant        GM_setValue
