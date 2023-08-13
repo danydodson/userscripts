@@ -3,10 +3,9 @@ var meta = {
 		// ==UserScript==
 		// @name         RARBG: Enhancer
 		// @version      1.6.11
-		// @namespace    https://github.com/FarisHijazi
-		// @author       Faris Hijazi with some code from https://greasyfork.org/en/users/2160-darkred
+		// @namespace    https://github.com/danydodson/userscripts
+		// @author       Faris Hijazi
 		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents             
-		// @run-at       document-idle
 		// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
     // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
 		// @require      https://code.jquery.com/jquery-3.4.0.min.js
@@ -16,7 +15,7 @@ var meta = {
 		// @require      https://raw.githubusercontent.com/mitchellmebane/GM_fetch/master/GM_fetch.js
 		// @require      https://raw.githubusercontent.com/sizzlemctwizzle/GM_config/master/gm_config.js
 		// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
-		// @icon         https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
+		// @icon         https://rargb.to/favicon.ico
 		// @match        https://*rarbg.*
 		// @match        /https?:\/\/.{0,8}rarbg.*\.\/*/
 		// @match        /https?:\/\/.{0,8}rargb.*\.\/*/
@@ -57,6 +56,7 @@ var meta = {
 		// @match        https://rarbgweb.org
 		// @match        https://unblockedrarbg.org
 		// @match        https://www.rarbg.is
+	  // @run-at       document-idle
 		// @grant        unsafeWindow
 		// @grant        GM_setValue
 		// @grant        GM_getValue
