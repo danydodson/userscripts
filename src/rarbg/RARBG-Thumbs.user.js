@@ -8,6 +8,7 @@
 // @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @match         http*://*rarbg*/*
+// @match         https://rarbg.how/*
 // @grant         none
 // @copyright     2012+, You
 // ==/UserScript==
