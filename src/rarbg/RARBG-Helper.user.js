@@ -4,7 +4,9 @@
 // @author                PeratX
 // @description           Powerful Toolbox for RARBG
 // @namespace             https://peratx.net
-// @icon                  https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://rarbg.to&size=16
+// @icon                  https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE
+// @downloadURL           https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
+// @updateURL             https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
 // @license               Apache License 2.0
 // @match                 *://rarbg.to/*
 // @match                 *://rarbg2018.org/*

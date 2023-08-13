@@ -7,7 +7,8 @@ var meta = {
 		// @author       Faris Hijazi with some code from https://greasyfork.org/en/users/2160-darkred
 		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents             
 		// @run-at       document-idle
-		// @updateUrl    https://github.com/FarisHijazi/Rarbg-Enhancer-UserScript/raw/master/Rarbg-Enhancer-UserScript.user.js
+		// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
+    // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
 		// @require      https://code.jquery.com/jquery-3.4.0.min.js
 		// @require      https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.4/jszip.min.js
 		// @require      https://unpkg.com/infinite-scroll@3.0.5/dist/infinite-scroll.pkgd.min.js
