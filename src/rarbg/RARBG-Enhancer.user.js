@@ -61,6 +61,7 @@ var meta = {
 		// @match        https://rarbgproxy.to/*
 		// @match        https://www2.rarbggo.to/*
 		// @match        https://rarbg.how/*
+		// @match        https://rargb.to/*
 	  // @run-at       document-idle
 		// @grant        unsafeWindow
 		// @grant        GM_setValue

@@ -47,6 +47,7 @@
 // @match                 https://rarbgproxy.to/*
 // @match                 https://www2.rarbggo.to/*
 // @match                 https://rarbg.how/*
+// @match                 https://rargb.to/*
 // @connect               *
 // @grant                 GM_xmlhttpRequest
 // ==/UserScript==
