@@ -22,8 +22,8 @@
 // @grant         GM_getResourceURL
 // @grant         GM_xmlhttpRequest
 // @license       GPL version 3 or any later version
-// @include       https://classic.torrentleech.org/torrents/*
-// @include       http://classic.torrentleech.org/torrents/*
+// @match         https://classic.torrentleech.org/torrents/*
+// @match         http://classic.torrentleech.org/torrents/*
 // @icon          https://www.torrentleech.org/favicon.ico
 // ==/UserScript==
 
