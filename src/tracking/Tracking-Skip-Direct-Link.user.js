@@ -8,6 +8,7 @@
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Skip-Direct-Link.user.js
 // @include       /((https|http)%)/
 // @include       /^(facebook|google|github|linkedin)/
+// @icon          https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @grant         none
 // @license       MIT
 // ==/UserScript==
