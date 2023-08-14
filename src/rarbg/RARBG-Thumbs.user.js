@@ -9,6 +9,7 @@
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @match         http*://*rarbg*/*
 // @match         https://rarbg.how/*
+// @match         https://www2.rarbggo.to/*
 // @grant         none
 // @copyright     2012+, You
 // ==/UserScript==
