@@ -1,10 +1,13 @@
 // ==UserScript==
-// @name         All: Ads DOM Remover
-// @namespace    All: Ads DOM Remover
+// @name         Ads: Remove Ad from DOM
 // @version      1.36
 // @author       Sagie Gur-Ari
 // @description  Removes Ad Containers from DOM (doesn't replace adblocker extension, but blocks dynamic content which the adblocker fails to block by removing whole sections from the HTML DOM.)
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/ads/Ads-Remove-Ad-from-DOM.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/ads/Ads-Remove-Ad-from-DOM.user.js
 // @supportURL   https://github.com/sagiegurari/userscripts-ads-dom-remover/issues
+// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @match        https://www.ynet.co.il/*
 // @match        https://www.mynet.co.il/*
 // @match        https://www.calcalist.co.il/*
@@ -22,9 +25,9 @@
 // @match        https://aternos.org/*
 // @require      https://code.jquery.com/jquery-2.2.2.min.js
 // @require      https://greasyfork.org/scripts/18490-ads-dom-remover-runner/code/Ads%20DOM%20Remover%20Runner.js?version=983896
-// @grant        none
-// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @license      MIT License
+// @grant        none
+
 // ==/UserScript==
 
 (function run($, runner) {

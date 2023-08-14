@@ -1,15 +1,17 @@
 // ==UserScript==
-// @name            YouTube: Player Controls
-// @namespace       YouTubePlayerControls
-// @version         1.3.3
-// @author          Costas
-// @description     fill window, stretch video, float video, set HD 4K 8K resolution, click skip ads, click show more, hide ads and annotations, loop, pause at start/end
-// @match           http://www.youtube.com/*
-// @match           https://www.youtube.com/*
-// @grant           GM_setValue
-// @grant           GM_getValue
-// @license         MIT
-// @icon            https://www.google.com/s2/favicons?domain=youtube.com
+// @name          YouTube: Player Controls
+// @version       1.3.3
+// @author        Costas
+// @description   fill window, stretch video, float video, set HD 4K 8K resolution, click skip ads, click show more, hide ads and annotations, loop, pause at start/end
+// @namespace     https://github.com/danydodson/userscripts
+// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-Player-Controls.user.js
+// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-Player-Controls.user.js
+// @match         http://www.youtube.com/*
+// @match         https://www.youtube.com/*
+// @grant         GM_setValue
+// @grant         GM_getValue
+// @license       MIT
+// @icon          https://www.google.com/s2/favicons?domain=youtube.com
 // @noframes
 // ==/UserScript==
 

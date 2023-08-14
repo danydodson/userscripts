@@ -4,8 +4,8 @@
 // @author       qwertanon
 // @description  Looks at search results on PirateBay results page that include Porn and adds a box with google image search results for the torrent title when you hover over the result. Also simplies the page's title.
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Results-Thumbs.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Results-Thumbs.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Results-Thumbs.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Results-Thumbs.user.js
 // @icon         https://thepiratebay.org/favicon.ico
 // @match        thepiratebay.org/search/*
 // @match        https://pirate-bays.net/*

@@ -1,14 +1,16 @@
 // ==UserScript==
-// @name         YouTube: Cpu Tamer
-// @version      1.2.0
-// @namespace    knoa.jp
-// @description  It just reduces CPU usage on YouTube.
-// @match        https://www.youtube.com/*
-// @match        https://www.youtube.com/embed/*
-// @match        https://www.youtube-nocookie.com/embed/*
-// @run-at       document-start
-// @grant        none
-// @icon         https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png
+// @name          YouTube: CPU Tamer
+// @version       1.2.0
+// @description   It just reduces CPU usage on YouTube.
+// @namespace     https://github.com/danydodson/userscripts
+// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-CPU-Tamer.user.js
+// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-CPU-Tamer.user.js
+// @match         https://www.youtube.com/*
+// @match         https://www.youtube.com/embed/*
+// @match         https://www.youtube-nocookie.com/embed/*
+// @run-at        document-start
+// @grant         none
+// @icon          https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png
 // ==/UserScript==
 
 /*

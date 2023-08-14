@@ -4,8 +4,8 @@
 // @author       https://www.reddit.com/user/nicobelic
 // @description  Hide Fake Torrents on The Pirate Bay with Conditional Logic
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Hide%20Fakes.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Hide%20Fakes.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Hide%20Fakes.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Hide%20Fakes.user.js
 // @icon         https://thepiratebay.org/favicon.ico
 // @match        https://thepiratebay.org/*
 // @match        https://pirate-bays.net/*

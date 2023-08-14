@@ -4,8 +4,8 @@
 // @author       BoKu
 // @description  Updated for 2022. Settings are in the navigation menus. Now Includes support for thepiratebay.org with support for 1337x.to and rarbg.to hopefully soon.
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Cleaner.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Cleaner.user.js
 // @icon         https://thepiratebay.org/favicon.ico
 // @license 	   The Pirate Bay Cleaner is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 // @grant        GM.setValue
