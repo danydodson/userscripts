@@ -1,15 +1,14 @@
 // ==UserScript==
-// @name                ChatGPT Infinity ∞
+// @name                ChatGPT: Infinity ∞
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @author              Adam Lui
 // @version             2023.8.14.1
 // @license             MIT
 // @namespace           https://github.com/danydodson/userscripts
-// @downloadURL         https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Infinity.user copy.js
-// @updateURL           https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Infinity.user copy.js
+// @downloadURL         https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Infinity.user.js
+// @updateURL           https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Infinity.user.js
 // @match               https://chat.openai.com/*
-// @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
-// @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon64.png
+// @icon                https://chat.openai.com/favicon.ico
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@315fc8e62d4d3e82276fbb641128774a0d1c5219/dist/chatgpt-2.1.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
@@ -22,8 +21,10 @@
 // @noframes
 // ==/UserScript==
 
-// @--homepageURL       https://chatgptinfinity.com
-// @--supportURL        https://chatgptinfinity.com/support
+// @homepageURL       https://chatgptinfinity.com
+// @supportURL        https://chatgptinfinity.com/support
+// @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
+// @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon64.png
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
 
