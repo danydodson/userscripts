@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub: Open In Code
 // @version      0.1.4
-// @description  A userscript that adds a button to open a repo in VSCode using github1s
+// @description  A userscript that adds a button to open a repo in VSCode using github1s -  https://github.com/Mottie/GitHub-userscripts/issues
 // @license      MIT
 // @author       Rob Garrison
 // @run-at       document-idle
@@ -11,11 +11,10 @@
 // @require      https://greasyfork.org/scripts/398877-utils-js/code/utilsjs.js?version=1079637
 // @require      https://greasyfork.org/scripts/28721-mutations/code/mutations.js?version=1108163
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/github/GitHub-Open-In-Code.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/github/GitHub-Open-In-Code.user.js
 // @icon         https://github.githubassets.com/pinned-octocat.svg
 // @include      https://github.com/*
-// @--supportURL https://github.com/Mottie/GitHub-userscripts/issues
 // ==/UserScript==
 
 /* global $ on make */
