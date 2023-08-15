@@ -576,6 +576,7 @@
 			}
 		}
 		function duckduckgoInjectContainer() {
+			GM_addStyle(".gdzyb9PgLazLyi4DKK0O.js-react-sidebar.YL_aMfikzFszfcc4KLSh{max-width: 600px!important}")
 			GM_addStyle(".chat-gpt-container{max-width: 100%!important}")
 			GM_addStyle(".chat-gpt-container{width: 70vw}")
 			const container2 = getContainer()
