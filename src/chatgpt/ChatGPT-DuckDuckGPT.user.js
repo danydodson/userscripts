@@ -14,6 +14,16 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
+// @compatible          chrome
+// @compatible          firefox
+// @compatible          edge
+// @compatible          opera
+// @compatible          brave
+// @compatible          vivaldi
+// @compatible          waterfox
+// @compatible          librewolf
+// @compatible          ghost
+// @compatible          qq
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@315fc8e62d4d3e82276fbb641128774a0d1c5219/dist/chatgpt-2.1.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
