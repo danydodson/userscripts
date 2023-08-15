@@ -5,9 +5,9 @@ var meta = {
 		// @version      1.6.11
 		// @namespace    https://github.com/danydodson/userscripts
 		// @author       Faris Hijazi
-		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents             
+		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents
 		// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
-    // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
+		// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
 		// @require      https://code.jquery.com/jquery-3.4.0.min.js
 		// @require      https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.4/jszip.min.js
 		// @require      https://unpkg.com/infinite-scroll@3.0.5/dist/infinite-scroll.pkgd.min.js
@@ -17,9 +17,9 @@ var meta = {
 		// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
 		// @icon         https://rargb.to/favicon.ico
 		// @match        https://*rarbg.*
-		// @match        /https?:\/\/.{0,8}rarbg.*\.\/*/
-		// @match        /https?:\/\/.{0,8}rargb.*\.\/*/
-		// @match        /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
+		// @include      /https?:\/\/.{0,8}rarbg.*\.\/*/
+		// @include      /https?:\/\/.{0,8}rargb.*\.\/*/
+		// @include      /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
 		// @match        https://www.rarbg.is
 		// @match        https://proxyrarbg.org
 		// @match        https://rarbg.com
@@ -57,13 +57,11 @@ var meta = {
 		// @match        https://unblockedrarbg.org
 		// @match        https://www.rarbg.is
 		// @match        https://rarbg.proxyninja.org
-		// @match        https://www.rarbgproxy.to/*
-		// @match        https://rarbgproxy.to/*
-		// @match        https://www2.rarbggo.to/*
-		// @match        https://rarbg.how/*
-		// @match        https://rargb.to/*
-		// @match        https://rarbg.how/*
-	  // @run-at       document-idle
+		// @include      https://www.rarbgproxy.to/*
+		// @include      https://rarbgproxy.to/*
+		// @include      https://www2.rarbggo.to/*
+		// @include      https://rarbg.how/*
+		// @run-at       document-idle
 		// @grant        unsafeWindow
 		// @grant        GM_setValue
 		// @grant        GM_getValue
