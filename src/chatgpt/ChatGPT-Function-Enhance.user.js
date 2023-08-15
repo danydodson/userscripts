@@ -6,7 +6,7 @@
 // @license      GPL-3.0
 // @run-at       document-idie
 // @grant        none
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
 // @icon         https://chat.openai.com/favicon.ico

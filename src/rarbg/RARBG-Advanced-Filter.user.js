@@ -4,7 +4,7 @@
 // @description  Additional quality of life filters: - Show or hide category icons; - Show or hide torrent thumbnails; - Show or hide movie and tv filters (Removes torrents with KORSUB and 720p); - Show or hide porn; - search for movies and tv shows by genre - Filter based on minimum IMDB rating;
 // @author       Kxmode
 // @license      MIT
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
 // @icon         https://rargb.to/favicon.ico

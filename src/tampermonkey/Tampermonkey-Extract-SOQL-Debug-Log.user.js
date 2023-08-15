@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         Tampermonkey: Extract SOQL Debug Log
-// @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
 // @grant        none
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-Extract-SOQL-Debug-Log.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-Extract-SOQL-Debug-Log.user.js
 // @icon         https://www.tampermonkey.net/favicon.ico

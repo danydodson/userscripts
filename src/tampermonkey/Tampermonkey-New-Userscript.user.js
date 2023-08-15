@@ -5,7 +5,7 @@
 // @author       You
 // @grant        GM_log
 // @grant        GM_addStyle
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-New-Userscript.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-New-Userscript.user.js
 // @icon         https://www.tampermonkey.net/favicon.ico

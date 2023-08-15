@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name          RARBG: Thumbs
-// @namespace     https://rarbg.to/
 // @version       0.2
 // @description   rarbg list thumb
 // @namespace     https://github.com/danydodson/userscripts
