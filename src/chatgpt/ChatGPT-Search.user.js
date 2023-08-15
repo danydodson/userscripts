@@ -202,6 +202,7 @@
 // @match              https://cn.bing.com/search*
 // @match              https://www.baidu.com/s*
 // @match              https://duckduckgo.com/*
+// @match              https://duckduckgo.com/?*
 // @match              https://www.deepl.com/translator*
 // @connect            chat.openai.com
 // @grant              GM_addStyle
