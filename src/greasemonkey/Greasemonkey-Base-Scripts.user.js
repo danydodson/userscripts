@@ -6,7 +6,7 @@
 // @namespace       https://github.com/danydodson/userscripts
 // @downloadURL     https://github.com/danydodson/userscripts/blob/main/src/greasemonkey/Greasemonkey-Base-Scripts.user.js
 // @updateURL       https://github.com/danydodson/userscripts/blob/main/src/greasemonkey/Greasemonkey-Base-Scripts.user.js
-// @icon            https://www.tampermonkey.net/favicon.ico
+// @icon            https://wiki.greasespot.net/favicon.ico
 // @run-at          document-end
 // @version         0.52.001
 // @include         http://gmonkey.*.*/test/6/*
