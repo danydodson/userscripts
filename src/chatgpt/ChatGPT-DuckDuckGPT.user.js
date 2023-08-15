@@ -8,16 +8,6 @@
 // @downloadURL         https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-DuckDuckGPT.user.js
 // @updateURL           https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-DuckDuckGPT.user.js
 // @icon                https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
-// @compatible          chrome
-// @compatible          firefox
-// @compatible          edge
-// @compatible          opera
-// @compatible          brave
-// @compatible          vivaldi
-// @compatible          waterfox
-// @compatible          librewolf
-// @compatible          ghost
-// @compatible          qq
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
 // @connect             raw.githubusercontent.com
