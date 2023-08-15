@@ -6,10 +6,6 @@
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
-// @match        http*://greasyfork.org/*
-// @match        http*://www.greasyfork.org/*
-// @match        http*://sleazyfork.org/*
-// @match        http*://www.sleazyfork.org/*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -22,6 +18,10 @@
 // @grant        GM.notification
 // @connect      greasyfork.org
 // @connect      sleazyfork.org
+// @include      http*://greasyfork.org/*
+// @include      http*://www.greasyfork.org/*
+// @include      http*://sleazyfork.org/*
+// @include      http*://www.sleazyfork.org/*
 // ==/UserScript==
 
 (function () {

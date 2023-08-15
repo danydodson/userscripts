@@ -7,10 +7,10 @@
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Bullshit-Filter.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Bullshit-Filter.user.js
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
-// @license      MIT
-// @match        /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
-// @match        /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts\/[\w-]+\/feedback|discussions\/[\d]+|users\/.*\/conversations.*)$/
 // @grant        none
+// @license      MIT
+// @include      /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
+// @include      /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts\/[\w-]+\/feedback|discussions\/[\d]+|users\/.*\/conversations.*)$/
 // ==/UserScript==
 
 //    This is a modified version of this script (http://userscripts-mirror.org/scripts/show/97145) by kuehlschrank.
