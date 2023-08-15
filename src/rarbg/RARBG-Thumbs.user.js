@@ -7,9 +7,12 @@
 // @icon          https://rargb.to/favicon.ico
 // @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
-// @include       http*://*rarbg*/*
 // @include       https://rarbg.how/*
+// @include       https://rargb.to/*
 // @include       https://www2.rarbggo.to/*
+// @include       https://rarbg.proxyninja.org
+// @include       https://www.rarbgproxy.to/*
+// @include       https://rarbgproxy.to/*
 // @grant         none
 // @copyright     2012+, You
 // ==/UserScript==

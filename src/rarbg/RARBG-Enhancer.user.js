@@ -24,54 +24,21 @@ var meta = {
 		// @grant        GM_download
 		// @grant        GM_xmlhttpRequest
 		// @grant        GM_registerMenuCommand
-		// @include      https://*rarbg.*
-		// @include      /https?:\/\/.{0,8}rarbg.*\.\/*/
-		// @include      /https?:\/\/.{0,8}rargb.*\.\/*/
-		// @include      /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
-		// @include      https://www.rarbgproxy.to/*
-		// @include      https://rarbgproxy.to/*
-		// @include      https://www2.rarbggo.to/*
-		// @include      https://rarbg.how/*
-		// @match        https://www.rarbg.is
-		// @match        https://proxyrarbg.org
-		// @match        https://rarbg.com
-		// @match        https://rarbg.to
-		// @match        https://rarbg2018.org
-		// @match        https://rarbg2019.org
-		// @match        https://rarbg2020.org
-		// @match        https://rarbg2021.org
-		// @match        https://rarbgaccess.org
-		// @match        https://rarbgaccessed.org
-		// @match        https://rarbgcdn.org
-		// @match        https://rarbgcore.org
-		// @match        https://rarbgdata.org
-		// @match        https://rarbgenter.org
-		// @match        https://rarbgget.org
-		// @match        https://rarbggo.org
-		// @match        https://rarbgindex.org
-		// @match        https://rarbgmirror.com
-		// @match        https://rarbgmirror.org
-		// @match        https://rarbgmirrored.org
-		// @match        https://rarbgp2p.org
-		// @match        https://rarbgproxied.org
-		// @match        https://rarbgproxies.org
-		// @match        https://rarbgproxy.com
-		// @match        https://rarbgproxy.org
-		// @match        https://rarbgprx.org
-		// @match        https://rarbgto.org
-		// @match        https://rarbgtor.org
-		// @match        https://rarbgtorrents.org
-		// @match        https://rarbgunblock.com
-		// @match        https://rarbgunblock.org
-		// @match        https://rarbgunblocked.org
-		// @match        https://rarbgway.org
-		// @match        https://rarbgweb.org
-		// @match        https://unblockedrarbg.org
-		// @match        https://www.rarbg.is
-		// @match        https://rarbg.proxyninja.org
+    // @include      https://rarbg.how/*
+    // @include      https://rargb.to/*
+    // @include      https://www2.rarbggo.to/*
+    // @include      https://rarbg.proxyninja.org
+    // @include      https://www.rarbgproxy.to/*
+    // @include      https://rarbgproxy.to/*
 		// ==/UserScript==
 	}
 }
+
+// @include      /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
+// @--include    https://*rarbg.*
+// @--include    /https?:\/\/.{0,8}rarbg.*\.\/*/
+// @--include    /https?:\/\/.{0,8}rargb.*\.\/*/
+
 if (meta.rawmdb && meta.rawmdb.toString && (meta.rawmdb = meta.rawmdb.toString())) {
 	var kv, row = /\/\/\s+@(\S+)\s+(.+)/g
 	while ((kv = row.exec(meta.rawmdb)) !== null) {

@@ -10,46 +10,14 @@
 // @license               Apache License 2.0
 // @connect               *
 // @grant                 GM_xmlhttpRequest
-// @include               https://rarbg.to/*
-// @include               https://rarbg2018.org/*
-// @include               https://rarbg2019.org/*
-// @include               https://rarbg2020.org/*
-// @include               https://rarbg2021.org/*
-// @include               https://rarbgaccess.org/*
-// @include               https://rarbgaccessed.org/*
-// @include               https://rarbgcdn.org/*
-// @include               https://rarbgcore.org/*
-// @include               https://rarbgdata.org/*
-// @include               https://rarbgenter.org/*
-// @include               https://rarbgget.org/*
-// @include               https://rarbggo.org/*
-// @include               https://rarbgindex.org/*
-// @include               https://rarbgmirror.org/*
-// @include               https://rarbgmirrored.org/*
-// @include               https://rarbgp2p.org/*
-// @include               https://rarbgproxied.org/*
-// @include               https://rarbgproxies.org/*
-// @include               https://rarbgproxy.org/*
-// @include               https://rarbgprx.org/*
-// @include               https://rarbgto.org/*
-// @include               https://rarbgtor.org/*
-// @include               https://rarbgtorrents.org/*
-// @include               https://rarbgunblock.org/*
-// @include               https://rarbgunblocked.org/*
-// @include               https://rarbgway.org/*
-// @include               https://rarbgweb.org/*
-// @include               https://proxyrarbg.org/*
-// @include               https://unblockedrarbg.org/*
-// @include               https://rarbg.com/*
-// @include               https://rarbgmirror.com/*
-// @include               https://rarbgproxy.com/*
-// @include               https://rarbgunblock.com/*
+// @include               https://rarbg.how/*
+// @include               https://rargb.to/*
+// @include               https://www2.rarbggo.to/*
 // @include               https://rarbg.proxyninja.org
 // @include               https://www.rarbgproxy.to/*
 // @include               https://rarbgproxy.to/*
-// @include               https://www2.rarbggo.to/*
-// @include               https://rarbg.how/*
-// @include               https://rargb.to/*
+
+
 // ==/UserScript==
 
 (async () => {
