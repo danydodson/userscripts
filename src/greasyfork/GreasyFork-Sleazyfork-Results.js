@@ -18,10 +18,10 @@
 // @grant        GM.notification
 // @connect      greasyfork.org
 // @connect      sleazyfork.org
-// @include      http*://greasyfork.org/*
-// @include      http*://www.greasyfork.org/*
-// @include      http*://sleazyfork.org/*
-// @include      http*://www.sleazyfork.org/*
+// @include      https://greasyfork.org/*
+// @include      https://www.greasyfork.org/*
+// @include      https://sleazyfork.org/*
+// @include      https://www.sleazyfork.org/*
 // ==/UserScript==
 
 (function () {

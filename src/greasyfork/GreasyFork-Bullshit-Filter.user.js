@@ -9,10 +9,10 @@
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
 // @grant        none
 // @license      MIT
-// @include      http*://greasyfork.org/*
-// @include      http*://www.greasyfork.org/*
-// @include      http*://sleazyfork.org/*
-// @include      http*://www.sleazyfork.org/*
+// @include      https://greasyfork.org/*
+// @include      https://www.greasyfork.org/*
+// @include      https://sleazyfork.org/*
+// @include      https://www.sleazyfork.org/*
 // ==/UserScript==
 
 // @--include      /^https:\/\/(greasy|sleazy)fork\.org\/(.*\/)?(scripts|discussions|users).*$/
