@@ -1,16 +1,18 @@
 // ==UserScript==
 // @name         ChatGPT: Function Enhance
-// @namespace    http://tampermonkey.net/
-// @version      1.2.5
 // @description  This version is good
 // @author       bigemon mebb
+// @version      1.2.5
+// @license      GPL-3.0
+// @run-at       document-idie
+// @grant        none
+// @namespace    http://tampermonkey.net/
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
+// @icon         https://chat.openai.com/favicon.ico
 // @match        https://chat.openai.com/chat
 // @match        https://chat.openai.com/chat/*
 // @match        https://chat.openai.com/auth/login
-// @icon         https://chat.openai.com/favicon.ico
-// @license      GPL-3.0
-// @run-at       document-idie
-// @grant none
 // ==/UserScript==
 
 

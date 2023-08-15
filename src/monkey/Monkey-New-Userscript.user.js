@@ -14,17 +14,17 @@
 (function () {
 	'use strict'
 
-	GM_log("garmin cleaning waiting")
+	GM_log('garmin cleaning waiting')
 
 	var intervalId = setInterval(function () {
-		var divs = document.getElementsByClassName("badge-available")
+		var divs = document.getElementsByClassName('badge-available')
 		//GM_log(divs);
 		divs = Array.from(divs)
 
 		divs.forEach(function (div) {
-			var div2 = div.getElementsByClassName("badge-name")
+			var div2 = div.getElementsByClassName('badge-name')
 			if (div2[0].innerHTML.startsWith('<span>Noble Warrior Hero')) {
-				GM_log("garmin cleaning started")
+				GM_log('garmin cleaning started')
 				div.remove()
 			}
 			if (div2[0].innerHTML.startsWith('<span>Light. Darkness. A Balance.')) div.remove()
@@ -32,7 +32,7 @@
 			if (div2[0].innerHTML.startsWith('<span>No, You Move')) div.remove()//
 			if (div2[0].innerHTML.startsWith('<span>Higher. Further. Faster.')) div.remove()
 			if (div2[0].innerHTML.startsWith('<span>I Can Do This All Day')) div.remove()
-			if (div2[0].innerHTML.startsWith("<span>Nothing's Impossible")) div.remove()
+			if (div2[0].innerHTML.startsWith(`<span>Nothing's Impossible`)) div.remove()
 			if (div2[0].innerHTML.startsWith('<span>Rule the Galaxy')) div.remove()
 			if (div2[0].innerHTML.startsWith('<span>High Ground')) div.remove()
 			if (div2[0].innerHTML.startsWith('<span>On Your Left')) div.remove()
@@ -41,7 +41,7 @@
 			if (div2[0].innerHTML.startsWith('<span>Hone Your Strength')) div.remove()
 			if (div2[0].innerHTML.startsWith('<span>Feel the Force Flow')) {
 				div.remove()
-				GM_log("garmin cleaning done")
+				GM_log('garmin cleaning done')
 				clearInterval(intervalId)
 			}
 		})
