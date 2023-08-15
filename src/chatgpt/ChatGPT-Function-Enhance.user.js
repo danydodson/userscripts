@@ -9,7 +9,7 @@
 // @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
-// @icon         https://chat.openai.com/favicon.ico
+// @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @match        https://chat.openai.com/chat
 // @match        https://chat.openai.com/chat/*
 // @match        https://chat.openai.com/auth/login

@@ -7,7 +7,7 @@
 // @namespace          https://github.com/danydodson/userscripts
 // @downloadURL        https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
 // @updateURL          https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
-// @icon               https://chat.openai.com/favicon.ico
+// @icon               https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @match              https://*.google.com/search*
 // @match              https://*.google.ad/search*
 // @match              https://*.google.ae/search*

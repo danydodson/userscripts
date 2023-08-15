@@ -3,7 +3,7 @@
 // @namespace    https://github.com/danydodson/userscripts
 // @updateURL    https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
 // @downloadURL  https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
-// @icon         https://chat.openai.com/favicon.ico
+// @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @version      4.5.0
 // @description  Remove filters and limitations from ChatGPT
 // @author       mk_
@@ -16,8 +16,6 @@
 
 // @source          https://github.com/madkarmaa/automatic-chatgpt-dan
 // @supportURL      https://github.com/madkarmaa/automatic-chatgpt-dan
-
-// @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 
 (async () => {
 	'use strict'
