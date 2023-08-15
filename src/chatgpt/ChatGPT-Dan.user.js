@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT: DAN
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Dan.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Dan.user.js
+// @updateURL    https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
+// @downloadURL  https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
 // @icon         https://chat.openai.com/favicon.ico
 // @version      4.5.0
 // @description  Remove filters and limitations from ChatGPT
@@ -16,8 +16,7 @@
 
 // @source          https://github.com/madkarmaa/automatic-chatgpt-dan
 // @supportURL      https://github.com/madkarmaa/automatic-chatgpt-dan
-// @updateURL       https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
-// @downloadURL     https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
+
 // @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 
 (async () => {
@@ -842,7 +841,7 @@ background-color: var(--light);
 			`
 <h2 class="noselect">New script update!
 	<span style="color: var(--light);">${GM_info.script.version}</span>
-	→ 
+	→
 	<span style="color: var(--light);">${await getVersion(version)}</span>
 </h2>
 <div class="noselect" style="margin-bottom: 5px;">What's new in this version?</div>

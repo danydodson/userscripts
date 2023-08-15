@@ -4,16 +4,13 @@
 // @description  Hides moderation results during conversations with ChatGPT
 // @author       4as
 // @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-DeMod.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-DeMod.user.js
+// @updateURL    https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
+// @downloadURL  https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
 // @match        *://chat.openai.com/*
 // @icon         https://chat.openai.com/favicon.ico
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
-
-// @downloadURL  https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
-// @updateURL    https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
 
 'use strict'
 
