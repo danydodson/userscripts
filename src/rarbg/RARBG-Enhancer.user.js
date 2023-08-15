@@ -16,7 +16,7 @@ var meta = {
 		// @require      https://raw.githubusercontent.com/sizzlemctwizzle/GM_config/master/gm_config.js
 		// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
 		// @icon         https://rargb.to/favicon.ico
-		// @include        https://*rarbg.*
+		// @include      https://*rarbg.*
 		// @include      /https?:\/\/.{0,8}rarbg.*\.\/*/
 		// @include      /https?:\/\/.{0,8}rargb.*\.\/*/
 		// @include      /https?:\/\/.*u=MTcyLjIxLjAuMXw6Ly9yYXJiZy50by90b3JyZW50LzIyMDg3MjYwfE1vemlsbGEvNS4wIChXaW5kb3dzIE5UIDEwLjA7IFdpbjY0OyB4NjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS83OS4wLjM5NDUuMTMwIFNhZmFyaS81MzcuMzZ8ODc4MDQz.*/
