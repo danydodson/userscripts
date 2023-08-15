@@ -3,32 +3,32 @@
 // @version      5.6.1
 // @author       BoKu
 // @description  Updated for 2022. Settings are in the navigation menus. Now Includes support for thepiratebay.org with support for 1337x.to and rarbg.to hopefully soon.
-// @namespace    https://github.com/danydodson/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Cleaner.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/piratebay/PirateBay-Cleaner.user.js
-// @icon         https://thepiratebay.org/favicon.ico
 // @license 	   The Pirate Bay Cleaner is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/pbay/PBay-Cleaner.user.js
+// @icon         https://thepiratebay.org/favicon.ico
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        GM.openInTab
-// @match        *://thepiratebay.org/*
-// @match        *://pirateproxy.surf/*
-// @match        *://pirate-bays.net/*
-// @-match       *://rarbg.to/*
-// @-match       *://1337x.to/*
-// @-match       *://1337x.st/*
-// @-match       *://x1337x.ws/*
-// @-match       *://x1337x.eu/*
-// @-match       *://x1337x.se/*
-// @--match      *://eztv.re/*
-// @--match      *://eztv.ag/*
-// @--match      *://eztv.it/*
-// @--match      *://eztv.ch/*
-// @--match      *://kickasstorrents.to/*
-// @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js#sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==
-// @require      https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.min.js#sha512-bCd+wlawQOsxutqlrFLgATxcGnQcb2PQ/Og8DtTcLzJVssqgSk3Ro0qUuOKF3fgZwee622W/i91fGYrd32zFpw==
 // @run-at       document-end
 // @noframes
+// @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js#sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==
+// @require      https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.min.js#sha512-bCd+wlawQOsxutqlrFLgATxcGnQcb2PQ/Og8DtTcLzJVssqgSk3Ro0qUuOKF3fgZwee622W/i91fGYrd32zFpw==
+// @include      *://thepiratebay.org/*
+// @include      *://pirateproxy.surf/*
+// @include      *://pirate-bays.net/*
+// @include      *://rarbg.to/*
+// @include      *://1337x.to/*
+// @include      *://1337x.st/*
+// @include      *://x1337x.ws/*
+// @include      *://x1337x.eu/*
+// @include      *://x1337x.se/*
+// @include      *://eztv.re/*
+// @include      *://eztv.ag/*
+// @include      *://eztv.it/*
+// @include      *://eztv.ch/*
+// @include      *://kickasstorrents.to/*
 // ==/UserScript==
 
 "use strict"
