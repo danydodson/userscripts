@@ -5,7 +5,7 @@
 // @namespace     https://github.com/danydodson/userscripts
 // @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Strip-UTM.user.js
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Strip-UTM.user.js
-// @match         *?*utm*
+// @include       *?*utm*
 // @icon          https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @grant         none
 // @run-at      start

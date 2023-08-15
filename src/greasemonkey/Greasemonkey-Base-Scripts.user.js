@@ -1,24 +1,19 @@
 // ==UserScript==
-// @name            GM Base
-// @fullname        Greasemonkey Base
+// @name            Greasemonkey: Base Scripts
 // @description     General Library for Greasemonkey Scripts
-// @name:de         GM Base
-// @fullname:de     Greasemonkey Base
-// @description:de  Allgemeine Bibliothek für Greasemonkey Scripts
 // @author          ollily2907
 // @license         Apache License, Version 2.0
-// @license         https://www.apache.org/licenses/LICENSE-2.0.txt
-// @homepageURL     https://ollily.github.io/gm-common/
-// @supportURL      https://ollily.github.io/gm-common/
-// @source          https://raw.githubusercontent.com/ollily/gm-common/master/gm_base/gm_base.user.js
-// @icon
-// @compatible      firefox >=52
-// @compatible      chrome >=57
-// @namespace       https://github.com/ollily
+// @namespace       https://github.com/danydodson/userscripts
+// @downloadURL     https://github.com/danydodson/userscripts/blob/main/src/greasemonkey/Greasemonkey-Base-Scripts.user.js
+// @updateURL       https://github.com/danydodson/userscripts/blob/main/src/greasemonkey/Greasemonkey-Base-Scripts.user.js
+// @icon            https://www.tampermonkey.net/favicon.ico
 // @run-at          document-end
 // @version         0.52.001
 // @include         http://gmonkey.*.*/test/6/*
 // @include         http://devzone.*.*/test/gm/*
+// @--namespace     https://github.com/ollily
+// @--supportURL    https://ollily.github.io/gm-common/
+// @--source        https://raw.githubusercontent.com/ollily/gm-common/master/gm_base/gm_base.user.js
 // ==/UserScript==
 
 //
