@@ -1,18 +1,19 @@
 // ==UserScript==
-// @name             Twitch: VOD Unblocker
-// @description      Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
-// @copyright        2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
-// @license          MIT
-// @version          2.0.5
-// @author           beypazarigurusu
-// @match            https://www.twitch.tv/*
-// @require          https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.0.11/hls.min.js
-// @require          https://unpkg.com/plyr/dist/plyr.min.js
-// @run-at           document-start
-// @grant            none
-// @icon             https://www.google.com/s2/favicons?domain=twitch.tv
-// @namespace        https://greasyfork.org/users/727473
+// @name         Twitch: VOD Unblocker
+// @description  Unblocks Twitch VODs. Buy me a coffee at: https://ko-fi.com/beypazari
+// @copyright    2020, beypazarigurusu (https://openuserjs.org/users/beypazarigurusu)
+// @license      MIT
+// @version      2.0.5
+// @author       beypazarigurusu
+// @match        https://www.twitch.tv/*
+// @require      https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.0.11/hls.min.js
+// @require      https://unpkg.com/plyr/dist/plyr.min.js
+// @run-at       document-start
+// @grant        none
+// @icon         https://www.google.com/s2/favicons?domain=twitch.tv
 // ==/UserScript==
+
+// @--namespace    https://greasyfork.org/users/727473
 
 /******/ (function () { // webpackBootstrap
 /******/ 	"use strict"
@@ -89,7 +90,7 @@
         }
 
         /***/
-}),
+      }),
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /***/ (function (module, __webpack_exports__, __webpack_require__) {
@@ -106,7 +107,7 @@
 
 
         /***/
-}),
+      }),
 
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /***/ (function (module, __unused_webpack_exports, __webpack_require__) {
@@ -382,10 +383,10 @@
         }
 
         /***/
-})
+      })
 
     /******/
-})
+  })
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {}
@@ -397,14 +398,14 @@
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports
       /******/
-}
+    }
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
       /******/
-}
+    }
 /******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__)
@@ -412,7 +413,7 @@
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports
     /******/
-}
+  }
 /******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -425,9 +426,9 @@
 /******/ 			__webpack_require__.d(getter, { a: getter })
 /******/ 			return getter
       /******/
-}
+    }
     /******/
-}()
+  }()
 /******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function () {
@@ -437,19 +438,19 @@
 /******/ 				if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] })
           /******/
-}
+        }
         /******/
-}
+      }
       /******/
-}
+    }
     /******/
-}()
+  }()
 /******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function () {
 /******/ 		__webpack_require__.o = function (obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop) }
     /******/
-}()
+  }()
 /******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function () {
@@ -458,12 +459,12 @@
 /******/ 			if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' })
         /******/
-}
+      }
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true })
       /******/
-}
+    }
     /******/
-}()
+  }()
   /******/
   /************************************************************************/
   var __webpack_exports__ = {}
@@ -3700,4 +3701,3 @@
   }()
   /******/
 })()
-  

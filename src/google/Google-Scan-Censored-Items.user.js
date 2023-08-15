@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Google: Scan Censored Items
 // @version      1.6
-// @namespace    45c9a6614fccd4edff9592da
 // @description  Google Unlocked scans hidden search results that were censored by Google due to complaints
 // @author       Ibit - The Best Torrents
 // @license      MIT License
-// @icon            https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/google/Google-Scan-Censored-Items.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/google/Google-Scan-Censored-Items.user.js
+// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
 // @match        *://www.google.*/*
 // @grant        GM_xmlhttpRequest
 // @require      http://code.jquery.com/jquery-3.4.1.min.js

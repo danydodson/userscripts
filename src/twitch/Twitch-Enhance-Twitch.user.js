@@ -2,12 +2,12 @@
 // @name         Twitch: Enhance Twitch
 // @namespace    http://tampermonkey.net/
 // @version      3.1.3
-// @description   Auto click claim bonus (channel points and moments), Show images/video in chat, always source quality, hide offline channels and more
+// @description  Auto click claim bonus (channel points and moments), Show images/video in chat, always source quality, hide offline channels and more
 // @author       Bum
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
 // @match        https://www.twitch.tv/*
-// @match https://clips.twitch.tv/*
-// @icon            https://www.google.com/s2/favicons?domain=twitch.tv
+// @match        https://clips.twitch.tv/*
+// @icon         https://www.google.com/s2/favicons?domain=twitch.tv
 // @grant        none
 // ==/UserScript==
 

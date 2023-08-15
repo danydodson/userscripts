@@ -1,6 +1,8 @@
 // ==UserScript==
-// @name              All: Alternative Redirector
-// @namespace         All: Alternative Redirector
+// @name              Tracking: Alternative Redirector
+// @namespace         https://github.com/danydodson/userscripts
+// @downloadURL       https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Alternative-Redirector.user.js
+// @updateURL         https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Alternative-Redirector.user.js
 // @version           11.2.0
 // @description       Redirects you from proprietary web-services to ethical alternatives(front-end).
 // @author            NotYou

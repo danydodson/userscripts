@@ -1,14 +1,18 @@
 // ==UserScript==
-// @name            Google: Highlight File Types
-// @icon            https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
-// @namespace       https://greasyfork.org/users/783910
-// @version         0.3.1
-// @description     Highlight file type labels in Google search results
-// @author          ysnr777
-// @match           https://www.google.com/search?*
-// @grant           none
-// @license         MIT
+// @name         Google: Highlight File Types
+// @author       ysnr777
+// @version      0.3.1
+// @description  Highlight file type labels in Google search results
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/google/Google-Highlight-File-Types.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/google/Google-Highlight-File-Types.user.js
+// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png
+// @grant        none
+// @license      MIT
+// @match        https://www.google.com/search?*
 // ==/UserScript==
+
+// @namespace       https://greasyfork.org/users/783910
 
 const fileSettings = {
   PDF: {

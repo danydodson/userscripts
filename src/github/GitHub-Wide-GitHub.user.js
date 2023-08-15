@@ -1,20 +1,21 @@
 "use strict";
 
 // ==UserScript==
-// @name        GitHub: Wide GitHub
-// @namespace   https://github.com/xthexder/wide-github
-// @description Change all GitHub repository and gist pages to be full width and dynamically sized.
-// @author      xthexder
-// @copyright   2013-2023, xthexder (https://github.com/xthexder)
-// @license     MIT; https://raw.githubusercontent.com/xthexder/wide-github/master/LICENSE
-// @version     1.5.2
-// @icon        https://raw.githubusercontent.com/xthexder/wide-github/master/icons/icon.png
-// @homepageURL https://github.com/xthexder/wide-github
-// @supportURL  https://github.com/xthexder/wide-github/issues
-// @match       https://github.com/*
-// @match       https://gist.github.com/*
-// @grant       none
+// @name         GitHub: Wide GitHub
+// @namespace    https://github.com/xthexder/wide-github
+// @description  Change all GitHub repository and gist pages to be full width and dynamically sized.
+// @author       xthexder
+// @copyright    2013-2023, xthexder (https://github.com/xthexder)
+// @license      MIT; https://raw.githubusercontent.com/xthexder/wide-github/master/LICENSE
+// @version      1.5.2
+// @icon         https://raw.githubusercontent.com/xthexder/wide-github/master/icons/icon.png
+// @match        https://github.com/*
+// @match        https://gist.github.com/*
+// @grant        none
 // ==/UserScript==
+
+// @homepageURL  https://github.com/xthexder/wide-github
+// @supportURL   https://github.com/xthexder/wide-github/issues
 
 var styleSheet = "" +
 "body:not(.wgh-disabled) .application-main .container {" +

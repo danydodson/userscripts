@@ -4,6 +4,9 @@
 // @version         0.4.0
 // @author          Nomo
 // @description     Always start playing live video with source quality on twitch.tv
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Auto-Quality.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Auto-Quality.user.js
 // @match           *://*.twitch.tv/*
 // @require         https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // @require         https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js

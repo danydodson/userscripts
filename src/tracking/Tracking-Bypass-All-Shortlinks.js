@@ -1,6 +1,8 @@
 // ==UserScript==
-// @name            All: Bypass All Shortlinks
-// @namespace       All: Bypass All Shortlinks
+// @name            Tracking: Bypass All Shortlinks
+// @namespace       https://github.com/danydodson/userscripts
+// @downloadURL     https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Bypass-All-Shortlinks.js
+// @updateURL       https://github.com/danydodson/userscripts/blob/main/src/tracking/Tracking-Bypass-All-Shortlinks.js
 // @version         60.7
 // @grant           none
 // @author          Bloggerpemula
