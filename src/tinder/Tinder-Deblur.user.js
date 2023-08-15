@@ -757,13 +757,9 @@ function updateUserFiltering() {
 									let matches = true
 
 									// check radius
-									if (!user.hide_distance && user.distance_mi > maxDistance) matches = false;
+									if (!user.hide_distance && user.distance_mi > maxDistance) matches = false
 									// check age range
-									else if (
-										!user.hide_age &&
-										(userItem.getAge() < ageRangeStart || userItem.getAge() > ageRangeEnd)
-									)
-										matches = false
+									else if (!user.hide_age && (userItem.getAge() < ageRangeStart || userItem.getAge() > ageRangeEnd)) matches = false
 									// check photos amount
 									else if (user.photos.length < minimumPhotosAmount) matches = false;
 									// check verified
