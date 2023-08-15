@@ -3,7 +3,7 @@
 // @version      1.6.6.55.34
 // @description  Assistant for switching search engines. Jump to any search engine quickly, can also search anything (selected text / image / link) on any engine with a simple right click or a variety of menus and shortcuts.
 // @license      MPL License
-// @namespace    https://github.com/danydodson/auto
+// @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/auto/Auto-Search-Jumper.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/auto/Auto-Search-Jumper.user.js
 // @match        *://*/*
