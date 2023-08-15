@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         ChatGPT: DAN
-// @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @namespace    https://github.com/danydodson/userscripts
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Dan.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Dan.user.js
@@ -19,6 +18,7 @@
 // @supportURL      https://github.com/madkarmaa/automatic-chatgpt-dan
 // @updateURL       https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
 // @downloadURL     https://github.com/madkarmaa/automatic-chatgpt-dan/raw/master/script.user.js
+// @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 
 (async () => {
 	'use strict'
