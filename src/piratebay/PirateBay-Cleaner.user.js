@@ -15,20 +15,12 @@
 // @noframes
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js#sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==
 // @require      https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.min.js#sha512-bCd+wlawQOsxutqlrFLgATxcGnQcb2PQ/Og8DtTcLzJVssqgSk3Ro0qUuOKF3fgZwee622W/i91fGYrd32zFpw==
-// @include      *://thepiratebay.org/*
-// @include      *://pirateproxy.surf/*
-// @include      *://pirate-bays.net/*
-// @include      *://rarbg.to/*
-// @include      *://1337x.to/*
-// @include      *://1337x.st/*
-// @include      *://x1337x.ws/*
-// @include      *://x1337x.eu/*
-// @include      *://x1337x.se/*
-// @include      *://eztv.re/*
-// @include      *://eztv.ag/*
-// @include      *://eztv.it/*
-// @include      *://eztv.ch/*
-// @include      *://kickasstorrents.to/*
+// @include      https://thepiratebay.org/*
+// @include      https://pirate-bays.net/*
+// @include      https://rargb.to/
+// @include      https://1337x.to/*
+// @include      https://eztv.re/*
+// @include      https://kickass.onl/*
 // ==/UserScript==
 
 "use strict"
