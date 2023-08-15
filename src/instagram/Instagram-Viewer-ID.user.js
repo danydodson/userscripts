@@ -7,12 +7,12 @@
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Viewer-ID.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Viewer-ID.user.js
 // @icon         https://www.google.com/s2/favicons?domain=instagram.com
-// @match        https://www.instagram.com/*/*
+// @match        https://www.instagram.com/*
 // @grant        none
 // ==/UserScript==
 
 window.onload = main
-
+var oldT
 function main() {
 	document.querySelector('#react-root > section > main > div > header > section > div > h1').innerText += ', ID: ' + window._sharedData.entry_data.ProfilePage[0].graphql.user.id
 	oldT = document.querySelector('#react-root > section > main > div > header > section > div > h1').innerText
@@ -33,11 +33,13 @@ function vc() {
 }
 
 function getID(url, callback) {
-	xhr = new XMLHttpRequest()
+	var xhr = new XMLHttpRequest()
 	xhr.open('get', url, callback ? true : false)
 	xhr.send()
-	if (callback !== undefined)
+	if (callback !== undefined) {
 		callback(xhr.responseText.split('"id":')[1].split(',')[0].split('"')[1])
-	else
+	}
+	else {
 		return xhr.responseText.split('"id":')[1].split(',')[0].split('"')[1]
+	}
 }
