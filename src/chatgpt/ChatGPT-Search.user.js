@@ -576,9 +576,10 @@
 			}
 		}
 		function duckduckgoInjectContainer() {
+			GM_addStyle(".chat-gpt-container{max-width: 100%!important}")
+			GM_addStyle(".chat-gpt-container{width: 70vw}")
 			const container2 = getContainer()
 			const siderbarContainer = document.getElementsByClassName("gdzyb9PgLazLyi4DKK0O js-react-sidebar YL_aMfikzFszfcc4KLSh")[0]
-			// const siderbarContainer = document.getElementsByClassName("results--sidebar")[0] 
 			siderbarContainer.prepend(container2)
 		}
 		function deeplInjectContainer() {
