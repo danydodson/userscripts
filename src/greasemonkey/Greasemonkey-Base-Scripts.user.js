@@ -11,10 +11,11 @@
 // @version         0.52.001
 // @include         http://gmonkey.*.*/test/6/*
 // @include         http://devzone.*.*/test/gm/*
+// ==/UserScript==
+
 // @--namespace     https://github.com/ollily
 // @--supportURL    https://ollily.github.io/gm-common/
 // @--source        https://raw.githubusercontent.com/ollily/gm-common/master/gm_base/gm_base.user.js
-// ==/UserScript==
 
 //
 //GM-Script specific code - START
