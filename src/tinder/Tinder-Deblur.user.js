@@ -4,7 +4,7 @@
 // @version        2.8
 // @author         Tajnymag
 // @description    Simple script using the official Tinder API to get clean photos of the users who liked you
-// @match          https://tinder.com/*
+// @include        https://tinder.com/*
 // @grant          none
 // @icon           https://www.google.com/s2/favicons?sz=64&domain=tinder.com
 // @downloadURL    https://raw.githubusercontent.com/tajnymag/tinder-deblur/main/tinder.user.js
