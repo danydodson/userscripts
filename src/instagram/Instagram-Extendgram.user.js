@@ -3,6 +3,9 @@
 // @description Extends functionality and user experience on instagram
 // @version     1.0.0
 // @author      ryano
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Extendgram.user.js
+// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/instagram/Instagram-Extendgram.user.js
 // @match       http://*.instagram.com/*
 // @match       https://*.instagram.com/*
 // @run-at      document-end
