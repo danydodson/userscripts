@@ -16,6 +16,13 @@ var meta = {
 		// @require      https://raw.githubusercontent.com/sizzlemctwizzle/GM_config/master/gm_config.js
 		// @require      https://raw.githubusercontent.com/antimatter15/ocrad.js/master/ocrad.js
 		// @icon         https://rargb.to/favicon.ico
+		// @run-at       document-idle
+		// @grant        unsafeWindow
+		// @grant        GM_setValue
+		// @grant        GM_getValue
+		// @grant        GM_download
+		// @grant        GM_xmlhttpRequest
+		// @grant        GM_registerMenuCommand
 		// @include      https://*rarbg.*
 		// @include      /https?:\/\/.{0,8}rarbg.*\.\/*/
 		// @include      /https?:\/\/.{0,8}rargb.*\.\/*/
@@ -61,13 +68,6 @@ var meta = {
 		// @include      https://rarbgproxy.to/*
 		// @include      https://www2.rarbggo.to/*
 		// @include      https://rarbg.how/*
-		// @run-at       document-idle
-		// @grant        unsafeWindow
-		// @grant        GM_setValue
-		// @grant        GM_getValue
-		// @grant        GM_download
-		// @grant        GM_xmlhttpRequest
-		// @grant        GM_registerMenuCommand
 		// @noframes
 		// ==/UserScript==
 	}
