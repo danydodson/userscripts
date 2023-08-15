@@ -1,20 +1,21 @@
 // ==UserScript==
-// @name        All: No Iframe
-// @namespace   All: No Iframe
-// @homepage    https://openuserjs.org/scripts/Azev/no-iframe
-// @icon        http://i.imgur.com/YdrrcRX.png
-// @description Disable iframes
-// @author		  Azev
-// @version     2.0
-// @grant       none
-// @run-at      document-start
-// @match       https://*kickass.*
-// @match       https://*torrent.*
-// @match       https://*tracker.*
-
-
-
+// @name         Ads: No Iframe
+// @namespace    https://github.com/danydodson/userscripts
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
+// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
+// @icon         http://i.imgur.com/YdrrcRX.png
+// @description  Disable iframes
+// @author		   Azev
+// @version      2.0
+// @grant        none
+// @run-at       document-start
+// @match        https://*kickass.*
+// @match        https://*torrent.*
+// @match        https://*tracker.*
 // ==/UserScript==
+
+// @--homepage    https://openuserjs.org/scripts/Azev/no-iframe
+
 var counter = 0
 
 function hideFrames() {
