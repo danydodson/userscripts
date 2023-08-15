@@ -8,6 +8,8 @@
 // @downloadURL        https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
 // @updateURL          https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
 // @icon               https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
+// @match              https://*duckduckgo.com/?*
+// @match              https://*duckduckgo.com/*
 // @match              https://*.google.com/search*
 // @match              https://*.google.ad/search*
 // @match              https://*.google.ae/search*
@@ -201,8 +203,6 @@
 // @match              https://www.bing.com/search*
 // @match              https://cn.bing.com/search*
 // @match              https://www.baidu.com/s*
-// @match              https://duckduckgo.com/*
-// @match              https://duckduckgo.com/?*
 // @match              https://www.deepl.com/translator*
 // @connect            chat.openai.com
 // @grant              GM_addStyle
