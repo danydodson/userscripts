@@ -6,33 +6,33 @@
 // @version           11.2.0
 // @description       Redirects you from proprietary web-services to ethical alternatives(front-end).
 // @author            NotYou
-// @icon              https://cdn0.iconfinder.com/data/icons/interface-editing-and-time/64/arrow-redirect-interface-512.png
+// @icon              https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @license           GPL-3.0-or-later
 // @run-at            document-start
-// @include           *youtube.com/*
-// @include           *google.com/*
-// @include           *google.*
-// @include           *yahoo.com/*
-// @include           *bing.com/*
-// @include           *reddit.com/*
-// @include           *twitter.com/*
-// @include           *instagram.com/*
-// @include           *wikipedia.org/*
-// @include           *medium.com/*
-// @include           *towardsdatascience.com/*
-// @include           *i.imgur.com/*
-// @include           *i.stack.imgur.com/*
-// @include           *odysee.com/*
-// @include           *tiktok.com/*
-// @include           *quora.com/*
+// @include           https://*youtube.com/*
+// @include           https://*google.com/*
+// @include           https://*google.*
+// @include           https://*yahoo.com/*
+// @include           https://*bing.com/*
+// @include           https://*reddit.com/*
+// @include           https://*twitter.com/*
+// @include           https://*instagram.com/*
+// @include           https://*wikipedia.org/*
+// @include           https://*medium.com/*
+// @include           https://*towardsdatascience.com/*
+// @include           https://*i.imgur.com/*
+// @include           https://*i.stack.imgur.com/*
+// @include           https://*odysee.com/*
+// @include           https://*tiktok.com/*
+// @include           https://*quora.com/*
 // @grant             none
 // ==/UserScript==
 
 (function () {
 	const DEBUG_MODE = false
-	
+
 	let { host, href, search } = location,
-	
+
 		// INSTANCES //
 		invidious = 'yewtu.be',
 		searx = 'search.mdosch.de',
