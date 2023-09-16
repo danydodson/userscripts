@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         Bumble: Enhanced
-// @--namespace    https://habs.sdf.org/
 // @version      2.6
 // @author       habs
 // @description  show votes, show online status, and change location on bumble
@@ -11,7 +10,7 @@
 // @license      AGPLv3
 // @grant        GM.getValue
 // @grant        GM.setValue
-// @include      https://*.bumble.com/*
+// @match        https://*.bumble.com/*
 // ==/UserScript==
 
 /* jshint esversion: 8 */

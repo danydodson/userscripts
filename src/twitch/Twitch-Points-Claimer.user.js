@@ -1,16 +1,15 @@
 // ==UserScript==
 // @name           Twitch: Points Claimer
+// @author         PartMent
+// @version        1.6
+// @description    Automatically claim channel points.
 // @namespace      https://github.com/danydodson/userscripts
 // @downloadURL    https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Points-Claimer.user.js
 // @updateURL      https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Points-Claimer.user.js
-// @version        1.6
-// @author         PartMent
-// @description    Automatically claim channel points.
 // @match          https://www.twitch.tv/*
 // @match          https://dashboard.twitch.tv/*
-// @license        MIT
-// @grant          none
 // @icon           https://www.google.com/s2/favicons?domain=twitch.tv
+// @grant          none
 // ==/UserScript==
 
 let MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
