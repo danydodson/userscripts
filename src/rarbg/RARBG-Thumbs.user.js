@@ -6,8 +6,9 @@
 // @icon          https://rargb.to/favicon.ico
 // @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @updateURL     https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
-// @include       https://rarbg.how/*
+// @match         *.rargb.to/*
 // @include       https://rargb.to/*
+// @include       https://rarbg.how/*
 // @include       https://www2.rarbggo.to/*
 // @include       https://rarbg.proxyninja.org
 // @include       https://www.rarbgproxy.to/*

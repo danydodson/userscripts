@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name           Twitch: Points Claimer
-// @namespace      https://greasyfork.org/users/310437
+// @namespace      https://github.com/danydodson/userscripts
+// @downloadURL    https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Points-Claimer.user.js
+// @updateURL      https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-Points-Claimer.user.js
 // @version        1.6
 // @author         PartMent
 // @description    Automatically claim channel points.

@@ -8,18 +8,17 @@
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Advanced-Filter.user.js
 // @icon         https://rargb.to/favicon.ico
-// @include      https://rarbg.how/*
-// @include      https://rargb.to/*
-// @include      https://www2.rarbggo.to/*
-// @include      https://rarbg.proxyninja.org
-// @include      https://www.rarbgproxy.to/*
-// @include      https://rarbgproxy.to/*
-// @grant        none
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+// @grant        none
 // @run-at       document-idle
+// @match        *.rargb.to/*
+// @match        *.rarbg.how/*
+// @match        *.rarbggo.to/*
+// @match        *.rarbg.proxyninja.org/*
+// @match        *.rarbgproxy.to/*
+// @match        *.rarbgproxy.to/*
+// @include      /(https?:)?\/\/(www\.)?(proxy|unblocked)?rarbg((2018|2019|2020|2021)?|access(ed)?|cdn|core|data|enter|get|go|index|mirror(ed)?|p2p|prox(ied|ies|y)|prx|to(r|rrents)?|unblock(ed)?|way|web)\.(to|com|org|is)\/((index\d{2}|torrents)\.php.*|torrent|catalog\/.*|s\/.*|tv\/.*|top10)/
 // ==/UserScript==
-
-// @--include      /(https?:)?\/\/(www\.)?(proxy|unblocked)?rarbg((2018|2019|2020|2021)?|access(ed)?|cdn|core|data|enter|get|go|index|mirror(ed)?|p2p|prox(ied|ies|y)|prx|to(r|rrents)?|unblock(ed)?|way|web)\.(to|com|org|is)\/((index\d{2}|torrents)\.php.*|torrent|catalog\/.*|s\/.*|tv\/.*|top10)/
 
 /* jshint esversion: 6 */
 /* eslint-disable */

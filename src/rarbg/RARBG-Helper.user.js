@@ -8,16 +8,15 @@
 // @downloadURL           https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
 // @updateURL             https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
 // @license               Apache License 2.0
-// @connect               *
-// @grant                 GM_xmlhttpRequest
-// @include               https://rarbg.how/*
+// @match                 *.rargb.to/*
 // @include               https://rargb.to/*
+// @include               https://rarbg.how/*
 // @include               https://www2.rarbggo.to/*
 // @include               https://rarbg.proxyninja.org
 // @include               https://www.rarbgproxy.to/*
 // @include               https://rarbgproxy.to/*
-
-
+// @connect               *
+// @grant                 GM_xmlhttpRequest
 // ==/UserScript==
 
 (async () => {
