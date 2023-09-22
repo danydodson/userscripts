@@ -1,20 +1,20 @@
 // ==UserScript==
-// @name         Twitch: AutoVolume
-// @version      0.1
-// @author       Vasya
+// @name         Twitch: Auto Volume
 // @description  try to take over the world!
-// @match        https://www.twitch.tv/*
-// @namespace    https://github.com/danydodson/userscripts
+// @author       Vasya
+// @version      0.1
+// @namespace    Nonce Scripts
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-AutoVolume.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-AutoVolume.user.js
 // @icon         https://www.google.com/s2/favicons?domain=twitch.tv
+// @match        https://www.twitch.tv/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM.setValue
 // @grant        GM.getValue
 // @grant        unsafeWindow
-// @grant        GM_log
 // @grant        window.onurlchange
+// @grant        GM_log
 // ==/UserScript==
 
 (function () {

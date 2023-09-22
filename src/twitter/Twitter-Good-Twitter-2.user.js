@@ -4,7 +4,7 @@
 // @description   A try to make Twitter look good again.
 // @author        schwarzkatz
 // @license       MIT
-// @namespace     https://github.com/danydodson/userscripts
+// @namespace     Nonce Scripts
 // @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Good-Twitter-2.user.js
 // @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Good-Twitter-2.user.js
 // @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg

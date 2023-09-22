@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Tiktok: Larger Video
-// @version      1.2
-// @author       JRem
 // @description  Makes the TikTok video take up more of the screen
-// @namespace    https://github.com/danydodson/userscripts
+// @author       JRem
+// @version      1.2
+// @license      MIT
+// @namespace    Nonce Scripts
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Larger-Video.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Larger-Video.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
-// @license      MIT
 // @require      https://cdn.jsdelivr.net/gh/mlcheng/js-toast@ebd3c889a1abaad615712485ce864d92aab4c7c0/toast.min.js
 // @match        https://www.tiktok.com/*
 // @match        https://www.tiktok.com/*/video/*

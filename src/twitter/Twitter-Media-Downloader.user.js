@@ -3,7 +3,7 @@
 // @version       1.05
 // @description   Save Video/Photo by One-Click.
 // @author        AMANE
-// @namespace     https://github.com/danydodson/userscripts
+// @namespace     Nonce Scripts
 // @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Media-Downloader.user.js
 // @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Media-Downloader.user.js
 // @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg

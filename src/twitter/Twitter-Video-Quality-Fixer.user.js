@@ -3,7 +3,7 @@
 // @version       0.2.0
 // @description   Force highest quality playback for Twitter videos.
 // @author        yuhaofe
-// @namespace     https://github.com/danydodson/userscripts
+// @namespace     Nonce Scripts
 // @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Video-Quality-Fixer.user.js
 // @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Video-Quality-Fixer.user.js
 // @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg

@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Video: Enhanced H5 Player
-// @version      3.7.1
-// @author       ankvps
 // @description  H5 video video enhancement script - https://github.com/xxxily/h5player
-// @namespace    https://github.com/danydodson/userscripts
+// @author       ankvps
+// @version      3.7.1
+// @license      GPL
+// @namespace    Nonce Scripts
 // @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
 // @updateURL    https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
 // @icon         https://cdn.jsdelivr.net/gh/xxxily/h5player@master/logo.png
-// @license      GPL
 // @match        *://*/*
 // @grant        unsafeWindow
 // @grant        GM_addStyle
