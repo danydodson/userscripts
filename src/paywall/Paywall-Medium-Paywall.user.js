@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Bypass: Medium Paywall
+// @name        Paywall: Medium Paywall
 // @version     0.1.0
-// @icon           https://i.ibb.co/8gKMGvZ/monkey.png
+// @icon        https://cdn.iconscout.com/icon/premium/png-256-thumb/pay-wall-3685480-3068562.png
 // @description Bypass Medium paywall
 // @author      xiaotianxt <tianyp@pku.edu.cn> (https://xiaotianxt.com/)
 // @homepage    https://github.com/xiaotianxt/medium-bypass

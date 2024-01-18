@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name                 Github: UTags 🏷️
+// @name                 Github: Utags 🏷️
 // @name:zh-CN           🏷️ 小鱼标签 (UTags) - 为链接添加用户标签
 // @namespace            https://utags.pipecraft.net/
 // @homepageURL          https://github.com/utags/utags#readme

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         PirateBay: Cleaner
+// @name         PirateBay: Pirate Bay Cleaner
 // @version      5.6.1
 // @author       BoKu
 // @description  Updated for 2022. Settings are in the navigation menus. Now Includes support for thepiratebay.org with support for 1337x.to and rarbg.to hopefully soon.

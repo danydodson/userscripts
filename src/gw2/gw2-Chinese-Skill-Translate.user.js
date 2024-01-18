@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         gw2: Chinese Skill Translate
+// @name         GW2: Chinese Skill Translate
 // @namespace    https://greasyfork.org/zh-CN/scripts/377052
 // @version      2.1
 // @description  Bundle Fighting 2 Metabattle, Snowrows, discretize The English skills description above the Raiders website is replaced by Chinese, which is convenient for beautiful uniforms/European service player reference.
-// @icon         https://wiki.guildwars2.com/favicon.ico
+// @icon         https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/da1va1z-652b959c-bbf1-4cc6-bfad-5c26975ff895.png/v1/fill/w_512,h_512/guild_wars_2___icon_by_blagoicons_da1va1z-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvNDZiNjNkM2MtYWU2Ny00NjRjLTlhMzctNjcwODI5YjJhMTU3XC9kYTF2YTF6LTY1MmI5NTljLWJiZjEtNGNjNi1iZmFkLTVjMjY5NzVmZjg5NS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.17v0mgVemPr54Uv85KUwsgKoz3FIpYn2abKYBbCOtgo
 // @author       Saber Lily Lili miles Gay mile gay qi
 // @run-at       document-start
 // @require      https://cdn.jsdelivr.net/npm/ajax-hook@2.1.3/dist/ajaxhook.min.js

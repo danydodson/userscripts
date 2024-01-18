@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         Github - Hide bots and github-actions from dashboards
+// @name         Github: Hide Bots & Actions
 // @description  Minimizes pushs and commits from github actions and bots from github.com dashboard
 // @namespace    cuzi
 // @author       cuzi
 // @version      1.8
 // @copyright    2020, cuzi (https://openuserjs.org/users/cuzi)
 // @license      GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
-// @icon         https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/72x72/E045.png
+// @icon         https://github.githubassets.com/pinned-octocat.svg
 // @match        https://github.com/
 // @match        https://github.com/dashboard-feed
 // @grant        none

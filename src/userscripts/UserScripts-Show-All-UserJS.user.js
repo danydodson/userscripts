@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         UserJS: Show All UserJS
+// @name         UserScripts: Show All UserScripts
 // @description  Magic Userscript+ Show current site all UserJS, the easier way to install UserJs for Tampermonkey.
 // @author       Magic <magicoflolis@tuta.io>
 // @version      6.0.1

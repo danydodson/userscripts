@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Github: High Speed Download
+// @name         Github: Enhancement Speed
 // @version      2.5.2
 // @author       X.I.U
 // @description  High-speed download of Git Clone/SSH, Release, Raw, Code(ZIP) and other files (Based on public welfare), project list file quick download (☁)
