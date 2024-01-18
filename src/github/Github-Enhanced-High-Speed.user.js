@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Github Enhancement - High Speed Download
+// @name         Github: High Speed Download
 // @version      2.5.2
 // @author       X.I.U
 // @description  High-speed download of Git Clone/SSH, Release, Raw, Code(ZIP) and other files (Based on public welfare), project list file quick download (☁)
@@ -112,11 +112,11 @@
 		if (menu_rawFast > raw_url.length - 1) menu_rawFast = 0
 
 		if (GM_getValue('menu_rawDownLink')) menu_rawFast_ID = GM_registerMenuCommand(`${['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'][menu_rawFast]} [ ${raw_url[menu_rawFast][1]} ] Acceleration source (☁) - Click to switch`, menu_toggle_raw_fast)
-		
+
 		menu_rawDownLink_ID = GM_registerMenuCommand(`${GM_getValue('menu_rawDownLink') ? '✅' : '❌'} Project List File Fast Download (☁)`, function () { if (GM_getValue('menu_rawDownLink') == true) { GM_setValue('menu_rawDownLink', false); GM_notification({ text: `closed [Project List File Fast Download (☁)] Function\n (click to refresh the webpage to take effect)`, timeout: 3500, onclick: function () { location.reload() } }) } else { GM_setValue('menu_rawDownLink', true); GM_notification({ text: `Turned on [Project List File Fast Download (☁)] Function\n (click to refresh the webpage to take effect)`, timeout: 3500, onclick: function () { location.reload() } }) } registerMenuCommand() })
-		
+
 		menu_gitClone_ID = GM_registerMenuCommand(`${GM_getValue('menu_gitClone') ? '✅' : '❌'} Add to git clone Order`, function () { if (GM_getValue('menu_gitClone') == true) { GM_setValue('menu_gitClone', false); GM_notification({ text: `closed [Add to git clone Order] Function\n (click to refresh the webpage to take effect)`, timeout: 3500, onclick: function () { location.reload() } }) } else { GM_setValue('menu_gitClone', true); GM_notification({ text: `Turned on [Add to git clone Order] Function\n (click to refresh the webpage to take effect)`, timeout: 3500, onclick: function () { location.reload() } }) } registerMenuCommand() })
-		
+
 		menu_feedBack_ID = GM_registerMenuCommand('💬 feedback & suggestion [Github]', function () { window.GM_openInTab('https://github.com/XIU2/UserScript', { active: true, insert: true, setParent: true }); window.GM_openInTab('https://greasyfork.org/en/scripts/412245/feedback', { active: true, insert: true, setParent: true }) })
 	}
 

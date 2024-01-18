@@ -1,6 +1,6 @@
 ﻿// ==UserScript==
 //
-// @name         IMDb: Scout Mod
+// @name         IMDB: Scout Mod
 // @version      19.6.8
 // @namespace    Nonce Scripts
 // @description  Auto search for movie/series on torrent, usenet, ddl, subtitles, streaming, predb and other sites. Adds links to IMDb pages from hundreds various sites. Adds movies/series to Radarr/Sonarr. Adds external ratings from Metacritic, Rotten Tomatoes, Letterboxd, Douban, Allocine, MyAnimeList, AniList. Media Server indicators for Plex, Jellyfin, Emby. Dark theme/style for Reference View. Adds/Removes to/from Trakt's watchlist. Removes ads.

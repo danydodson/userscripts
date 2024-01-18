@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Codewars: Helper
+// @name         CodeWars: Helper
 // @description  Removes unlock solution buttons and AD under the kata description
 // @author       Murka
 // @version      0.1
