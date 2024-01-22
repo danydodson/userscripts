@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         Tinder Deblur
+// @name         Tinder: Deblur
 // @description  Simple script using the official Tinder API to get clean photos of the users who liked you
-// @author       Tajnymag
+// @author       Spatch
 // @version      5.0
-// @namespace    Nonce Scripts
+// @namespace    spatch/scripts
+// @match        https://tinder.com/*
 // @downloadURL  https://raw.githubusercontent.com/tajnymag/tinder-deblur/main/tinder.user.js
 // @updateURL    https://raw.githubusercontent.com/tajnymag/tinder-deblur/main/tinder.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
-// @match        https://tinder.com/*
 // @grant        none
 // ==/UserScript==
 
