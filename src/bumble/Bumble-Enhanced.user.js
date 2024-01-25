@@ -1,24 +1,17 @@
 // ==UserScript==
 // @name         Bumble: Enhanced
-<<<<<<< HEAD
 // @version      2.6
-=======
 // @description  https://habs.sdf.org/ show votes, show online status, and change location on bumble
->>>>>>> 1b6abbc (:sparkles: updates)
 // @author       habs
 // @version      2.6
 // @license      AGPLv3
 // @namespace    Nonce Scripts
 // @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/bumble/Bumble-Enhanced.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/bumble/Bumble-Enhanced.user.js
+// @homepageURL  https://github.com/danydodson/userscripts
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bumble.com
 // @match        https://*.bumble.com/*
 // @grant        GM.getValue
-// @grant        GM.setValue
-<<<<<<< HEAD
-// @match        https://*.bumble.com/*
-=======
->>>>>>> 1b6abbc (:sparkles: updates)
 // ==/UserScript==
 
 /* jshint esversion: 8 */
