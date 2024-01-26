@@ -16,7 +16,7 @@ var displayVideos = "true"
 var autoPlayClips = "false"
 var hideHypeTrain = "false"
 var hideBitGiftLeaderBoard = "false"
-var hideUnfollowButton = "false"
+var hideUnfollowButton = "true"
 var ultraWide = "true"
 var hideOfflineChannels = "true"
 var hideRecommendedChannels = "false"
@@ -272,7 +272,6 @@ function LoadTwitchEnhance() {
     })
     var config = { attributes: false, childList: true, subtree: true }
 
-
     var SupportedImageFormats = [".jpg", ".jpeg", ".png", ".webp", ".gif"]
     var SupportedVideoFormats = [".mp4", ".webm"]
 
@@ -281,10 +280,8 @@ function LoadTwitchEnhance() {
 
     GM_addStyle("iframe[class^='imgur-embed']{max-width: " + maxWidth + "px !important;}")
     GM_addStyle("svg[class*='logotwitchwordmark']{display: none !important;}")
-    if (hideHypeTrain == "true")
-        GM_addStyle(".community-highlight-stack__scroll-area--disable{display: none !important;}")
-    if (hideBitGiftLeaderBoard == "true")
-        GM_addStyle(".channel-leaderboard{display: none !important;}")
+    if (hideHypeTrain == "true") GM_addStyle(".community-highlight-stack__scroll-area--disable{display: none !important;}")
+    if (hideBitGiftLeaderBoard == "true") GM_addStyle(".channel-leaderboard{display: none !important;}")
     GM_addStyle(".btnRefreshEnhance button{height: 15px; width: 100%}")
     GM_addStyle(".chat-settings{    max-height: 500px !important;    overflow: hidden !important;}")
 
@@ -793,11 +790,14 @@ function AddTheMenu() {
     });*/
 
 
-    $(".enhancecontainer").append(`<div class="tw-border-t tw-mg-t-1 tw-mg-x-05 tw-pd-b-1 customEnhanceMenu"" ></div><div class="tw-mg-y-05 tw-pd-x-05" style="width: 100%;"><p class="tw-c-text-alt-2 tw-font-size-6 tw-strong tw-upcase"
-
-style="color: var(--color-text-alt-2)!important;
-    font-size: smaller;
-    margin-top: 6px;">Options marked with * need a refresh after disabling.</p></div>`)
+    $(".enhancecontainer").append(`
+        <div class="tw-border-t tw-mg-t-1 tw-mg-x-05 tw-pd-b-1 customEnhanceMenu"" ></div>
+        <div class="tw-mg-y-05 tw-pd-x-05" style="width: 100%;">
+            <p class="tw-c-text-alt-2 tw-font-size-6 tw-strong tw-upcase" style="color: var(--color-text-alt-2)!important;font-size: smaller;margin-top: 6px;">
+                Options marked with * need a refresh after disabling.
+            </p>
+        </div>
+    `)
 
 
     $(".top-nav__prime").parent().children().eq(2).after(menuButton)
@@ -808,12 +808,7 @@ style="color: var(--color-text-alt-2)!important;
 
     //rgba(25, 25, 25, 0.75);
 
-
-
-
     document.addEventListener('keydown', (event) => {
-
-
         if (event.altKey && event.key == 's') {
             $(".enhancecontainer").toggle()
         }
@@ -821,36 +816,40 @@ style="color: var(--color-text-alt-2)!important;
 }
 
 GM_addStyle('.enhanceButton:hover{    background-color:var(--color-background-button-text-hover) !important;}')
+
 GM_addStyle(`
     .enhancecontainer {
-display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: var(--color-background-base);
-    padding: 10px;
-    width: 200px;
-    position: absolute;
-    right: 100px;
-    z-index: 100;
-    margin-top: 66px;
-    width: 500px;
-    height: auto;
-}
-    `)
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: var(--color-background-base);
+        padding: 10px;
+        width: 200px;
+        position: absolute;
+        right: 100px;
+        z-index: 100;
+        margin-top: 66px;
+        width: 500px;
+        height: auto;
+    }
+`)
 
 GM_addStyle(`
     input.enhancCheck[type=checkbox] + label {
-  display: block;
-    cursor: pointer;
-    height: fit-content;
-    flex: 1 0 35%;
-    margin-top: 5px;
-}
+        display: block;
+        cursor: pointer;
+        height: fit-content;
+        flex: 1 0 35%;
+        margin-top: 5px;
+    }
 `)
+
 GM_addStyle(`
     input.enhancCheck[type=checkbox] {
-  display: none;
-}`)
+        display: none; 
+    } 
+`)
+
 GM_addStyle(` input.enhancCheck[type=checkbox] + label:before {
   content: "\\2714";
   border: 0.1em solid #fff;
@@ -864,6 +863,7 @@ GM_addStyle(` input.enhancCheck[type=checkbox] + label:before {
   vertical-align: bottom;
   color: transparent;
 }`)
+
 GM_addStyle(`input.enhancCheck[type=checkbox]:checked + label:before {
   background-color: #ED820A;
   border-color:white;
