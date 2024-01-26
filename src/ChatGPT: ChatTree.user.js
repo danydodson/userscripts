@@ -61,8 +61,6 @@
 // @supportURL   https://github.com/cuizhenzhi/ChatTree/issues
 // @license GPL-2.0-only
 // @icon https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
-// @downloadURL https://update.greasyfork.org/scripts/476683/ChatGPT%20ChatTree%20%F0%9F%8C%B3.user.js
-// @updateURL https://update.greasyfork.org/scripts/476683/ChatGPT%20ChatTree%20%F0%9F%8C%B3.meta.js
 // ==/UserScript==
 
 (function (node) {

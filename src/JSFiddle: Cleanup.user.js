@@ -3,9 +3,7 @@
 // @version      0.1
 // @author       toaster
 // @description  removes unnecessary elements from fidelity ui
-// @namespace    https://github.com/danydodson/userscripts/blob/main/src/jsfiddle/JSFiddle-Cleanup.user.js
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/jsfiddle/JSFiddle-Cleanup.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/jsfiddle/JSFiddle-Cleanup.user.js
+// @namespace    https://egore.url.lol/userscripts
 // @icon         https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbranditechture.agency%2Fbrand-logos%2Fwp-content%2Fuploads%2Fwpdm-cache%2FJSFiddle-900x0.png&f=1&nofb=1&ipt=80194e9d045bbf5d2c314ea397a9d3b431d6f71b46a522712af8cfb3142db1da&ipo=images
 // @match        https://jsfiddle.net/*
 // @grant        none

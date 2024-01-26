@@ -5,8 +5,6 @@
 // @version      2021.3.31
 // @license      MIT
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Bullshit-Filter.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Bullshit-Filter.user.js
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
 // @grant        none
 // @match        https://greasyfork.org/*

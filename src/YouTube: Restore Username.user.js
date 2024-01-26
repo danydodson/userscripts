@@ -128,9 +128,6 @@ SOFTWARE.
 // @description:ka      YouTube მომხმარებლის სახელის აღდგენა ხანდლიდან მორგებულ სახელში
 // @description:am      ስለ YouTube የተጠቃሚ ስም ማስቀመጫዎቹን ከ Handle ወደ Custom ውስጥ እንደሚመጣ ይረዳሉ
 // @description:km      កំណត់ YouTube ពាក្យឈ្មោះពី Handle ទៅជាឈ្មោះផ្ទាល់ខ្លួន
-
-// @downloadURL https://update.greasyfork.org/scripts/468740/Restore%20YouTube%20Username%20from%20Handle%20to%20Custom.user.js
-// @updateURL https://update.greasyfork.org/scripts/468740/Restore%20YouTube%20Username%20from%20Handle%20to%20Custom.meta.js
 // ==/UserScript==
 
 /* jshint esversion:8 */

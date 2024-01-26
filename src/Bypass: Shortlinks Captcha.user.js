@@ -10,10 +10,9 @@
 // @grant       GM_xmlhttpRequest
 // @grant       window.onurlchange
 // @grant       GM_registerMenuCommand
-// @icon        https://i.ibb.co/qgr0H1n/BASS-Blogger-Pemula.png
+// @icon        https://cdn.iconscout.com/icon/premium/png-256-thumb/pay-wall-3685480-3068562.png
 // @copyright   2022+, Bloggerpemula (https://openuserjs.org/users/Bloggerpemula)
 // @license     CC-BY-NC-SA-4.0; https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
-// @updateURL   https://openuserjs.org/meta/Bloggerpemula/Bypass_All_Shortlinks_Manual_Captcha.meta.js
 // @license     GPL-3.0-or-later; https://www.gnu.org/licenses/gpl-3.0.txt
 // @require     https://update.greasyfork.org/scripts/439099/1203718/MonkeyConfig%20Modern%20Reloaded.js
 // @description Bypass All Shortlinks Sites Automatically Skips Annoying Link Shorteners , Skip AdFly , Linkvertise and No Annoying Ads, Directly to Your Destination and now Support Auto Downloading Your Files

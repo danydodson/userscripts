@@ -166,8 +166,6 @@
 // @match       *://*.zeit.de/*
 // @grant       GM_addStyle
 // @namespace https://egore.url.lol/userscripts
-// @downloadURL https://update.greasyfork.org/scripts/481440/medium-bypass.user.js
-// @updateURL https://update.greasyfork.org/scripts/481440/medium-bypass.meta.js
 // ==/UserScript==
 
 (function() {

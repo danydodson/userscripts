@@ -6,8 +6,6 @@
 // @run-at        document-start
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @version      0.0.1.20191107015349
-// @downloadURL  https://update.greasyfork.org/scripts/392078/Twitch%20RSS%20Button.user.js
-// @updateURL    https://update.greasyfork.org/scripts/392078/Twitch%20RSS%20Button.meta.js
 // ==/UserScript==
 
 setInterval(function()

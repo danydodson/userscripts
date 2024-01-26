@@ -5,8 +5,6 @@
 // @version      3.7.1
 // @license      GPL
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/video/Video-Enhanced-H5-Player.user.js
 // @icon         https://cdn.jsdelivr.net/gh/xxxily/h5player@master/logo.png
 // @match        *://*/*
 // @grant        unsafeWindow

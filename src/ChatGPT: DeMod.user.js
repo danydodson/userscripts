@@ -4,8 +4,6 @@
 // @description  Hides moderation results during conversations with ChatGPT
 // @author       4as
 // @namespace    https://egore.url.lol/userscripts
-// @updateURL    https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
-// @downloadURL  https://raw.githubusercontent.com/4as/ChatGPT-DeMod/main/ChatGPT%20DeMod.user.js
 // @match        *://chat.openai.com/*
 // @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @run-at       document-start

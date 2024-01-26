@@ -9,8 +9,6 @@
 // @grant        GM_addStyle
 // @run-at       document-start
 // @license      MIT
-// @downloadURL https://update.greasyfork.org/scripts/469543/Kickcom%20-%20Auto%20select%20best%20quality%2C%20show%20buffer%20delay%20and%20speedup%20stream.user.js
-// @updateURL https://update.greasyfork.org/scripts/469543/Kickcom%20-%20Auto%20select%20best%20quality%2C%20show%20buffer%20delay%20and%20speedup%20stream.meta.js
 // ==/UserScript==
 
 

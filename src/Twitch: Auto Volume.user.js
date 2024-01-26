@@ -4,8 +4,6 @@
 // @author       Vasya
 // @version      0.1
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-AutoVolume.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/twitch/Twitch-AutoVolume.user.js
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @match        https://www.twitch.tv/*
 // @grant        GM_setValue

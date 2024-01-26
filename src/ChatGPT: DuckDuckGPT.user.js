@@ -187,8 +187,6 @@
 // @grant               GM.xmlHttpRequest
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
-// @downloadURL https://update.greasyfork.org/scripts/459849/DuckDuckGPT%20%F0%9F%A4%96.user.js
-// @updateURL https://update.greasyfork.org/scripts/459849/DuckDuckGPT%20%F0%9F%A4%96.meta.js
 // ==/UserScript==
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png

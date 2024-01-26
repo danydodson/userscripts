@@ -2,10 +2,8 @@
 // @name          RARBG: Thumbs
 // @version       0.2
 // @description   rarbg list thumb
-// @namespace     https://github.com/danydodson/userscripts
+// @namespace     https://egore.url.lol/userscripts
 // @icon          https://rargb.to/favicon.ico
-// @downloadURL   https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
-// @updateURL     https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Thumbs.user.js
 // @match         *.rargb.to/*
 // @include       https://rargb.to/*
 // @include       https://rarbg.how/*

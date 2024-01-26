@@ -18,8 +18,6 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
 // @grant        GM_addStyle
-// @downloadURL https://update.greasyfork.org/scripts/462967/ChatGPT%20HeartBeat.user.js
-// @updateURL https://update.greasyfork.org/scripts/462967/ChatGPT%20HeartBeat.meta.js
 // ==/UserScript==
 
 /*

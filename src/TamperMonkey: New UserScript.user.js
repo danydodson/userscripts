@@ -3,9 +3,7 @@
 // @description  try to take over the world!
 // @author       You
 // @version      0.1
-// @namespace    Nonce Scripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-New-Userscript.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/tampermonkey/Tampermonkey-New-Userscript.user.js
+// @namespace    https://egore.url.lol/userscripts
 // @icon         https://www.tampermonkey.net/favicon.ico
 // @match        https://www.tampermonkey.net/index.php?version=4.9&ext=dhdg&updated=true
 // @match        https://connect.garmin.com/modern/badges

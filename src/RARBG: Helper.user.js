@@ -3,10 +3,8 @@
 // @version               1.7.5
 // @author                PeratX
 // @description           Powerful Toolbox for RARBG
-// @namespace             https://github.com/danydodson/userscripts
+// @namespace             https://egore.url.lol/userscripts
 // @icon                  https://rargb.to/favicon.ico
-// @downloadURL           https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
-// @updateURL             https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Helper.user.js
 // @license               Apache License 2.0
 // @match                 *.rargb.to/*
 // @include               https://rargb.to/*

@@ -7,8 +7,6 @@
 // @run-at       document-idie
 // @grant        none
 // @namespace   https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/chatgpt/ChatGPT-Function-Enhance.user.js
 // @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @match        https://chat.openai.com/chat
 // @match        https://chat.openai.com/chat/*

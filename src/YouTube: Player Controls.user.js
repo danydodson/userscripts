@@ -5,8 +5,6 @@
 // @version       1.3.3
 // @license       MIT
 // @namespace     https://egore.url.lol/userscripts
-// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-Player-Controls.user.js
-// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/youtube/YouTube-Player-Controls.user.js
 // @icon          https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png
 // @match         http://www.youtube.com/*
 // @match         https://www.youtube.com/*

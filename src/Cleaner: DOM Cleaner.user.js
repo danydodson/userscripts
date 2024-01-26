@@ -4,8 +4,6 @@
 // @author       Sagie Gur-Ari
 // @description  Removes Ad Containers from DOM (doesn't replace adblocker extension, but blocks dynamic content which the adblocker fails to block by removing whole sections from the HTML DOM.)
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/ads/Ads-Remove-Ad-from-DOM.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/ads/Ads-Remove-Ad-from-DOM.user.js
 // @supportURL   https://github.com/sagiegurari/userscripts-ads-dom-remover/issues
 // @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @match        https://www.ynet.co.il/*

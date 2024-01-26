@@ -3,7 +3,7 @@
 // @description  Adds show/hide channels sidebar button to Discord Web App
 // @author       Github mindovermiles262
 // @version      1.12.1
-// @namespace    Nounce Scripts
+// @namespace    https://egore.url.lol/userscripts
 // @iconURL      https://i.ibb.co/7znt13j/30162036.png
 // @match        https://discord.com/*
 // @grant        none

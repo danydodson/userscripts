@@ -4,8 +4,6 @@
 // @namespace   https://egore.url.lol/userscripts
 // @homepageURL https://openuserjs.org/scripts/sjehuda/Black_Belt
 // @supportURL  https://openuserjs.org/scripts/sjehuda/Black_Belt/issues
-// @updateURL   https://openuserjs.org/meta/sjehuda/Black_Belt.meta.js
-// @downloadURL https://openuserjs.org/install/sjehuda/Black_Belt.user.js
 // @copyright   2023, Schimon Jehudah (http://schimon.i2p)
 // @license     MIT; https://opensource.org/licenses/MIT
 // @description Find and display links inside a bar; Type of links: chat, contact, email, geo, magnet, media documents, metalinks, podcasts, syndication feeds, torrents and userscripts and wallets.

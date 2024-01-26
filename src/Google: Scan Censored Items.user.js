@@ -5,8 +5,6 @@
 // @version      1.6
 // @license      MIT License
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/google/Google-Scan-Censored-Items.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/google/Google-Scan-Censored-Items.user.js
 // @icon         https://www.google.com/favicon.ico
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
 // @match        *.google.com/*

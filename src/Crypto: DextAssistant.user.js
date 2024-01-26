@@ -4,8 +4,6 @@
 // @version      ALPHA-2020.08.28b
 // @description  Adds some research tools and visual niceties to Dextools.io. Does not interfere with existing functionality, just adds cosmetics for user convenience.
 // @author       @ApopheniaPays
-// @updateURL    https://github.com/ApopheniaPays/dextassistant/raw/master/dextAssistant.user.js
-// @downloadURL  https://github.com/ApopheniaPays/dextassistant/raw/master/dextAssistant.user.js
 // @match        https://www.dextools.io/app/*
 // @match        http://www.dextools.io/app/*
 // @match        https://dextools.io/app/*

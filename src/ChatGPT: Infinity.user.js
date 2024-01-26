@@ -202,8 +202,7 @@
 // @version             2024.1.9
 // @license             MIT
 // @match               *://chat.openai.com/*
-// @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
-// @icon64              https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon64.png
+// @icon                https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
@@ -227,8 +226,6 @@
 // @noframes
 // @homepageURL         https://chatgptinfinity.com
 // @supportURL          https://chatgptinfinity.com/support
-// @downloadURL https://update.greasyfork.org/scripts/465051/ChatGPT%20Infinity%20%E2%88%9E.user.js
-// @updateURL https://update.greasyfork.org/scripts/465051/ChatGPT%20Infinity%20%E2%88%9E.meta.js
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license

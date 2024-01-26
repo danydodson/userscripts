@@ -41,8 +41,6 @@
     // @license MIT
 // @version 0.0.1.20221215235744
 // @namespace  https://egore.url.lol/userscripts
-// @downloadURL https://update.greasyfork.org/scripts/456641/The%20Internet%20gets%20better%3A%20No%20Cookies%20%F0%9F%8D%AA.user.js
-// @updateURL https://update.greasyfork.org/scripts/456641/The%20Internet%20gets%20better%3A%20No%20Cookies%20%F0%9F%8D%AA.meta.js
    // ==/UserScript==
  
     (function(){

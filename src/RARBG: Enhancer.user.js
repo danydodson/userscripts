@@ -4,11 +4,9 @@ var meta = {
 		// ==UserScript==
 		// @name         RARBG: Enhancer
 		// @version      1.6.11
-		// @namespace    https://github.com/danydodson/userscripts
+		// @namespace    https://egore.url.lol/userscripts
 		// @author       Faris Hijazi
 		// @description  Auto-solve CAPTCHA, infinite scroll, add a magnet link shortcut and thumbnails of torrents
-		// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
-		// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/rarbg/RARBG-Enhancer.user.js
 		// @grant        unsafeWindow
 		// @grant        GM_setValue
 		// @grant        GM_getValue

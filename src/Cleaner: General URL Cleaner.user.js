@@ -23,8 +23,6 @@
 // @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png
 // @version     3.3
 // @license     GPL version 3 or any later version; http://www.gnu.org/copyleft/gpl.html
-// @downloadURL https://update.greasyfork.org/scripts/10096/General%20URL%20Cleaner.user.js
-// @updateURL https://update.greasyfork.org/scripts/10096/General%20URL%20Cleaner.meta.js
 // ==/UserScript==
 
 /*

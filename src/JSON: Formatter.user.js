@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         JSON: Formatter
-// @namespace    http://gerald.top
+// @namespace    https://egore.url.lol/userscripts
 // @author       Gerald <i@gerald.top>
 // @icon         https://cdn-icons-png.flaticon.com/512/136/136525.png
 // @description  Format JSON data in a beautiful way.
@@ -13,8 +13,6 @@
 // @grant        GM_addStyle
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
-// @downloadURL  https://update.greasyfork.org/scripts/10718/JSON%20formatter.user.js
-// @updateURL    https://update.greasyfork.org/scripts/10718/JSON%20formatter.meta.js
 // ==/UserScript==
 
 (function () {

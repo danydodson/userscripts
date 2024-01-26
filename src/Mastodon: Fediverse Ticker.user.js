@@ -14,8 +14,6 @@
 // @icon        https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Mastodon_Logotype_%28Simple%29.svg/953px-Mastodon_Logotype_%28Simple%29.svg.png
 // @run-at      document-end
 // @grant       none
-// @updateURL   https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonFediverseTicker/MastodonFediverseTicker.user.js
-// @downloadURL https://github.com/hidao80/UserScript/raw/main/src/Mastodon/MastodonFediverseTicker/MastodonFediverseTicker.user.js
 // ==/UserScript==
 
 // Twitter Emoji (Twemoji)

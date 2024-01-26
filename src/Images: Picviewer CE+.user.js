@@ -57,8 +57,6 @@
 // @created              2011-6-15
 // @contributionURL      https://ko-fi.com/hoothin
 // @contributionAmount   1
-// @downloadURL https://update.greasyfork.org/scripts/24204/Picviewer%20CE%2B.user.js
-// @updateURL https://update.greasyfork.org/scripts/24204/Picviewer%20CE%2B.meta.js
 // ==/UserScript==
 
 if (window.top != window.self) {

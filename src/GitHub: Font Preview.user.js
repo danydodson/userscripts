@@ -4,7 +4,7 @@
 // @description A userscript that adds a font file preview
 // @license     MIT
 // @author      Rob Garrison
-// @namespace   https://github.com/Mottie
+// @namespace   https://egore.url.lol/userscripts
 // @match       https://github.com/*
 // @run-at      document-idle
 // @grant       GM_addStyle
@@ -16,8 +16,6 @@
 // @require     https://greasyfork.org/scripts/28721-mutations/code/mutations.js?version=1108163
 // @require     https://greasyfork.org/scripts/20469-opentype-js/code/opentypejs.js?version=130870
 // @icon        https://github.githubassets.com/pinned-octocat.svg
-// @updateURL   https://raw.githubusercontent.com/Mottie/GitHub-userscripts/master/github-font-preview.user.js
-// @downloadURL https://raw.githubusercontent.com/Mottie/GitHub-userscripts/master/github-font-preview.user.js
 // @supportURL  https://github.com/Mottie/GitHub-userscripts/issues
 // ==/UserScript==
 /* global opentype */

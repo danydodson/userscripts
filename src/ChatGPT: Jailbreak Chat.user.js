@@ -8,8 +8,6 @@
 // @match        https://chat.openai.com/*
 // @grant        GM_addStyle
 // @icon               https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
-// @downloadURL https://update.greasyfork.org/scripts/467640/ChatGPT%20Jailbreakchat%3A%20Unlock%20potential%20of%20chatgpt.user.js
-// @updateURL https://update.greasyfork.org/scripts/467640/ChatGPT%20Jailbreakchat%3A%20Unlock%20potential%20of%20chatgpt.meta.js
 // ==/UserScript==
 
 // Project Update

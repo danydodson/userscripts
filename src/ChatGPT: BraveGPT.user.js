@@ -149,8 +149,6 @@
 // @grant               GM.xmlHttpRequest
 // @homepageURL         https://www.bravegpt.com
 // @supportURL          https://github.bravegpt.com/issues
-// @downloadURL https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.user.js
-// @updateURL https://update.greasyfork.org/scripts/462440/BraveGPT%20%F0%9F%A4%96.meta.js
 // ==/UserScript==
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png

@@ -5,8 +5,6 @@
 // @namespace   https://egore.url.lol/userscripts
 // @author      ryano
 // @source      https://github.com/ryanocf/extendgram
-// @updateURL   https://raw.githubusercontent.com/ryanocf/extendgram/main/src/dist/js/extendgram.user.js
-// @downloadURL https://raw.githubusercontent.com/ryanocf/extendgram/main/src/dist/js/extendgram.user.js
 // @supportURL  https://github.com/ryanocf/extendgram
 // @icon         https://instagram.com/favicon.ico
 // @match     http://*.instagram.com/*

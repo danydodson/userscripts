@@ -19,8 +19,6 @@
 // @icon         https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @grant        none
 // @license      MIT
-// @downloadURL https://update.greasyfork.org/scripts/482907/ChatGPT%20Shortcut%20Anywhere.user.js
-// @updateURL https://update.greasyfork.org/scripts/482907/ChatGPT%20Shortcut%20Anywhere.meta.js
 // ==/UserScript==
 
 (function() {

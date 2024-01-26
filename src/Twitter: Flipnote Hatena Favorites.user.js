@@ -7,8 +7,6 @@
 // @match        https://twitter.com/**
 // @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/Vukky123/userscripts/main/flipnotefavsounds.user.js
-// @downloadURL  https://raw.githubusercontent.com/Vukky123/userscripts/main/flipnotefavsounds.user.js
 // @sandbox      JavaScript
 // ==/UserScript==
 

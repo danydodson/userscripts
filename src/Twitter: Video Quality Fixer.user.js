@@ -12,8 +12,6 @@
 // @match               https://twitter.com/*
 // @match               https://mobile.twitter.com/*
 // @grant               none
-// @downloadURL https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20Twitter.user.js
-// @updateURL https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20Twitter.meta.js
 // ==/UserScript==
 
 (function() {

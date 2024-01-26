@@ -4,8 +4,6 @@
 // @author       https://github.com/cleanlock/VideoAdBlockForTwitch#credits
 // @version      5.8.4
 // @namespace    https://egore.url.lol/userscripts
-// @updateURL    https://github.com/pixeltris/TwitchAdSolutions/raw/master/vaft/vaft.user.js
-// @downloadURL  https://github.com/pixeltris/TwitchAdSolutions/raw/master/vaft/vaft.user.js
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @match        *://*.twitch.tv/*
 // @run-at       document-start

@@ -9,8 +9,6 @@
 // @run-at      document-idle
 // @grant       none
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
-// @updateURL   https://raw.githubusercontent.com/Mottie/Misc-userscripts/master/greasy-fork-total-installs.user.js
-// @downloadURL https://raw.githubusercontent.com/Mottie/Misc-userscripts/master/greasy-fork-total-installs.user.js
 // ==/UserScript==
 (() => {
 	"use strict";

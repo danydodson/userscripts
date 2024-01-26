@@ -4,8 +4,7 @@
 // @author       hoothin
 // @version      1.6.6
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/greasyfork/GreasyFork-Sleazyfork-Results.user.js
+
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
 // @author       hoothin
 // @match        http*://greasyfork.org/*

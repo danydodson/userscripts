@@ -5,8 +5,6 @@
 // @author        schwarzkatz
 // @license       MIT
 // @namespace     https://egore.url.lol/userscripts
-// @downloadURL   https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Good-Twitter-2.user.js
-// @updateURL     https://github.com/danydodson/userscripts/raw/main/src/twitter/Twitter-Good-Twitter-2.user.js
 // @icon          https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // @match         https://twitter.com/*
 // @match         https://mobile.twitter.com/*

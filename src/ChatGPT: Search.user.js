@@ -5,8 +5,6 @@
 // @description        ChatGPT answers displayed in sidebar after search (Google, Bing, Baidu, DuckDuckGo and DeepL)
 // @license            MIT
 // @namespace          https://egore.url.lol/userscripts
-// @downloadURL        https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
-// @updateURL          https://github.com/danydodson/userscripts/raw/main/src/chatgpt/ChatGPT-Search.user.js
 // @icon               https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @match              https://*.duckduckgo.com/?*
 // @match              https://*.google.com/search*

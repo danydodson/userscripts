@@ -5,8 +5,6 @@
 // @license      AGPLv3
 // @namespace    https://egore.url.lol/userscripts
 // @description  Bubmle enhanced
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/bumble/Bumble-Enhanced.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/bumble/Bumble-Enhanced.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bumble.com
 // @match        https://*.bumble.com/*
 // @grant        GM.getValue

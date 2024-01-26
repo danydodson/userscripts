@@ -14,8 +14,6 @@
 // @license         WTFPL
 // @homepageURL     https://greasyfork.org/scripts/199
 // @supportURL      https://greasyfork.org/scripts/199/feedback
-// @updateURL       https://raw.github.com/LouCypher/userscripts/master/greasyfork/userscript.user.js
-// @downloadURL     https://raw.github.com/LouCypher/userscripts/master/greasyfork/userscript.user.js
 // @resource        LICENSE https://raw.github.com/LouCypher/userscripts/master/licenses/WTFPL/LICENSE.txt
 // @include         https://greasyfork.org/*
 // @exclude         https://greasyfork.org/*/code.user.js

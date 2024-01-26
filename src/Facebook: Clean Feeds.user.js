@@ -3,11 +3,8 @@
 // @version      4.16
 // @author       You!
 // @description  Hide Sponsored and Suggested posts in FB's News Feed, Groups Feed, Watch Videos Feed and Marketplace Feed
-// @namespace   https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/facebook/Facebook-Clean-Feeds.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/facebook/Facebook-Clean-Feeds.user.js
+// @namespace    https://egore.url.lol/userscripts
 // @icon         https://www.google.com/s2/favicons?domain=facebook.com
-// @namespace    https://greasyfork.org/users/812551
 // @match        https://*.facebook.com/*
 // @require      https://unpkg.com/idb-keyval@6.0.3/dist/umd.js
 // @grant        GM.registerMenuCommand

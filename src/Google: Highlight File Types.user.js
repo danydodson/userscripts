@@ -5,8 +5,6 @@
 // @version      0.3.1
 // @license      MIT
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/google/Google-Highlight-File-Types.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/google/Google-Highlight-File-Types.user.js
 // @icon         https://www.google.com/favicon.ico
 // @match        *.google.com/*
 // @grant        none

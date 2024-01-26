@@ -8,7 +8,6 @@
 // @match        https://xkcd.com/*
 // @grant        none
 // @icon         https://xkcd.com/favicon.ico
-// @updateURL    https://raw.githubusercontent.com/Vukkyy/userscripts/main/explainxkcd.user.js
 // ==/UserScript==
 
 (function() {

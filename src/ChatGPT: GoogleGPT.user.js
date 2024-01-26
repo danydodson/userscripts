@@ -378,8 +378,6 @@
 // @grant               GM.xmlHttpRequest
 // @homepageURL         https://www.googlegpt.io
 // @supportURL          https://github.googlegpt.io/issues
-// @downloadURL https://update.greasyfork.org/scripts/478597/GoogleGPT%20%F0%9F%A4%96.user.js
-// @updateURL https://update.greasyfork.org/scripts/478597/GoogleGPT%20%F0%9F%A4%96.meta.js
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license

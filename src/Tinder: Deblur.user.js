@@ -4,8 +4,6 @@
 // @author       Tajnymag
 // @version      5.0
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://raw.githubusercontent.com/tajnymag/tinder-deblur/main/tinder.user.js
-// @updateURL    https://raw.githubusercontent.com/tajnymag/tinder-deblur/main/tinder.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
 // @match        https://tinder.com/*
 // @grant        none

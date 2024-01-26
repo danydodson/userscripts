@@ -9,8 +9,6 @@
 // @match        https://www.twitch.tv/*
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @grant        GM.addStyle
-// @downloadURL https://update.greasyfork.org/scripts/457632/Twitch%2C%20Display%20sidebar%20on%20theater%20mode.user.js
-// @updateURL https://update.greasyfork.org/scripts/457632/Twitch%2C%20Display%20sidebar%20on%20theater%20mode.meta.js
 // ==/UserScript==
 (function() {
     'use strict';

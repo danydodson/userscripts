@@ -11,8 +11,6 @@
 // @run-at       document-start
 // @noframes
 // @icon         https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
-// @downloadURL https://update.greasyfork.org/scripts/22938/Twitch%20Multi-Redirect.user.js
-// @updateURL https://update.greasyfork.org/scripts/22938/Twitch%20Multi-Redirect.meta.js
 // ==/UserScript==
 
 (function() {

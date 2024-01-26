@@ -11,8 +11,7 @@
 // @grant       none
 // @icon        https://www.google.com/s2/favicons?domain=greasyfork.org
 // @require     https://greasyfork.org/scripts/398877-utils-js/code/utilsjs.js?version=895926
-// @updateURL   https://raw.githubusercontent.com/Mottie/Misc-userscripts/master/greasy-fork-copy-code.user.js
-// @downloadURL https://raw.githubusercontent.com/Mottie/Misc-userscripts/master/greasy-fork-copy-code.user.js
+
 // ==/UserScript==
 /* global $ */
 (() => {

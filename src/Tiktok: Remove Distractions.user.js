@@ -5,8 +5,6 @@
 // @version      1.1
 // @license      GPL v3
 // @namespace    https://egore.url.lol/userscripts
-// @downloadURL  https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Remove-Distractions.user.js
-// @updateURL    https://github.com/danydodson/userscripts/raw/main/src/tiktok/Tiktok-Lower-Remove-Distractions.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tiktok.com
 // @match	     *://tiktok.com/*
 // @match	     *://*.tiktok.com/*

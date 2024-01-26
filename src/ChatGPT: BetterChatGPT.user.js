@@ -11,8 +11,6 @@
 // @match          https://chat.openai.com/*
 // @icon           https://raw.githubusercontent.com/madkarmaa/automatic-chatgpt-dan/master/images/icon.png
 // @license MIT
-// @downloadURL https://update.greasyfork.org/scripts/459602/BetterChatGPT.user.js
-// @updateURL https://update.greasyfork.org/scripts/459602/BetterChatGPT.meta.js
 // ==/UserScript==
 // check out TheTerrasque extension: https://github.com/TheTerrasque/chatgpt-firefox-extension
 if (localStorage.getItem('capacityCounter') === null) localStorage.setItem('capacityCounter', 0)

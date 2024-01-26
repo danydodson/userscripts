@@ -4,8 +4,6 @@
 // @author       LegeBeker (https://github.com/LegeBeker), (Fork from https://github.com/iamadamdev/bypass-paywalls-chrome)
 // @namespace    https://egore.url.lol/userscripts
 // @supportURL   https://github.com/LegeBeker/bypass-paywalls-tampermonkey/issues
-// @updateURL    https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-paywalls-tampermonkey.user.js
-// @downloadURL  https://github.com/LegeBeker/bypass-paywalls-tampermonkey/raw/master/bypass-paywalls-tampermonkey.user.js
 // @icon         https://cdn.iconscout.com/icon/premium/png-256-thumb/pay-wall-3685480-3068562.png
 // @run-at       document-end
 // @version      0.1.2

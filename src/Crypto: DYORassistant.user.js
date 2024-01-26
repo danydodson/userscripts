@@ -4,8 +4,6 @@
 // @version      ALPHA-2020.10.03s2
 // @description  Adds some research tools and visual niceties to popular DeFi utilities and sites. Does not interfere with existing functionality, just adds cosmetics for user convenience.
 // @author       @ApopheniaPays
-// @updateURL    https://github.com/ApopheniaPays/DYORassistant/raw/master/DYORassistant.user.js
-// @downloadURL  https://github.com/ApopheniaPays/DYORassistant/raw/master/DYORassistant.user.js
 // @match        *://etherscan.io/*
 // @match        *://www.dextools.io/app/*
 // @match        *://app.astrotools.io/*

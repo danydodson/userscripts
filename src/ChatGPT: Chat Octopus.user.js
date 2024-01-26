@@ -16,8 +16,6 @@
 // @grant        GM_setValue
 // @grant        GM_addValueChangeListener
 // @license      MIT
-// @downloadURL https://update.greasyfork.org/scripts/462713/chat-octopus.user.js
-// @updateURL https://update.greasyfork.org/scripts/462713/chat-octopus.meta.js
 // ==/UserScript==
 "use strict";
 (() => {
