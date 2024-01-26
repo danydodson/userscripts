@@ -13,6 +13,7 @@
 // @run-at       document-start
 // @require      https://code.jquery.com/jquery-1.11.2.min.js
 // @require      https://www.promisejs.org/polyfills/promise-6.1.0.min.js
+// @icon         https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
 // ==/UserScript==
 
 // Constants
