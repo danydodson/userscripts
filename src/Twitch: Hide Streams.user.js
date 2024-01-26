@@ -352,7 +352,7 @@ husot.settings.BlockedItems.prototype = {
             start = new Date().getTime();
 
         if (typeof self._blockedItems === 'undefined') {
-            husot.log.debug('husot.settings.BlockedItems.list() starts');
+            husot.log.debug(`husot.settings.BlockedItems.list() starts`);
             husot.settings.getValue(self._settingsKey, '[]', function (item) {
                 // Convert to JSON
                 var items = JSON.parse(item);

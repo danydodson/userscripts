@@ -282,6 +282,7 @@ function LoadTwitchEnhance() {
     GM_addStyle("svg[class*='logotwitchwordmark']{display: none !important;}")
     if (hideHypeTrain == "true") GM_addStyle(".community-highlight-stack__scroll-area--disable{display: none !important;}")
     if (hideBitGiftLeaderBoard == "true") GM_addStyle(".channel-leaderboard{display: none !important;}")
+    if (hideTheseThots == "true") GM_addStyle(".hide-these-thots{display: none !important;}")
     GM_addStyle(".btnRefreshEnhance button{height: 15px; width: 100%}")
     GM_addStyle(".chat-settings{    max-height: 500px !important;    overflow: hidden !important;}")
 
@@ -600,20 +601,12 @@ function AddTheMenu() {
     background-repeat: no-repeat;
     background-position: center; width: 25px;
     height: 25px;" ></button>
-  </div>
-  </div>
-  <div aria-label="Whispers" role="button" data-click-out-id="threads-box" data-a-target="threads-box-closed" class="Layout-sc-nxg1ff-0 emWtQg InjectLayout-sc-588ddc-0 kgrtoC whispers-threads-box__container"></div></div></div>
-
-    `
-
-    var enhanceSettings = `
-    <div class="enhancecontainer" style="display:none;">
-
     </div>
+    </div>
+    <div aria-label="Whispers" role="button" data-click-out-id="threads-box" data-a-target="threads-box-closed" class="Layout-sc-nxg1ff-0 emWtQg InjectLayout-sc-588ddc-0 kgrtoC whispers-threads-box__container"></div></div></div>
     `
 
-
-
+    var enhanceSettings = `<div class="enhancecontainer" style="display:none;"></div>`
 
     $("body").append(enhanceSettings)
     $(".enhancecontainer").append('<div class="tw-border-t tw-mg-t-1 tw-mg-x-05 tw-pd-b-1 customEnhanceMenu"" ></div><div class="tw-mg-y-05 tw-pd-x-05" style="width: 100%;"><p class="tw-c-text-alt-2 tw-font-size-6 tw-strong tw-upcase" style="color: var(--color-text-alt-2)!important;    font-size: var(--font-size-6)!important;    font-weight: 600!important;    text-transform: uppercase!important;">Enhance Twitch</p></div>')
@@ -752,14 +745,14 @@ function AddTheMenu() {
             GM_addStyle(".channel-leaderboard{display: none !important;}")
     })
 
-    $(".enhancecontainer").append(getMenuItem('hideBitGiftLeaderBoard', 'Hide gift/bit leaderboard', hideBitGiftLeaderBoard))
-    $("#fixhideBitGiftLeaderBoard").change(function () {
-        localStorage.setItem("hideBitGiftLeaderBoard", this.checked)
-        hideBitGiftLeaderBoard = localStorage.getItem("hideBitGiftLeaderBoard")
-        if (hideBitGiftLeaderBoard == "false")
-            RemoveCssRule(".channel-leaderboard")
+    $(".enhancecontainer").append(getMenuItem('hideTheseThots', 'Hide these thots', hideTheseThots))
+    $("#fixhideTheseThots").change(function () {
+        localStorage.setItem("hideTheseThots", this.checked)
+        hideTheseThots = localStorage.getItem("hideTheseThots")
+        if (hideTheseThots == "false")
+            RemoveCssRule(".hide-these-thots")
         else
-            GM_addStyle(".channel-leaderboard{display: none !important;}")
+            GM_addStyle(".hide-these-thots{display: none !important;}")
     }); -
 
         $(".enhancecontainer").append(getMenuItem('hideTags', 'Hide tags', hideTags))
@@ -815,7 +808,7 @@ function AddTheMenu() {
     })
 }
 
-GM_addStyle('.enhanceButton:hover{    background-color:var(--color-background-button-text-hover) !important;}')
+GM_addStyle('.enhanceButton:hover{background-color:var(--color-background-button-text-hover) !important;}')
 
 GM_addStyle(`
     .enhancecontainer {

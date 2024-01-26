@@ -4,7 +4,7 @@
 // @version      0.1.0
 // @description  try to take over the world!
 // @author       You
-// @match        https://www.twitch.tv/videos/*
+// @match        https://www.twitch.tv/*
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @require      https://greasyfork.org/scripts/419640-onelementready/code/onElementReady.js?version=887637
 // @grant        none

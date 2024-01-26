@@ -49,7 +49,7 @@
         dialog.parentNode.style.width = "440px";
         dialog.parentNode.querySelector("img")?.remove();
         const channel = element.querySelector("[alt]").alt.toLowerCase()
-        console.log(channel)
+        // console.log(channel)
         if (!cache[channel] || Date.now() - cache[channel] >= 30 * 70) { // Cache Thumbnails for half minute
             cache[channel] = Date.now();
         }
