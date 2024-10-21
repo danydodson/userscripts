@@ -6,7 +6,7 @@
 // @description     Hover over Channel in the Sidebar to see a Thumbnail Preview of the Stream on Twitch
 // @namespace       dumpsterbaby.lol
 // @homepage        https://github.com/danydodson/userscripts/blob/main/src/Twitch_Sidebar_Previews.user.js
-// @updateURL       https://github.com/danydodson/userscripts/raw/main/src/Twitch_Sidebar_Previews.user.js
+// @updateURL       https://github.com/danydodson/userscripts/blob/main/src/Twitch_Sidebar_Previews.user.js
 // @icon            https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
 // @match           https://www.twitch.tv/*
 // ==/UserScript==
