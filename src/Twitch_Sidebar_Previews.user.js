@@ -7,6 +7,7 @@
 // @namespace       dumpsterbaby.lol
 // @homepage        https://github.com/danydodson/userscripts/blob/main/src/Twitch_Sidebar_Previews.user.js
 // @updateURL       https://github.com/danydodson/userscripts/blob/main/src/Twitch_Sidebar_Previews.user.js
+// @downloadURL     https://github.com/danydodson/userscripts/blob/main/src/Twitch_Sidebar_Previews.user.js
 // @icon            https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
 // @match           https://www.twitch.tv/*
 // ==/UserScript==

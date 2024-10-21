@@ -7,6 +7,7 @@
 // @namespace    dumpsterbaby.lol
 // @homepage     https://github.com/danydodson/userscripts/blob/main/src/Twitch_Enhance_witch.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/Twitch_Ads_Solutions.user.js
+// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/Twitch_Ads_Solutions.user.js
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
 // @match        https://www.twitch.tv/*
