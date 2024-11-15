@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Tinder Deblur
 // @description  Simple script using the official Tinder API to get clean photos of the users who liked you
-// @author       dany
+// @author       spatch
 // @version      1.0
 // @license      MIT
-// @namespace    https://github.com/danydodson/userscripts
+// @namespace    https://greasyfork.org/en/scripts/517571-tinder-deblur/code
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
 // @match        https://tinder.com/*
 // @grant        none
