@@ -14,130 +14,130 @@
 // @filename: types/tampermonkey.d.ts
 
 class UserCacheItem {
-	/**
-	 * @param {string} userId
-	 * @param {object} user
-	 */
-	constructor(userId, user) {
-		this.userId = userId
-		this.user = user
-		this.hidden = !!localStorage.getItem('hiddenUsers')?.includes(userId)
+  /**
+   * @param {string} userId
+   * @param {object} user
+   */
+  constructor(userId, user) {
+    this.userId = userId
+    this.user = user
+    this.hidden = !!localStorage.getItem('hiddenUsers')?.includes(userId)
 
-		this.photoIndex = 0
-	}
+    this.photoIndex = 0
+  }
 
-	/**
-	 * @returns {string | null}
-	 */
-	getPreviousPhoto() {
-		if (!this.user) return null
+  /**
+   * @returns {string | null}
+   */
+  getPreviousPhoto() {
+    if (!this.user) return null
 
-		this.photoIndex = this.photoIndex - 1
+    this.photoIndex = this.photoIndex - 1
 
-		if (this.photoIndex < 0) this.photoIndex = this.user.photos.length - 1
+    if (this.photoIndex < 0) this.photoIndex = this.user.photos.length - 1
 
-		return this.user.photos[this.photoIndex].url
-	}
+    return this.user.photos[this.photoIndex].url
+  }
 
-	/**
-	 * @returns {string | null}
-	 */
-	getNextPhoto() {
-		if (!this.user) return null
+  /**
+   * @returns {string | null}
+   */
+  getNextPhoto() {
+    if (!this.user) return null
 
-		this.photoIndex = (this.photoIndex + 1) % this.user.photos.length
+    this.photoIndex = (this.photoIndex + 1) % this.user.photos.length
 
-		return this.user.photos[this.photoIndex].url
-	}
+    return this.user.photos[this.photoIndex].url
+  }
 
-	/**
-	 * @returns {number}
-	 */
-	getAge() {
-		if (!this.user || !this.user.birth_date) return 0
+  /**
+   * @returns {number}
+   */
+  getAge() {
+    if (!this.user || !this.user.birth_date) return 0
 
-		const currentDate = new Date()
-		const birthDate = Date.parse(this.user.birth_date)
+    const currentDate = new Date()
+    const birthDate = Date.parse(this.user.birth_date)
 
-		const currentYear = currentDate.getFullYear()
-		const currentMonth = currentDate.getMonth()
-		const currentDay = currentDate.getDay()
-		const birthYear = birthDate.getFullYear()
-		const birthMonth = birthDate.getMonth()
-		const birthDay = birthDate.getDay()
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = currentDate.getMonth()
+    const currentDay = currentDate.getDay()
+    const birthYear = birthDate.getFullYear()
+    const birthMonth = birthDate.getMonth()
+    const birthDay = birthDate.getDay()
 
-		let age = currentYear - birthYear
+    let age = currentYear - birthYear
 
-		if (currentMonth < birthMonth) age--
-		else if (currentDay < birthDay) age--
+    if (currentMonth < birthMonth) age--
+    else if (currentDay < birthDay) age--
 
-		return age
-	}
+    return age
+  }
 
-	/**
-	 * @returns {boolean}
-	 */
-	isHidden() {
-		return this.hidden
-	}
+  /**
+   * @returns {boolean}
+   */
+  isHidden() {
+    return this.hidden
+  }
 
-	/** @param {boolean} hidden */
-	setHidden(hidden) {
-		this.hidden = hidden
-	}
+  /** @param {boolean} hidden */
+  setHidden(hidden) {
+    this.hidden = hidden
+  }
 }
 
 class UserCache {
-	constructor() {
-		/** @type {Map<string, UserCacheItem>} */
-		this.cache = new Map()
-	}
+  constructor() {
+    /** @type {Map<string, UserCacheItem>} */
+    this.cache = new Map()
+  }
 
-	/**
-	 * @param {string} userId
-	 * @param {object} user
-	 * @returns {UserCacheItem}
-	 */
-	add(userId, user) {
-		this.delete(userId)
+  /**
+   * @param {string} userId
+   * @param {object} user
+   * @returns {UserCacheItem}
+   */
+  add(userId, user) {
+    this.delete(userId)
 
-		const newItem = new UserCacheItem(userId, user)
-		this.cache.set(userId, newItem)
+    const newItem = new UserCacheItem(userId, user)
+    this.cache.set(userId, newItem)
 
-		return newItem
-	}
+    return newItem
+  }
 
-	/**
-	 * @param {string} userId
-	 */
-	has(userId) {
-		return this.cache.has(userId)
-	}
+  /**
+   * @param {string} userId
+   */
+  has(userId) {
+    return this.cache.has(userId)
+  }
 
-	/**
-	 * @param {string} userId
-	 * @returns UserCacheItem | undefined
-	 */
-	get(userId) {
-		return this.cache.get(userId)
-	}
+  /**
+   * @param {string} userId
+   * @returns UserCacheItem | undefined
+   */
+  get(userId) {
+    return this.cache.get(userId)
+  }
 
-	/**
-	 * @param {string} userId
-	 */
-	delete(userId) {
-		const existingUser = this.cache.get(userId)
+  /**
+   * @param {string} userId
+   */
+  delete(userId) {
+    const existingUser = this.cache.get(userId)
 
-		if (!existingUser) return
+    if (!existingUser) return
 
-		this.cache.delete(userId)
-	}
+    this.cache.delete(userId)
+  }
 
-	clear() {
-		for (const userItem of this.cache.values()) {
-			this.cache.delete(userItem.userId)
-		}
-	}
+  clear() {
+    for (const userItem of this.cache.values()) {
+      this.cache.delete(userItem.userId)
+    }
+  }
 }
 
 /**
@@ -149,97 +149,97 @@ const cache = new UserCache()
  * Original function of the script
  */
 async function unblur() {
-	/** @type {HTMLElement | null} */
-	const likesGridContainerEl = document.querySelector('main div.Expand > div[role="grid"]')
+  /** @type {HTMLElement | null} */
+  const likesGridContainerEl = document.querySelector('main div.Expand > div[role="grid"]')
 
-	if (!likesGridContainerEl) return
+  if (!likesGridContainerEl) return
 
-	if (!likesGridContainerEl.dataset.loadingTextAdded) {
-		likesGridContainerEl.dataset.loadingTextAdded = 'true'
+  if (!likesGridContainerEl.dataset.loadingTextAdded) {
+    likesGridContainerEl.dataset.loadingTextAdded = 'true'
 
-		likesGridContainerEl.style.position = 'relative'
+    likesGridContainerEl.style.position = 'relative'
 
-		const loadingContainer = document.createElement('DIV')
-		loadingContainer.classList.add('loading-container')
-		loadingContainer.setAttribute(
-			'style',
-			'align-items: center; background-color: black; display: flex; height: 100%; justify-content: center; left: 0; position: absolute; text-align: center; top: 0; width: 100%; z-index: 50;'
-		)
-		likesGridContainerEl.insertBefore(loadingContainer, likesGridContainerEl.firstChild)
+    const loadingContainer = document.createElement('DIV')
+    loadingContainer.classList.add('loading-container')
+    loadingContainer.setAttribute(
+      'style',
+      'align-items: center; background-color: black; display: flex; height: 100%; justify-content: center; left: 0; position: absolute; text-align: center; top: 0; width: 100%; z-index: 50;'
+    )
+    likesGridContainerEl.insertBefore(loadingContainer, likesGridContainerEl.firstChild)
 
-		const loadingText = document.createElement('H4')
-		loadingText.setAttribute(
-			'style',
-			'color: #d2d2d3; font-size: 40px; letter-spacing: 2px; text-transform: uppercase;'
-		)
-		loadingText.innerText = 'Loading'
-		loadingContainer.appendChild(loadingText)
-	}
+    const loadingText = document.createElement('H4')
+    loadingText.setAttribute(
+      'style',
+      'color: #d2d2d3; font-size: 40px; letter-spacing: 2px; text-transform: uppercase;'
+    )
+    loadingText.innerText = 'Loading'
+    loadingContainer.appendChild(loadingText)
+  }
 
-	const [failedToFetchTeasersError, teasers] = await safeAwait(fetchTeasers())
+  const [failedToFetchTeasersError, teasers] = await safeAwait(fetchTeasers())
 
-	if (failedToFetchTeasersError) {
-		console.error(`Could not load teasers: ${failedToFetchTeasersError.name}`)
-		return
-	}
+  if (failedToFetchTeasersError) {
+    console.error(`Could not load teasers: ${failedToFetchTeasersError.name}`)
+    return
+  }
 
-	/** @type {NodeListOf<HTMLElement>} */
-	const teaserEls = document.querySelectorAll('.Expand.enterAnimationContainer > div:nth-child(1)')
+  /** @type {NodeListOf<HTMLElement>} */
+  const teaserEls = document.querySelectorAll('.Expand.enterAnimationContainer > div:nth-child(1)')
 
-	for (let i = 0; i < teaserEls.length; ++i) {
-		const teaserUser = teasers[i].user
-		const teaserEl = teaserEls[i]
-		const teaserImage = teaserUser.photos[0].url
+  for (let i = 0; i < teaserEls.length; ++i) {
+    const teaserUser = teasers[i].user
+    const teaserEl = teaserEls[i]
+    const teaserImage = teaserUser.photos[0].url
 
-		if (!teaserEl) continue
+    if (!teaserEl) continue
 
-		const likeEl = teaserEl.parentElement?.parentElement
+    const likeEl = teaserEl.parentElement?.parentElement
 
-		if (!likeEl) continue
+    if (!likeEl) continue
 
-		if (!likeEl.classList.contains('like')) likeEl.classList.add('like')
+    if (!likeEl.classList.contains('like')) likeEl.classList.add('like')
 
-		const likeElContent = likeEl.querySelector('.enterAnimationContainer.Expand')
+    const likeElContent = likeEl.querySelector('.enterAnimationContainer.Expand')
 
-		if (!likeElContent) continue
+    if (!likeElContent) continue
 
-		if (teaserImage.includes('unknown') || !teaserImage.includes('images-ssl')) {
-			if (likeEl.dataset.invalid) continue
+    if (teaserImage.includes('unknown') || !teaserImage.includes('images-ssl')) {
+      if (likeEl.dataset.invalid) continue
 
-			likeEl.dataset.invalid = 'true'
-			likeElContent.style.opacity = '0.5'
-			likeEl.innerHTML += `
+      likeEl.dataset.invalid = 'true'
+      likeElContent.style.opacity = '0.5'
+      likeEl.innerHTML += `
 				<div class="invalid-text" style="align-items: center; display: flex; flex-direction: column; font-size: 14px; height: calc(100% - 25px * 2); gap: 15px; left: 25px; text-align: center; top: 25px; position: absolute; width: calc(100% - 25px * 2);">
 					<span style="background-color: #0008; border-radius: 12.5px; color: #ac0c04; letter-spacing: 1px; padding: 5px 14px; text-transform: uppercase;">Unable to deblur</span>
 					<span class="invalid-disclaimer" style="background-color: #0004; border-radius: 12.5px; padding: 15px 20px;"><b>This is not a bug!</b><br />Not all likes can be unblurred.</span>
 				</div>
 			`
-			continue
-		}
+      continue
+    }
 
-		if (likeEl.dataset.invalid) {
-			delete likeEl.dataset.invalid
+    if (likeEl.dataset.invalid) {
+      delete likeEl.dataset.invalid
 
-			likeEl.querySelector('.invalid-text').remove()
-			likeElContent.style.opacity = '1'
-		}
+      likeEl.querySelector('.invalid-text').remove()
+      likeElContent.style.opacity = '1'
+    }
 
-		const userId = teaserImage.slice(32, 56)
+    const userId = teaserImage.slice(32, 56)
 
-		if (cache.has(userId)) continue
+    if (cache.has(userId)) continue
 
-		try {
-			// only update teaser once
-			if (likeEl.dataset.userId) continue
+    try {
+      // only update teaser once
+      if (likeEl.dataset.userId) continue
 
-			const infoContainerEl = teaserEl.parentElement?.lastElementChild
+      const infoContainerEl = teaserEl.parentElement?.lastElementChild
 
-			if (!infoContainerEl) {
-				console.error(`Could not find info container for '${userId}'`)
-				return
-			}
+      if (!infoContainerEl) {
+        console.error(`Could not find info container for '${userId}'`)
+        return
+      }
 
-			infoContainerEl.outerHTML = `
+      infoContainerEl.outerHTML = `
 				<div class='Pos(a) Start(0) End(0) TranslateZ(0) Pe(n) B(0)' style='background-image: linear-gradient(to top, #000F 0%, #0000 100%); height: 65%;'>
 					<div style='opacity: 0; transition: opacity 0.5s ease-out;' class='like-user-info Pos(a) D(f) Jc(sb) C($c-ds-text-primary-overlay) Ta(start) W(100%) Ai(fe) B(0) P(8px)--xs P(16px) P(20px)--l Cur(p) focus-button-style' tabindex='0'>
 						<div class='Tsh($tsh-s) D(f) Fx($flx1) Fxd(c) Miw(0)'></div>
@@ -247,39 +247,39 @@ async function unblur() {
 				</div>
 			`
 
-			likeEl.classList.add('like-item')
-			likeEl.dataset.userId = userId
+      likeEl.classList.add('like-item')
+      likeEl.dataset.userId = userId
 
-			teaserEl.id = 'teaser-' + userId
-			teaserEl.classList.add('teaser', 'like-action-button', 'like-action-next-photo')
-			teaserEl.style.backgroundSize = 'cover'
+      teaserEl.id = 'teaser-' + userId
+      teaserEl.classList.add('teaser', 'like-action-button', 'like-action-next-photo')
+      teaserEl.style.backgroundSize = 'cover'
 
-			fetchUser(userId).then((user) => {
-				// save user to cache
-				const userItem = cache.add(userId, user ?? null)
+      fetchUser(userId).then((user) => {
+        // save user to cache
+        const userItem = cache.add(userId, user ?? null)
 
-				// hide the like if it was passed before
-				if (userItem.isHidden()) {
-					likeEl.remove()
-					return
-				}
+        // hide the like if it was passed before
+        if (userItem.isHidden()) {
+          likeEl.remove()
+          return
+        }
 
-				if (!user) {
-					teaserEl.style.backgroundImage = `url('https://preview.gotinder.com/${teaserUser._id}/original_${teaserUser.photos[0].id}.jpeg')`
-					infoContainerEl.remove()
+        if (!user) {
+          teaserEl.style.backgroundImage = `url('https://preview.gotinder.com/${teaserUser._id}/original_${teaserUser.photos[0].id}.jpeg')`
+          infoContainerEl.remove()
 
-					console.error(`Could not load user '${userId}'`)
-					return
-				}
+          console.error(`Could not load user '${userId}'`)
+          return
+        }
 
-				// log user name + bio
-				console.debug(`${user.name} (${user.bio})`)
+        // log user name + bio
+        console.debug(`${user.name} (${user.bio})`)
 
-				const likeUserInfo = infoContainerEl.querySelector('like-user-info')?.firstChild
+        const likeUserInfo = infoContainerEl.querySelector('like-user-info')?.firstChild
 
-				if (!likeUserInfo) return
+        if (!likeUserInfo) return
 
-				likeUserInfo.innerHTML = `
+        likeUserInfo.innerHTML = `
 					<div class='Pos(a) Fz($l) B(0) Trsdu($fast) Maw(80%) D(f) Fxd(c) like-user-name'>
 						<div class='D(f) Ai(c) Miw(0)'>
 							<!-- Name -->
@@ -307,107 +307,107 @@ async function unblur() {
 					</div>
 					<!-- Bio -->
 					<span class='like-user-bio' style='-webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; max-height: 63px; overflow-y: hidden; text-overflow: ellipsis; transform: translateY(-20px);'>${user.bio
-					}</span>
+          }</span>
 				`
 
-				teaserEl.style.backgroundImage = `url(${user.photos[0].url})`
-			})
-		} catch (err) {
-			if (err.name != 'SyntaxError') console.error(`Failed to load user '${userId}': ${err.name}`)
-		}
-	}
+        teaserEl.style.backgroundImage = `url(${user.photos[0].url})`
+      })
+    } catch (err) {
+      if (err.name != 'SyntaxError') console.error(`Failed to load user '${userId}': ${err.name}`)
+    }
+  }
 }
 
 /**
  * Remove Tinder Gold ads
  */
 function removeGoldAds() {
-	// hide special offer advertisement
-	const advertisementLogo = document.querySelector('div[aria-label="Tinder Gold"]')
+  // hide special offer advertisement
+  const advertisementLogo = document.querySelector('div[aria-label="Tinder Gold"]')
 
-	if (advertisementLogo) {
-		const addContainer = advertisementLogo.parentElement?.parentElement
+  if (advertisementLogo) {
+    const addContainer = advertisementLogo.parentElement?.parentElement
 
-		if (addContainer) addContainer.style.display = 'none'
-	}
+    if (addContainer) addContainer.style.display = 'none'
+  }
 
-	// remove 'Tinder Gold' advertisement
+  // remove 'Tinder Gold' advertisement
 
-	for (const advertisementEl of document.getElementsByTagName('div')) {
-		if (advertisementEl.children.length > 0) continue
+  for (const advertisementEl of document.getElementsByTagName('div')) {
+    if (advertisementEl.children.length > 0) continue
 
-		if (advertisementEl.innerText.toLowerCase().includes('gold')) advertisementEl.remove()
-	}
+    if (advertisementEl.innerText.toLowerCase().includes('gold')) advertisementEl.remove()
+  }
 
-	// remove gold button
-	/** @type {HTMLButtonElement | null} */
-	const goldButtonEl = document.querySelector('div.CenterAlign button[type="button"]')
+  // remove gold button
+  /** @type {HTMLButtonElement | null} */
+  const goldButtonEl = document.querySelector('div.CenterAlign button[type="button"]')
 
-	if (goldButtonEl != null) goldButtonEl.remove()
+  if (goldButtonEl != null) goldButtonEl.remove()
 }
 
 function updateUserInfos() {
-	/** @type {HTMLElement | null} */
-	const likesGridContainerEl = document.querySelector('main div.Expand > div[role="grid"]')
+  /** @type {HTMLElement | null} */
+  const likesGridContainerEl = document.querySelector('main div.Expand > div[role="grid"]')
 
-	if (!likesGridContainerEl) return
+  if (!likesGridContainerEl) return
 
-	// fix scrolling
-	if (likesGridContainerEl.parentElement) likesGridContainerEl.parentElement.style.overflow = 'hidden'
+  // fix scrolling
+  if (likesGridContainerEl.parentElement) likesGridContainerEl.parentElement.style.overflow = 'hidden'
 
-	if (!likesGridContainerEl.dataset.eventsInterrupted) {
-		likesGridContainerEl.dataset.eventsInterrupted = 'true'
-		likesGridContainerEl.addEventListener('scroll', (event) => event.stopImmediatePropagation(), true)
-		likesGridContainerEl.style.justifyContent = 'flex-start'
-	}
+  if (!likesGridContainerEl.dataset.eventsInterrupted) {
+    likesGridContainerEl.dataset.eventsInterrupted = 'true'
+    likesGridContainerEl.addEventListener('scroll', (event) => event.stopImmediatePropagation(), true)
+    likesGridContainerEl.style.justifyContent = 'flex-start'
+  }
 
-	// update the likes grid
-	const likesGridEl = likesGridContainerEl.lastElementChild
+  // update the likes grid
+  const likesGridEl = likesGridContainerEl.lastElementChild
 
-	if (!likesGridEl.dataset.stylesUpdated) {
-		likesGridEl.dataset.stylesUpdated = 'true'
-		likesGridEl.classList.add('D(f)')
-		likesGridEl.style.removeProperty('height')
-		likesGridEl.style.flexWrap = 'wrap'
-		likesGridEl.style.flex = 'unset'
-		likesGridEl.style.gap = '10px'
-		likesGridEl.style.justifyContent = 'flex-start'
-	}
+  if (!likesGridEl.dataset.stylesUpdated) {
+    likesGridEl.dataset.stylesUpdated = 'true'
+    likesGridEl.classList.add('D(f)')
+    likesGridEl.style.removeProperty('height')
+    likesGridEl.style.flexWrap = 'wrap'
+    likesGridEl.style.flex = 'unset'
+    likesGridEl.style.gap = '10px'
+    likesGridEl.style.justifyContent = 'flex-start'
+  }
 
-	// update the like elements
-	for (const likeEl of likesGridEl.children) {
-		// don't update the element if it is invisible
-		if (likeEl.style.display === 'none') continue
+  // update the like elements
+  for (const likeEl of likesGridEl.children) {
+    // don't update the element if it is invisible
+    if (likeEl.style.display === 'none') continue
 
-		likeEl.classList.remove('Cur(p)')
-		likeEl.style.removeProperty('transform')
-		likeEl.style.position = 'relative'
-		likeEl.style.backgroundColor = 'black'
-		likeEl.style.borderRadius = '8px'
-		likeEl.style.marginTop = '0'
-		likeEl.style.marginBottom = '0'
+    likeEl.classList.remove('Cur(p)')
+    likeEl.style.removeProperty('transform')
+    likeEl.style.position = 'relative'
+    likeEl.style.backgroundColor = 'black'
+    likeEl.style.borderRadius = '8px'
+    likeEl.style.marginTop = '0'
+    likeEl.style.marginBottom = '0'
 
-		const userId = likeEl.dataset.userId
+    const userId = likeEl.dataset.userId
 
-		// only update if user was loaded
-		if (!userId) continue
+    // only update if user was loaded
+    if (!userId) continue
 
-		const userItem = cache.get(userId)
+    const userItem = cache.get(userId)
 
-		if (!userItem) continue
+    if (!userItem) continue
 
-		// only update the container once
-		if (likeEl.dataset.infoSet) continue
+    // only update the container once
+    if (likeEl.dataset.infoSet) continue
 
-		likeEl.dataset.infoSet = 'true'
+    likeEl.dataset.infoSet = 'true'
 
-		/** @type {HTMLElement | null} */
-		const infoContainerEl = likeEl.querySelector('.like-user-info')
+    /** @type {HTMLElement | null} */
+    const infoContainerEl = likeEl.querySelector('.like-user-info')
 
-		if (!infoContainerEl) continue
+    if (!infoContainerEl) continue
 
-		// add action buttons
-		likeEl.innerHTML += `
+    // add action buttons
+    likeEl.innerHTML += `
 			<div class='like-actions' style='align-items: center; background-image: linear-gradient(to top, #0004, #0001); border-radius: 8px; display: flex; height: 30px; justify-content: space-around; left: 5px; padding: 2px; position: absolute; bottom: 5px; width: calc(100% - 5px * 2);'>
 				<!-- Hide -->
 				<button class='like-action-button like-action-pass button Lts($ls-s) Cur(p) Tt(u) Bdrs(50%) P(0) Fw($semibold) focus-button-style Bxsh($bxsh-btn) Wc($transform) Pe(a) Scale(1.1):h Scale(.9):a' type='button' style='cursor: pointer; height: 24px; width: 24px;' draggable='false'>
@@ -432,140 +432,140 @@ function updateUserInfos() {
 			</div>
 		`
 
-		// handle like element click
-		likeEl.addEventListener(
-			'click',
-			(event) => {
-				/** @type {HTMLElement | null} */
-				let currentParent = event.target
+    // handle like element click
+    likeEl.addEventListener(
+      'click',
+      (event) => {
+        /** @type {HTMLElement | null} */
+        let currentParent = event.target
 
-				if (!currentParent) return
+        if (!currentParent) return
 
-				while (!currentParent?.classList.contains('like-action-button')) {
-					if (!currentParent?.parentElement) break
-					currentParent = currentParent.parentElement
-				}
+        while (!currentParent?.classList.contains('like-action-button')) {
+          if (!currentParent?.parentElement) break
+          currentParent = currentParent.parentElement
+        }
 
-				event.stopImmediatePropagation()
+        event.stopImmediatePropagation()
 
-				if (!currentParent) return
+        if (!currentParent) return
 
-				if (currentParent.classList.contains('like-action-pass')) {
-					pass(userItem)
-				} else if (currentParent.classList.contains('like-action-like')) {
-					like(userItem)
-				} else {
-					if (!userItem.user) return
+        if (currentParent.classList.contains('like-action-pass')) {
+          pass(userItem)
+        } else if (currentParent.classList.contains('like-action-like')) {
+          like(userItem)
+        } else {
+          if (!userItem.user) return
 
-					if (currentParent.classList.contains('like-action-photo')) {
-						const index = parseInt(currentParent.dataset.photoIndex ?? '0')
-						showPhoto(likeEl, userItem.photoIndex, index, userItem.user.photos[index].url)
-						userItem.photoIndex = index
-					} else if (currentParent.classList.contains('like-action-next-photo')) {
-						const oldIndex = userItem.photoIndex
-						const photoUrl =
-							event.offsetX < currentParent.clientWidth / 2
-								? userItem.getPreviousPhoto()
-								: userItem.getNextPhoto()
-						showPhoto(likeEl, oldIndex, userItem.photoIndex, photoUrl)
-					}
+          if (currentParent.classList.contains('like-action-photo')) {
+            const index = parseInt(currentParent.dataset.photoIndex ?? '0')
+            showPhoto(likeEl, userItem.photoIndex, index, userItem.user.photos[index].url)
+            userItem.photoIndex = index
+          } else if (currentParent.classList.contains('like-action-next-photo')) {
+            const oldIndex = userItem.photoIndex
+            const photoUrl =
+              event.offsetX < currentParent.clientWidth / 2
+                ? userItem.getPreviousPhoto()
+                : userItem.getNextPhoto()
+            showPhoto(likeEl, oldIndex, userItem.photoIndex, photoUrl)
+          }
 
-					return
-				}
+          return
+        }
 
-				likeEl.remove()
-			},
-			true
-		)
+        likeEl.remove()
+      },
+      true
+    )
 
-		/** @type {HTMLElement | null} */
-		const userNameEl = infoContainerEl.querySelector('.like-user-name')
-		/** @type {HTMLElement | null} */
-		const userBioEl = infoContainerEl.querySelector('.like-user-bio')
+    /** @type {HTMLElement | null} */
+    const userNameEl = infoContainerEl.querySelector('.like-user-name')
+    /** @type {HTMLElement | null} */
+    const userBioEl = infoContainerEl.querySelector('.like-user-bio')
 
-		if (!userNameEl || !userBioEl) continue
+    if (!userNameEl || !userBioEl) continue
 
-		const user = userItem.user
+    const user = userItem.user
 
-		// update info container
+    // update info container
 
-		const userBioElHeight = userBioEl.getBoundingClientRect().height
+    const userBioElHeight = userBioEl.getBoundingClientRect().height
 
-		userNameEl.style.transform = `translateY(-${userBioElHeight + 20 /* distance height */ + 20 /* name height */ + 20 /* action buttons */
-			}px)`
-		infoContainerEl.style.opacity = `1`
+    userNameEl.style.transform = `translateY(-${userBioElHeight + 20 /* distance height */ + 20 /* name height */ + 20 /* action buttons */
+      }px)`
+    infoContainerEl.style.opacity = `1`
 
-		// add photo selector
-		const photoSelectorContainer = document.createElement('div')
-		photoSelectorContainer.setAttribute(
-			'class',
-			'photo-selectors CenterAlign D(f) Fxd(r) W(100%) Px(8px) Pos(a) Iso(i)'
-		)
-		photoSelectorContainer.style.top = '5px'
-		likeEl.appendChild(photoSelectorContainer)
+    // add photo selector
+    const photoSelectorContainer = document.createElement('div')
+    photoSelectorContainer.setAttribute(
+      'class',
+      'photo-selectors CenterAlign D(f) Fxd(r) W(100%) Px(8px) Pos(a) Iso(i)'
+    )
+    photoSelectorContainer.style.top = '5px'
+    likeEl.appendChild(photoSelectorContainer)
 
-		for (let i = 0; i < user.photos.length; i++) {
-			const photoButton = document.createElement('button')
-			photoButton.setAttribute(
-				'class',
-				'like-action-button like-action-photo bullet D(ib) Va(m) Cnt($blank)::a D(b)::a Cur(p) H(4px)::a W(100%)::a Py(4px) Px(2px) W(100%) Bdrs(100px)::a focus-background-style ' +
-				(i == 0
-					? 'Bgc($c-ds-background-tappy-indicator-active)::a bullet--active'
-					: 'Bgc($c-ds-background-tappy-indicator-inactive)::a')
-			)
-			photoButton.dataset.photoIndex = i.toString()
-			photoSelectorContainer.appendChild(photoButton)
-		}
-	}
+    for (let i = 0; i < user.photos.length; i++) {
+      const photoButton = document.createElement('button')
+      photoButton.setAttribute(
+        'class',
+        'like-action-button like-action-photo bullet D(ib) Va(m) Cnt($blank)::a D(b)::a Cur(p) H(4px)::a W(100%)::a Py(4px) Px(2px) W(100%) Bdrs(100px)::a focus-background-style ' +
+        (i == 0
+          ? 'Bgc($c-ds-background-tappy-indicator-active)::a bullet--active'
+          : 'Bgc($c-ds-background-tappy-indicator-inactive)::a')
+      )
+      photoButton.dataset.photoIndex = i.toString()
+      photoSelectorContainer.appendChild(photoButton)
+    }
+  }
 
-	const totalLikesCount = likesGridEl?.childElementCount ?? 0
+  const totalLikesCount = likesGridEl?.childElementCount ?? 0
 
-	if (totalLikesCount == 0) {
-		if (!likesGridContainerEl.dataset.noLikes) {
-			likesGridContainerEl.dataset.noLikes = 'true'
+  if (totalLikesCount == 0) {
+    if (!likesGridContainerEl.dataset.noLikes) {
+      likesGridContainerEl.dataset.noLikes = 'true'
 
-			if (likesGridContainerEl.dataset.loadingTextAdded)
-				likesGridContainerEl.querySelector('.loading-container')?.remove()
+      if (likesGridContainerEl.dataset.loadingTextAdded)
+        likesGridContainerEl.querySelector('.loading-container')?.remove()
 
-			const noLikesContainer = document.createElement('DIV')
-			noLikesContainer.classList.add('no-likes-container')
-			noLikesContainer.setAttribute(
-				'style',
-				'align-items: center; background-color: black; display: flex; height: 100%; justify-content: center; left: 0; position: absolute; text-align: center; top: 0; width: 100%; z-index: 50;'
-			)
-			likesGridContainerEl.insertBefore(noLikesContainer, likesGridContainerEl.firstChild)
+      const noLikesContainer = document.createElement('DIV')
+      noLikesContainer.classList.add('no-likes-container')
+      noLikesContainer.setAttribute(
+        'style',
+        'align-items: center; background-color: black; display: flex; height: 100%; justify-content: center; left: 0; position: absolute; text-align: center; top: 0; width: 100%; z-index: 50;'
+      )
+      likesGridContainerEl.insertBefore(noLikesContainer, likesGridContainerEl.firstChild)
 
-			const noLikesText = document.createElement('H4')
-			noLikesText.setAttribute(
-				'style',
-				'color: #d2d2d3; font-size: 40px; letter-spacing: 2px; text-transform: uppercase;'
-			)
-			noLikesText.innerText = 'No likes available'
-			noLikesContainer.appendChild(noLikesText)
-		}
-	} else if (
-		document.querySelectorAll('div[data-info-set]').length > 0 ||
-		document.querySelectorAll('div[data-invalid]').length == totalLikesCount
-	) {
-		if (!likesGridContainerEl.dataset.loadingComplete) {
-			likesGridContainerEl.dataset.loadingComplete = 'true'
+      const noLikesText = document.createElement('H4')
+      noLikesText.setAttribute(
+        'style',
+        'color: #d2d2d3; font-size: 40px; letter-spacing: 2px; text-transform: uppercase;'
+      )
+      noLikesText.innerText = 'No likes available'
+      noLikesContainer.appendChild(noLikesText)
+    }
+  } else if (
+    document.querySelectorAll('div[data-info-set]').length > 0 ||
+    document.querySelectorAll('div[data-invalid]').length == totalLikesCount
+  ) {
+    if (!likesGridContainerEl.dataset.loadingComplete) {
+      likesGridContainerEl.dataset.loadingComplete = 'true'
 
-			if (likesGridContainerEl.dataset.noLikes) {
-				delete likesGridContainerEl.dataset.noLikes
+      if (likesGridContainerEl.dataset.noLikes) {
+        delete likesGridContainerEl.dataset.noLikes
 
-				likesGridContainerEl.querySelector('.no-likes-container')?.remove()
-			}
+        likesGridContainerEl.querySelector('.no-likes-container')?.remove()
+      }
 
-			const loadingContainer = likesGridContainerEl.querySelector('.loading-container')
+      const loadingContainer = likesGridContainerEl.querySelector('.loading-container')
 
-			if (!loadingContainer) return
+      if (!loadingContainer) return
 
-			loadingContainer.style.transition = 'opacity 0.4s 0.2s ease-out'
-			loadingContainer.style.opacity = '0'
+      loadingContainer.style.transition = 'opacity 0.4s 0.2s ease-out'
+      loadingContainer.style.opacity = '0'
 
-			setTimeout(() => loadingContainer.remove(), 600)
-		}
-	}
+      setTimeout(() => loadingContainer.remove(), 600)
+    }
+  }
 }
 
 /**
@@ -576,25 +576,25 @@ function updateUserInfos() {
  * @param {string} photoUrl
  */
 function showPhoto(likeEl, oldIndex, index, photoUrl) {
-	/** @type {HTMLElement | null} */
-	const teaserEl = likeEl.querySelector('.teaser')
-	const photoSelectorContainer = likeEl.querySelector('.photo-selectors')
+  /** @type {HTMLElement | null} */
+  const teaserEl = likeEl.querySelector('.teaser')
+  const photoSelectorContainer = likeEl.querySelector('.photo-selectors')
 
-	if (!photoSelectorContainer) return
+  if (!photoSelectorContainer) return
 
-	const oldPhotoButton = photoSelectorContainer.children[oldIndex]
-	oldPhotoButton.classList.remove('Bgc($c-ds-background-tappy-indicator-active)::a')
-	oldPhotoButton.classList.remove('bullet--active')
-	oldPhotoButton.classList.add('Bgc($c-ds-background-tappy-indicator-inactive)::a')
+  const oldPhotoButton = photoSelectorContainer.children[oldIndex]
+  oldPhotoButton.classList.remove('Bgc($c-ds-background-tappy-indicator-active)::a')
+  oldPhotoButton.classList.remove('bullet--active')
+  oldPhotoButton.classList.add('Bgc($c-ds-background-tappy-indicator-inactive)::a')
 
-	if (!teaserEl) return
+  if (!teaserEl) return
 
-	teaserEl.style.backgroundImage = `url('${photoUrl}')`
+  teaserEl.style.backgroundImage = `url('${photoUrl}')`
 
-	const newPhotoButton = photoSelectorContainer.children[index]
-	newPhotoButton.classList.remove('Bgc($c-ds-background-tappy-indicator-inactive)::a')
-	newPhotoButton.classList.add('Bgc($c-ds-background-tappy-indicator-active)::a')
-	newPhotoButton.classList.add('bullet--active')
+  const newPhotoButton = photoSelectorContainer.children[index]
+  newPhotoButton.classList.remove('Bgc($c-ds-background-tappy-indicator-inactive)::a')
+  newPhotoButton.classList.add('Bgc($c-ds-background-tappy-indicator-active)::a')
+  newPhotoButton.classList.add('bullet--active')
 }
 
 /**
@@ -602,298 +602,298 @@ function showPhoto(likeEl, oldIndex, index, photoUrl) {
  * @param {UserCacheItem} userItem
  */
 function hide(userItem) {
-	const hiddenUsers = localStorage.getItem('hiddenUsers')?.split(';') ?? []
+  const hiddenUsers = localStorage.getItem('hiddenUsers')?.split(';') ?? []
 
-	if (!hiddenUsers.includes(userItem.userId)) hiddenUsers.push(userItem.userId)
+  if (!hiddenUsers.includes(userItem.userId)) hiddenUsers.push(userItem.userId)
 
-	localStorage.setItem('hiddenUsers', hiddenUsers.join(';'))
+  localStorage.setItem('hiddenUsers', hiddenUsers.join(';'))
 
-	userItem.hidden = true
+  userItem.hidden = true
 }
 
 /**
  * Adds user filtering
  */
 function updateUserFiltering() {
-	/** @type {HTMLDivElement | null} */
-	const filterButtonEl = document.querySelector('div[role="grid"] div[role="option"]:nth-of-type(1)')
+  /** @type {HTMLDivElement | null} */
+  const filterButtonEl = document.querySelector('div[role="grid"] div[role="option"]:nth-of-type(1)')
 
-	if (filterButtonEl != null) {
-		if (!filterButtonEl.dataset.eventsInterrupted) {
-			filterButtonEl.dataset.eventsInterrupted = 'true'
-			filterButtonEl.addEventListener('click', () => {
-				setTimeout(() => {
-					// remove "show all" button
-					for (const element of document.querySelectorAll(
-						'div[role="dialog"] .menuItem__contents > div > div[role="button"]'
-					)) {
-						element.remove()
-					}
+  if (filterButtonEl != null) {
+    if (!filterButtonEl.dataset.eventsInterrupted) {
+      filterButtonEl.dataset.eventsInterrupted = 'true'
+      filterButtonEl.addEventListener('click', () => {
+        setTimeout(() => {
+          // remove "show all" button
+          for (const element of document.querySelectorAll(
+            'div[role="dialog"] .menuItem__contents > div > div[role="button"]'
+          )) {
+            element.remove()
+          }
 
-					const applyContainer = document.querySelector(
-						'div[role="dialog"] > div:not(.menuItem):not(.CenterAlign)'
-					)
+          const applyContainer = document.querySelector(
+            'div[role="dialog"] > div:not(.menuItem):not(.CenterAlign)'
+          )
 
-					if (applyContainer != null) {
-						applyContainer.innerHTML = ''
-						applyContainer.className = ''
-						applyContainer.setAttribute(
-							'style',
-							'align-items: center; display: flex; flex-shrink: 0; font-size: 20px; height: 50px; justify-content: center; width: 100%;'
-						)
+          if (applyContainer != null) {
+            applyContainer.innerHTML = ''
+            applyContainer.className = ''
+            applyContainer.setAttribute(
+              'style',
+              'align-items: center; display: flex; flex-shrink: 0; font-size: 20px; height: 50px; justify-content: center; width: 100%;'
+            )
 
-						const applyButtonEl = document.createElement('button')
-						applyButtonEl.innerText = 'Apply'
-						applyButtonEl.style.textTransform = 'uppercase'
-						applyButtonEl.style.fontWeight = '600'
-						applyButtonEl.style.color = 'var(--color--text-brand-normal)'
-						applyContainer.appendChild(applyButtonEl)
+            const applyButtonEl = document.createElement('button')
+            applyButtonEl.innerText = 'Apply'
+            applyButtonEl.style.textTransform = 'uppercase'
+            applyButtonEl.style.fontWeight = '600'
+            applyButtonEl.style.color = 'var(--color--text-brand-normal)'
+            applyContainer.appendChild(applyButtonEl)
 
-						applyButtonEl.addEventListener(
-							'click',
-							(event) => {
-								event.stopImmediatePropagation()
+            applyButtonEl.addEventListener(
+              'click',
+              (event) => {
+                event.stopImmediatePropagation()
 
-								const dialogMenuItemContents = document.querySelectorAll(
-									'div[role="dialog"] > .menuItem > .menuItem__contents > div:nth-of-type(2)'
-								)
+                const dialogMenuItemContents = document.querySelectorAll(
+                  'div[role="dialog"] > .menuItem > .menuItem__contents > div:nth-of-type(2)'
+                )
 
-								// max distance
-								const maxDistanceElement = dialogMenuItemContents[0].querySelector('div[style]')
+                // max distance
+                const maxDistanceElement = dialogMenuItemContents[0].querySelector('div[style]')
 
-								if (!maxDistanceElement) return
+                if (!maxDistanceElement) return
 
-								let maxDistance = Math.floor(
-									(maxDistanceElement.clientWidth /
-										(maxDistanceElement.parentElement?.clientWidth ?? 1)) *
-									(161 - 2) +
-									2
-								)
+                let maxDistance = Math.floor(
+                  (maxDistanceElement.clientWidth /
+                    (maxDistanceElement.parentElement?.clientWidth ?? 1)) *
+                  (161 - 2) +
+                  2
+                )
 
-								if (maxDistance == 161) maxDistance = Number.MAX_SAFE_INTEGER
+                if (maxDistance == 161) maxDistance = Number.MAX_SAFE_INTEGER
 
-								// age range
-								const ageRangeElement = dialogMenuItemContents[1].querySelector('div[style]')
+                // age range
+                const ageRangeElement = dialogMenuItemContents[1].querySelector('div[style]')
 
-								if (!ageRangeElement) return
+                if (!ageRangeElement) return
 
-								const ageRangeStart = Math.round(
-									(parseFloat(getComputedStyle(ageRangeElement).left.replace('px', '')) /
-										(ageRangeElement.parentElement?.clientWidth ?? 1)) *
-									(100 - 18) +
-									18
-								)
-								let ageRangeEnd =
-									ageRangeStart +
-									Math.round(
-										(ageRangeElement.clientWidth /
-											(ageRangeElement.parentElement?.clientWidth ?? 1)) *
-										(100 - 18)
-									)
+                const ageRangeStart = Math.round(
+                  (parseFloat(getComputedStyle(ageRangeElement).left.replace('px', '')) /
+                    (ageRangeElement.parentElement?.clientWidth ?? 1)) *
+                  (100 - 18) +
+                  18
+                )
+                let ageRangeEnd =
+                  ageRangeStart +
+                  Math.round(
+                    (ageRangeElement.clientWidth /
+                      (ageRangeElement.parentElement?.clientWidth ?? 1)) *
+                    (100 - 18)
+                  )
 
-								if (ageRangeEnd == 100) ageRangeEnd = Number.MAX_SAFE_INTEGER
+                if (ageRangeEnd == 100) ageRangeEnd = Number.MAX_SAFE_INTEGER
 
-								// minimum photos amount
-								let minimumPhotosAmount = 0
+                // minimum photos amount
+                let minimumPhotosAmount = 0
 
-								/** @type {NodeListOf<HTMLDivElement>} */
-								const photosOptions = dialogMenuItemContents[2].querySelectorAll('div[role="option"]')
+                /** @type {NodeListOf<HTMLDivElement>} */
+                const photosOptions = dialogMenuItemContents[2].querySelectorAll('div[role="option"]')
 
-								for (const minimumPhotosOption of photosOptions) {
-									if (
-										minimumPhotosOption
-											.getAttribute('class')
-											?.includes('c-ds-border-passions-shared')
-									) {
-										minimumPhotosAmount = parseInt(minimumPhotosOption.innerText)
-										break
-									}
-								}
+                for (const minimumPhotosOption of photosOptions) {
+                  if (
+                    minimumPhotosOption
+                      .getAttribute('class')
+                      ?.includes('c-ds-border-passions-shared')
+                  ) {
+                    minimumPhotosAmount = parseInt(minimumPhotosOption.innerText)
+                    break
+                  }
+                }
 
-								// interests
-								const interests = []
+                // interests
+                const interests = []
 
-								/** @type {NodeListOf<HTMLDivElement>} */
-								const interestOptions =
-									dialogMenuItemContents[3].querySelectorAll('div[role="option"]')
+                /** @type {NodeListOf<HTMLDivElement>} */
+                const interestOptions =
+                  dialogMenuItemContents[3].querySelectorAll('div[role="option"]')
 
-								for (const interestOption of interestOptions) {
-									if (interestOption.getAttribute('class')?.includes('c-ds-border-passions-shared'))
-										interests.push(interestOption.innerText)
-								}
+                for (const interestOption of interestOptions) {
+                  if (interestOption.getAttribute('class')?.includes('c-ds-border-passions-shared'))
+                    interests.push(interestOption.innerText)
+                }
 
-								/** @type {NodeListOf<HTMLInputElement>} */
-								const dialogMenuSelects = document.querySelectorAll(
-									'div[role="dialog"] > .menuItem > .menuItem__contents .menuItem__select input'
-								)
+                /** @type {NodeListOf<HTMLInputElement>} */
+                const dialogMenuSelects = document.querySelectorAll(
+                  'div[role="dialog"] > .menuItem > .menuItem__contents .menuItem__select input'
+                )
 
-								// verified
-								const verifiedRequired = dialogMenuSelects[0].checked
+                // verified
+                const verifiedRequired = dialogMenuSelects[0].checked
 
-								// has bio
-								const bioRequired = dialogMenuSelects[1].checked
+                // has bio
+                const bioRequired = dialogMenuSelects[1].checked
 
-								// apply filter
-								/** @type {NodeListOf<HTMLDivElement>} */
-								const likeItems = document.querySelectorAll('.like-item')
+                // apply filter
+                /** @type {NodeListOf<HTMLDivElement>} */
+                const likeItems = document.querySelectorAll('.like-item')
 
-								for (const likeElement of likeItems) {
-									if (!likeElement.dataset.userId) continue
+                for (const likeElement of likeItems) {
+                  if (!likeElement.dataset.userId) continue
 
-									const userItem = cache.get(likeElement.dataset.userId)
+                  const userItem = cache.get(likeElement.dataset.userId)
 
-									if (!userItem) continue
+                  if (!userItem) continue
 
-									const user = userItem.user
+                  const user = userItem.user
 
-									if (!user) continue
+                  if (!user) continue
 
-									const userInterests = Array.from(user.user_interests ?? []).map(
-										(interest) => interest.name
-									)
+                  const userInterests = Array.from(user.user_interests ?? []).map(
+                    (interest) => interest.name
+                  )
 
-									let matches = true
+                  let matches = true
 
-									// check radius
-									if (!user.hide_distance && user.distance_mi > maxDistance) matches = false
-									// check age range
-									else if (!user.hide_age && (userItem.getAge() < ageRangeStart || userItem.getAge() > ageRangeEnd)) matches = false
-									// check photos amount
-									else if (user.photos.length < minimumPhotosAmount) matches = false;
-									// check verified
-									else if (!user.is_tinder_u && verifiedRequired) matches = false;
-									// check bio
-									else if (user.bio.length == 0 && bioRequired) matches = false;
-									// check interests
-									else {
-										for (const interest of interests) {
-											if (!userInterests.includes(interest)) matches = false
-										}
-									}
+                  // check radius
+                  if (!user.hide_distance && user.distance_mi > maxDistance) matches = false
+                  // check age range
+                  else if (!user.hide_age && (userItem.getAge() < ageRangeStart || userItem.getAge() > ageRangeEnd)) matches = false
+                  // check photos amount
+                  else if (user.photos.length < minimumPhotosAmount) matches = false;
+                  // check verified
+                  else if (!user.is_tinder_u && verifiedRequired) matches = false;
+                  // check bio
+                  else if (user.bio.length == 0 && bioRequired) matches = false;
+                  // check interests
+                  else {
+                    for (const interest of interests) {
+                      if (!userInterests.includes(interest)) matches = false
+                    }
+                  }
 
-									likeElement.style.display = matches ? 'flex' : 'none'
-								}
+                  likeElement.style.display = matches ? 'flex' : 'none'
+                }
 
-								// close dialog
-								/** @type {Element | null | undefined} */
-								const applyButton =
-									document.querySelector('div[role="dialog"]')?.parentElement?.firstElementChild
+                // close dialog
+                /** @type {Element | null | undefined} */
+                const applyButton =
+                  document.querySelector('div[role="dialog"]')?.parentElement?.firstElementChild
 
-								applyButton?.click()
+                applyButton?.click()
 
-								setTimeout(removeGoldAds, 250)
-							},
-							true
-						)
-					}
-				}, 200)
-			})
-		}
+                setTimeout(removeGoldAds, 250)
+              },
+              true
+            )
+          }
+        }, 200)
+      })
+    }
 
-		if (!filterButtonEl.parentElement) return
+    if (!filterButtonEl.parentElement) return
 
-		/** @type {NodeListOf<HTMLDivElement>} */
-		const optionEls = filterButtonEl.parentElement.querySelectorAll('div[role="option"]')
+    /** @type {NodeListOf<HTMLDivElement>} */
+    const optionEls = filterButtonEl.parentElement.querySelectorAll('div[role="option"]')
 
-		for (const optionEl of optionEls) {
-			if (!optionEl.dataset.eventsInterrupted) optionEl.remove()
-		}
+    for (const optionEl of optionEls) {
+      if (!optionEl.dataset.eventsInterrupted) optionEl.remove()
+    }
 
-		if (!filterButtonEl.parentElement.parentElement) return
+    if (!filterButtonEl.parentElement.parentElement) return
 
-		/** @type {HTMLElement} */
-		const filterButtonContainer = filterButtonEl.parentElement.parentElement
-		filterButtonContainer.style.maxWidth = 'calc(100% - 36.5px * 2 + 12px * 2)'
-	}
+    /** @type {HTMLElement} */
+    const filterButtonContainer = filterButtonEl.parentElement.parentElement
+    filterButtonContainer.style.maxWidth = 'calc(100% - 36.5px * 2 + 12px * 2)'
+  }
 }
 
 /**
  * Creates a message status icon + text
  */
 function createMessageStatusElement(parentNode, read) {
-	if (parentNode == null) return
+  if (parentNode == null) return
 
-	const status = document.createElement('div')
-	status.setAttribute(
-		'class',
-		'Pos(r) Fz($2xs) My(8px) Mx(4px) Mih(16px) C($c-ds-text-secondary) D(f) Ai(c) Jc(fe) Fxd(r)'
-	)
-	status.innerHTML = `
+  const status = document.createElement('div')
+  status.setAttribute(
+    'class',
+    'Pos(r) Fz($2xs) My(8px) Mx(4px) Mih(16px) C($c-ds-text-secondary) D(f) Ai(c) Jc(fe) Fxd(r)'
+  )
+  status.innerHTML = `
 		<div class="D(f) Jc(c) Fxd(r) Mend(8px) Ai(fs)">
 			<svg focusable="false" aria-hidden="false" role="img" viewBox="0 0 24 24" width="24px" height="24px" class="Sq(12px)">
 				<path d="M7.48 14.413l5.74-8.316a.63.63 0 01.9-.142l.917.697c.275.21.33.6.125.876L8.02 17.153a.63.63 0 01-.938.084l-.047-.044a.85.85 0 01-.145-.105l-4.072-3.653a.84.84 0 01-.075-1.173l.524-.612a.84.84 0 011.215-.063l2.996 2.826h.002zm6.353.627l5.747-8.327a.63.63 0 01.9-.143l.917.698c.275.209.33.6.125.877l-7.144 9.622a.63.63 0 01-.938.083l-.023-.023a.842.842 0 01-.217-.137l-2-1.738a.84.84 0 01-.087-1.182l.517-.6a.84.84 0 011.213-.065l.989.933.001.002z" fill="${read ? '#106bd5' : '#fff'
-		}" fill-rule="evenodd" />
+    }" fill-rule="evenodd" />
 			</svg>
 		</div>
 		<span>${read ? 'Read' : 'Sent'}</span>
 	`
 
-	parentNode.appendChild(status)
+  parentNode.appendChild(status)
 }
 
 /**
  * Displays read status below sent messages
  */
 async function updateMessageInfos(matchId) {
-	/** @type {HTMLDivElement | null} */
-	const lastMessageStatus = document.querySelector('.msg__status')
+  /** @type {HTMLDivElement | null} */
+  const lastMessageStatus = document.querySelector('.msg__status')
 
-	if (!lastMessageStatus) return
+  if (!lastMessageStatus) return
 
-	lastMessageStatus.remove()
+  lastMessageStatus.remove()
 
-	fetchMatches().then((matches) => {
-		if (matches == null) return
+  fetchMatches().then((matches) => {
+    if (matches == null) return
 
-		const filteredMatches = matches.filter((match) => match.id === matchId)
+    const filteredMatches = matches.filter((match) => match.id === matchId)
 
-		if (filteredMatches.length == 0) return
+    if (filteredMatches.length == 0) return
 
-		const match = filteredMatches[0]
-		const lastReadMesssageId = match.seen.last_seen_msg_id
+    const match = filteredMatches[0]
+    const lastReadMesssageId = match.seen.last_seen_msg_id
 
-		if (!lastReadMesssageId) return
+    if (!lastReadMesssageId) return
 
-		// get message content from last read message
-		fetchMessages(matchId).then((messages) => {
-			if (messages == null) return
+    // get message content from last read message
+    fetchMessages(matchId).then((messages) => {
+      if (messages == null) return
 
-			const filteredMessages = messages.filter((message) => message._id === lastReadMesssageId)
+      const filteredMessages = messages.filter((message) => message._id === lastReadMesssageId)
 
-			if (filteredMessages.length == 0) return
+      if (filteredMessages.length == 0) return
 
-			let lastReadMessage = filteredMessages[0]
-			let currentMessageIndex = messages.indexOf(lastReadMessage)
+      let lastReadMessage = filteredMessages[0]
+      let currentMessageIndex = messages.indexOf(lastReadMessage)
 
-			while (lastReadMessage.from === match.person._id && currentMessageIndex < messages.length - 1) {
-				lastReadMessage = messages[currentMessageIndex++]
-			}
+      while (lastReadMessage.from === match.person._id && currentMessageIndex < messages.length - 1) {
+        lastReadMessage = messages[currentMessageIndex++]
+      }
 
-			// only the matched person sent a message
-			if (!lastReadMessage) return
+      // only the matched person sent a message
+      if (!lastReadMessage) return
 
-			const messageContent = lastReadMessage.message
+      const messageContent = lastReadMessage.message
 
-			/** @type {NodeListOf<HTMLElement>} */
-			const messageElements = document.querySelectorAll('.msg')
+      /** @type {NodeListOf<HTMLElement>} */
+      const messageElements = document.querySelectorAll('.msg')
 
-			if (messageElements.length == 0) return
+      if (messageElements.length == 0) return
 
-			for (let i = messageElements.length - 1; i >= 0; i--) {
-				const messageElement = messageElements[i]
-				const messageContainer = messageElement.parentElement?.parentElement
+      for (let i = messageElements.length - 1; i >= 0; i--) {
+        const messageElement = messageElements[i]
+        const messageContainer = messageElement.parentElement?.parentElement
 
-				if (!messageContainer) continue
+        if (!messageContainer) continue
 
-				const isRead = messageElement.innerText === messageContent
+        const isRead = messageElement.innerText === messageContent
 
-				// only add info to messages sent by the user of this script
-				if (messageContainer.classList.contains('Ta(e)')) createMessageStatusElement(messageContainer, isRead)
+        // only add info to messages sent by the user of this script
+        if (messageContainer.classList.contains('Ta(e)')) createMessageStatusElement(messageContainer, isRead)
 
-				if (isRead) break
-			}
-		})
-	})
+        if (isRead) break
+      }
+    })
+  })
 }
 
 /**
@@ -901,18 +901,18 @@ async function updateMessageInfos(matchId) {
  * @param {UserCacheItem} userItem
  */
 async function pass(userItem) {
-	const response = await fetch(
-		`https://api.gotinder.com/pass/${userItem.userId}?s_number=${userItem.user?.s_number ?? 0}`,
-		{
-			headers: {
-				'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-				platform: 'android',
-			},
-			method: 'GET',
-		}
-	)
+  const response = await fetch(
+    `https://api.gotinder.com/pass/${userItem.userId}?s_number=${userItem.user?.s_number ?? 0}`,
+    {
+      headers: {
+        'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+        platform: 'android',
+      },
+      method: 'GET',
+    }
+  )
 
-	hide(userItem)
+  hide(userItem)
 }
 
 /**
@@ -920,27 +920,27 @@ async function pass(userItem) {
  * @param {UserCacheItem} userItem
  */
 async function like(userItem) {
-	const response = await fetch(`https://api.gotinder.com/like/${userItem.userId}`, {
-		headers: {
-			'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-			platform: 'android',
-			'Content-Type': 'application/json',
-		},
-		method: 'POST',
-		body: JSON.stringify(
-			userItem.user
-				? {
-					liked_content_id: userItem.user.photos[0].id,
-					liked_content_type: 'photo',
-					s_number: userItem.user.s_number,
-				}
-				: {
-					s_number: 0,
-				}
-		),
-	})
+  const response = await fetch(`https://api.gotinder.com/like/${userItem.userId}`, {
+    headers: {
+      'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+      platform: 'android',
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify(
+      userItem.user
+        ? {
+          liked_content_id: userItem.user.photos[0].id,
+          liked_content_type: 'photo',
+          s_number: userItem.user.s_number,
+        }
+        : {
+          s_number: 0,
+        }
+    ),
+  })
 
-	hide(userItem)
+  hide(userItem)
 }
 
 /**
@@ -949,13 +949,13 @@ async function like(userItem) {
  * @returns {Promise<any>}
  */
 async function fetchMessages(matchId) {
-	return fetch(`https://api.gotinder.com/v2/matches/${matchId}/messages?locale=en&count=100`, {
-		headers: {
-			'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-		},
-	})
-		.then((res) => res.json())
-		.then((res) => res.data.messages)
+  return fetch(`https://api.gotinder.com/v2/matches/${matchId}/messages?locale=en&count=100`, {
+    headers: {
+      'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => res.data.messages)
 }
 
 /**
@@ -963,13 +963,13 @@ async function fetchMessages(matchId) {
  * @returns {Promise<any>}
  */
 async function fetchMatches() {
-	return fetch('https://api.gotinder.com/v2/matches?locale=en&count=60&message=1', {
-		headers: {
-			'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-		},
-	})
-		.then((res) => res.json())
-		.then((res) => res.data.matches)
+  return fetch('https://api.gotinder.com/v2/matches?locale=en&count=60&message=1', {
+    headers: {
+      'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => res.data.matches)
 }
 
 /**
@@ -977,14 +977,14 @@ async function fetchMatches() {
  * @returns {Promise<any>}
  */
 async function fetchTeasers() {
-	return fetch('https://api.gotinder.com/v2/fast-match/teasers', {
-		headers: {
-			'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-			platform: 'android',
-		},
-	})
-		.then((res) => res.json())
-		.then((res) => res.data.results)
+  return fetch('https://api.gotinder.com/v2/fast-match/teasers', {
+    headers: {
+      'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+      platform: 'android',
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => res.data.results)
 }
 
 /**
@@ -993,18 +993,18 @@ async function fetchTeasers() {
  * @returns {Promise<any>}
  */
 async function fetchUser(id) {
-	/* disabled due to API changes, currently looking for a workaround!
+  /* disabled due to API changes, currently looking for a workaround!
 
-	return fetch(`https://api.gotinder.com/user/${id}`, {
-		headers: {
-			'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
-			platform: 'android',
-		},
-	})
-		.then((res) => res.json())
-		.then((res) => res.results);*/
+  return fetch(`https://api.gotinder.com/user/${id}`, {
+    headers: {
+      'X-Auth-Token': localStorage.getItem('TinderWeb/APIToken') ?? '',
+      platform: 'android',
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => res.results);*/
 
-	return null
+  return null
 }
 
 /**
@@ -1014,13 +1014,13 @@ async function fetchUser(id) {
  * @returns {Promise<void>}
  */
 async function once(target, eventType) {
-	return new Promise((resolve) => {
-		const resolver = () => {
-			target.removeEventListener(eventType, resolver)
-			resolve()
-		}
-		target.addEventListener(eventType, resolver)
-	})
+  return new Promise((resolve) => {
+    const resolver = () => {
+      target.removeEventListener(eventType, resolver)
+      resolve()
+    }
+    target.addEventListener(eventType, resolver)
+  })
 }
 
 /**
@@ -1031,12 +1031,12 @@ async function once(target, eventType) {
  * @return {Promise<[null, T] | [U, undefined]>}
  */
 async function safeAwait(promise) {
-	try {
-		const result = await promise
-		return [null, result]
-	} catch (err) {
-		return [err, undefined]
-	}
+  try {
+    const result = await promise
+    return [null, result]
+  } catch (err) {
+    return [err, undefined]
+  }
 }
 
 /**
@@ -1044,69 +1044,70 @@ async function safeAwait(promise) {
  * @returns {Promise<HTMLElement>}
  */
 async function waitForApp() {
-	const getAppEl = (parent) => parent.querySelector('.App')
-	let appEl = getAppEl(document.body)
+  const getAppEl = (parent) => parent.querySelector('.App')
+  let appEl = getAppEl(document.body)
 
-	if (appEl) return appEl
+  if (appEl) return appEl
 
-	return new Promise((resolve) => {
-		new MutationObserver((_, me) => {
-			appEl = getAppEl(document.body)
+  return new Promise((resolve) => {
+    new MutationObserver((_, me) => {
+      appEl = getAppEl(document.body)
 
-			if (appEl) {
-				me.disconnect()
-				resolve(appEl)
-			}
-		}).observe(document.body, { subtree: true, childList: true })
-	})
+      if (appEl) {
+        me.disconnect()
+        resolve(appEl)
+      }
+    }).observe(document.body, { subtree: true, childList: true })
+  })
 }
 
 async function main() {
-	// check if running as a userscript
-	if (typeof GM_info === 'undefined') {
-		console.warn(
-			'[TINDER DEBLUR]: The only supported way of running this script is through a userscript management browser addons like Violentmonkey, Tampermonkey or Greasemonkey!'
-		)
-		console.warn(
-			'[TINDER DEBLUR]: Script was not terminated, but you should really look into the correct way of running it.'
-		)
-	}
+  // check if running as a userscript
+  if (typeof GM_info === 'undefined') {
+    console.warn(
+      '[TINDER DEBLUR]: The only supported way of running this script is through a userscript management browser addons like Violentmonkey, Tampermonkey or Greasemonkey!'
+    )
+    console.warn(
+      '[TINDER DEBLUR]: Script was not terminated, but you should really look into the correct way of running it.'
+    )
+  }
 
-	// wait for a full page load
-	await once(window, 'load')
-	const appEl = await waitForApp()
+  // wait for a full page load
+  await once(window, 'load')
+  const appEl = await waitForApp()
 
-	const pageCheckCallback = async () => {
-		if (['/app/likes-you', '/app/gold-home'].includes(location.pathname)) {
-			// check if any likes were loaded yet
-			if (document.querySelectorAll('div.focus-button-style[style]').length > 0) {
-				console.debug('[TINDER DEBLUR]: Removing Tinder Gold ads')
-				removeGoldAds()
+  const pageCheckCallback = async () => {
+    
+    if (['/app/likes-you', '/app/gold-home'].includes(location.pathname)) {
+      // check if any likes were loaded yet
+      if (document.querySelectorAll('div.focus-button-style[style]').length > 0) {
+        console.debug('[TINDER DEBLUR]: Removing Tinder Gold ads')
+        removeGoldAds()
 
-				console.debug('[TINDER DEBLUR]: Checking filters')
-				updateUserFiltering()
+        console.debug('[TINDER DEBLUR]: Checking filters')
+        updateUserFiltering()
 
-				console.debug('[TINDER DEBLUR]: Deblurring likes')
-				await unblur()
-			}
+        console.debug('[TINDER DEBLUR]: Deblurring likes')
+        await unblur()
+      }
 
-			console.debug('[TINDER DEBLUR]: Updating user infos')
-			updateUserInfos()
-		} else {
-			// clear the cache when not on likes page anymore
-			cache.clear()
+      console.debug('[TINDER DEBLUR]: Updating user infos')
+      updateUserInfos()
+    } else {
+      // clear the cache when not on likes page anymore
+      cache.clear()
 
-			if (location.pathname.startsWith('/app/messages/')) {
-				console.debug('[TINDER DEBLUR]: Updating message infos')
-				updateMessageInfos(location.pathname.substring(location.pathname.lastIndexOf('/') + 1))
-			}
-		}
+      if (location.pathname.startsWith('/app/messages/')) {
+        console.debug('[TINDER DEBLUR]: Updating message infos')
+        updateMessageInfos(location.pathname.substring(location.pathname.lastIndexOf('/') + 1))
+      }
+    }
 
-		// loop based observer (every 4s)
-		setTimeout(pageCheckCallback, 4_000)
-	}
+    // loop based observer (every 4s)
+    setTimeout(pageCheckCallback, 4_000)
+  }
 
-	pageCheckCallback()
+  pageCheckCallback()
 }
 
 main().catch(console.error)
