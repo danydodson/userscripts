@@ -3,6 +3,7 @@
 // @description  Simple script using the official Tinder API to get clean photos of the users who liked you
 // @author       dany
 // @version      1.0
+// @license      MIT
 // @namespace    https://github.com/danydodson/userscripts
 // @homepage     https://github.com/danydodson/userscripts/blob/main/src/Tinder_Deblur.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/Tinder_Deblur.user.js
