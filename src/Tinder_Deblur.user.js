@@ -5,9 +5,6 @@
 // @version      1.0
 // @license      MIT
 // @namespace    https://github.com/danydodson/userscripts
-// @homepage     https://github.com/danydodson/userscripts/blob/main/src/Tinder_Deblur.user.js
-// @updateURL    https://github.com/danydodson/userscripts/blob/main/src/Tinder_Deblur.user.js
-// @downloadURL  https://github.com/danydodson/userscripts/blob/main/src/Tinder_Deblur.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
 // @match        https://tinder.com/*
 // @grant        none
