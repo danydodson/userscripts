@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Local File Explorer
+// @name         UserScript File Explorer
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  A script to navigate local directories and open files in new tabs.
-// @icon          https://i.ibb.co/VxRTZ4K/monky.png
+// @icon         https://i.ibb.co/VxRTZ4K/monky.png
 // @author       Your Name
 // @match        *://*/*
 // @grant        none

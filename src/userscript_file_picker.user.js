@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Local File Picker
+// @name         UserScript File Picker
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Use the File Picker API to show local directory/file navigator.
-// @icon          https://i.ibb.co/VxRTZ4K/monky.png
+// @icon         https://i.ibb.co/VxRTZ4K/monky.png
 // @author       Your Name
 // @match        *://*/*
 // @grant        none

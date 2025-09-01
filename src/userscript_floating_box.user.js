@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         TamperMonkey: Floating Box
+// @name         UserScript Floating Box
 // @description  This is a userscript.
 // @author       https://egore.url.lol/userscripts
 // @version      0.0.0
