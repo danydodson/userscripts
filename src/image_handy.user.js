@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name		     Handy Image
+// @name		     Image Handy
 // @version		2023.05.10
 // @author		Owyn
 // @contributor	ubless607, bitst0rm
