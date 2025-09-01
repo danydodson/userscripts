@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name		     Search Google Expert
+// @name		     Google Expert
 // @namespace	   http://googlescript.blogspot.com
 // @author       vemalsar
 // @description	 Add many other hidden (only available in text) functionality to the basic search: file extension filter (video, text document, presentation, datasheets, audio search ...), site filter (video streaming, file share sites, anime streaming sites ...) and all popular file share link search, customizable categories and many more improvements. Check the site for tips and more information: http://googlescript.blogspot.com Contact: pogisti@gmail.com

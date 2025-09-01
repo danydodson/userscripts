@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name            Search Master Redirect
+// @name            Google Redirects
 // @version         2023-06-12-0
 // @description     Easily swap between search engines with the press of a button while maintaining your current query.
 // @author          Mehvix
