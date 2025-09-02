@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         M3U8 Detector
+// @name         M3U8 Detect and Download
 // @version      1.4.1
 // @description  Automatically detect the m3u8 video of the page and download it completely. Once detected the m3u8 link, it will appear in the upper right corner of the page. Click download to jump to the m3u8 downloader.
 // @icon         https://tools.thatwind.com/favicon.png
@@ -365,10 +365,12 @@
   const barBtn = bar.querySelector(".number-indicator");
 
   // About visibility and movement
+
   (async function () {
 
     let shown = await GM_getValue("shown", true);
     wrapper.setAttribute("data-shown", shown);
+
 
     let x = await GM_getValue("x", 10);
     let y = await GM_getValue("y", 10);
@@ -496,6 +498,7 @@
         );
       }
     });
+
   }
 
 
