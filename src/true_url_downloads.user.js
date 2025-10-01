@@ -295,8 +295,7 @@
     var isseeking = false, dontDecode = false;
 
     document.addEventListener("keydown", function (e) {
-      // if (e.keyCode == shortcutKey && e.altKey == altKey && e.ctrlKey == ctrlKey && e.shiftKey == shiftKey) {
-      if (e.key == shortcutKey && e.altKey == altKey && e.ctrlKey == ctrlKey && e.shiftKey == shiftKey) {
+      if (e.keyCode == shortcutKey && e.altKey == altKey && e.ctrlKey == ctrlKey && e.shiftKey == shiftKey) {
         copyLink();
       }
     });
@@ -379,8 +378,7 @@
         });
       }, 500);
     });
-    // var i18n, lang = navigator.appName == "Netscape" ? navigator.language : navigator.userLanguage;
-    var i18n, lang = navigator.language || navigator.userLanguage || "en";
+    var i18n, lang = navigator.appName == "Netscape" ? navigator.language : navigator.userLanguage;
     switch (lang) {
       case "zh-CN":
       case "zh-SG":
