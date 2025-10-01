@@ -3,6 +3,7 @@
 // @description    Decryption and Display the real URL of the download links and then manage them.(thunder,flashget,qqdl)
 // @author         Yulei, Hoothin
 // @namespace      https://github.com/danydodson/userscripts
+// @icon           https://raw.githubusercontent.com/goawaylovestrike/Userscripts/refs/heads/main/quick-porn-search/quick-porn-search.png
 // @version        1.22.16.1
 // @include        http://*
 // @include        https://*
