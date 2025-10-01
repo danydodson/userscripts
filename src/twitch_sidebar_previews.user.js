@@ -14,8 +14,21 @@
 
 (function () {
   'use strict';
-  let cache = {}, eventCount = 0;
 
+  // Cache stores last thumbnail fetch timestamp per channel (for 30s cache)
+  let cache = {};
+  // eventCount increments on mouseenter, to manage concurrency and ensure only the latest event acts
+  let eventCount = 0;
+  // 
+  // let interval;
+
+  /**
+   * Utility: Creates an HTML element with optionally specified attributes and content
+   * @param {string} tagName - HTML tag name
+   * @param {Object} [attributes] - Element attributes as key-value pairs
+   * @param {string} [content] - Inner HTML content
+   * @returns {Element}
+   */
   function newElement(tagName, attributes, content) {
     var tag = document.createElement(tagName);
     for (var key in attributes || {}) {
@@ -27,68 +40,109 @@
     return tag;
   }
 
+  /**
+   * Adds a preview thumbnail to the Twitch sidebar user's popup dialog.
+   * Waits asynchronously for the dialog to appear, aborts if it takes too long or if a newer mouseenter event happens first.
+   * Uses a cache to avoid unnecessary reloads within 30 seconds.
+   * @param {Element} element - Sidebar channel entry element
+   * @param {number} eventCountLocal - Event index when mouseenter fired
+   */
   async function addThumbnail(element, eventCountLocal) {
-    if (element.querySelector(".side-nav-card__avatar--offline")) { // Channel is offline
+    // Skip if channel is offline (sidebar avatar has this class)
+    if (element.querySelector(".side-nav-card__avatar--offline")) {
       return;
     }
 
     let dialog, timeoutCount = 0;
-    do { // Wait until Popup is ready
+
+    // Wait for Twitch's dialog popup to be added to DOM after hover
+    do {
       await new Promise(r => setTimeout(r, 10));
       timeoutCount++;
 
-      if (timeoutCount > 50 || eventCountLocal != eventCount) { // Dialog timeout or newer mouseenter event called
+      // Timeout after 0.5s or if a newer mouseenter event has been processed
+      if (timeoutCount > 50 || eventCountLocal != eventCount) {
         return;
       }
 
+      // Selects the dialog containing the user popout
       dialog = document.querySelector(".tw-dialog-layer:has(.hidden-focusable-elem) p");
     } while (!dialog);
 
+    // Expand dialog width to fit the preview & remove old thumbnails
     dialog.parentNode.style.width = "440px";
     dialog.parentNode.querySelector("img")?.remove();
+
+    // Infer channel name (username) in lowercase from sidebar element
     const channel = element.querySelector("[title]").textContent.toLowerCase();
-    if (!cache[channel] || Date.now() - cache[channel] >= 30 * 1000) { // Cache Thumbnails for half minute
+
+    // Cache thumbnail URLs for 30 seconds seconds per channel
+    if (!cache[channel] || Date.now() - cache[channel] >= 30 * 1000) {
       cache[channel] = Date.now();
+      // console.log(`Twitch Sidebar Preview cache[channel]: ${cache[channel]}`);
     }
-    const img = newElement("img", { src: `https://static-cdn.jtvnw.net/previews-ttv/live_user_${channel}-440x248.jpg?t=${cache[channel]}` });
+
+    // Add live thumbnail preview for this channel, bust cache via timestamp query param
+    const img = newElement(
+      "img",
+      { src: `https://static-cdn.jtvnw.net/previews-ttv/live_user_${channel}-440x248.jpg?t=${cache[channel]}` }
+    );
+    // console.info(`Twitch Sidebar Preview img: ${img.src}`)
     dialog.parentNode.append(img);
   }
 
+  /**
+   * Attach mouseenter event handler for showing thumbnails, once per element.
+   * @param {Element} element - Sidebar channel element
+   */
   function addHoverEvent(element) {
-    if ([...element.classList].includes("tsp")) { // Already added
+    // Prevent duplicate listeners (uses 'tsp' as marker)
+    if ([...element.classList].includes("tsp")) {
       return;
     }
 
     element.classList.add("tsp");
     element.addEventListener("mouseenter", () => {
-      eventCount++;
+      eventCount++; // Invalidate previous hover events
       addThumbnail(element, eventCount);
     });
   }
 
+  /**
+   * Main initialization routine. Searches for sidebar channel lists and attaches
+   * event listeners. Handles dynamic DOM updates using MutationObserver.
+   * Ensures it's not re-run unnecessarily.
+   */
   function init() {
+    // Find all elements that represent the Twitch sidebar user/channel transition groups
     const uls = document.querySelectorAll("nav .tw-transition-group");
-    if (!uls.length || !uls[0].children.length) { // Page not ready
+    // Wait until the DOM and sidebar channel list are ready
+    if (!uls.length || !uls[0].children.length) {
       return;
     }
 
+    // Only run once; after first success, reduce interval to slower periodic check
     if (interval) {
+      console.info(`Twitch Sidebar Preview Interval: ${interval}`)
       clearInterval(interval);
       interval = undefined;
-      window.setInterval(init, 5000);
+      // Re-run init every 5 minutes to handle page navigation or sidebar changes
+      window.setInterval(init, 300000);
     }
 
     for (let i = 0; i < uls.length; i++) {
-      if ([...uls[i].classList].includes("tsp")) { // Already observing channel list
+      if ([...uls[i].classList].includes("tsp")) { // Already processed this list
         continue;
       }
       uls[i].classList.add("tsp");
 
+      // Attach hover event to each direct child (sidebar channel element)
       for (let j = 0; j < uls[i].children.length; j++) {
         addHoverEvent(uls[i].children[j]);
       }
 
-      const observer = new MutationObserver((mutationList) => { // Check for new channels in channel list added by click on show more
+      // Use MutationObserver: listens for added nodes ("Show more" reveals or changes list)
+      const observer = new MutationObserver((mutationList) => {
         for (const mutation of mutationList) {
           for (let j = 0; j < mutation.addedNodes.length; j++) {
             addHoverEvent(mutation.addedNodes[j]);
@@ -99,5 +153,7 @@
     }
   }
 
+  // Initial poll to wait for Twitch's dynamic SPA interface to load
   let interval = window.setInterval(init, 500);
+
 })();

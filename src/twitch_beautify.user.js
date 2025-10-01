@@ -6,20 +6,19 @@
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @license      MIT
 // @namespace    https://greasyfork.org/users/989635
+// @downloadURL  https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.user.js
+// @updateURL    https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.meta.js
 // @match        *://*.twitch.tv/*
-// @include      *://*twitch.tv/_deck
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js
 // @require      https://update.greasyfork.org/scripts/495339/1382008/ObjectSyntax_min.js
 // @resource     jui https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css
-// @downloadURL  https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.user.js
-// @updateURL    https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.meta.js
-// @run-at       document-body
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_getResourceText
 // @grant        window.onurlchange
 // @grant        GM_registerMenuCommand
+// @run-at       document-body
 // ==/UserScript==
 
 (function () {
@@ -83,18 +82,24 @@
           this.Channel_Button.removeAttribute("style");
           this.Channel_Button.classList.remove("Button_Effect");
           this.Channel_Parent.classList.remove("Channel_Expand_Effect");
-        }), Syn.RemovListener(this.Channel_Button, "mouseenter"),
+        }),
+          Syn.RemovListener(this.Channel_Button, "mouseenter"),
           Syn.RemovListener(this.Channel_Button, "mouseleave"));
       };
     }
 
     async Main() {
       this.ImportStyle();
-      Syn.Store("g", "Beautify", []) ? (this.ClearFooter(), this.RegisterMenu(d.MS_02), this.IsLive(Syn.Device.Url) ? this.Trigger() : (this.Start(), this.PlayControl(!1))) : this.RegisterMenu(d.MS_01);
+      Syn.Store("g", "Beautify", [])
+        ? (this.ClearFooter(), this.RegisterMenu(d.MS_02), this.IsLive(Syn.Device.Url)
+          ? this.Trigger()
+          : (this.Start(), this.PlayControl(!1))) : this.RegisterMenu(d.MS_01);
     }
 
+
+
     async Trigger() {
-      Syn.WaitMap("nav;.side-nav;.side-nav-section div;[data-a-player-state=''];[data-a-target='side-nav-arrow'];[data-a-target='right-column__toggle-collapse-btn']".split(";"), a => {
+      Syn.WaitMap(`nav;.side-nav;.side-nav-section div;[data-a-player-state=''];[data-a-target='side-nav-arrow'];[data-a-target='right-column__toggle-collapse-btn']`.split(";"), a => {
         const [b, c, g, e, f, h] = a;
         this.Nav = b;
         this.Frame = e;
@@ -199,7 +204,22 @@
       })) : a.data("ui-draggable") && (a.draggable("destroy"), a.resizable("destroy")));
     }
     async ImportStyle() {
-      Syn.AddStyle(`${GM_getResourceText("jui")}.Nav_Effect {opacity: 0;height: 1rem !important;transition: opacity 0.5s , height 0.8s;}.Nav_Effect:hover {opacity: 1;height: 5rem !important;}.Channel_Expand_Effect {opacity: 0;width: 1rem;transition: opacity 0.4s , width 0.7s;}.Channel_Expand_Effect:hover {opacity: 1;width: 24rem;}.Button_Effect {transform: translateY(10px);color: rgba(239, 239, 241, 0.3) !important;}.Button_Effect:hover {color: rgb(239, 239, 241) !important;}.Drag_Effect {border-radius: 10px;border: 2px solid white;}`, "Effect");
+      Syn.AddStyle(/*css*/`
+        ${GM_getResourceText("jui")}
+        .Nav_Effect {opacity: 0;height: 1rem !important;transition: opacity 0.5s , height 0.8s;}
+        .Nav_Effect:hover {opacity: 1;height: 5rem !important;}
+        .Channel_Expand_Effect {opacity: 0;width: 1rem;transition: opacity 0.4s , width 0.7s;}
+        .Channel_Expand_Effect:hover {opacity: 1;width: 24rem;}
+        .Button_Effect {transform: translateY(10px);color: rgba(239, 239, 241, 0.3) !important;}
+        .Button_Effect:hover {color: rgb(239, 239, 241) !important;}
+        .Drag_Effect {border-radius: 10px;border: 2px solid white;}
+        /*_____*/
+        .Layout-sc-1xcs6mc-0.bMcAyM.side-bar-contents {background-color: #18181b !important;}
+        .scrollable-area.Akwmp.InjectLayout-sc-1i43xsx-0.side-nav__scrollable_content {background-color: #18181b !important;}
+        .ScCoreButton-sc-ocjdkq-0.iPkwTD.ScButtonIcon-sc-9yap0r-0.dcNXJO.Button_Effect {padding-bottom: 20px !important}
+      `,
+        "Effect"
+      );
     }
   })
     .Main();
