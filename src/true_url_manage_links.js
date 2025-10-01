@@ -1,7 +1,6 @@
 /*
 manageLinks v0.1
-https://github.com/hoothin/UserScripts/blob/master/True%20URL%20downloads/manageLinks.js
-(c) 2017-2017 by Hoothin Wang. All rights reserved.
+https://github.com/danydodson/userscripts/blob/main/src/true_url_manage_links.js
 */
 var specialUrl = /^thunder|^magnet|^ed2k/i,
 	simplefilter = /\.php|\.htm|\.jsp|\.asp|\/[^\.]+$/i,

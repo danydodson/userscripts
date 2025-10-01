@@ -2,7 +2,7 @@
 // @name           True URL Downloads
 // @description    Decryption and Display the real URL of the download links and then manage them.(thunder,flashget,qqdl)
 // @author         Yulei, Hoothin
-// @namespace      https://github.com/hoothin/UserScripts
+// @namespace      https://github.com/danydodson/userscripts
 // @version        1.22.16.1
 // @include        http://*
 // @include        https://*
@@ -21,7 +21,7 @@
 // @grant          GM.getValue
 // @license        MIT License
 // @require        https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js
-// @require        https://update.greasyfork.org/scripts/550512/1666020/manageLinks.js
+// @require        https://update.greasyfork.org/scripts/551197/1669677/manage_links.js
 // ==/UserScript==
 
 (function () {
