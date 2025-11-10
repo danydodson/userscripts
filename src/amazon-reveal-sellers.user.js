@@ -23,8 +23,6 @@
 // @require      https://openuserjs.org/src/libs/sizzle/GM_config.min.js
 // @grant        GM.getValue
 // @grant        GM.setValue
-// @compatible   firefox Tested on Firefox v119 with Violentmonkey v2.16.0, Tampermonkey v4.19.0 and Greasemonkey v4.11
-// @compatible   chrome Tested on Chrome v119 with Violentmonkey v2.16.0 and Tampermonkey v4.19.0
 // @downloadURL  https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.user.js
 // @updateURL    https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.meta.js
 // ==/UserScript==
@@ -753,7 +751,39 @@
     head.appendChild(style);
   }
 
-  addGlobalStyle(`
+  addGlobalStyle(/*css*/`
+    .s-spacing-small {
+      margin: 0 12px 8px 12px;
+    }
+
+    .s-desktop-toolbar {
+      box-shadow: none;
+    }
+
+    #rhf .rhf-border {
+      border: none !important;
+      padding: 0 12px;
+    }
+
+    #rhf-shoveler {
+      background-color: #ffffff;
+    }
+
+    ._cDEzb_identity_slKBR {
+      background-color: #ffffff;
+      padding: 12px;
+    }
+    
+    #above-dp-container {
+      margin: 0 0 12px 0 !important;
+      background: #ffffff !important;
+    }
+
+    #ppd {
+      background: #ffffff !important;
+      padding: 12px;
+    }
+
     .sb--hide {
       display: none !important;
     }
@@ -766,7 +796,7 @@
     .seller-info {
       display: inline-flex;
       gap: 4px;
-      background: #fff;
+      background: #ffffff;
       font-size: 0.9em;
       padding: 2px 4px;
       border: 1px solid #d5d9d9;
@@ -835,7 +865,7 @@
     .product--highlight .octopus-pc-deal-block-section,
     .product--highlight .octopus-pc-dotd-info-section,
     .acswidget-carousel .product--highlight .acs-product-block {
-      background-color: #f9e3e4;
+      background-color: #ffffff;
       border-color: #f9e3e4;
     }
 
@@ -878,7 +908,8 @@
     .product--highlight a,
     .product--highlight .a-color-base,
     .product--highlight .a-price[data-a-color='base'] {
-      color: #842029 !important;
+      color: #000000 !important;
+      /*color: #842029 !important;*/
     }
 
     #gridItemRoot .seller-info {
@@ -1020,3 +1051,4 @@
   `);
 })();
 
+/* eslint no-undef:0 */

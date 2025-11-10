@@ -7,7 +7,6 @@
 // @antifeature  referral-link This script may add an associate ID to visited Amazon URLs. It doesn't replace any existed ID. Thank you.
 // @downloadURL  https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.user.js
 // @updateURL    https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.meta.js
-// @contributionURL https://paypal.me/kantankikaku
 // @include      https://www.amazon.com/*
 // @include      https://www.amazon.co.jp/*
 // @include      https://www.amazon.co.uk/*
@@ -43,24 +42,24 @@ iframe(cloudfront.net ad)
   ローカルソースのiframeから事後生成されるのでTampermonkeyが機能しない。
   広告除去することはできるが、このスクリプトの役目ではない。
 */
-(function(){
+(function () {
   const SCRIPTID = 'AmazonCpuTamer';
   console.log(SCRIPTID, location.href);
-  const BUNDLEDINTERVAL    =     125;/* the bundled interval */
-  const BACKGROUNDINTERVAL = 60*1000;/* take even longer interval on hidden tab */
-  const IFRAMETIMEOUT      =  1*1000;/* amazon uses timeouts instead of intervals on iframes */
+  const BUNDLEDINTERVAL = 125;/* the bundled interval */
+  const BACKGROUNDINTERVAL = 60 * 1000;/* take even longer interval on hidden tab */
+  const IFRAMETIMEOUT = 1 * 1000;/* amazon uses timeouts instead of intervals on iframes */
   /*
     [interval]
     tame quick intervals
   */
-  if(window === top){
+  if (window === top) {
     /* integrate each of intervals */
     const bundle = {};/* {0: {f, interval, lastExecution}} */
     let index = 0;/* use it instead of interval id */
     let lastExecution = 0;
     /* bundle intervals */
     const originalSetInterval = window.setInterval.bind(window);
-    window.setInterval = function(f, interval, ...args){
+    window.setInterval = function (f, interval, ...args) {
       //console.log(SCRIPTID, 'original interval:', interval, location.href);
       bundle[index] = {
         f: f.bind(null, ...args),
@@ -69,19 +68,19 @@ iframe(cloudfront.net ad)
       };
       return index++;
     };
-    window.clearInterval = function(id){
+    window.clearInterval = function (id) {
       //console.log(SCRIPTID, 'clearInterval:', id, location.href);
       delete bundle[id];
     };
     /* execute bundled intervals */
     /* a bunch of intervals does cost so much even if the processes do nothing */
-    originalSetInterval(function(){
+    originalSetInterval(function () {
       const now = Date.now();
-      if(document.hidden && now < lastExecution + BACKGROUNDINTERVAL) return;
+      if (document.hidden && now < lastExecution + BACKGROUNDINTERVAL) return;
       Object.keys(bundle).forEach(id => {
         const item = bundle[id];
-        if(item === undefined) return;/* it could be occur on tiny deletion chance */
-        if(now < item.lastExecution + item.interval) return;/* not yet */
+        if (item === undefined) return;/* it could be occur on tiny deletion chance */
+        if (now < item.lastExecution + item.interval) return;/* not yet */
         item.f();
         item.lastExecution = now;
       });
@@ -92,11 +91,11 @@ iframe(cloudfront.net ad)
     [timeout]
     tame quick timeouts on iframe ads
   */
-  if(window !== top){
+  if (window !== top) {
     const originalSetTimeout = window.setTimeout.bind(window);
-    window.setTimeout = function(f, timeout, ...args){
-      if(document.hidden) return;
-      if(timeout < IFRAMETIMEOUT){
+    window.setTimeout = function (f, timeout, ...args) {
+      if (document.hidden) return;
+      if (timeout < IFRAMETIMEOUT) {
         //console.log(SCRIPTID, 'timeout:', timeout, 'to', IFRAMETIMEOUT, location.href);
         timeout = IFRAMETIMEOUT;
       }
@@ -107,26 +106,26 @@ iframe(cloudfront.net ad)
     [associate]
     add an associate tag
   */
-  if(window === top){
+  if (window === top) {
     const IDS = {
-      'www.amazon.com':   'knoa-20',
+      'www.amazon.com': 'knoa-20',
       'www.amazon.co.jp': 'knoa-22',
       'www.amazon.co.uk': 'knoa01-21',
-      'www.amazon.es':    'knoa0c-21',
-      'www.amazon.fr':    'knoa09-21',
-      'www.amazon.de':    'knoa03-21',
-      'www.amazon.it':    'knoa0a-21',
+      'www.amazon.es': 'knoa0c-21',
+      'www.amazon.fr': 'knoa09-21',
+      'www.amazon.de': 'knoa03-21',
+      'www.amazon.it': 'knoa0a-21',
     };
-    if(IDS[location.host]){
+    if (IDS[location.host]) {
       addTag(IDS[location.host]);
     }
-    function addTag(tag){
+    function addTag(tag) {
       const url = new URL(location.href);
-      if(url.searchParams.get('tag') !== null) return;/* do not overwrite */
+      if (url.searchParams.get('tag') !== null) return;/* do not overwrite */
       console.log(SCRIPTID, 'associate tag:', tag);
-      document.documentElement.addEventListener('mousedown', function(e){
-        for(let target = e.target; target; target = target.parentNode){
-          if(target.href && target.href.startsWith(location.origin) && !target.getAttribute('href').startsWith('#')){
+      document.documentElement.addEventListener('mousedown', function (e) {
+        for (let target = e.target; target; target = target.parentNode) {
+          if (target.href && target.href.startsWith(location.origin) && !target.getAttribute('href').startsWith('#')) {
             const separator = (target.href.includes('?')) ? '&' : '?';
             target.href = target.href.replace(/(?=#)|$/, separator + 'tag=' + tag);
           }
