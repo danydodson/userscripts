@@ -36,3 +36,4 @@ pnpm-lock.yaml
 
 # local files
 _*
+local/*
