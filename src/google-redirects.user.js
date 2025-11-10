@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name            Google Redirects
-// @version         2023-06-12-0
-// @description     Easily swap between search engines with the press of a button while maintaining your current query.
-// @author          Mehvix
+// @name         Google Redirects
+// @version      2023-06-12-0
+// @description  Easily swap between search engines with the press of a button while maintaining your current query.
+// @author       Mehvix
 // @icon         http://www.google.com/favicon.ico
-// @include         https://duckduckgo.com/?q=*
-// @include         https://www.google.com/search?*
-// @include         https://search.brave.com/*?q=*
-// @include         https://www.startpage.com/*search*
-// @include         https://search.disroot.org/search?q=*
-// @include         https://yandex.com/search/?text=*
-// @downloadURL     https://raw.githubusercontent.com/Mehvix/search-engine-redirect/master/SearchEngineRedirect.user.js
-// @updateURL       https://raw.githubusercontent.com/Mehvix/search-engine-redirect/master/SearchEngineRedirect.user.js
-// @supportURL      https://github.com/Mehvix/search-engine-redirect/issues
-// @license         GNU General Public License v3
+// @include      https://duckduckgo.com/?q=*
+// @include      https://www.google.com/search?*
+// @include      https://search.brave.com/*?q=*
+// @include      https://www.startpage.com/*search*
+// @include      https://search.disroot.org/search?q=*
+// @include      https://yandex.com/search/?text=*
+// @downloadURL  https://raw.githubusercontent.com/Mehvix/search-engine-redirect/master/SearchEngineRedirect.user.js
+// @updateURL    https://raw.githubusercontent.com/Mehvix/search-engine-redirect/master/SearchEngineRedirect.user.js
+// @supportURL   https://github.com/Mehvix/search-engine-redirect/issues
+// @license      GNU General Public License v3
 // ==/UserScript==
 
 (function () {
