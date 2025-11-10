@@ -1,23 +1,8 @@
-<!-- <div align="center"> -->
-
-<!-- # ☠️ userscripts ☠️ -->
-
-# userscripts
-
-<!-- ### Userscript Suite for Digital Emancipation -->
-
-### Userscript Collection
-
-<!-- > A modular, **userscript suite** engineered for actual control and digital emancipation—crafted by [dany](https://github.com/danydodson).
-> _Destroying knowledge feudalism one line at a time._ -->
+# UserScript Collection
 
 > A collection of modular **userscripts** by [dany](https://github.com/danydodson).
 
-<!-- > _Destroying knowledge feudalism one line at a time._ -->
-
 <br/>
-
-<!-- badges -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: MIT](https://img.shields.io/github/stars/danydodson/userscripts?style=flat)](https://github.com/danydodson/userscripts)
@@ -25,35 +10,23 @@
 [![License: MIT](https://img.shields.io/github/languages/top/danydodson/userscripts)](https://github.com/danydodson/userscripts)
 [![License: MIT](https://img.shields.io/github/issues/danydodson/userscripts)](https://github.com/danydodson/userscripts/issues)
 
-<!-- </div> -->
-
 ---
 
 ## ✨ Overview
 
-userscripts is a personal, highly-opinionated userscript collection for browser power users and pragmatic tinkerers and red-team engagements.  
+This UserScript collection is a personal, highly-opinionated userscript collection for browser power users and pragmatic tinkerers and red-team engagements.  
 It provides custom browser automations, UI enhancements, and freedom-ware “protocols” that break down artificial web restrictions.
-
-Scripts are **XDG-principled** and aim to be:
-
-- Minimal, transparent, and easily auditable
-- Modular—each script is atomic and can be enabled/disabled independently
-- Zero-dependency or with clearly stated, auto-acquired dependencies
-- XDG/ShellCheck/Suckless/Arch-aligned by design
-- Resistant to anti-user design, walled gardens, and closed platforms
 
 ---
 
 ## 🛠️ Installation
 
-- Install [Violentmonkey](https://violentmonkey.github.io/), [Tampermonkey](https://www.tampermonkey.net/), or another userscript manager.
+- Install [Tampermonkey](https://www.tampermonkey.net/), [Violentmonkey](https://violentmonkey.github.io/), or another userscript manager.
 - Import/copy the desired `.user.js` scripts directly from this repository.
-
-_**Arch Linux users**_: All scripts are tested and optimized for a minimalist, systemd-optional, power-user workflow.
 
 ---
 
-## 🚀 Script Catalog
+## 🚀 Scripts
 
 > Auto-generated index...
 
@@ -117,24 +90,6 @@ _**Arch Linux users**_: All scripts are tested and optimized for a minimalist, s
 
 <!-- END_CATALOG -->
 
-<!-- --- -->
-
-<!-- ## 🔥 Project Philosophy
-
-**userscripts** was created in response to the growing digital enclosure of browser experiences--where user agency, open standards, and direct access are actively eroded by our government.
-
-<br/>
-
-**Key Tenets:**
-
-- **End-User Sovereignty**: You, not the site or government, should dictate your browsing experience.
-- **Anti-Feudalism**: Knowledge, data, and tools must be free, inspectable, forkable, and remixable.
-- **Minimalism**: Every script should have a single clear purpose. No bloat. No tracking. No hidden logic.
-- **Cohesion & Idempotency**: All changes are modular, reversible, and avoid breakage on site updates.
-- **Community, not Platform**: Designed to be forked, improved, and locally tailored—never locked in.
-
---- -->
-
 <br>
 
 ```
@@ -163,11 +118,3 @@ _**Arch Linux users**_: All scripts are tested and optimized for a minimalist, s
                      ................................
 
 ```
-
-<!-- </br> -->
-
-<!-- <div align="center">
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-</div> -->
