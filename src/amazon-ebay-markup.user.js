@@ -1,20 +1,20 @@
 // ==UserScript==
-// @name             Amazon eBay Markup
-// @namespace        https://egore.url.lol/userscripts
-// @version          1.0
-// @description      Adds eBay markup price, direct link to Amazon product page, eBay search by title, ThePriceGeek search by first 10 words of title, Amabay search by title.  However over price to see minimum eBay price to profit $2 by dropshipping with Prime.
-// @match            https://www.amazon.com/*
-// @match            https://www.amazon.co.jp/*
-// @match            https://www.amazon.co.uk/*
-// @match            https://www.amazon.es/*
-// @match            https://www.amazon.fr/*
-// @match            https://www.amazon.de/*
-// @match            https://www.amazon.it/*
-// @match            https://www.amazon.*
-// @match            https://*.amazon*.com/*
-// @run-at           document-end
-// @require          http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
-// @icon             https://www.google.com/s2/favicons?sz=64&domain=amazon.com
+// @name         Amazon eBay Markup
+// @namespace    https://egore.url.lol/userscripts
+// @version      1.0
+// @description  Adds eBay markup price, direct link to Amazon product page, eBay search by title, ThePriceGeek search by first 10 words of title, Amabay search by title.  However over price to see minimum eBay price to profit $2 by dropshipping with Prime.
+// @match        https://www.amazon.com/*
+// @match        https://www.amazon.co.jp/*
+// @match        https://www.amazon.co.uk/*
+// @match        https://www.amazon.es/*
+// @match        https://www.amazon.fr/*
+// @match        https://www.amazon.de/*
+// @match        https://www.amazon.it/*
+// @match        https://www.amazon.*
+// @match        https://*.amazon*.com/*
+// @run-at       document-end
+// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=amazon.com
 // ==/UserScript==
 
 /**

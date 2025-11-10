@@ -1,35 +1,29 @@
 // ==UserScript==
-// @name         Image Mouseover View
-// @namespace   https://github.com/tophf
-// @description Shows images and videos behind links and thumbnails.
-//
-// @include     *
-// @run-at      document-start
-//
-// @grant       GM_addElement
-// @grant       GM_download
-// @grant       GM_getValue
-// @grant       GM_openInTab
-// @grant       GM_registerMenuCommand
-// @grant       GM_unregisterMenuCommand
-// @grant       GM_setClipboard
-// @grant       GM_setValue
-// @grant       GM_xmlhttpRequest
-//
-// @grant       GM.getValue
-// @grant       GM.openInTab
-// @grant       GM.registerMenuCommand
-// @grant       GM.unregisterMenuCommand
-// @grant       GM.setClipboard
-// @grant       GM.setValue
-// @grant       GM.xmlHttpRequest
-//
-// @version     1.2.32
-// @author      tophf
-//
+// @name         Media Mouseover View
+// @namespace    https://github.com/tophf
+// @description  Shows images and videos behind links and thumbnails.
+// @include      *
+// @run-at       document-start
+// @grant        GM_addElement
+// @grant        GM_download
+// @grant        GM_getValue
+// @grant        GM_openInTab
+// @grant        GM_registerMenuCommand
+// @grant        GM_unregisterMenuCommand
+// @grant        GM_setClipboard
+// @grant        GM_setValue
+// @grant        GM_xmlhttpRequest
+// @grant        GM.getValue
+// @grant        GM.openInTab
+// @grant        GM.registerMenuCommand
+// @grant        GM.unregisterMenuCommand
+// @grant        GM.setClipboard
+// @grant        GM.setValue
+// @grant        GM.xmlHttpRequest
+// @version      1.2.32
+// @author       tophf
 // @original-version 2017.9.29
 // @original-author  kuehlschrank
-//
 // @connect     *
 // CSP check:
 // @connect     self
@@ -49,7 +43,6 @@
 // @connect     prnt.sc
 // @connect     prntscr.com
 // @connect     user-images.githubusercontent.com
-//
 // @supportURL  https://github.com/tophf/mpiv/issues
 // @icon        https://raw.githubusercontent.com/tophf/mpiv/master/icon.png
 // ==/UserScript==

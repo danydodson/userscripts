@@ -1,33 +1,29 @@
 // ==UserScript==
-// @name        Amazon CPU Tamer
-// @name:ja     Amazon CPU Tamer
-// @name:zh-CN  Amazon CPU Tamer
-// @namespace   knoa.jp
-// @description It reduces CPU usage on Amazon shopping pages. Enjoy your snappy shopping.
-// @description:ja AmazonのショッピングページでのCPU使用率を削減します。お買いものをサクサク楽しみましょう。
-// @description:zh-CN 减少Amazon购物页面上的CPU利用率。顺利地享受买东西吧。
-// @include     https://www.amazon.com/*
-// @include     https://www.amazon.co.jp/*
-// @include     https://www.amazon.co.uk/*
-// @include     https://www.amazon.es/*
-// @include     https://www.amazon.fr/*
-// @include     https://www.amazon.de/*
-// @include     https://www.amazon.it/*
-// @include     https://www.amazon.*
-// @include     https://*.amazon-*.com/*
-// @include     https://*.*-amazon.com/*
-// @exclude     */cart/*
-// @exclude     */buy/*
-// @version     1.4.4
-// @grant       none
-// @icon         https://www.amazon.com/favicon.ico
-// @run-at      document-start
-// @antifeature referral-link This script may add an associate ID to visited Amazon URLs. It doesn't replace any existed ID. Thank you.
-// @antifeature:ja referral-link ありがとうございます。本スクリプトは、訪れたAmazonページのURLにアソシエイトIDを付与することがあります。別のIDがすでに付与されている場合は、置き換えることはしません。
-// @antifeature:zh-CN referral-link 本脚本可能会为访问过的Amazon页面的URL授予联盟ID。如果已经授予了另一个ID，则不会进行替换。谢谢。
+// @name         Amazon CPU Tamer
+// @name:ja      Amazon CPU Tamer
+// @name:zh-CN   Amazon CPU Tamer
+// @namespace    knoa.jp
+// @description  It reduces CPU usage on Amazon shopping pages. Enjoy your snappy shopping.
+// @antifeature  referral-link This script may add an associate ID to visited Amazon URLs. It doesn't replace any existed ID. Thank you.
+// @downloadURL  https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.user.js
+// @updateURL    https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.meta.js
 // @contributionURL https://paypal.me/kantankikaku
-// @downloadURL https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.user.js
-// @updateURL https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.meta.js
+// @include      https://www.amazon.com/*
+// @include      https://www.amazon.co.jp/*
+// @include      https://www.amazon.co.uk/*
+// @include      https://www.amazon.es/*
+// @include      https://www.amazon.fr/*
+// @include      https://www.amazon.de/*
+// @include      https://www.amazon.it/*
+// @include      https://www.amazon.*
+// @include      https://*.amazon-*.com/*
+// @include      https://*.*-amazon.com/*
+// @exclude      */cart/*
+// @exclude      */buy/*
+// @version      1.4.4
+// @grant        none
+// @icon         https://www.amazon.com/favicon.ico
+// @run-at       document-start
 // ==/UserScript==
 
 /*

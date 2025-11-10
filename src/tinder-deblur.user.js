@@ -8,8 +8,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
 // @match        https://tinder.com/*
 // @grant        none
-// @downloadURL https://update.greasyfork.org/scripts/517572/Tinder%20Deblur.user.js
-// @updateURL https://update.greasyfork.org/scripts/517572/Tinder%20Deblur.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/517572/Tinder%20Deblur.user.js
+// @updateURL    https://update.greasyfork.org/scripts/517572/Tinder%20Deblur.meta.js
 // ==/UserScript==
 
 // This async function fetches the first 10 teaser profiles from the Tinder API and unblurs them by

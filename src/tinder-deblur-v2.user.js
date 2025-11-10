@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name        Tinder Deblur V2
-// @namespace   Violentmonkey Scripts
-// @match       https://tinder.com/*
-// @grant       none
-// @version     2.0
-// @author      BytePhoenix
+// @name         Tinder Deblur V2
+// @namespace    Violentmonkey Scripts
+// @description  A script using the official Tinder API to get unblurred photos of the users who liked you
+// @match        https://tinder.com/*
+// @grant        none
+// @version      2.0
+// @author       BytePhoenix
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tinder.com
-// @downloadURL https://raw.githubusercontent.com/BytePhoenixCoding/TinderDeblurV2/refs/heads/main/TinderDeblurV2.js
-// @description A script using the official Tinder API to get unblurred photos of the users who liked you
+// @downloadURL  https://raw.githubusercontent.com/BytePhoenixCoding/TinderDeblurV2/refs/heads/main/TinderDeblurV2.js
 // ==/UserScript==
 
 console.log('[TINDER DEBLUR]: Script file loaded and parsed.');

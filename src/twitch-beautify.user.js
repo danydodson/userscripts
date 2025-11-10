@@ -9,6 +9,7 @@
 // @downloadURL  https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.user.js
 // @updateURL    https://update.greasyfork.org/scripts/472085/Twitch%20Beautify.meta.js
 // @match        *://*.twitch.tv/*
+// @include      *://*twitch.tv/_deck
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js
 // @require      https://update.greasyfork.org/scripts/495339/1382008/ObjectSyntax_min.js

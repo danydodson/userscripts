@@ -12,8 +12,8 @@
 // @grant        GM_deleteValue
 // @noframes
 // @icon         https://www.amazon.com/favicon.ico
-// @downloadURL https://update.greasyfork.org/scripts/381550/Amazon%20-%20Highlight%20resellers.user.js
-// @updateURL https://update.greasyfork.org/scripts/381550/Amazon%20-%20Highlight%20resellers.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/381550/Amazon%20-%20Highlight%20resellers.user.js
+// @updateURL    https://update.greasyfork.org/scripts/381550/Amazon%20-%20Highlight%20resellers.meta.js
 // ==/UserScript==
 
 /* jshint esversion: 6 */

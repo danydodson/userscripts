@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         H5Player
+// @name         Media H5Player
 // @version      4.3.4
 // @description  Audio and Video enhancement script, supports all H5 video websites, such as: Bilibili, Douyin, Tencent Video, Youku, iQiyi, Xigua Video, YouTube, Weibo Video, Zhihu Video, Sohu Video, NetEase Open Course, Baidu network disk, Alibaba cloud disk, ted, instagram, twitter, etc. Full shortcut key control, support: double-speed playback/accelerated playback, video screenshots, picture-in-picture, full-screen web pages, adjusting brightness, saturation, contrast
 // @author       ankvps
@@ -14274,11 +14274,11 @@ const h5Player = {
 
     // ctrl+方向键右→：快进30秒
     if (event.ctrlKey && keyCode === 39) {
-      t.setCurrentTimeUp(t.skipStep * 6);
+      t.setCurrentTimeUp(t.skipStep * 1);
     }
     // ctrl+方向键左←：后退30秒
     if (event.ctrlKey && keyCode === 37) {
-      t.setCurrentTimeDown(-t.skipStep * 6);
+      t.setCurrentTimeDown(-t.skipStep * 1);
     }
 
     // ctrl+方向键上↑：音量升高 20%
@@ -14294,12 +14294,12 @@ const h5Player = {
     if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) return;
 
     // 方向键右→：快进5秒
-    if (keyCode === 39) {
-      t.setCurrentTimeUp();
+    if (keyCode === 76) {
+      t.setCurrentTimeUp(t.skipStep * 1);
     }
     // 方向键左←：后退5秒
-    if (keyCode === 37) {
-      t.setCurrentTimeDown();
+    if (keyCode === 72) {
+      t.setCurrentTimeDown(-t.skipStep * 1);
     }
 
     // 方向键上↑：音量升高 10%
@@ -14404,7 +14404,7 @@ const h5Player = {
     }
 
     // 按键回车，进入全屏
-    if (keyCode === 13) {
+    if (keyCode === 70) {
       t.setFullScreen();
     }
 

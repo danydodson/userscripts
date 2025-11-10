@@ -1,12 +1,23 @@
 // ==UserScript==
-// @name         Search Shortcut
-// @namespace    -
+// @name         Search Torrents
 // @version      1.0.0
-// @license      GPL-3.0-or-later
-// @description  show options for search request where you can choose your favorite site search engine.
 // @author       NotYou
-// @icon         https://images.vexels.com/media/users/3/132069/isolated/preview/8c320ef393a9b5be57263a1d67e2010b-search-icon-bubble-infographic.png
+// @namespace    userscripts
+// @description  Shows a custom torrent and userscript search engine menu selection a form input
+// @icon         https://cdn-icons-png.flaticon.com/512/9985/9985721.png
+// @license      MIT
+// @include      https://www.google.com/*
+// @include      https://cse.google.com/*
+// @include      https://userscripts-mirror.org/*
+// @include      https://greasyfork.org/*
+// @include      https://sleazyfork.org/*
+// @include      https://openuserjs.org/*
+// @include      https://toorgle.com/*
+// @include      https://userscripts.org/*
 // @include      https://milkie.cc/*
+// @include      https://torrenting.com/*
+// @include      https://torrentseeker.com/*
+// @include      https://pirateiro.com/*
 // @include      https://www.torrentmac.net/*
 // @include      https://nmac.to/*
 // @include      https://macappstre.com/*
@@ -22,7 +33,7 @@
 
 (function () {
   const COLUMNS = '3'; // Amout of columns
-  const FAVICON = 'duckduckgo'; // You can also choose 'duckduckgo' instead of 'google'
+  const FAVICON = 'duckduckgo'; // You can also choose 'google' instead of 'duckduckgo'
   const CUSTOM_ENGINES = [
     {
       name: '', // site name that will be displayed
@@ -34,9 +45,76 @@
 
   let _engines = [
     {
+      name: 'Google',
+      searchUrl: 'https://www.google.com/search?q=%s',
+      input: 'form.tsf textarea[aria-label="Search"]',
+      fixed: true,
+    },
+    {
+      name: 'UserScripts',
+      searchUrl: 'https://cse.google.com/cse?cx=006416817443944833046:icpbeh10o5k&ie=UTF-8&q=%s',
+      input: '[name="search"]',
+      fixed: true,
+    },
+    {
+      name: 'ScriptsMirror',
+      searchUrl: 'https://www.google.com/search?sitesearch=userscripts-mirror.org&q=%s&submit=Search',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'GreasyFork',
+      searchUrl: 'https://greasyfork.org/en/scripts?q=%s',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'SleazyFork',
+      searchUrl: 'https://sleazyfork.org/en/scripts?q=%s',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'OpenUserJS',
+      searchUrl: 'https://openuserjs.org/?q=%s',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'Toorgle',
+      searchUrl: 'https://toorgle.com/search/?q=%s&type=&searchby_type=1&page=',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'UserScripts.org',
+      searchUrl: 'https://userscripts.org/scripts/search?q=%s',
+      input: '',
+      fixed: false,
+      isExample: true,
+    },
+    {
       name: 'Milkie',
       searchUrl: 'https://milkie.cc/browse?query=%s',
       input: '#searchInput',
+      fixed: true,
+    },
+    {
+      name: 'Torrenting',
+      searchUrl: 'https://torrenting.com/t?q=%s&qf=#top',
+      input: '[name="q"]',
+      fixed: true,
+    },
+    {
+      name: 'TorrentSeeker',
+      searchUrl: 'https://torrentseeker.com/search.php?q=%s',
+      input: '[name="q"]',
+      fixed: false,
+    },
+    {
+      name: 'Pirateiro',
+      searchUrl: 'https://pirateiro.com/search?query=%s',
+      input: '[name="query"]',
       fixed: true,
     },
     {
@@ -86,25 +164,20 @@
       searchUrl: 'https://www.limetorrents.fun/search/all/%s/',
       input: '[name="q"]',
       fixed: true,
+      isExample: true,
     },
     {
-      name: 'ThePirateBay',
+      name: 'PirateBay',
       searchUrl: 'https://thepiratebay.org/search.php?q=%s',
       input: '[name="q"]',
       fixed: true,
     },
     {
-      name: 'TorrentDownloads',
+      name: 'Torrents',
       searchUrl: 'https://www.torrentdownloads.pro/search/?search=%s',
       input: '[name="search"]',
       fixed: true,
     },
-    // {
-    //   name: '',
-    //   searchUrl: '',
-    //   input: '',
-    //   fixed: true,
-    // },
   ];
 
   let engines = {};
@@ -258,9 +331,7 @@
 
     function search(target) {
       let v = getQuery();
-
       v = target.dataset.search.replace('%s', v);
-
       open(v);
     }
 
@@ -339,42 +410,4 @@
     return new URL(url).host;
   }
 })()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

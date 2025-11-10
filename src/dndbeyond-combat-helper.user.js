@@ -6,9 +6,9 @@
 // @author       Xanlantos
 // @match        https://www.dndbeyond.com/combat-tracker/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dndbeyond.com
-// @license       https://tldrlegal.com/license/creative-commons-attribution-noncommercial-(cc-nc)#summary
-// @downloadURL https://update.greasyfork.org/scripts/455545/Combat%20Helper.user.js
-// @updateURL https://update.greasyfork.org/scripts/455545/Combat%20Helper.meta.js
+// @license      https://tldrlegal.com/license/creative-commons-attribution-noncommercial-(cc-nc)#summary
+// @downloadURL  https://update.greasyfork.org/scripts/455545/Combat%20Helper.user.js
+// @updateURL    https://update.greasyfork.org/scripts/455545/Combat%20Helper.meta.js
 // ==/UserScript==
 function locateRightTimeing() {
   if (document.querySelector('.combatant-card__hp')) {

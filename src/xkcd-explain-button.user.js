@@ -2,7 +2,7 @@
 // @name         XKCD Explain Button
 // @namespace    https://egore.url.lol/userscripts
 // @version      0.1.0
-// @description  'cause you're dumb, or something?
+// @description  Explain xkcd comic, cause you're dumb or something?
 // @author       You
 // @match        https://xkcd.com
 // @match        https://xkcd.com/*

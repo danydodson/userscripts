@@ -2,49 +2,48 @@
 // @name		     Google Expert
 // @namespace	   http://googlescript.blogspot.com
 // @author       vemalsar
-// @description	 Add many other hidden (only available in text) functionality to the basic search: file extension filter (video, text document, presentation, datasheets, audio search ...), site filter (video streaming, file share sites, anime streaming sites ...) and all popular file share link search, customizable categories and many more improvements. Check the site for tips and more information: http://googlescript.blogspot.com Contact: pogisti@gmail.com
+// @description  Simple greasemonkey user script for better get results in Google and find exactly what you want, no more. Site and extension filter, link search categories, (documents, audio, torrent, anime, fileshares etc.), easy to use and add content custom!
 // @copyright    2015, vemalsar (http://googlescript.blogspot.com)
 // @version	     1.3
 // @icon         http://www.google.com/favicon.ico
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js
 // @require      http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.2/jquery-ui.min.js
-
-// @include		http://www.google.*
-// @include		https://www.google.*
-// @exclude		http://www.google.*/imghp*
-// @exclude		http://www.google.*/analytics*
-// @exclude		http://www.google.*/search*
-// @exclude		http://www.google.*/preferences*
-// @exclude		http://www.google.*/advanced_search*
-// @exclude		http://www.google.*/language_tools*
-// @exclude		http://www.google.*/ig*
-// @exclude		http://www.google.*/#*
-// @exclude		http://www.google.com/#q=*
-// @exclude		http://www.google.*/support*
-// @exclude		https://www.google.*/imghp*
-// @exclude		https://www.google.*/analytics*
-// @exclude		https://www.google.*/search*
-// @exclude		https://www.google.*/preferences*
-// @exclude		https://www.google.*/advanced_search*
-// @exclude		https://www.google.*/language_tools*
-// @exclude		https://www.google.*/ig*
-// @exclude		https://www.google.*/#*
-// @exclude		https://www.google.com/#q=*
-// @exclude		https://www.google.*/support*
-// @exclude		http://www.google.*/webhp*
-// @exclude		http://*maps.google.*
-// @exclude		*google.*/maps*
-// @exclude		http://*translate.google.*
-// @exclude		*google*/ig*
-// @exclude		*.google.com/webhp?rls=ig
-
-// @grant		GM_log
-// @grant		GM_addStyle
-// @grant		GM_getValue
-// @grant		GM_setValue
-// @grant		GM_getResourceText
-
+// @include		   http://www.google.*
+// @include		   https://www.google.*
+// @exclude		   http://www.google.*/imghp*
+// @exclude		   http://www.google.*/analytics*
+// @exclude		   http://www.google.*/search*
+// @exclude		   http://www.google.*/preferences*
+// @exclude		   http://www.google.*/advanced_search*
+// @exclude		   http://www.google.*/language_tools*
+// @exclude		   http://www.google.*/ig*
+// @exclude		   http://www.google.*/#*
+// @exclude		   http://www.google.com/#q=*
+// @exclude		   http://www.google.*/support*
+// @exclude		   https://www.google.*/imghp*
+// @exclude		   https://www.google.*/analytics*
+// @exclude		   https://www.google.*/search*
+// @exclude		   https://www.google.*/preferences*
+// @exclude		   https://www.google.*/advanced_search*
+// @exclude		   https://www.google.*/language_tools*
+// @exclude		   https://www.google.*/ig*
+// @exclude		   https://www.google.*/#*
+// @exclude		   https://www.google.com/#q=*
+// @exclude		   https://www.google.*/support*
+// @exclude		   http://www.google.*/webhp*
+// @exclude		   http://*maps.google.*
+// @exclude		   *google.*/maps*
+// @exclude		   http://*translate.google.*
+// @exclude		   *google*/ig*
+// @exclude		   *.google.com/webhp?rls=ig
+// @grant		     GM_log
+// @grant		     GM_addStyle
+// @grant		     GM_getValue
+// @grant		     GM_setValue
+// @grant		     GM_getResourceText
 // ==/UserScript==
+// @description	 Add many other hidden (only available in text) functionality to the basic search: file extension filter (video, text document, presentation, datasheets, audio search ...), site filter (video streaming, file share sites, anime streaming sites ...) and all popular file share link search, customizable categories and many more improvements. Check the site for tips and more information: http://googlescript.blogspot.com Contact: pogisti@gmail.com
+
 
 //(multiple/redundant include because of browser compatibility)
 // WARNING!
@@ -64,7 +63,6 @@
 // 1. Add url, link or extension category what you want (for example: if you want to make hello kitty url group, you should add "var helloKittyUrl = ['hellokitty.com','hellokittyagain.com'];" line without quotes after another Url categories)
 // 2. Add category to the array (in the previous case, you should add in initUrls() this line: "urls.push(helloKittyUrl, 'Hello Kitty sites',false);" without quotes)
 // 3. Save it and you're done! (script will generate text and checkbox and manage everything else ;) )
-
 
 var searchString = '';
 

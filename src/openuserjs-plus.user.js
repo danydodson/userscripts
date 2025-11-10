@@ -1,30 +1,30 @@
 // ==UserScript==
-// @name               OpenUserJS Plus
-// @author             Davide <iFelix18@protonmail.com>
-// @namespace          https://egore.url.lol/userscripts
-// @icon               https://www.google.com/s2/favicons?domain=openuserjs.org
-// @description        Adds various features and improves the OpenUserJS experience
-// @copyright          2021, Davide (https://github.com/iFelix18)
-// @license            MIT
-// @version            2.0.5
-// @homepage           https://github.com/iFelix18/Userscripts#readme
-// @homepageURL        https://github.com/iFelix18/Userscripts#readme
-// @supportURL         https://github.com/iFelix18/Userscripts/issues
-// @require            https://fastly.jsdelivr.net/gh/sizzlemctwizzle/GM_config@43fd0fe4de1166f343883511e53546e87840aeaf/gm_config.min.js
-// @require            https://fastly.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
-// @require            https://fastly.jsdelivr.net/npm/@ifelix18/utils@6.5.0/lib/index.min.js
-// @require            https://fastly.jsdelivr.net/npm/@violentmonkey/shortcut@1.2.6/dist/index.min.js
-// @match              *://openuserjs.org/*
-// @connect            openuserjs.org
-// @grant              GM_getValue
-// @grant              GM_setValue
-// @grant              GM.deleteValue
-// @grant              GM.getValue
-// @grant              GM.notification
-// @grant              GM.registerMenuCommand
-// @grant              GM.setValue
-// @run-at             document-start
-// @inject-into        page
+// @name         OpenUserJS Plus
+// @author       Davide <iFelix18@protonmail.com>
+// @namespace    https://egore.url.lol/userscripts
+// @icon         https://www.google.com/s2/favicons?domain=openuserjs.org
+// @description  Adds various features and improves the OpenUserJS experience
+// @copyright    2021, Davide (https://github.com/iFelix18)
+// @license      MIT
+// @version      2.0.5
+// @homepage     https://github.com/iFelix18/Userscripts#readme
+// @homepageURL  https://github.com/iFelix18/Userscripts#readme
+// @supportURL   https://github.com/iFelix18/Userscripts/issues
+// @require      https://fastly.jsdelivr.net/gh/sizzlemctwizzle/GM_config@43fd0fe4de1166f343883511e53546e87840aeaf/gm_config.min.js
+// @require      https://fastly.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
+// @require      https://fastly.jsdelivr.net/npm/@ifelix18/utils@6.5.0/lib/index.min.js
+// @require      https://fastly.jsdelivr.net/npm/@violentmonkey/shortcut@1.2.6/dist/index.min.js
+// @match        *://openuserjs.org/*
+// @connect      openuserjs.org
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM.deleteValue
+// @grant        GM.getValue
+// @grant        GM.notification
+// @grant        GM.registerMenuCommand
+// @grant        GM.setValue
+// @run-at       document-start
+// @inject-into  page
 // ==/UserScript==
 
 /* global $, GM_config, UU, VM */

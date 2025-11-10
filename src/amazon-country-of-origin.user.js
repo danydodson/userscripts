@@ -1,25 +1,9 @@
 // ==UserScript==
-// @name            Amazon Country of Origin
-// @name:pl         Kraj pochodzenia produktów Amazon
-// @name:de         Herkunftsland für Amazon Produkte
-// @name:fr         Pays d'origine des produits Amazon
-// @name:it         Paese di origine per i prodotti Amazon
-// @name:es         País de origen de los productos de Amazon
-// @name:nl         Land van herkomst voor Amazon-producten
-// @name:sv         Ursprungsland för Amazon-produkter
-// @name:ja         Amazon製品の原産国
+// @name         Amazon Country of Origin
 // @namespace    http://tampermonkey.net/
 // @version      2.5.0
 // @icon         https://www.amazon.com/favicon.ico
-// @description     userscript to fetch and display the country of origin for amazon products. initially developed to make boycotting the CCP more easy.
-// @description:pl  skrypt użytkownika do pobierania i wyświetlania kraju pochodzenia produktów Amazon. początkowo opracowany, aby ułatwić bojkot KPCh.
-// @description:de  Userscript zum Abrufen und Anzeigen des Herkunftslandes von Amazon-Produkten. ursprünglich entwickelt, um den Boykott der KPC zu erleichtern.
-// @description:fr  userscript pour récupérer et afficher le pays d'origine des produits amazon. initialement développé pour faciliter le boycott du PCC.
-// @description:it  userscript per recuperare e visualizzare il paese di origine dei prodotti Amazon. inizialmente sviluppato per rendere più facile il boicottaggio del PCC.
-// @description:es  usercript para buscar y mostrar el país de origen de los productos de Amazon. inicialmente desarrollado para facilitar el boicot al PCCh.
-// @description:nl  userscript om het land van herkomst voor Amazon-producten op te halen en weer te geven. oorspronkelijk ontwikkeld om het boycotten van de CCP gemakkelijker te maken.
-// @description:sv  användarskript för att hämta och visa ursprungslandet för Amazon-produkter. ursprungligen utvecklad för att göra det lättare att bojkotta KKP.
-// @description:ja  アマゾン製品の原産国を取得して表示するためのユーザースクリプト。 当初はCCPのボイコットをより簡単にするために開発されました。
+// @description  userscript to fetch and display the country of origin for amazon products. initially developed to make boycotting the CCP more easy.
 // @author       Sidem, calne_ca
 // @license      GPL-3.0-only
 // @match        https://www.amazon.de/*
@@ -36,13 +20,14 @@
 // @match        https://www.amazon.com.mx/*
 // @match        https://www.amazon.com.au/*
 // @match        https://www.amazon.com.be/*
-// @contributionURL https://cointr.ee/sidem
 // @grant        GM_openInTab
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
-// @downloadURL https://update.greasyfork.org/scripts/416635/Country%20of%20origin%20for%20Amazon%20products.user.js
-// @updateURL https://update.greasyfork.org/scripts/416635/Country%20of%20origin%20for%20Amazon%20products.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/416635/Country%20of%20origin%20for%20Amazon%20products.user.js
+// @updateURL    https://update.greasyfork.org/scripts/416635/Country%20of%20origin%20for%20Amazon%20products.meta.js
+// @contributionURL https://cointr.ee/sidem
 // ==/UserScript==
+
 /* jshint esversion: 6 */
 
 

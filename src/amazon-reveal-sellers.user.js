@@ -1,32 +1,32 @@
 // ==UserScript==
-// @name            Amazon Reveal Sellers
-// @description     Shows name, country of origin and ratings for third party sellers on Amazon (and highlights Chinese sellers)
-// @namespace       https://github.com/tadwohlrapp
-// @author          Tad Wohlrapp
-// @version         1.7.2
-// @license         MIT
-// @homepageURL     https://github.com/tadwohlrapp/soldby
-// @supportURL      https://github.com/tadwohlrapp/soldby/issues
+// @name         Amazon Reveal Sellers
+// @description  Shows name, country of origin and ratings for third party sellers on Amazon (and highlights Chinese sellers)
+// @namespace    https://github.com/tadwohlrapp
+// @author       Tad Wohlrapp
+// @version      1.7.2
+// @license      MIT
+// @homepageURL  https://github.com/tadwohlrapp/soldby
+// @supportURL   https://github.com/tadwohlrapp/soldby/issues
 // @icon         https://www.amazon.com/favicon.ico
-// @match           https://www.amazon.co.jp/*
-// @match           https://www.amazon.co.uk/*
-// @match           https://www.amazon.com/*
-// @match           https://www.amazon.com.be/*
-// @match           https://www.amazon.com.mx/*
-// @match           https://www.amazon.com.tr/*
-// @match           https://www.amazon.de/*
-// @match           https://www.amazon.es/*
-// @match           https://www.amazon.fr/*
-// @match           https://www.amazon.it/*
-// @match           https://www.amazon.nl/*
-// @match           https://www.amazon.se/*
-// @require         https://openuserjs.org/src/libs/sizzle/GM_config.min.js
-// @grant           GM.getValue
-// @grant           GM.setValue
-// @compatible      firefox Tested on Firefox v119 with Violentmonkey v2.16.0, Tampermonkey v4.19.0 and Greasemonkey v4.11
-// @compatible      chrome Tested on Chrome v119 with Violentmonkey v2.16.0 and Tampermonkey v4.19.0
-// @downloadURL https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.user.js
-// @updateURL https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.meta.js
+// @match        https://www.amazon.co.jp/*
+// @match        https://www.amazon.co.uk/*
+// @match        https://www.amazon.com/*
+// @match        https://www.amazon.com.be/*
+// @match        https://www.amazon.com.mx/*
+// @match        https://www.amazon.com.tr/*
+// @match        https://www.amazon.de/*
+// @match        https://www.amazon.es/*
+// @match        https://www.amazon.fr/*
+// @match        https://www.amazon.it/*
+// @match        https://www.amazon.nl/*
+// @match        https://www.amazon.se/*
+// @require      https://openuserjs.org/src/libs/sizzle/GM_config.min.js
+// @grant        GM.getValue
+// @grant        GM.setValue
+// @compatible   firefox Tested on Firefox v119 with Violentmonkey v2.16.0, Tampermonkey v4.19.0 and Greasemonkey v4.11
+// @compatible   chrome Tested on Chrome v119 with Violentmonkey v2.16.0 and Tampermonkey v4.19.0
+// @downloadURL  https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.user.js
+// @updateURL    https://update.greasyfork.org/scripts/402064/SoldBy%20-%20Reveal%20Sellers%20on%20Amazon.meta.js
 // ==/UserScript==
 
 (function () {

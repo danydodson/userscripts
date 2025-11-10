@@ -1,0 +1,18 @@
+* text=auto eol=lf
+
+*.user.js linguist-language=JavaScript
+readme.md linguist-language=Markdown
+*.sh text eol=lf
+
+package-lock.json -diff
+yarn.lock        -diff
+pnpm-lock.yaml   -diff
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+
+.github/** linguist-generated
+tools/**   linguist-generated

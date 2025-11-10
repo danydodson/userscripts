@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Twitch Hide Mute Ads
+// @name         Twitch Hide Ads
 // @namespace    TWITCHADS
 // @description  Automatically mutes the Twitch player when an advertisement started and unmute it once finished. You can also hide ads by setting disableDisplay to true.
 // @include      https://www.twitch.tv/*

@@ -1,0 +1,11 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "description": "A modular userscript collection.",
+  "author": "danydodson",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "update-collection": "node tools/update-collection.mjs"
+  }
+}

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Discord Hide UI
+// @name         Discord Custom Styles
 // @namespace    discord-hide-ui
 // @version      1.0.0
 // @description  A simple userstyle that hides some of Discord's UI.
