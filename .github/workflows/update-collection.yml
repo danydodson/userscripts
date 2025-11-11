@@ -36,15 +36,19 @@ jobs:
           echo "default-cache-ttl 34560000" > ~/.gnupg/gpg-agent.conf
           echo "max-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
           gpgconf --kill gpg-agent
+          export GPG_TTY=$(tty)
 
       - name: Commit Changes
         env:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "2219168+danydodson@users.noreply.github.com"
           git config commit.gpgSign true
           git config user.signingkey $GPG_KEY_ID
+          echo "$GPG_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --status-fd 1 --sign-key $GPG_KEY_ID
           git add readme.md
           git diff --cached --quiet && echo "no changes" || git commit -m "chore: auto-update script collection"
           git push
+
