@@ -1,0 +1,37 @@
+name: Update Script Collection
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Update Collection
+        run: |
+          mkdir -p tools
+          node --version
+          node tools/update-collection.mjs || { echo "Generator failed"; exit 1; }
+
+      - name: Commit Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "2219168+danydodson@users.noreply.github.com"
+          git add readme.md
+          git diff --cached --quiet && echo "No changes" || git commit -m "chore: auto-update Script collection"
+          git push
