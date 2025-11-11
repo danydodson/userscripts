@@ -129,253 +129,256 @@ var defaultSearchRemember = false;
 var enableHunCategories = true;
 
 function getButtons() {
-	var node_list = document.getElementsByTagName('input');
-	var buttons = [];
-	var i, node;
+  var node_list = document.getElementsByTagName('input');
+  var buttons = [];
+  var i, node;
 
-	for (i = 0; i < node_list.length; i++) {
-		node = node_list[i];
+  for (i = 0; i < node_list.length; i++) {
+    node = node_list[i];
 
-		if (node.getAttribute('type') == 'submit') {
-			buttons.push(node);
-		}
-	}
+    if (node.getAttribute('type') == 'submit') {
+      buttons.push(node);
+    }
+  }
 
-	return buttons;
+  return buttons;
 }
 
 function initUrls() {
-	urls.push([animestreamUrl, 'Anime', false]);
-	urls.push([auctionUrl, 'Auction', false]);
-	urls.push([onlineshoppingUrl, 'Online shops', false]);
-	urls.push([blogUrl, 'Blog', false]);
-	urls.push([fileshareUrl, 'Fileshare', false]);
-	urls.push([videostreamUrl, 'Video', false]);
-	urls.push([torrentUrl, 'Torrent', false]);
-	//urls.push([gwUrl,'Guild Wars wiki',false]);
-	urls.push([xvideoUrl, 'Porn', false]);
-	if (enableHunCategories) {
-		urls.push([pcShopHuUrl, 'PC Shop (hu)', false]);
-		urls.push([auctionHuUrl, 'Auction (hu)', false]);
-		urls.push([blogHuUrl, 'Blog (hu)', false]);
-		urls.push([fileshareHuUrl, 'Fileshare (hu)', false]);
-		urls.push([jobHuUrl, 'Jobs (hu)', false]);
-		urls.push([videoStreamHuUrl, 'Videostream (hu)', false]);
-	}
-	//urls.push([newcategoryUrl, 'new category label', false]);
+  urls.push([animestreamUrl, 'Anime', false]);
+  urls.push([auctionUrl, 'Auction', false]);
+  urls.push([onlineshoppingUrl, 'Online shops', false]);
+  urls.push([blogUrl, 'Blog', false]);
+  urls.push([fileshareUrl, 'Fileshare', false]);
+  urls.push([videostreamUrl, 'Video', false]);
+  urls.push([torrentUrl, 'Torrent', false]);
+  //urls.push([gwUrl,'Guild Wars wiki',false]);
+  urls.push([xvideoUrl, 'Porn', false]);
+  if (enableHunCategories) {
+    urls.push([pcShopHuUrl, 'PC Shop (hu)', false]);
+    urls.push([auctionHuUrl, 'Auction (hu)', false]);
+    urls.push([blogHuUrl, 'Blog (hu)', false]);
+    urls.push([fileshareHuUrl, 'Fileshare (hu)', false]);
+    urls.push([jobHuUrl, 'Jobs (hu)', false]);
+    urls.push([videoStreamHuUrl, 'Videostream (hu)', false]);
+  }
+  //urls.push([newcategoryUrl, 'new category label', false]);
 }
 
 function initLinks() {
-	links.push([audioLink, 'Audio', false]);
-	links.push([fileshareLink, 'Fileshare link', false]);
-	links.push([flashgameLink, 'Flashgame', false]);
-	//links.push([newcategoryLink,'new category label',false]);
+  links.push([audioLink, 'Audio', false]);
+  links.push([fileshareLink, 'Fileshare link', false]);
+  links.push([flashgameLink, 'Flashgame', false]);
+  //links.push([newcategoryLink,'new category label',false]);
 }
 
 function initExtensions() {
-	extensions.push([datasheetExt, 'Datasheet', false]);
-	extensions.push([documentExt, 'Text', false]);
-	extensions.push([presentationExt, 'Presentation', false]);
-	extensions.push([csharpSourceExt, 'C#', false]);
-	extensions.push([javaSourceExt, 'Java', false]);
-	extensions.push([cppSourceExt, 'C++', false]);
-	extensions.push([basicSourceExt, 'Basic', false]);
-	extensions.push([perlSourceExt, 'Perl', false]);
-	extensions.push([pythonSourceExt, 'Python', false]);
-	extensions.push([xmlExt, 'XML', false]);
-	//extensions.push(new Array(newcategoryExt, 'new category label', false));
+  extensions.push([datasheetExt, 'Datasheet', false]);
+  extensions.push([documentExt, 'Text', false]);
+  extensions.push([presentationExt, 'Presentation', false]);
+  extensions.push([csharpSourceExt, 'C#', false]);
+  extensions.push([javaSourceExt, 'Java', false]);
+  extensions.push([cppSourceExt, 'C++', false]);
+  extensions.push([basicSourceExt, 'Basic', false]);
+  extensions.push([perlSourceExt, 'Perl', false]);
+  extensions.push([pythonSourceExt, 'Python', false]);
+  extensions.push([xmlExt, 'XML', false]);
+  //extensions.push(new Array(newcategoryExt, 'new category label', false));
 }
 
 function initCheckboxArray() {
-	var i;
-	for (i = 0; i < checkboxes.length; i++) {
-		checkboxes[i] = new Array(options[i].length);
-	}
+  var i;
+  for (i = 0; i < checkboxes.length; i++) {
+    checkboxes[i] = new Array(options[i].length);
+  }
 }
 
 function appendCheckbox() {
-	var name;
+  var name;
 
-	GM_addStyle("[id=upperDiv] { font-weight: bold; font-size:80% ! important; }");
-	if (useCustomFontColor) { GM_addStyle("body { color: " + colorCode + " !important; }"); }
+  GM_addStyle("[id=upperDiv] { font-weight: bold; font-size:80% ! important; }");
+  if (useCustomFontColor) { GM_addStyle("body { color: " + colorCode + " !important; }"); }
 
-	var oDiv = document.createElement('div');
-	oDiv.setAttribute('id', 'upperDiv');
-	oDiv.setAttribute('name', 'upperDiv');
-	oDiv.setAttribute('align', 'center');
-	oDiv.setAttribute('vertical-align', 'middle');
-	oDiv.setAttribute('text-align', 'center');
-	oDiv.setAttribute('class', 'ui-widget-content');
-	oDiv.setAttribute('padding', '15px');
-	oDiv.setAttribute('margin-left', 'auto');
-	oDiv.setAttribute('margin-right', 'auto');
+  var oDiv = document.createElement('div');
+  oDiv.setAttribute('id', 'upperDiv');
+  oDiv.setAttribute('name', 'upperDiv');
+  oDiv.setAttribute('align', 'center');
+  oDiv.setAttribute('vertical-align', 'middle');
+  oDiv.setAttribute('text-align', 'center');
+  oDiv.setAttribute('class', 'ui-widget-content');
+  oDiv.setAttribute('padding', '15px');
+  oDiv.setAttribute('margin-left', 'auto');
+  oDiv.setAttribute('margin-right', 'auto');
 
-	oDiv.appendChild(document.createElement('BR'));
-	var txt1 = document.createTextNode('Press DEL to clear the searchbox!');
-	oDiv.appendChild(txt1);
-	oDiv.appendChild(document.createElement('BR'));
-	var txt3 = document.createTextNode('Remember last searchterm');
-	oDiv.appendChild(txt3);
-	cbSearchRemember = document.createElement('input');
-	cbSearchRemember.type = 'checkbox';
-	cbSearchRemember.id = '';
-	cbSearchRemember.name = '';
-	cbSearchRemember.value = '';
-	cbSearchRemember.checked = defaultSearchRemember;
-	oDiv.appendChild(cbSearchRemember);
+  oDiv.appendChild(document.createElement('BR'));
+  var txt1 = document.createTextNode('Press DEL to clear the searchbox!');
+  oDiv.appendChild(txt1);
+  oDiv.appendChild(document.createElement('BR'));
+  var txt3 = document.createTextNode('Remember last searchterm');
+  oDiv.appendChild(txt3);
+  cbSearchRemember = document.createElement('input');
+  cbSearchRemember.type = 'checkbox';
+  cbSearchRemember.id = '';
+  cbSearchRemember.name = '';
+  cbSearchRemember.value = '';
+  cbSearchRemember.checked = defaultSearchRemember;
+  oDiv.appendChild(cbSearchRemember);
 
-	var oDivOpt = document.createElement('div');
-	oDivOpt.setAttribute('id', 'optionsDiv');
-	oDivOpt.setAttribute('name', 'optionsDiv');
-	oDivOpt.setAttribute('align', 'center');
-	oDivOpt.setAttribute('vertical-align', 'middle');
-	oDivOpt.setAttribute('text-align', 'center');
-	oDivOpt.setAttribute('class', 'ui-widget-content');
-	oDivOpt.setAttribute('padding', '15px');
-	oDivOpt.setAttribute('margin-left', 'auto');
-	oDivOpt.setAttribute('margin-right', 'auto');
+  var oDivOpt = document.createElement('div');
+  oDivOpt.setAttribute('id', 'optionsDiv');
+  oDivOpt.setAttribute('name', 'optionsDiv');
+  oDivOpt.setAttribute('align', 'center');
+  oDivOpt.setAttribute('vertical-align', 'middle');
+  oDivOpt.setAttribute('text-align', 'center');
+  oDivOpt.setAttribute('class', 'ui-widget-content');
+  oDivOpt.setAttribute('padding', '15px');
+  oDivOpt.setAttribute('margin-left', 'auto');
+  oDivOpt.setAttribute('margin-right', 'auto');
 
-	oDivOpt.appendChild(oDiv);
-	oDivOpt.appendChild(document.createElement('BR'));
+  oDivOpt.appendChild(oDiv);
+  oDivOpt.appendChild(document.createElement('BR'));
 
-	var i, j;
-	for (i = 0; i < options.length; i++) {
-		for (j = 0; j < options[i].length; j++) {
-			name = options[i][j][1];
-			var cb = document.createElement('input');
-			cb.type = 'checkbox';
-			cb.id = 'cb' + i + j;
-			cb.name = 'cb' + i + j;
-			cb.value = 'cb';
-			var text = document.createTextNode(name);
-			oDivOpt.appendChild(cb);
-			checkboxes[i][j] = cb;
-			oDivOpt.appendChild(text);
-			var txtLabel = document.createElement('label');
-			txtLabel.id = 'label' + i + j;
-			txtLabel.name = 'label' + i + j;
-			txtLabel.text = '  ' + i + j;
-			txtLabel.style['padding'] = '5px';
-			oDivOpt.appendChild(txtLabel);
-		}
-		oDivOpt.appendChild(document.createElement('BR'));
-	}
+  var i, j;
+  for (i = 0; i < options.length; i++) {
+    for (j = 0; j < options[i].length; j++) {
+      name = options[i][j][1];
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.id = 'cb' + i + j;
+      cb.name = 'cb' + i + j;
+      cb.value = 'cb';
+      var text = document.createTextNode(name);
+      oDivOpt.appendChild(cb);
+      checkboxes[i][j] = cb;
+      oDivOpt.appendChild(text);
+      var txtLabel = document.createElement('label');
+      txtLabel.id = 'label' + i + j;
+      txtLabel.name = 'label' + i + j;
+      txtLabel.text = '  ' + i + j;
+      txtLabel.style['padding'] = '5px';
+      oDivOpt.appendChild(txtLabel);
+    }
+    oDivOpt.appendChild(document.createElement('BR'));
+  }
 
-	$(function () {
-		$("#optionsDiv").draggable();
-	});
-	$(oDivOpt).css('border-radius', '19px');
-	$(oDivOpt).css('background-color', '#4d5156');
+  $(function () {
+    $("#optionsDiv").draggable();
+  });
+  $(oDivOpt).css('border-radius', '19px');
+  $(oDivOpt).css('background-color', '#4d5156');
 
-	$("#optionsDiv").position({
-		my: "center",
-		at: "center",
-		of: "#form"
-	});
+  $("#optionsDiv").position({
+    my: "center",
+    at: "center",
+    of: "#form"
+  });
 
-	form.appendChild(oDivOpt);
+  form.appendChild(oDivOpt);
 }
 
 function processOptions() {
-	var first = true;
-	searchString = textbox.value;
+  var first = true;
+  searchString = textbox.value;
 
-	if (cbSearchRemember.checked) { GM_setValue("rememberSearch", true); GM_setValue("searchTerm", textbox.value); } else { GM_setValue("rememberSearch", false); }
+  if (cbSearchRemember.checked) { GM_setValue("rememberSearch", true); GM_setValue("searchTerm", textbox.value); } else { GM_setValue("rememberSearch", false); }
 
-	var i, j, k;
+  var i, j, k;
 
-	for (i = 0; i < options.length; i++) {
-		if (options[i] == urls) {
-			for (j = 0; j < options[i].length; j++) {
-				if (checkboxes[i][j].checked) {
-					for (k = 0; k < options[i][j][0].length; k++) {
-						if (!first) {
-							searchString += ' OR';
-						}
-						else { first = false; }
-						searchString = searchString + ' site:' + options[i][j][0][k];
-					}
-				}
-			}
-		}
-		else if (options[i] == links) {
-			for (j = 0; j < options[i].length; j++) {
-				if (checkboxes[i][j].checked) {
-					for (k = 0; k < options[i][j][0].length; k++) {
-						if (!first) {
-							searchString += ' OR';
-						}
-						else { first = false; }
-						searchString = searchString + ' "' + options[i][j][0][k] + '"';
-					}
-				}
-			}
-		}
-		else if (options[i] == extensions) {
-			for (j = 0; j < options[i].length; j++) {
-				if (checkboxes[i][j].checked) {
-					for (k = 0; k < options[i][j][0].length; k++) {
-						if (!first) {
-							searchString += ' OR';
-						}
-						else { first = false; }
-						searchString = searchString + ' filetype:' + options[i][j][0][k];
-					}
-				}
-			}
-		}
-	}
-	textbox.value = searchString;
+  for (i = 0; i < options.length; i++) {
+    if (options[i] == urls) {
+      for (j = 0; j < options[i].length; j++) {
+        if (checkboxes[i][j].checked) {
+          for (k = 0; k < options[i][j][0].length; k++) {
+            if (!first) {
+              searchString += ' OR';
+            }
+            else { first = false; }
+            searchString = searchString + ' site:' + options[i][j][0][k];
+          }
+        }
+      }
+    }
+    else if (options[i] == links) {
+      for (j = 0; j < options[i].length; j++) {
+        if (checkboxes[i][j].checked) {
+          for (k = 0; k < options[i][j][0].length; k++) {
+            if (!first) {
+              searchString += ' OR';
+            }
+            else { first = false; }
+            searchString = searchString + ' "' + options[i][j][0][k] + '"';
+          }
+        }
+      }
+    }
+    else if (options[i] == extensions) {
+      for (j = 0; j < options[i].length; j++) {
+        if (checkboxes[i][j].checked) {
+          for (k = 0; k < options[i][j][0].length; k++) {
+            if (!first) {
+              searchString += ' OR';
+            }
+            else { first = false; }
+            searchString = searchString + ' filetype:' + options[i][j][0][k];
+          }
+        }
+      }
+    }
+  }
+  textbox.value = searchString;
 
 }
 
 function keyCheck(e) {
-	if (e.keyCode == 13 && e.shiftKey) {
-		e.preventDefault();
-		buttons[1].click();
-	}
-	else if (e.keyCode == 13) {
-		processOptions();
-	}
-	else if (e.keyCode == 46) {
-		textbox.value = '';
-	}
+  if (e.keyCode == 13 && e.shiftKey) {
+    e.preventDefault();
+    buttons[1].click();
+  }
+  else if (e.keyCode == 13) {
+    processOptions();
+  }
+  else if (e.keyCode == 46) {
+    textbox.value = '';
+  }
 }
 
 function searchButtonModify() {
-	var i;
-	for (i = 0; i < buttons.length; i++) {
-		buttons[i].addEventListener('click', processOptions, false);
-	}
+  var i;
+  for (i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', processOptions, false);
+  }
 
-	window.addEventListener('keydown', keyCheck, true);
+  window.addEventListener('keydown', keyCheck, true);
 }
 
 function setToCenterOfParent(obj, parentObj) {
-	var height = obj.height();
-	var width = obj.width();
-	var heightOffset = 35;
+  var height = obj.height();
+  var width = obj.width();
+  var heightOffset = 35;
 
-	if (parentObj == window) {
-		obj.css('top', (parentObj.height() / 2) - (height / 2));
-		obj.css('left', (parentObj.width() / 2) - (width / 2));
-	}
-	else {
-		obj.css('top', (parentObj.height() / 2) - (height / 2) + parentObj.position().top + heightOffset);
-		obj.css('left', (parentObj.width() / 2) - (width / 2) + parentObj.position().left);
-	}
+  if (parentObj == window) {
+    obj.css('top', (parentObj.height() / 2) - (height / 2));
+    obj.css('left', (parentObj.width() / 2) - (width / 2));
+  }
+  else {
+    obj.css('top', (parentObj.height() / 2) - (height / 2) + parentObj.position().top + heightOffset);
+    obj.css('left', (parentObj.width() / 2) - (width / 2) + parentObj.position().left);
+  }
 }
 
 function init() {
-	initUrls();
-	initLinks();
-	initExtensions();
-	initCheckboxArray();
-	buttons = getButtons();
-	searchButtonModify();
-	appendCheckbox();
+  initUrls();
+  initLinks();
+  initExtensions();
+  initCheckboxArray();
+  buttons = getButtons();
+  searchButtonModify();
+  appendCheckbox();
 
-	if (GM_getValue("rememberSearch") == true) { textbox.value = GM_getValue("searchTerm", ""); } else { textbox.value = ""; }
+  if (GM_getValue("rememberSearch") == true) { textbox.value = GM_getValue("searchTerm", ""); } else { textbox.value = ""; }
 }
 
 init();
+
+/* eslint no-undef:0 */
+/* eslint dot-notation:0 */
