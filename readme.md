@@ -35,7 +35,6 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 |---|---|---|
 | amazon-country-of-origin | [amazon-country-of-origin.user.js](./src/amazon-country-of-origin.user.js) | Fetch and display the country of origin for amazon products. |
 | amazon-cpu-tamer | [amazon-cpu-tamer.user.js](./src/amazon-cpu-tamer.user.js) | Reduces CPU usage on Amazon shopping pages. |
-| amazon-ebay-markup | [amazon-ebay-markup.user.js](./src/amazon-ebay-markup.user.js) | Adds eBay markup price, direct link to Amazon product page, eBay search by title, ThePriceGeek search by first 10 words of title, Amabay search by title. However over price to see eBay price to profit $2 by dropshipping with Prime. |
 | amazon-reveal-sellers | [amazon-reveal-sellers.user.js](./src/amazon-reveal-sellers.user.js) | Shows name, country of origin and ratings for third party sellers on Amazon. |
 | discord-custom-styles | [discord-custom-styles.user.js](./src/discord-custom-styles.user.js) | A simple userstyle that hides some of Discord's UI. |
 | discord-image-downloader | [discord-image-downloader.user.js](./src/discord-image-downloader.user.js) | Adds a download button to images and GIFs in Discord. |
@@ -46,7 +45,7 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 | dndbeyond-dark-mode | [dndbeyond-dark-mode.user.js](./src/dndbeyond-dark-mode.user.js) | Makes AVTT a little easier on the eyes. |
 | dndbeyond-my-sources | [dndbeyond-my-sources.user.js](./src/dndbeyond-my-sources.user.js) | Adds a button to DnDBeyond to filter sources you own. |
 | dndbeyond-sidebar-fix | [dndbeyond-sidebar-fix.user.js](./src/dndbeyond-sidebar-fix.user.js) | Opens the sidebar set to fixed and locks its position. |
-| google-expert | [google-expert.user.js](./src/google-expert.user.js) | Simple greasemonkey user script for better get results in Google and find exactly what you want, no more. Site and extension filter, link search categories, (documents, audio, torrent, anime, fileshares etc.), easy to use and add content custom! |
+| google-expert | [google-expert.user.js](./src/google-expert.user.js) | Simple greasemonkey user script for better get results in Google and find exactly what you want. |
 | google-highlight-types | [google-highlight-types.user.js](./src/google-highlight-types.user.js) | Highlight file type labels in Google search results |
 | google-redirects | [google-redirects.user.js](./src/google-redirects.user.js) | Easily swap between search engines with the press of a button while maintaining your current query. |
 | greasyfork-bs-filter | [greasyfork-bs-filter.user.js](./src/greasyfork-bs-filter.user.js) | Hides scripts for popular browser games and social networks as well as scripts that use "foreign" characters in descriptions. Applies to posts in Forum too. |
@@ -69,11 +68,11 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 | media-remove-link-underlines | [media-remove-link-underlines.user.js](./src/media-remove-link-underlines.user.js) | Remove link underlines on all sites，and handle new links dynamically. |
 | openuserjs-plus | [openuserjs-plus.user.js](./src/openuserjs-plus.user.js) | Adds various features and improves the OpenUserJS experience. |
 | proxy-load-image | [proxy-load-image.user.js](./src/proxy-load-image.user.js) | Load images through a random proxy. |
-| proxy-random-header | [proxy-random-header.user.js](./src/proxy-random-header.user.js) | Load webpages and links through a random proxy based on the server response (403). If not found (404), loads the cached version of the page. |
+| proxy-random-header | [proxy-random-header.user.js](./src/proxy-random-header.user.js) | Load webpages and links through a random proxy based on the server response 403. If not found 404, loads the cached version of the page. |
 | proxy-random | [proxy-random.user.js](./src/proxy-random.user.js) | Load webpages and links through a random proxy. |
 | reddit-hide-sidebar | [reddit-hide-sidebar.user.js](./src/reddit-hide-sidebar.user.js) | Slides in and out and fades right sidebar when near right screen edge. |
 | scroller-premium | [scroller-premium.user.js](./src/scroller-premium.user.js) | Gives you access to Scrolller Premium features for free. |
-| tiktok-enhancer-plus | [tiktok-enhancer-plus.user.js](./src/tiktok-enhancer-plus.user.js) | Enhance TikTok web: download videos, audio-only, dark mode, auto loop/mute/scroll, UI tweaks, draggable settings w/ backup & import/export and more. |
+| tiktok-enhancer-plus | [tiktok-enhancer-plus.user.js](./src/tiktok-enhancer-plus.user.js) | Enhance tiktok web to download videos, dark mode, auto scroll and more. |
 | tiktok-user-info | [tiktok-user-info.user.js](./src/tiktok-user-info.user.js) | Additional user info from TikTok profiles. |
 | tinder-deblur-v2 | [tinder-deblur-v2.user.js](./src/tinder-deblur-v2.user.js) | A script using the official Tinder API to get unblurred photos of the users who liked you. |
 | tinder-deblur | [tinder-deblur.user.js](./src/tinder-deblur.user.js) | Simple script using the official Tinder API to get clean photos of the users who liked you. |
@@ -82,13 +81,13 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 | twitch-auto-volume | [twitch-auto-volume.user.js](./src/twitch-auto-volume.user.js) | Auto set volume for twitch. |
 | twitch-beautify-old | [twitch-beautify-old.user.js](./src/twitch-beautify-old.user.js) | Beautify the Twitch viewing screen. |
 | twitch-beautify | [twitch-beautify.user.js](./src/twitch-beautify.user.js) | Beautify the Twitch viewing screen. |
-| twitch-enhance | [twitch-enhance.user.js](./src/twitch-enhance.user.js) | Auto click claim bonus, Show images/video in chat, always source quality, hide offline channels and more. |
+| twitch-enhance | [twitch-enhance.user.js](./src/twitch-enhance.user.js) | Auto claim bonus, always source quality, hide offline channels and more. |
 | twitch-hide-ads | [twitch-hide-ads.user.js](./src/twitch-hide-ads.user.js) | Automatically mutes player when an advertisement started and unmute it once finished. Hide ads by setting disableDisplay to true. |
 | twitch-multi-redirect | [twitch-multi-redirect.user.js](./src/twitch-multi-redirect.user.js) | Redirect Twitch with options. |
-| twitch-refresh-page | [twitch-refresh-page.user.js](./src/twitch-refresh-page.user.js) | Updates the Thumbnail, Viewer Count, Title, Game and Live Status of the Recommended Channels on the Twitch Homepage. |
+| twitch-refresh-page | [twitch-refresh-page.user.js](./src/twitch-refresh-page.user.js) | Updates the thumbnail, viewer count, title, game and live status of the recommended channels on the twitch homepage. |
 | twitch-sidebar-previews | [twitch-sidebar-previews.user.js](./src/twitch-sidebar-previews.user.js) | Hover over channel in the sidebar to see a thumbnail preview of the stream on Twitch. |
 | twitter-quality-fixer | [twitter-quality-fixer.user.js](./src/twitter-quality-fixer.user.js) | Force highest quality playback for twitter videos. |
-| twitter-tweaks | [twitter-tweaks.user.js](./src/twitter-tweaks.user.js) | Remove algorithmic content from Twitter, hide news & trends, control which shared tweets appear on your timeline, and improve the UI. |
+| twitter-tweaks | [twitter-tweaks.user.js](./src/twitter-tweaks.user.js) | Remove algorithmic content from twitter, hide news & trends, your timeline, and improve the UI. |
 | userscript-file-explorer | [userscript-file-explorer.user.js](./src/userscript-file-explorer.user.js) | A script to navigate local directories and open files in new tabs. |
 | userscript-file-picker | [userscript-file-picker.user.js](./src/userscript-file-picker.user.js) | Use the File Picker API to show local directory/file navigator. |
 | userscript-floating-box | [userscript-floating-box.user.js](./src/userscript-floating-box.user.js) | This is a userscript that shows a floating box. |
