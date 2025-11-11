@@ -32,6 +32,7 @@ jobs:
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
           echo "use-agent" > ~/.gnupg/gpg.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "default-cache-ttl 34560000" > ~/.gnupg/gpg-agent.conf
           echo "max-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
           gpgconf --kill gpg-agent
