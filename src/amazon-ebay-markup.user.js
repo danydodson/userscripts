@@ -2,7 +2,7 @@
 // @name         Amazon eBay Markup
 // @namespace    https://egore.url.lol/userscripts
 // @version      1.0
-// @description  Adds eBay markup price, direct link to Amazon product page, eBay search by title, ThePriceGeek search by first 10 words of title, Amabay search by title.  However over price to see minimum eBay price to profit $2 by dropshipping with Prime.
+// @description  Adds eBay markup price, direct link to Amazon product page, eBay search by title, ThePriceGeek search by first 10 words of title, Amabay search by title. However over price to see eBay price to profit $2 by dropshipping with Prime.
 // @match        https://www.amazon.com/*
 // @match        https://www.amazon.co.jp/*
 // @match        https://www.amazon.co.uk/*

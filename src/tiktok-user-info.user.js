@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         TikTok User Info
-// @description  Additional user info from TikTok profiles
+// @description  Additional user info from TikTok profiles.
 // @author       Brudda
 // @namespace    https://github.com/bruddaa/
 // @supportURL   https://github.com/bruddaa//issues

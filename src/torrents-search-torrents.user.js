@@ -3,7 +3,7 @@
 // @version      1.0.0
 // @author       NotYou
 // @namespace    userscripts
-// @description  Shows a custom torrent and userscript search engine menu selection a form input
+// @description  Shows a custom torrent and userscript search engine menu selection a form input.
 // @icon         https://cdn-icons-png.freepik.com/512/8122/8122729.png
 // @license      MIT
 // @include      https://www.google.com/*

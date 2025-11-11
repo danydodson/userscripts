@@ -2,7 +2,7 @@
 // @name         Twitch Beautify
 // @version      0.0.23
 // @author       Canaan HS
-// @description  Live page: Auto-beautify, auto-collapse buttons on mouse hover, auto-trigger replay function. Home page: Restore original style, auto-pause and mute, draggable and scalable live window.
+// @description  Beautify the Twitch viewing screen.
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico
 // @license      MIT
 // @namespace    https://greasyfork.org/users/989635

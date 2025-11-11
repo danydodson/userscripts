@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2.5.0
 // @icon         https://www.amazon.com/favicon.ico
-// @description  userscript to fetch and display the country of origin for amazon products. initially developed to make boycotting the CCP more easy.
+// @description  Fetch and display the country of origin for amazon products.
 // @author       Sidem, calne_ca
 // @license      GPL-3.0-only
 // @match        https://www.amazon.de/*

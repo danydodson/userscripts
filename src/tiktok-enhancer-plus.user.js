@@ -2,7 +2,7 @@
 // @name         TikTok Enhancer Plus
 // @namespace    https://greasyfork.org/en/users/123456-eliminater74
 // @version      2.4
-// @description  Safely enhance TikTok web: download videos (with blob fallback via recorder), audio-only (WIP), dark mode, auto loop/mute/scroll, UI tweaks, draggable settings gear/menu w/ backup & import/export — by Eliminater74
+// @description  Enhance TikTok web: download videos, audio-only, dark mode, auto loop/mute/scroll, UI tweaks, draggable settings w/ backup & import/export and more.
 // @author       Eliminater74
 // @license      MIT
 // @match        https://www.tiktok.com/*

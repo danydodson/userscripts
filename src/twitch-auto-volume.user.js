@@ -2,7 +2,7 @@
 // @name         Twitch Auto Volume
 // @namespace    http://twitch.tv/
 // @version      0.1
-// @description  try to take over the world!
+// @description  Auto set volume for twitch.
 // @author       Vasya
 // @match        https://www.twitch.tv/*
 // @icon         https://icons.duckduckgo.com/ip2/twitch.tv.ico

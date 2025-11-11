@@ -4,13 +4,12 @@
 // @author       RASG
 // @version      2012.06.14.1010
 // @icon         https://www.clipartmax.com/png/full/114-1147589_reverse-proxy-reverse-proxy-icon.png
-// @description  [PT] Carrega imagens atraves de um proxy aleatorio. [EN] Load images through a random proxy.
+// @description  Load images through a random proxy.
 // @include      *
 // @exclude      *intranet*
 // ==/UserScript==
 
-/* [PT] SOMENTE IMAGENS SAO CARREGADAS PELO PROXY. LINKS PERMANECEM INTACTOS. */
-/* [EN] ONLY IMAGES ARE LOADED THROUGH THE PROXY. LINKS REMAIN UNTOUCHED. */
+// Only images are loaded through the proxy. links remain untouched.
 
 var imagens = ['.bmp', '.gif', '.img', 'imgur.com', '.jpeg', '.jpg', '.png'];
 var matriz = ['https://cache-001.appspot.com/', 'https://cache-003.appspot.com/', 'https://cache-017.appspot.com/', 'https://meme-darwin.appspot.com/'];
@@ -27,13 +26,13 @@ if (temproxy == 0) {
     for (h in imagens) {
       if (link.href.indexOf(imagens[h]) > -1) {
         link.href = link.href.replace(location.protocol + '//', proxy);
-        //GM_log(link.href);
+        // GM_log(link.href);
       }
     }
   }
 }
 
-/* SUBSTITUI OS 'img src' */
+/* Replace the 'img src' */
 if (temproxy == 0) {
   for (var x = 0; x < document.images.length; x++) {
     imagem = document.images[x];

@@ -2,7 +2,7 @@
 // @name         DND Beyond Sidebar Fix
 // @namespace    dndbeyond-fixed-sidebar
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dndbeyond.com
-// @description  This script opens the sidebar, sets the sidebar to be fixed, locks its position, opens the profile, and scrolls to the bottom of the page.
+// @description  Opens the sidebar set to fixed and locks its position.
 // @version      1
 // @grant        GM_setValue
 // @grant        GM_getValue

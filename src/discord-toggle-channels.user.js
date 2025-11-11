@@ -2,7 +2,7 @@
 // @name         Discord Toggle Channels
 // @namespace    https://github.com/Dragosarus/Userscripts/
 // @version      2.4
-// @description  Give the chat more screen space
+// @description  Removes the channels sidebar for more screen space.
 // @author       egore
 // @match        http://discord.com/*
 // @match        https://discord.com/*

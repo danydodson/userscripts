@@ -29,7 +29,7 @@ function summaryFor(file) {
 
 // 3) Build table
 const rows = entries.map((f) => {
-  const display = f.replace(/^4ndr0tools\s*-\s*/i, "").replace(/\.user\.js$/i, "").replace(/%20/g, " ");
+  const display = f.replace(/\.user\.js$/i, "").replace(/%20/g, " ");
   const href = "./src/" + encodeURI(f).replace(/#/g, "%23");
   return `| ${display} | [${f}](${href}) | ${summaryFor(f)} |`;
 });

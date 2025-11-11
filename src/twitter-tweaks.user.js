@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Tweaks
 // @namespace    https://github.com/insin/tweak-new-twitter/
-// @description  Remove algorithmic content from Twitter, hide news & trends, control which shared tweets appear on your timeline, and improve the UI
+// @description  Remove algorithmic content from Twitter, hide news & trends, control which shared tweets appear on your timeline, and improve the UI.
 // @version      73
 // @icon         https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
 // @match        https://twitter.com/*

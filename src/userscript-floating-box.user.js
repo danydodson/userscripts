@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         UserScript Floating Box
-// @description  This is a userscript.
+// @description  This is a userscript that shows a floating box.
 // @author       https://egore.url.lol/userscripts
 // @version      0.0.0
 // @namespace    https://egore.url.lol/userscripts

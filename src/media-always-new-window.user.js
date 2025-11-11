@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Media Always New Window
 // @namespace    http://www.github.com/4ndr0666/userscripts
-// @description  Force every single link, including dynamically loaded ones, to open in a new window/tab.
+// @description  Force every single link to open in a new window/tab.
 // @version      0.3
 // @author       4ndr0666
 // @downloadURL  https://github.com/4ndr0666/userscripts/raw/refs/heads/main/4ndr0tools-AlwaysNewWindow.user.js

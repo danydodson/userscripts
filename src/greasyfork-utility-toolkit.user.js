@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              Greasyfork Utility Toolkit
-// @description       Providing various features for Greasyfork, including absolute time, widescreen web pages, script page enhancements, download extensions, panel fixes, and more.
+// @description       Various features for greasyfork, including absolute time, widescreen web pages, script page enhancements, download extensions, panel fixes, and more.
 // @namespace         https://github.com/ChinaGodMan/UserScripts
 // @require           https://update.greasyfork.org/scripts/498897/1404834/Toastnew.js
 // @require           https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js

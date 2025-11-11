@@ -2,7 +2,7 @@
 // @name         DND Beyond Combat Helper
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Track Status in dndbeyond
+// @description  Track Status in dndbeyond.
 // @author       Xanlantos
 // @match        https://www.dndbeyond.com/combat-tracker/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dndbeyond.com

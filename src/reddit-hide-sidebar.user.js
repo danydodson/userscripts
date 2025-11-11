@@ -2,7 +2,7 @@
 // @name         Reddit Hide Sidebar
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  Slides out and fades right sidebar when near right screen edge
+// @description  Slides in and out and fades right sidebar when near right screen edge.
 // @author       dany
 // @icon         https://www.reddit.com/favicon.ico
 // @match        https://www.reddit.com/*

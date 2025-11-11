@@ -3,7 +3,7 @@
 // @author       Davide <iFelix18@protonmail.com>
 // @namespace    https://egore.url.lol/userscripts
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
-// @description  Adds various features and improves the Greasy Fork experience
+// @description  Adds various features and improves the greasyfork experience.
 // @copyright    2021, Davide (https://github.com/iFelix18)
 // @license      MIT
 // @version      2.0.6

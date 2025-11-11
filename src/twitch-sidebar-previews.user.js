@@ -2,7 +2,7 @@
 // @name         Twitch Sidebar Previews
 // @name:de      Twitch Seitenleiste Vorschaubild
 // @version      1.0.2
-// @description  Hover over Channel in the Sidebar to see a Thumbnail Preview of the Stream on Twitch
+// @description  Hover over channel in the sidebar to see a thumbnail preview of the stream on Twitch.
 // @icon         https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
 // @author       TalkLounge (https://github.com/TalkLounge)
 // @namespace    https://github.com/TalkLounge/twitch-sidebar-preview

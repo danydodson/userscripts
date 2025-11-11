@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Greasy Fork Other Sites
 // @namespace    https://github.com/LouCypher/userscripts
-// @description  Add search option to search on Userscripts.org, OpenUserJS.org, MonkeyGuts.com (Code Remodified), Google.com(Beta;Work in progress;still functional) and Google Custom Search(Search all userscript websites with one click). Plus especially Userscripts-mirror.org(As Userscripts.org has shut down).
+// @description  Add search option to search on userscripts.org, openuserjs.org, monkeyguts.com, google.com and google custom search.
 // @icon         https://raw.githubusercontent.com/JasonBarnabe/greasyfork/master/public/images/blacklogo512.png
 // @version      5.1
 // @author       HACKSCOMICON Credits:LouCypher

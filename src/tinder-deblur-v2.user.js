@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tinder Deblur V2
 // @namespace    Violentmonkey Scripts
-// @description  A script using the official Tinder API to get unblurred photos of the users who liked you
+// @description  A script using the official Tinder API to get unblurred photos of the users who liked you.
 // @match        https://tinder.com/*
 // @grant        none
 // @version      2.0

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Greasy Fork Copy Code
 // @version      0.1.1
-// @description  A userscript that adds a copy code button to the greasyfork code page
+// @description  Adds a copy code button to the greasyfork code page.
 // @license      MIT
 // @author       Rob Garrison
 // @namespace    https://egore.url.lol/userscripts

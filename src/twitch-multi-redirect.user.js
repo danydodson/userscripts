@@ -2,7 +2,7 @@
 // @name         Twitch Multi Redirect
 // @namespace    https://egore.url.lol/userscripts
 // @version      1.2
-// @description  Redirect Twitch with options
+// @description  Redirect Twitch with options.
 // @author       RexOmniFurtim
 // @match        https://www.twitch.tv/*
 // @exclude      https://www.twitch.tv/directory/*

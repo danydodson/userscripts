@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @icon         https://cdn3.iconfinder.com/data/icons/material-set-4-3/48/395-512.png
-// @description  Hides the mouse pointer immediately after it stops moving, reappears on movement
+// @description  Hides the mouse pointer immediately after it stops moving.
 // @author       You
 // @match        *://*/*
 // @grant        none

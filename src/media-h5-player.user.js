@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Media H5Player
 // @version      4.3.4
-// @description  Audio and Video enhancement script, supports all H5 video websites, such as: Bilibili, Douyin, Tencent Video, Youku, iQiyi, Xigua Video, YouTube, Weibo Video, Zhihu Video, Sohu Video, NetEase Open Course, Baidu network disk, Alibaba cloud disk, ted, instagram, twitter, etc. Full shortcut key control, support: double-speed playback/accelerated playback, video screenshots, picture-in-picture, full-screen web pages, adjusting brightness, saturation, contrast
+// @description  Audio and video enhancement script.
 // @author       ankvps
 // @license      GPL
 // @namespace    https://github.com/xxxily/h5player

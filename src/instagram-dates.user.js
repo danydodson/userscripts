@@ -2,7 +2,7 @@
 // @name         Instagram Dates
 // @namespace    http://lbreda.com/
 // @version      1.4
-// @description  Show an explicit date string on instagram image pages
+// @description  Show an explicit date string on instagram image pages.
 // @author       Lorenzo Breda
 // @match        https://*.instagram.com/*
 // @icon         https://www.instagram.com/favicon.ico

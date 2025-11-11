@@ -6,7 +6,7 @@
 // @grant        none
 // @version      1.1
 // @author       IceWreck
-// @description  Block websites from knowing if you switched tabs/windows
+// @description  Block websites from knowing if you switched tabs/windows.
 
 // ==/UserScript==
 

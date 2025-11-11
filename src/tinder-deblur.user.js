@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Tinder Deblur
-// @description  Simple script using the official Tinder API to get clean photos of the users who liked you
+// @description  Simple script using the official Tinder API to get clean photos of the users who liked you.
 // @author       spatch
 // @version      1.0
 // @license      MIT

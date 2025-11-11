@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Greasy Fork Total Installs
 // @version      0.1.1
-// @description  A userscript that shows the total installs for any page on Greasy Fork
+// @description  A userscript that shows the total installs for any page on greasyfork.
 // @license      MIT
 // @author       Rob Garrison
 // @namespace    https://egore.url.lol/userscripts

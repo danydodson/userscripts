@@ -2,7 +2,7 @@
 // @name         Discord Toggle Servers
 // @namespace    https://github.com/Dragosarus/Userscripts/
 // @version      1.1
-// @description  Hide the servers sidebar for more screen space
+// @description  Removes the servers sidebar for more screen space.
 // @author       Dragosarus
 // @match        http://discord.com/*
 // @match        https://discord.com/*

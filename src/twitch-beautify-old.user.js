@@ -3,7 +3,7 @@
 // @version      0.0.20
 // @author       spatch
 // @license      MIT
-// @description  Beautify the Twitch viewing screen, automatic clicks for lazy people, automatic pause and mute on the homepage, and automatic playback of videos.
+// @description  Beautify the Twitch viewing screen.
 // @namespace    dumpsterbaby.lol
 // @homepage     https://github.com/danydodson/userscripts/blob/main/src/Twitch_Beautify.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/Twitch_Ads_Solutions.user.js

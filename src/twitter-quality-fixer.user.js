@@ -3,7 +3,7 @@
 // @namespace    https://github.com/yuhaofe
 // @version      0.2.1
 // @icon         https://cdn.cdnlogo.com/logos/t/96/twitter-icon.svg
-// @description  Force highest quality playback for X (Twitter) videos.
+// @description  Force highest quality playback for twitter videos.
 // @author       yuhaofe
 // @downloadURL  https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20X%20%28Twitter%29.user.js
 // @updateURL    https://update.greasyfork.org/scripts/399827/Video%20Quality%20Fixer%20for%20X%20%28Twitter%29.meta.js

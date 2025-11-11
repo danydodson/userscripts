@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Media m3u8 Detector
 // @version      1.4.1
-// @description  Automatically detect the m3u8 video of the page and download it completely. Once detected the m3u8 link, it will appear in the upper right corner of the page. Click download to jump to the m3u8 downloader.
+// @description  Automatically detect the m3u8 video of the page and download it completely.
 // @icon         https://tools.thatwind.com/favicon.png
 // @author       allFull
 // @namespace    https://tools.thatwind.com/

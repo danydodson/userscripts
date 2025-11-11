@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Hide ScrollBars
 // @namespace      https://egore.url.lol/userscripts
-// @description	   Hides Sscrollbars.
+// @description	   Hides all Scrollbars.
 // @match          *
 // @version        1.0.0
 // @icon           https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/RedX.svg/1024px-RedX.svg.png

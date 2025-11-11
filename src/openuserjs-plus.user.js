@@ -3,7 +3,7 @@
 // @author       Davide <iFelix18@protonmail.com>
 // @namespace    https://egore.url.lol/userscripts
 // @icon         https://www.google.com/s2/favicons?domain=openuserjs.org
-// @description  Adds various features and improves the OpenUserJS experience
+// @description  Adds various features and improves the OpenUserJS experience.
 // @copyright    2021, Davide (https://github.com/iFelix18)
 // @license      MIT
 // @version      2.0.5

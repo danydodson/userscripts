@@ -3,7 +3,7 @@
 // @name:ja      Amazon CPU Tamer
 // @name:zh-CN   Amazon CPU Tamer
 // @namespace    knoa.jp
-// @description  It reduces CPU usage on Amazon shopping pages. Enjoy your snappy shopping.
+// @description  Reduces CPU usage on Amazon shopping pages.
 // @antifeature  referral-link This script may add an associate ID to visited Amazon URLs. It doesn't replace any existed ID. Thank you.
 // @downloadURL  https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.user.js
 // @updateURL    https://update.greasyfork.org/scripts/415464/Amazon%20CPU%20Tamer.meta.js

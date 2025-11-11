@@ -4,7 +4,7 @@
 // @author       RASG
 // @icon         https://www.clipartmax.com/png/full/114-1147589_reverse-proxy-reverse-proxy-icon.png
 // @version      2012.06.14.1010
-// @description  [PT] Carrega paginas e links atraves de um proxy aleatorio. [EN] Load webpages and links through a random proxy.
+// @description  Load webpages and links through a random proxy.
 // @include      http*://*
 // ==/UserScript==
 
