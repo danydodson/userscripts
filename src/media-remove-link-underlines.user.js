@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Remove link underline
+// @name         Remove Link Underline
 // @description  Remove link underlines on all sites，and handle new links dynamically
 // @namespace    ChinaGodMan/UserScripts
 // @version      1.2.0.63
