@@ -2,7 +2,7 @@ name: Update Script Collection
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -28,10 +28,22 @@ jobs:
           node --version
           node tools/update-collection.mjs || { echo "Generator failed"; exit 1; }
 
+      - name: Configure GPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          echo "use-agent" > ~/.gnupg/gpg.conf
+          echo "default-cache-ttl 34560000" > ~/.gnupg/gpg-agent.conf
+          echo "max-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
+          gpgconf --kill gpg-agent
+
       - name: Commit Changes
+        env:
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "2219168+danydodson@users.noreply.github.com"
+          git config commit.gpgSign true
+          git config user.signingkey $GPG_KEY_ID
           git add readme.md
-          git diff --cached --quiet && echo "No changes" || git commit -m "chore: auto-update Script collection"
+          git diff --cached --quiet && echo "no changes" || git commit -m "chore: auto-update script collection"
           git push
