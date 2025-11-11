@@ -2,7 +2,7 @@
 // @name		     Google Expert
 // @namespace	   http://googlescript.blogspot.com
 // @author       vemalsar
-// @description  Simple greasemonkey user script for better get results in Google and find exactly what you want, no more. Site and extension filter, link search categories, (documents, audio, torrent, anime, fileshares etc.), easy to use and add content custom!
+// @description  Simple greasemonkey user script for better get results in Google and find exactly what you want.
 // @copyright    2015, vemalsar (http://googlescript.blogspot.com)
 // @version	     1.3
 // @icon         http://www.google.com/favicon.ico

@@ -4,7 +4,7 @@
 // @author       RASG
 // @version      2014.08.25.1010
 // @icon         https://www.clipartmax.com/png/full/114-1147589_reverse-proxy-reverse-proxy-icon.png
-// @description  Load webpages and links through a random proxy based on the server response (403). If not found (404), loads the cached version of the page.
+// @description  Load webpages and links through a random proxy based on the server response 403. If not found 404, loads the cached version of the page.
 // @require      http://code.jquery.com/jquery.min.js
 // @grant        GM_log
 // @grant        GM_wait

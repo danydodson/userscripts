@@ -2,7 +2,7 @@
 // @name            Twitch Refresh Page
 // @name:de         Twitch Startseite aktualisieren
 // @version         1.0.0
-// @description     Updates the Thumbnail, Viewer Count, Title, Game and Live Status of the Recommended Channels on the Twitch Homepage.
+// @description     Updates the thumbnail, viewer count, title, game and live status of the recommended channels on the twitch homepage.
 // @icon            https://static.twitchcdn.net/assets/favicon-32-e29e246c157142c94346.png
 // @author          TalkLounge (https://github.com/TalkLounge)
 // @namespace       https://github.com/TalkLounge/twitch-refresh-homepage

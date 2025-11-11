@@ -3,7 +3,7 @@
 // @version      3.1.3
 // @author       spatch
 // @license      MIT
-// @description  Auto click claim bonus, Show images/video in chat, always source quality, hide offline channels and more.
+// @description  Auto claim bonus, always source quality, hide offline channels and more.
 // @namespace    dumpsterbaby.lol
 // @homepage     https://github.com/danydodson/userscripts/blob/main/src/Twitch_Enhance_witch.user.js
 // @updateURL    https://github.com/danydodson/userscripts/blob/main/src/Twitch_Ads_Solutions.user.js
