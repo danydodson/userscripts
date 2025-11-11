@@ -65,7 +65,7 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 | media-mouseover-view | [media-mouseover-view.user.js](./src/media-mouseover-view.user.js) | Shows images and videos behind links and thumbnails. |
 | media-no-page-visibility | [media-no-page-visibility.user.js](./src/media-no-page-visibility.user.js) | Block websites from knowing if you switched tabs/windows. |
 | media-prevent-page-visibility | [media-prevent-page-visibility.user.js](./src/media-prevent-page-visibility.user.js) | Block websites from knowing if you switched tabs/windows. |
-| media-remove-link-underlines | [media-remove-link-underlines.user.js](./src/media-remove-link-underlines.user.js) | Remove link underlines on all sites，and handle new links dynamically. |
+| media-remove-link-decorations | [media-remove-link-decorations.user.js](./src/media-remove-link-decorations.user.js) | Remove link underlines on all sites，and handle new links dynamically. |
 | openuserjs-plus | [openuserjs-plus.user.js](./src/openuserjs-plus.user.js) | Adds various features and improves the OpenUserJS experience. |
 | proxy-load-image | [proxy-load-image.user.js](./src/proxy-load-image.user.js) | Load images through a random proxy. |
 | proxy-random-header | [proxy-random-header.user.js](./src/proxy-random-header.user.js) | Load webpages and links through a random proxy based on the server response 403. If not found 404, loads the cached version of the page. |
@@ -82,7 +82,7 @@ It provides custom browser automations, UI enhancements, and freedom-ware “pro
 | twitch-beautify-old | [twitch-beautify-old.user.js](./src/twitch-beautify-old.user.js) | Beautify the Twitch viewing screen. |
 | twitch-beautify | [twitch-beautify.user.js](./src/twitch-beautify.user.js) | Beautify the Twitch viewing screen. |
 | twitch-enhance | [twitch-enhance.user.js](./src/twitch-enhance.user.js) | Auto claim bonus, always source quality, hide offline channels and more. |
-| twitch-hide-ads | [twitch-hide-ads.user.js](./src/twitch-hide-ads.user.js) | Automatically mutes player when an advertisement started and unmute it once finished. Hide ads by setting disableDisplay to true. |
+| twitch-hide-ads | [twitch-hide-ads.user.js](./src/twitch-hide-ads.user.js) | Automatically mutes player when an advertisement started and unmute it once finished. Hide ads by setting 'disableDisplay' to true. |
 | twitch-multi-redirect | [twitch-multi-redirect.user.js](./src/twitch-multi-redirect.user.js) | Redirect Twitch with options. |
 | twitch-refresh-page | [twitch-refresh-page.user.js](./src/twitch-refresh-page.user.js) | Updates the thumbnail, viewer count, title, game and live status of the recommended channels on the twitch homepage. |
 | twitch-sidebar-previews | [twitch-sidebar-previews.user.js](./src/twitch-sidebar-previews.user.js) | Hover over channel in the sidebar to see a thumbnail preview of the stream on Twitch. |
