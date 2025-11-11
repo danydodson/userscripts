@@ -13,7 +13,6 @@
 (function () {
   'use strict';
 
-  // CSS for transition effects
   const style = document.createElement('style');
   style.innerHTML = /*css*/`
     #right-sidebar-container {
@@ -32,32 +31,37 @@
     .legal-links {
       display: none !important;
     }
-
   `;
   document.head.appendChild(style);
 
-  const SENSITIVITY = 300; // pixels from right edge
-
+  const SENSITIVITY = 290;
   function setupSidebarHide() {
     const sidebar = document.getElementById('right-sidebar-container');
     if (!sidebar) return false;
 
-    // Hide it by default
     sidebar.classList.add('rs-hidden');
 
     document.addEventListener('mousemove', function (e) {
+      if (sidebar.dataset.processing === 'true') return;
+
+      const delayOpen = 800;
+
       if (window.innerWidth - e.clientX < SENSITIVITY) {
-        // Near right edge, show sidebar
-        sidebar.classList.remove('rs-hidden');
+        sidebar.dataset.processing = 'true';
+        setTimeout(() => {
+          if (window.innerWidth - e.clientX < SENSITIVITY) {
+            sidebar.classList.remove('rs-hidden');
+          }
+          sidebar.dataset.processing = 'false';
+        }, delayOpen);
       } else {
-        // Away from edge, hide sidebar
         sidebar.classList.add('rs-hidden');
+        sidebar.dataset.processing = 'false';
       }
     });
     return true;
   }
 
-  // Retry finding the sidebar in case it loads late (works up to 10 seconds)
   function waitForSidebar(attempts = 0) {
     if (setupSidebarHide()) return;
     if (attempts < 40) setTimeout(() => waitForSidebar(attempts + 1), 250);
